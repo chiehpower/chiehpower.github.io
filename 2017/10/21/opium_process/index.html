@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CASTEP,Linux,M.S.,Pseudopotential,Alchemy,Opium,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="以下內文教學均為 ZwHuang 研究生所指導撰寫:Chieh Tsai時間:2017/09/19※這是ZwHuang研究生碩士論文 之後會放上清楚來源  [Keyword]離子實 [產生贗勢目的]讓波函數的(曲線)平滑 ►► 也就是「贗勢」 (真實的曲線應該是上下起伏，有所震盪) [簡易流程理念]1. 由薛丁格方程式中，求解全電子的各種解(包含波函數、本徵值...etc) 2. 贗化波函數 ►">
+<meta name="keywords" content="CASTEP,Linux,M.S.,Pseudopotential,Alchemy,Opium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鍊金術贗勢說明">
+<meta property="og:url" content="https://chiehpower.com/2017/10/21/opium_process/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="以下內文教學均為 ZwHuang 研究生所指導撰寫:Chieh Tsai時間:2017/09/19※這是ZwHuang研究生碩士論文 之後會放上清楚來源  [Keyword]離子實 [產生贗勢目的]讓波函數的(曲線)平滑 ►► 也就是「贗勢」 (真實的曲線應該是上下起伏，有所震盪) [簡易流程理念]1. 由薛丁格方程式中，求解全電子的各種解(包含波函數、本徵值...etc) 2. 贗化波函數 ►">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://images.unsplash.com/photo-1477519726670-15a7b643a08c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d998e5c3239b9ba8ba1c6b02a137afd&auto=format&fit=crop&w=1950&q=80">
+<meta property="og:updated_time" content="2019-01-19T22:49:54.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="鍊金術贗勢說明">
+<meta name="twitter:description" content="以下內文教學均為 ZwHuang 研究生所指導撰寫:Chieh Tsai時間:2017/09/19※這是ZwHuang研究生碩士論文 之後會放上清楚來源  [Keyword]離子實 [產生贗勢目的]讓波函數的(曲線)平滑 ►► 也就是「贗勢」 (真實的曲線應該是上下起伏，有所震盪) [簡易流程理念]1. 由薛丁格方程式中，求解全電子的各種解(包含波函數、本徵值...etc) 2. 贗化波函數 ►">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1477519726670-15a7b643a08c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d998e5c3239b9ba8ba1c6b02a137afd&auto=format&fit=crop&w=1950&q=80">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2017/10/21/opium_process/">
+
+
+
+
+
+  <title>鍊金術贗勢說明 | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站點地圖
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2017/10/21/opium_process/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">鍊金術贗勢說明</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-10-21T12:16:47+01:00">
+                2017-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Opium/" itemprop="url" rel="index">
+                    <span itemprop="name">Opium</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/21/opium_process/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/21/opium_process/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://images.unsplash.com/photo-1477519726670-15a7b643a08c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d998e5c3239b9ba8ba1c6b02a137afd&auto=format&fit=crop&w=1950&q=80" rel="gallery_cjr42jzwh007tlmtzg559oa6k" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://images.unsplash.com/photo-1477519726670-15a7b643a08c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d998e5c3239b9ba8ba1c6b02a137afd&auto=format&fit=crop&w=1950&q=80" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <blockquote>
+<p><em>以下內文教學均為 ZwHuang 研究生所指導</em><br><em>撰寫:Chieh Tsai</em><br><em>時間:2017/09/19</em><br><em>※這是ZwHuang研究生碩士論文 之後會放上清楚來源</em></p>
+</blockquote>
+<h1 id="Keyword"><a href="#Keyword" class="headerlink" title="[Keyword]"></a>[Keyword]</h1><p>離子實</p>
+<h1 id="產生贗勢目的"><a href="#產生贗勢目的" class="headerlink" title="[產生贗勢目的]"></a>[產生贗勢目的]</h1><p>讓波函數的(曲線)平滑 ►► 也就是「贗勢」 (真實的曲線應該是上下起伏，有所震盪)</p>
+<h1 id="簡易流程理念"><a href="#簡易流程理念" class="headerlink" title="[簡易流程理念]"></a>[簡易流程理念]</h1><pre><code>1. 由薛丁格方程式中，求解全電子的各種解(包含波函數、本徵值...etc)
+2. 贗化波函數 ► 讓震盪波函數變成平滑的波函數 (俗稱:混血波函數)，把真實的波函數而我們取出虛線的波函數，這動作為贗化波函數
+3. 怎樣的一個贗勢，可以使用贗化波函數得到全電子的本徵值? (We should find.)
+</code></pre><a id="more"></a>
+<hr>
+<h1 id="執行指令"><a href="#執行指令" class="headerlink" title="[執行指令]"></a>[執行指令]</h1><h2 id="．指令"><a href="#．指令" class="headerlink" title="．指令:"></a>．指令:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(opium執行檔位置) (atom_name).param (atom_name).log all rpt recpot plot ke plot wp plot logd plot vi</span><br></pre></td></tr></table></figure>
+<h2 id="．介紹"><a href="#．介紹" class="headerlink" title="．介紹:"></a>．介紹:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">param     ►► 檔案自行準備，包含內容需自建 (底下有詳細說明)</span><br><span class="line">log       ►► 所有的行為，包含error都會寫入於此</span><br><span class="line">all       ►► 全部都會計算，包含ae(原子的全部電子解)、ps(產生贗勢)、nl、tc(test configurations組態測試)</span><br><span class="line">rpt       ►► 寫出report檔，會報告全電子和贗化後的(各個軌域)本徵值差</span><br><span class="line">plot ke   ►► 畫出動能的圖</span><br><span class="line">plot wp   ►► 波函數的圖，用實線表示全電子波函數，虛線表示贗化波函數</span><br><span class="line">plot logd ►► 相位圖的測試 (波函數一次微分/波函數)=微分log波函數   (若有相對論效應，則無法看到logd)</span><br><span class="line">             我們利用觀看logd圖判斷相位留下來的相，判斷相位若相符，表示波函數的散射行為則是相同的，</span><br><span class="line">						 波函數往後的行為，以動力學來說也會是一樣的</span><br><span class="line">plot vi   ►► 未去價電子影響的位勢，可以幫助判斷是否連續，或者波函數是否為震盪?(平滑?)</span><br><span class="line">             因若切掉(價電子)後，行為依舊會延續未切掉，以此做確認是否有異。</span><br></pre></td></tr></table></figure>
+<h2 id="．詳細參考網址"><a href="#．詳細參考網址" class="headerlink" title="．詳細參考網址:"></a>．詳細參考網址:</h2><p><a href="http://opium.sourceforge.net/guide.html" target="_blank" rel="noopener">Opium-pseudopotential generation project</a></p>
+<hr>
+<h1 id="自建-param-檔內容-格式解釋"><a href="#自建-param-檔內容-格式解釋" class="headerlink" title="[自建 .param 檔內容/格式解釋]"></a>[自建 .param 檔內容/格式解釋]</h1><p>※以下為例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"> [Atom]</span><br><span class="line">Au           (atom name)</span><br><span class="line">15           (有幾個軌域)</span><br><span class="line">100 2.00 -  ╕</span><br><span class="line">200 2.00 -  │</span><br><span class="line">210 6.00 -  │</span><br><span class="line">300 2.00 -  │				最左邊(ex.100)為 nlm(主量子數，角量子數，磁量子數)</span><br><span class="line">310 6.00 -  │				中間  (ex.2.00)為 電子佔據數(1S2 2S2 2P6...etc)</span><br><span class="line">400 2.00 -  │				最右邊(ex. - )為 本徵值數(若有數據就可填入，沒有就為Default)</span><br><span class="line">410 6.00 -  │</span><br><span class="line">320 10.00 - ├(電子組態)</span><br><span class="line">500 2.00 -  │        </span><br><span class="line">510 6.00 -  │        </span><br><span class="line">420 10.00 - │                  </span><br><span class="line">430 14.00 - │</span><br><span class="line">600 0.00 -  │</span><br><span class="line">610 0.00 -  │</span><br><span class="line">520 10.00 - ╛</span><br><span class="line"></span><br><span class="line"> [Pseudo]</span><br><span class="line"> 3	     (要算3個軌域之意，又外層往內算起，ex.600 610 520這三組)</span><br><span class="line"> 2.0 3.0 2.0  (若算3個軌域則填入三個軌域的半徑，單位是波爾半徑，此即為rc參數。)</span><br><span class="line">	     (最左邊為最內層，不同軌域的角動量不同，因此半徑也可能會不相同，需做測試。)</span><br><span class="line">opt	   (表示是利用opt的方法計算贗勢，總共有三種 optimized, kerker, tm)</span><br><span class="line"></span><br><span class="line"> [Optinif]</span><br><span class="line">7.0 5      (7.0即為截止動能，789就已經算很高的值，即為qc參數--&gt;影響ke值。)</span><br><span class="line">3.0 5	     (5為使用5個Bessel方程來做疊加，一般為4倍)</span><br><span class="line">7.0 5</span><br><span class="line"></span><br><span class="line"> [Configs]</span><br><span class="line"> 3            (計算三個軌域則輸入3，下方就做3種軌域不同的變化計畫)</span><br><span class="line"> #            (改變電子數做計算測試)</span><br><span class="line">600 1.00 -   Q:如果這裡600是1.0，520應該為9.0才對?</span><br><span class="line">610 0.00 -   A:是對的，多或少電子只是變成正負價的原子，</span><br><span class="line">520 10.00 -           藉由這樣調控去調配到正確的贗勢為技巧之一。</span><br><span class="line"> #</span><br><span class="line">600 1.00 -</span><br><span class="line">610 0.00 -</span><br><span class="line">520 9.00 -</span><br><span class="line"> #</span><br><span class="line">600 0.50 -</span><br><span class="line">610 0.00 -</span><br><span class="line">520 9.50 -</span><br><span class="line"></span><br><span class="line"> [Xc]         (交互相干能)</span><br><span class="line">pbe          (代表使用PBE來做交互相干能計算)</span><br><span class="line"></span><br><span class="line"> [Relativity]</span><br><span class="line">srl	     (要不要讓元素做相對論效應，通常是5d以上的元素才會讓他做相對論效應的選項)</span><br><span class="line">	     	 (不要相對論效應則輸入 nrl)</span><br><span class="line"></span><br><span class="line"> [Loginfo]     (有使用相對論條件時，這個就不會顯示出來，需關掉)</span><br><span class="line">0             (看的組態數目)</span><br><span class="line">2.50 -8.0 8.0 (2.5通常為中點，為rc值。-8.0與8.0為左右距離)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>  ．Note:<br>    rc qc 產生厭世主要調控的變數<br>   ．詳細參考網址:<br>    <a href="https://www.webelements.com/" target="_blank" rel="noopener">https://www.webelements.com/</a></p>
+</blockquote>
+<hr>
+<h1 id="獲取優良的贗勢所需條件"><a href="#獲取優良的贗勢所需條件" class="headerlink" title="[獲取優良的贗勢所需條件]"></a>[獲取優良的贗勢所需條件]</h1><pre><code>1. 很好的收斂性(看Ke圖分析)
+2. 平滑連續的波函數與位勢
+3. 有很高的可轉移性 (意即不同configuration的本徵值要相近)
+4. 看logd，其散射行為需要良好
+</code></pre><hr>
+<h1 id="RECPOT檔-很常忘記-需要注意-3-7-2才需要"><a href="#RECPOT檔-很常忘記-需要注意-3-7-2才需要" class="headerlink" title="[.RECPOT檔] 很常忘記!!需要注意!! (3.7.2才需要)"></a>[.RECPOT檔] 很常忘記!!需要注意!! (3.7.2才需要)</h1><pre><code>需於.RECPOT檔中自行加入CASTEP所需要讀入的資訊
+加入位置於 ►►  END COMMENT
+ (值為固定)    3 5
+</code></pre><hr>
+<h1 id="使用版本注意"><a href="#使用版本注意" class="headerlink" title="[使用版本注意]"></a>[使用版本注意]</h1><pre><code>Name: opium-v3.7.3                 最新版，擁有d&amp;f軌域混合
+Name: opium-3.7.(3/4)-src 不須使用
+Name: opium-3.7.2-src     才是真正有更改過的版本
+Name: opium-3.7-src-tgz   為原官方版本
+</code></pre><hr>
+<h1 id="作法"><a href="#作法" class="headerlink" title="[作法]"></a>[作法]</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">需事先準備七個檔案</span><br><span class="line">1. alcwnl.txt (需自己產生)(wnl是價電子數，若要算不同的價電子數的元素需從此做更改。)</span><br><span class="line">2. Wps1_s.txt (贗化波函數 W必定要大寫)</span><br><span class="line">3. Wps1_p.txt (贗化波函數 W必定要大寫)</span><br><span class="line">4. pc.txt     (控制贗化波函數的混合比例)</span><br><span class="line">5. pcen.txt   (控制本徵值的混合比例)    </span><br><span class="line">6. en.txt     (本徵值，會由另外程式中貼過來這裡面)(為想要混合元素的本徵值)</span><br><span class="line">7. (atom).param (需自行準備，按照上述所規定的格式做設定)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="程式操作流程"><a href="#程式操作流程" class="headerlink" title="[程式操作流程]"></a>[程式操作流程]</h1><pre><code>混合元素: A 與 B
+
+&lt;共分兩階段操作&gt;
+(第一階段，先利用Opium計算 A元素)
+</code></pre><h2 id="※計算第一階段時，"><a href="#※計算第一階段時，" class="headerlink" title="※計算第一階段時，"></a>※計算第一階段時，</h2><pre><code>  1.務必把pc.txt檔以及pcen.txt檔參數設為0，意即不混合。
+  2.需自備 A.param檔案。
+  3.需自行隨意準備一個Wps1.txt(s&amp;p)檔以及en.txt檔來做混合，不過不必擔心，
+    因為pc.txt以及pcen.txt檔為0不混合，因此不會影響到最後的值，
+        但程式設定必須要有這個檔才能執行。
+
+    ╔══╗     ╔═════════════╗            ╔═══════════╗
+    ║AE║ ►►  ║Pseudize波函數║ ►►►►►►►►►  ║產生Recpot ║
+    ╚══╝ ↘   ╚═════════════╝       ↘    ╚══════════╝
+            ↘ ╔═══════════════════╗    ↘ ╔═════════════╗   ╔═══════════════════╗
+              ║產生A元素的en.txt檔 ║      ║產生Wps2.txt檔║ ► ║自行修改為Wps1.txt檔║
+              ╚═══════════════════╝      ╚═════════════╝   ╚═══════════════════╝
+
+(第二階段，拿 A元素混合 B元素)
+</code></pre><h2 id="※計算第二階段時，"><a href="#※計算第二階段時，" class="headerlink" title="※計算第二階段時，"></a>※計算第二階段時，</h2><pre><code>1.利用第一階段計算 A元素時得到的Wps1.txt檔案，以及 A元素的en.txt檔來混合
+2.pc.txt檔以及pcen.txt檔則自行設定，看需要用多少比例去混合。
+3.pc.txt內的比例由0到1，0為B元素100%，1為A元素100%，價若設定0.3則意為B元素有7成;A元素有3成。
+4.自行準備B元素的.param檔
+執行程式前，使用B元素的 .param檔 pc.txt檔 pcen.txt檔  A元素的Wps1.txt檔 en.txt檔
+
+  ╔══╗  ╔═════════════╗  ╔═════════════╗
+  ║AE║ ►║Pseudize波函數║ ►║產生混合Recpot║
+  ╚══╝  ╚═════════════╝  ╚═════════════╝
+</code></pre><hr>
+<h1 id="正常計算輸出結果-小註釋"><a href="#正常計算輸出結果-小註釋" class="headerlink" title="[正常計算輸出結果-小註釋]"></a>[正常計算輸出結果-小註釋]</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><span class="line">eigenvalue=  -1.00194952305725		(原本初始元素的S軌域值)</span><br><span class="line">eigenvalue= -0.398598570875805		(原本初始元素的P軌域值)</span><br><span class="line"> alcen= -0.796627474917336</span><br><span class="line"> [從外部讀取的值所以初始做時，隨意拿取en值即可](混合過元素的S軌域值)</span><br><span class="line"></span><br><span class="line"> alcen= -0.307051842859830</span><br><span class="line"> [從外部讀取的值所以初始做時，隨意拿取en值即可](混合過元素的P軌域值)</span><br><span class="line"></span><br><span class="line"> pcen=  0.500000000000000		(混合比例)</span><br><span class="line"> eigenvalue=  -1.00194952305725		(原本初始元素的S軌域值)</span><br><span class="line"> eigenvalue= -0.899288498987293		(混合過元素的S軌域值)</span><br><span class="line"> eigenvalue= -0.398598570875805		(原本初始元素的P軌域值)</span><br><span class="line"> eigenvalue= -0.352825206867818		(混合過元素的P軌域值)</span><br><span class="line"> nfam0          10</span><br><span class="line"> nmax        3942</span><br><span class="line"> nfammx=           2</span><br><span class="line"> nmax=        3942</span><br><span class="line"> optsolve works</span><br><span class="line"> (到此為已經完成所有該初始元素的所有贗化過程，包含波函數、本徵值贗化)</span><br><span class="line"> alc=           1			</span><br><span class="line"> (開始進行混合贗勢)</span><br><span class="line"> integral of wf1=   1.00170192830542</span><br><span class="line"> pc=  0.500000000000000</span><br><span class="line"> pea=  0.779627363890603</span><br><span class="line">wf2=   1.00170192830545</span><br><span class="line"> 2</span><br><span class="line">peb=  0.738492007371293</span><br><span class="line">    3045</span><br><span class="line"> 3</span><br><span class="line">    3044</span><br><span class="line"> 6</span><br><span class="line">    4376</span><br><span class="line"> integral of fr before do radin=   1.00391760067139</span><br><span class="line"> 5</span><br><span class="line"> indrc=        3202</span><br><span class="line"> eigenvalue nnn= -0.899288498987293</span><br><span class="line">	tch1=   2.00000000000000</span><br><span class="line"> tch2=   1.00110534303707</span><br><span class="line"> tch3=   2.00000000000000</span><br><span class="line"> integral of wf=   1.00170192830544</span><br><span class="line"> optsolve write rnl</span><br><span class="line"> fit</span><br><span class="line"> xro</span><br><span class="line"> ai</span><br><span class="line"> gau</span><br><span class="line"> biq</span><br><span class="line">	nfam0          10</span><br><span class="line">	nmax        3925</span><br><span class="line">	nfammx=           2</span><br><span class="line">	nmax=        3925</span><br><span class="line">	nfammx=           3</span><br><span class="line">	nmax=        3925</span><br><span class="line">	nfammx=           4</span><br><span class="line">	nmax=        3925</span><br><span class="line">	nfammx=           5</span><br><span class="line">nmax=        3925</span><br><span class="line">nfammx=           6</span><br><span class="line">nmax=        3925</span><br><span class="line">nfammx=           7</span><br><span class="line">nmax=        3925</span><br><span class="line">nfammx=           8</span><br><span class="line">	nmax=        3925</span><br><span class="line">	nfammx=           9</span><br><span class="line">	nmax=        3925</span><br><span class="line">	cq</span><br><span class="line">dij</span><br><span class="line">ei</span><br><span class="line">fin</span><br><span class="line">	gin</span><br><span class="line">	optsolve works			</span><br><span class="line">	alc=           2		</span><br><span class="line">	tch1=   2.00000000000000</span><br><span class="line">	tch2=   1.00000000000000</span><br><span class="line">	tch3=   2.00000000000000</span><br><span class="line">	integral of wf=   1.00170192830544</span><br><span class="line">	rvps  -2.33907564322124      rvcoul  -1.74971649617755</span><br><span class="line">	rvps-rvcoul -0.589359147043689</span><br><span class="line">	z=   6.00000000000000      xion=  0.000000000000000E+000</span><br><span class="line">	1</span><br><span class="line">	tch4=   2.00000000000000</span><br><span class="line">	nnn=           1 wnl=   2.00000000000000</span><br><span class="line">	optsolve write rnl</span><br><span class="line">	nfam0          10</span><br><span class="line">	nmax        4078</span><br><span class="line">	nfammx=           2</span><br><span class="line">	nmax=        4078</span><br><span class="line">	nfammx=           3</span><br><span class="line">	nmax=        4078</span><br><span class="line">	optsolve works</span><br><span class="line">	alc=           1</span><br><span class="line">	integral of wf1=   1.00170192830545</span><br><span class="line">	pc=  0.500000000000000</span><br><span class="line">	pea=  0.783220311736997</span><br><span class="line">	wf2=   1.00170192830545</span><br><span class="line">	2</span><br><span class="line">	peb=  0.620303490961302</span><br><span class="line">       	3032</span><br><span class="line">	3</span><br><span class="line">       	3031</span><br><span class="line">	6</span><br><span class="line">       	4376</span><br><span class="line">	integral of fr before do radin=   1.04312335063091</span><br><span class="line">	5</span><br><span class="line">	indrc=        3202</span><br><span class="line">	eigenvalue nnn= -0.352825206867818</span><br><span class="line">	tch1=   4.00000000000000</span><br><span class="line">	tch2=   1.02046609243529</span><br><span class="line">	tch3=   4.00000000000000</span><br><span class="line">	integral of wf=   1.00170192830545</span><br><span class="line">	optsolve write rnl</span><br><span class="line">	fit</span><br><span class="line">	xro</span><br><span class="line">	ai</span><br><span class="line">	gau</span><br><span class="line">	biq</span><br><span class="line">	nfam0          10</span><br><span class="line">	nmax        4051</span><br><span class="line">	nfammx=           2</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           3</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           4</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           5</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           6</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           7</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           8</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           9</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=          10</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=          11</span><br><span class="line">	nmax=        4051</span><br><span class="line">	nfammx=           2</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           3</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           4</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           5</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           6</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           7</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           8</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=           9</span><br><span class="line">	nmax=        4050</span><br><span class="line">	nfammx=          10</span><br><span class="line">	nmax=        4050</span><br><span class="line">	cq</span><br><span class="line">	dij</span><br><span class="line">	ei</span><br><span class="line">	fin</span><br><span class="line">	gin</span><br><span class="line">	optsolve works</span><br><span class="line">	alc=           2</span><br><span class="line">	tch1=   4.00000000000000</span><br><span class="line">tch2=   1.00000000000000</span><br><span class="line">	tch3=   4.00000000000000</span><br><span class="line">	integral of wf=   1.00170192830545</span><br><span class="line">	rvps  -2.17983675268404      rvcoul  -1.74971649617755</span><br><span class="line">	rvps-rvcoul -0.430120256506484</span><br><span class="line">	z=   6.00000000000000      xion=  0.000000000000000E+000</span><br><span class="line">	1</span><br><span class="line">	tch4=   4.00000000000000</span><br><span class="line">	nnn=           2 wnl=   2.00000000000000</span><br><span class="line">	optsolve write rnl</span><br><span class="line">	maxim=        4078</span><br><span class="line">	zeff  0.000000000000000E+000 indrc        3202 nval           2 zv2</span><br><span class="line">	  8.00000000000000</span><br><span class="line">	ebef= -0.899288498987293      ee= -0.894418668129297</span><br><span class="line">	ebef= -0.352825206867818      ee= -0.378119304303352</span><br><span class="line">	call1</span><br><span class="line">	call2</span><br><span class="line">	eigenvalue= -0.890597123212005</span><br><span class="line">	eigenvalue= -0.374491101289932</span><br><span class="line">	eigenvalue=  -1.00194952305725</span><br><span class="line">	eigenvalue= -0.398598570875805</span><br><span class="line">	eigenvalue= -0.890597123212005</span><br><span class="line">	eigenvalue= -0.374491101289932</span><br><span class="line">	eigenvalue=  -1.88749267360413</span><br><span class="line">	eigenvalue=  -1.26372168597883</span><br><span class="line">eigenvalue=  -1.66408614364255</span><br><span class="line">	eigenvalue=  -1.09488285532366</span><br><span class="line">	eigenvalue=  -1.88106457228139</span><br><span class="line">eigenvalue=  -1.25871364170433</span><br><span class="line">eigenvalue=  -1.61142464069418</span><br><span class="line">eigenvalue=  -1.04985388311957</span><br><span class="line">eigenvalue=  -1.00194952305725</span><br><span class="line">eigenvalue= -0.398598570875805</span><br><span class="line">eigenvalue= -0.890597123212005</span><br><span class="line">eigenvalue= -0.374491101289932</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2017/11/4 (更新3.7.3版)</p>
+<h2 id="改版內容"><a href="#改版內容" class="headerlink" title="改版內容"></a>改版內容</h2><ol>
+<li>已產出可混D&amp;F軌域</li>
+<li>已經關掉alcwnl.txt的要求</li>
+<li>已經改掉需要再recpot內於END COMMENT後面加上 3 5 字樣 (會自動加上)</li>
+</ol>
+<h2 id="操作上須注意"><a href="#操作上須注意" class="headerlink" title="操作上須注意"></a>操作上須注意</h2><ol>
+<li>需要給Wps1_d.txt檔，當然第一階段完成後要自行更改Wps2_d檔。</li>
+<li>在en.txt需要給第三行(d軌域值)</li>
+<li>計算完第一階段時，需從計算過程中取得三行en值並複製於en.txt檔案內做第二階段<pre><code>► (補更) 目前en.txt已經改為自動輸出
+</code></pre></li>
+</ol>
+<h2 id="目前待釐清事項"><a href="#目前待釐清事項" class="headerlink" title="目前待釐清事項"></a>目前待釐清事項</h2><ol>
+<li>拿去MS計算BS出來的 .bands 內Spin值會有好幾個，若你只算S應該只會有一個而已。</li>
+<li>計算一個無d軌域的atom，但atom欄裡有計算d軌域，在KBdesign欄上是否需要用d? 還是說照用p or s?</li>
+<li>目前有發現一個招數(?)，如果再前一個(實)軌域內填入較少一點的電子好像可以增加計算時的成功率，但不確定是否適用且可靠性有多少?</li>
+</ol>
+<hr>
+<p>2017/11/5 補充說明</p>
+<h1 id="config-configuration-test的用意說明"><a href="#config-configuration-test的用意說明" class="headerlink" title="[config] configuration test的用意說明"></a>[config] configuration test的用意說明</h1><p>在產生贗勢之後，程式會拿這個贗勢以不同的組態來解薛丁格方程式，獲得不同組態的本徵值。<br>而這些本徵值如果與之前(.param)在atom裡寫的組態獲得的本徵值相近，表示這個贗勢的可轉移性佳。<br>但我們進入混合階段(第二階段)後，我們的波函數與本徵值是與混合之前不同的，<br>因此在測試這個針對混合之前的贗勢的組態測試，理所當然的是不準的。<br>► 故可以考慮關掉。<br>所以在合成Pseudopotential時，其實應該在產生純元素時就該注意各種測試，<br>包含圖表、config test(寫在.rpt)，甚至晶胞大小測試。<br>當兩個元素都有相當好的表現之後，我們再來進行混合。</p>
+<h1 id="atom-解釋說明若電子給予負的意義"><a href="#atom-解釋說明若電子給予負的意義" class="headerlink" title="[atom] 解釋說明若電子給予負的意義"></a>[atom] 解釋說明若電子給予負的意義</h1><p>給予負的電子數，表示是「非束縛態」，以前認為要加入這樣的一個狀態位勢才會好，<br>所謂非束縛態就是位能小於電子動能，也就是說原子核無法束縛住電子。<br>在這種環境下描述電子分佈函數會在無限遠處存在，其波函數應該是正的而且有點像error function，並不會掉到零以下，在原子半徑附近看起來很像指數函數，是一飛沖天的那種。<br>而改為正的電子就表示束縛態，既然是束縛態，電子一定無法逃脫至某個距離，有就是說你一定可以在徑向上找到波函數為零的位置，相較於非束縛態則不會有波函數為零的時候。<br>PS 混合程式不支援非束縛態計算，混合目的要做的是原子大小漸變的虛擬原子方法，既然是大小漸變要在意的當然是束縛電子，非束縛電子不在程式設計所關心的地方，因此未支援。</p>
+<hr>
+<p>2017/11/12 發現問題</p>
+<ol>
+<li>目前計算完單原子測試之後，發現CASTEP計算完輸出的本徵值只有兩個，但我們的potential是有到d軌域</li>
+<li>不確定d給0.01時，CASTEP是否會讀入0.01這參數的電子，或者已經歸為0化為整數?</li>
+</ol>
+<hr>
+<p>2017/11/13 測試內容</p>
+<h1 id="測試-產生完的recpot檔需要測試品質"><a href="#測試-產生完的recpot檔需要測試品質" class="headerlink" title="[測試] 產生完的recpot檔需要測試品質"></a>[測試] 產生完的recpot檔需要測試品質</h1><p>首先，把recpot檔拿去MS底下的potential檔案夾內放入，再開啟MS</p>
+<p>測試有兩個程序:  (適用於混合recpot)</p>
+<ol>
+<li>做單原子測試，計算bs之後，把每個recpot檔計算bs後的本徵值放到excel，看每個本徵值是否有線性變化?</li>
+<li>做晶體測試，計算Geometry Optimization(幾何結構最佳化，並使用Optimize Cell)，記住C_Si計算請用非metal，看晶包邊長是否有線性變化，以及bs圖的線性變化</li>
+</ol>
+<p>測試純元素:<br>拿純元素測試時，與原本MS內的potential兩個比較是否特性相近。</p>
+<hr>
+<p>推薦可參考The Rappe Group，也是很知名的一個生產potential的Group<br><a href="http://www.sas.upenn.edu/rappegroup/research/psp.html" target="_blank" rel="noopener">The Rappe Group</a></p>
+<p>另外，University of Sheffield Group也做了一個Atomic orbitals 相關的網站，滿有趣的!<br><a href="http://winter.group.shef.ac.uk/orbitron/" target="_blank" rel="noopener">Atomic orbitals</a></p>
+<hr>
+<p>2018/01/08</p>
+<p>#論文口試總結:</p>
+<ol>
+<li>Alchemist 修改 pseudo-wave-function and eigen-energy</li>
+<li>Pseudopotential 本身就是要去除掉核電子，計算價電子，可以在減少做一些平面波的基底計算</li>
+<li>運算流程是:<br> All Electrons 計算 ► 贗化波函數 ► 反轉薛丁格方程式 ► 去遮蔽 ► 寫入 .recpot 檔</li>
+<li>程式內修改的部分:<ol>
+<li>Alchemist在Opium裡做了程式修改的部分是 固定R格點 以及 混合本徵值 E=(1-beta)E1+(beta)E2</li>
+<li>使用的方法是 Optimize</li>
+<li>因為opium內不能做wave function反轉S.E.，所以我們使用Sperical Bessel function</li>
+</ol>
+</li>
+<li>VCA的峰是左右共存，函數峰值是會隨比例而高低消長。但是Alchemist是只有單一峰值會隨比例的改變而往外推移，屬電荷密度線性混合。 庫倫位勢 ► rc以外。</li>
+<li>VCA的優點:<ol>
+<li>合金才是VCA使用的方法 ► 可往費米面做解釋</li>
+<li>適合模擬大的超晶包合金或半導體</li>
+</ol>
+</li>
+<li>VCA所碰到的弱勢:<ol>
+<li>無法做聲子計算</li>
+<li>在50%時會出現誤差的最大化問題</li>
+</ol>
+</li>
+<li>Alchemist所碰到的問題:<ol>
+<li>Defect問題還是存在</li>
+</ol>
+</li>
+<li>Alchemist大小漸變於C-Si應用的部分探討:<ol>
+<li>看C ► Si之間的變化</li>
+<li>然後r ► 變大之後</li>
+<li>pi鍵弱化造成無法再維持平面結構</li>
+</ol>
+</li>
+<li>可以多再做一些Alchemist的測試與計算:<ol>
+<li>比較 C , Si , C-Si 之間的總能、其他基本物性(ex. 楊氏係數 等等) 來加以與 VCA做比較，更能凸顯VCA的弱勢</li>
+<li>C ► Si ► Ge的三個混合應該能夠回到 Si 這樣就可以證明出大小漸變的這一個與VCA之間的差異</li>
+<li>VCA不好的部分，Alchemist是否能夠做的好?</li>
+<li>VCA好的部分，Alchemist是否能夠做到更好?</li>
+</ol>
+</li>
+<li>反思:<ol>
+<li>為什麼說明Alchemist的波函數外推比較好? 而VCA的雙峰共存不好?</li>
+<li>Yn 與 Eref 所附有的物理意義是什麼?<ol>
+<li>alpha ► 線性漸變的混合比例參數</li>
+<li>beta ► 本徵值</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h1 id="修改輸出en-txt檔的位置"><a href="#修改輸出en-txt檔的位置" class="headerlink" title="修改輸出en.txt檔的位置"></a>修改輸出en.txt檔的位置</h1><p>/opium_v3_7_valence/src/pseudo/optim.F</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="https://chiehpower.com/2017/10/21/opium_process/" title="鍊金術贗勢說明">https://chiehpower.com/2017/10/21/opium_process/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CASTEP/" rel="tag"># CASTEP</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/M-S/" rel="tag"># M.S.</a>
+          
+            <a href="/tags/Pseudopotential/" rel="tag"># Pseudopotential</a>
+          
+            <a href="/tags/Alchemy/" rel="tag"># Alchemy</a>
+          
+            <a href="/tags/Opium/" rel="tag"># Opium</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/Task2/" rel="next" title="Task2-Notes">
+                <i class="fa fa-chevron-left"></i> Task2-Notes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/01/Cmder/" rel="prev" title="Cmder推薦">
+                Cmder推薦 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Keyword"><span class="nav-number">1.</span> <span class="nav-text">[Keyword]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#產生贗勢目的"><span class="nav-number">2.</span> <span class="nav-text">[產生贗勢目的]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#簡易流程理念"><span class="nav-number">3.</span> <span class="nav-text">[簡易流程理念]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#執行指令"><span class="nav-number">4.</span> <span class="nav-text">[執行指令]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#．指令"><span class="nav-number">4.1.</span> <span class="nav-text">．指令:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#．介紹"><span class="nav-number">4.2.</span> <span class="nav-text">．介紹:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#．詳細參考網址"><span class="nav-number">4.3.</span> <span class="nav-text">．詳細參考網址:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自建-param-檔內容-格式解釋"><span class="nav-number">5.</span> <span class="nav-text">[自建 .param 檔內容/格式解釋]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#獲取優良的贗勢所需條件"><span class="nav-number">6.</span> <span class="nav-text">[獲取優良的贗勢所需條件]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RECPOT檔-很常忘記-需要注意-3-7-2才需要"><span class="nav-number">7.</span> <span class="nav-text">[.RECPOT檔] 很常忘記!!需要注意!! (3.7.2才需要)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用版本注意"><span class="nav-number">8.</span> <span class="nav-text">[使用版本注意]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作法"><span class="nav-number">9.</span> <span class="nav-text">[作法]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程式操作流程"><span class="nav-number">10.</span> <span class="nav-text">[程式操作流程]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#※計算第一階段時，"><span class="nav-number">10.1.</span> <span class="nav-text">※計算第一階段時，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#※計算第二階段時，"><span class="nav-number">10.2.</span> <span class="nav-text">※計算第二階段時，</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正常計算輸出結果-小註釋"><span class="nav-number">11.</span> <span class="nav-text">[正常計算輸出結果-小註釋]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#改版內容"><span class="nav-number">11.1.</span> <span class="nav-text">改版內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作上須注意"><span class="nav-number">11.2.</span> <span class="nav-text">操作上須注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前待釐清事項"><span class="nav-number">11.3.</span> <span class="nav-text">目前待釐清事項</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#config-configuration-test的用意說明"><span class="nav-number">12.</span> <span class="nav-text">[config] configuration test的用意說明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#atom-解釋說明若電子給予負的意義"><span class="nav-number">13.</span> <span class="nav-text">[atom] 解釋說明若電子給予負的意義</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#測試-產生完的recpot檔需要測試品質"><span class="nav-number">14.</span> <span class="nav-text">[測試] 產生完的recpot檔需要測試品質</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改輸出en-txt檔的位置"><span class="nav-number">15.</span> <span class="nav-text">修改輸出en.txt檔的位置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2017/10/21/opium_process/';
+          this.page.identifier = '2017/10/21/opium_process/';
+          this.page.title = '鍊金術贗勢說明';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

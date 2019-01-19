@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,Xmgrace,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="本篇介紹 教學操作Xmgrace基本流程  前言:Xmgrace是一個免費的數據處理軟體，同時也是非常古老的一個軟體，現在大多數的人都改使用 Origin 這種先進的軟體，也比較人性化一點…(老實說xmgrace真的很麻煩阿!不人性QAQ)但是越是麻煩，">
+<meta name="keywords" content="Linux,Xmgrace">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xmgrace 基礎篇">
+<meta property="og:url" content="https://chiehpower.com/2017/10/05/xmgrace/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="本篇介紹 教學操作Xmgrace基本流程  前言:Xmgrace是一個免費的數據處理軟體，同時也是非常古老的一個軟體，現在大多數的人都改使用 Origin 這種先進的軟體，也比較人性化一點…(老實說xmgrace真的很麻煩阿!不人性QAQ)但是越是麻煩，">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://picjumbo.com/wp-content/uploads/sexy-woman-legs-on-high-heels-out-of-car-windows_free_stock_photos_picjumbo_HNCK9042-2210x1474.jpg">
+<meta property="og:updated_time" content="2019-01-19T22:49:54.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xmgrace 基礎篇">
+<meta name="twitter:description" content="本篇介紹 教學操作Xmgrace基本流程  前言:Xmgrace是一個免費的數據處理軟體，同時也是非常古老的一個軟體，現在大多數的人都改使用 Origin 這種先進的軟體，也比較人性化一點…(老實說xmgrace真的很麻煩阿!不人性QAQ)但是越是麻煩，">
+<meta name="twitter:image" content="https://picjumbo.com/wp-content/uploads/sexy-woman-legs-on-high-heels-out-of-car-windows_free_stock_photos_picjumbo_HNCK9042-2210x1474.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2017/10/05/xmgrace/">
+
+
+
+
+
+  <title>Xmgrace 基礎篇 | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站點地圖
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2017/10/05/xmgrace/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Xmgrace 基礎篇</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-10-05T13:52:33+01:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/05/xmgrace/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/05/xmgrace/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://picjumbo.com/wp-content/uploads/sexy-woman-legs-on-high-heels-out-of-car-windows_free_stock_photos_picjumbo_HNCK9042-2210x1474.jpg" rel="gallery_cjr42jzqn002glmtzlw3x5go0" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://picjumbo.com/wp-content/uploads/sexy-woman-legs-on-high-heels-out-of-car-windows_free_stock_photos_picjumbo_HNCK9042-2210x1474.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p><strong>本篇介紹 教學操作Xmgrace基本流程</strong></p>
+<blockquote>
+<p>前言:<br>Xmgrace是一個免費的數據處理軟體，同時也是非常古老的一個軟體，現在大多數的人都改使用 Origin 這種先進的軟體，也比較人性化一點…<br>(老實說xmgrace真的很麻煩阿!不人性QAQ)<br>但是越是麻煩，</p>
+</blockquote>
+<a id="more"></a>
+<p>以下只是個人基本初階的流程(也沒有實用教學)<br>想要看進階一點的用法(?)可以到我寫的另一篇「<a href="https://chiehpower.github.io/2017/11/25/xmgrace-advanced/" target="_blank" rel="noopener">進階篇</a>」</p>
+<h1 id="啟動Xmgrace之登入步驟操作教學"><a href="#啟動Xmgrace之登入步驟操作教學" class="headerlink" title="啟動Xmgrace之登入步驟操作教學"></a>啟動Xmgrace之登入步驟操作教學</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -Y (帳號)@(ip)</span><br></pre></td></tr></table></figure>
+<p>輸入密碼，登入伺服器之後<br>輸入xmgrace即可開啟xmgrace</p>
+<hr>
+<h1 id="匯入數據"><a href="#匯入數據" class="headerlink" title="匯入數據"></a>匯入數據</h1><p><em>[前提]由於本人是要做CHI2的數據繪圖，因此以下是拿本實驗室所開發的執行檔工具所計算出結果檔案來做說明</em></p>
+<ol>
+<li><p>首先，用NewSHG算出來的檔案名子會是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx(檔名)\_Optics.shg_br_ve(或者vh，此為單位)\_xxx(數字即為方向)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打開xmgrace時，於 <em>data</em> 的地方點開，<em>import</em> 開啟上述的那個檔案(雙擊)，<br>即可於畫面上呈現出最原始的數據圖。</p>
+</li>
+</ol>
+<hr>
+<h1 id="儲存數據"><a href="#儲存數據" class="headerlink" title="儲存數據"></a>儲存數據</h1><p>儲存的時候，可以到 <em>print as</em> 的地方，副檔名改為 <em>jpg</em> 的格式<br>輸出到你想要的地方，再到 <em>print</em> 那個地方做輸出，照片就直接匯出到指定的位置出現</p>
+<blockquote>
+<p>初學者想要先入門建議可以先從 <a href="http://xination.pixnet.net/blog/post/27714581-a-brief-introduction-to-xmgrace-and-its-demo" target="_blank" rel="noopener"><strong>倫大</strong></a> 網站先學簡單的(倫大有影片可看)<br>至於其他功能再慢慢摸索~<br>倫大裡面也有講到可以先看 <em>help</em> 裡面，看看xmgrace可以做到怎麼樣的地步?<br>簡單說就是有很多模板啦! 可以拿來使用!<br>先了解Xmgrace他的極限、他的功能之後，當你有需要再來學你需要的部分。</p>
+</blockquote>
+<hr>
+<h1 id="Xmgrace的數據操控語法"><a href="#Xmgrace的數據操控語法" class="headerlink" title="Xmgrace的數據操控語法"></a>Xmgrace的數據操控語法</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">Control code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\f{x}</td>
+<td style="text-align:left">switch to font named “x”</td>
+</tr>
+<tr>
+<td style="text-align:center">\f{n}</td>
+<td style="text-align:left">switch to font number n</td>
+</tr>
+<tr>
+<td style="text-align:center">\f{}</td>
+<td style="text-align:left">return to original font</td>
+</tr>
+<tr>
+<td style="text-align:center">\R{x}</td>
+<td style="text-align:left">switch to color named “x”</td>
+</tr>
+<tr>
+<td style="text-align:center">\R{n}</td>
+<td style="text-align:left">switch to color number n</td>
+</tr>
+<tr>
+<td style="text-align:center">\R{}</td>
+<td style="text-align:left">return to original color</td>
+</tr>
+<tr>
+<td style="text-align:center">\#{x}</td>
+<td style="text-align:left">treat “x” (must be of even length) as list of hexadecimal char codes</td>
+</tr>
+<tr>
+<td style="text-align:center">\t{xx xy yx yy}</td>
+<td style="text-align:left">apply transformation matrix</td>
+</tr>
+<tr>
+<td style="text-align:center">\t{}</td>
+<td style="text-align:left">reset transformation matrix</td>
+</tr>
+<tr>
+<td style="text-align:center">\z{x}</td>
+<td style="text-align:left">zoom x times</td>
+</tr>
+<tr>
+<td style="text-align:center">\z{}</td>
+<td style="text-align:left">return to original zoom</td>
+</tr>
+<tr>
+<td style="text-align:center">\r{x}</td>
+<td style="text-align:left">rotate by x degrees</td>
+</tr>
+<tr>
+<td style="text-align:center">\l{x}</td>
+<td style="text-align:left">slant by factor x</td>
+</tr>
+<tr>
+<td style="text-align:center">\v{x}</td>
+<td style="text-align:left">shift vertically by x</td>
+</tr>
+<tr>
+<td style="text-align:center">\v{}</td>
+<td style="text-align:left">return to unshifted baseline</td>
+</tr>
+<tr>
+<td style="text-align:center">\V{x}</td>
+<td style="text-align:left">shift baseline by x</td>
+</tr>
+<tr>
+<td style="text-align:center">\V{}</td>
+<td style="text-align:left">reset baseline</td>
+</tr>
+<tr>
+<td style="text-align:center">\h{x}</td>
+<td style="text-align:left">horizontal shift by x</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">new line</td>
+</tr>
+<tr>
+<td style="text-align:center">\u</td>
+<td style="text-align:left">begin underline</td>
+</tr>
+<tr>
+<td style="text-align:center">\U</td>
+<td style="text-align:left">stop underline</td>
+</tr>
+<tr>
+<td style="text-align:center">\o</td>
+<td style="text-align:left">begin overline</td>
+</tr>
+<tr>
+<td style="text-align:center">\O</td>
+<td style="text-align:left">stop overline</td>
+</tr>
+<tr>
+<td style="text-align:center">\Fk</td>
+<td style="text-align:left">enable kerning</td>
+</tr>
+<tr>
+<td style="text-align:center">\FK</td>
+<td style="text-align:left">disable kerning</td>
+</tr>
+<tr>
+<td style="text-align:center">\Fl</td>
+<td style="text-align:left">enable ligatures</td>
+</tr>
+<tr>
+<td style="text-align:center">\FL</td>
+<td style="text-align:left">disable ligatures</td>
+</tr>
+<tr>
+<td style="text-align:center">\m{n}</td>
+<td style="text-align:left">mark current position as n</td>
+</tr>
+<tr>
+<td style="text-align:center">\M{n}</td>
+<td style="text-align:left">return to saved position n</td>
+</tr>
+<tr>
+<td style="text-align:center">\dl</td>
+<td style="text-align:left">LtoR substring direction</td>
+</tr>
+<tr>
+<td style="text-align:center">\dr</td>
+<td style="text-align:left">RtoL substring direction</td>
+</tr>
+<tr>
+<td style="text-align:center">\dL</td>
+<td style="text-align:left">LtoR text advancing</td>
+</tr>
+<tr>
+<td style="text-align:center">\dR</td>
+<td style="text-align:left">RtoL text advancing</td>
+</tr>
+<tr>
+<td style="text-align:center">\x</td>
+<td style="text-align:left">switch to Symbol font (same as \f{Symbol})</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:left">increase size (same as \z{1.19} ; 1.19 = sqrt(sqrt(2)))</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:left">decrease size (same as \z{0.84} ; 0.84 = 1/sqrt(sqrt(2)))</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:left">begin subscripting (same as \v{-0.4}\z{0.71})</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:left">begin superscripting (same as \v{0.6}\z{0.71})</td>
+</tr>
+<tr>
+<td style="text-align:center">\T{xx xy yx yy}</td>
+<td style="text-align:left">same as \t{}\t{xx xy yx yy}</td>
+</tr>
+<tr>
+<td style="text-align:center">\Z{x}</td>
+<td style="text-align:left">absolute zoom x times (same as \z{}\z{x})</td>
+</tr>
+<tr>
+<td style="text-align:center">\q</td>
+<td style="text-align:left">make font oblique (same as \l{0.25})</td>
+</tr>
+<tr>
+<td style="text-align:center">\Q</td>
+<td style="text-align:left">undo oblique (same as \l{-0.25})</td>
+</tr>
+<tr>
+<td style="text-align:center">\N</td>
+<td style="text-align:left">return to normal style (same as \v{}\t{})</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:left">print \</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">switch to font number n (0-9) (deprecated)</td>
+</tr>
+<tr>
+<td style="text-align:center">\c</td>
+<td style="text-align:left">begin using upper 128 characters of set (deprecated)</td>
+</tr>
+<tr>
+<td style="text-align:center">\C</td>
+<td style="text-align:left">stop using upper 128 characters of set (deprecated)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="常用的指令-個人常用"><a href="#常用的指令-個人常用" class="headerlink" title="常用的指令[個人常用]"></a>常用的指令[個人常用]</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">Control code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">可以於標題換行</td>
+</tr>
+<tr>
+<td style="text-align:center">\N</td>
+<td style="text-align:left">可以讓上標(次方)跑下來</td>
+</tr>
+<tr>
+<td style="text-align:center">\x</td>
+<td style="text-align:left">可以呈現希臘字</td>
+</tr>
+<tr>
+<td style="text-align:center">\c</td>
+<td style="text-align:left">chi</td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:left">上標(次方)</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:left">下標</td>
+</tr>
+<tr>
+<td style="text-align:center">\f{}</td>
+<td style="text-align:left">還原字體</td>
+</tr>
+<tr>
+<td style="text-align:center">\f{symbol}</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ex.<br>上標與下標同時存在語法(先小m到大M)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\xc\m&#123;0&#125;\s\f&#123;&#125;VE\N\M&#123;0&#125;\S(2)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="https://chiehpower.com/2017/10/05/xmgrace/" title="Xmgrace 基礎篇">https://chiehpower.com/2017/10/05/xmgrace/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Xmgrace/" rel="tag"># Xmgrace</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/05/runcastep/" rel="next" title="RunCASTEP">
+                <i class="fa fa-chevron-left"></i> RunCASTEP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/05/Weighted_den_teaching/" rel="prev" title="Weighted_den_teaching">
+                Weighted_den_teaching <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#啟動Xmgrace之登入步驟操作教學"><span class="nav-number">1.</span> <span class="nav-text">啟動Xmgrace之登入步驟操作教學</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匯入數據"><span class="nav-number">2.</span> <span class="nav-text">匯入數據</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#儲存數據"><span class="nav-number">3.</span> <span class="nav-text">儲存數據</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Xmgrace的數據操控語法"><span class="nav-number">4.</span> <span class="nav-text">Xmgrace的數據操控語法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的指令-個人常用"><span class="nav-number">5.</span> <span class="nav-text">常用的指令[個人常用]</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2017/10/05/xmgrace/';
+          this.page.identifier = '2017/10/05/xmgrace/';
+          this.page.title = 'Xmgrace 基礎篇';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

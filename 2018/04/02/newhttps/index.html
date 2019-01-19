@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Domain name,SSL,Https,Cloudflare,Namecheap,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="這篇主要講述購買替換新的Domain name以及用最低成本的方式取得SSL證書的流程與方法。">
+<meta name="keywords" content="Domain name,SSL,Https,Cloudflare,Namecheap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Domain name &amp; SSL Certification">
+<meta property="og:url" content="https://chiehpower.com/2018/04/02/newhttps/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="這篇主要講述購買替換新的Domain name以及用最低成本的方式取得SSL證書的流程與方法。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fluLtrmNwhceUVlyAigxXLQMXGNFF15gsXaKGTXaE1Eav9sH4c5HjElebK5ULCxKPg_DTlx42ciFV4uaObxiOYSvwW2nJZn8xVIl4oVVU6Mwr2ILZl27dfhngqDGSbVE8EgLQhuG1sGFPYMoTYea68_obeyDhZVUqWM0DiXq9iMnDT9owL6lPi6fboHTglDHuu1gE-GYOjq2mygX-gW7PJCOmg8eLmI-IwxczWWi2oZWfhnYE_MxfhViNOgAF8i-Zxd8W5dh7Mh-0jcoiQ7wpyH8vyiIaqvPokEnXcrEz16tNhL9mNUuc24LSE5GxKyG6YUfq5aU4yUxQM-sC0jWflDR3GHqWLuSKYgEYP_z3m3lEv74n6Us298RH3Wh-T9brM_3nLes-sdXQkTjCsNMRGETA3VUtI94h3mAt-PBFqOMMTz51am3LcrcRWBCZJG3a9qZIELqZvSJUEJ_CZrR9DvJNu9Q2tId4FyI2vjRtFV6GsKVJw8GoVvTFO0p4-GGq_Pdhq1P8rdsmS1dtDKKf4PvlnyUtXWvJ1DcTvaNVDQBkh0R2LJ3uC9ySnyMnWS7Mrk36QaXUaeYKr97nDST00n4HqrP0dOqUJXdRP_D9nkMFG7RNaIx9TrxO3be_g3p7nkf2YOXcN7hUIBMGl9ZWiFBCrv9q0QOE_--qbq8VfQuRovIU5mAw_amUCUDO69ixt1Pa6JUWoGKjqjS7iM65zXPcE3ERg5VisQu=w972-h548-no">
+<meta property="og:updated_time" content="2019-01-19T22:49:54.169Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Domain name &amp; SSL Certification">
+<meta name="twitter:description" content="這篇主要講述購買替換新的Domain name以及用最低成本的方式取得SSL證書的流程與方法。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/fluLtrmNwhceUVlyAigxXLQMXGNFF15gsXaKGTXaE1Eav9sH4c5HjElebK5ULCxKPg_DTlx42ciFV4uaObxiOYSvwW2nJZn8xVIl4oVVU6Mwr2ILZl27dfhngqDGSbVE8EgLQhuG1sGFPYMoTYea68_obeyDhZVUqWM0DiXq9iMnDT9owL6lPi6fboHTglDHuu1gE-GYOjq2mygX-gW7PJCOmg8eLmI-IwxczWWi2oZWfhnYE_MxfhViNOgAF8i-Zxd8W5dh7Mh-0jcoiQ7wpyH8vyiIaqvPokEnXcrEz16tNhL9mNUuc24LSE5GxKyG6YUfq5aU4yUxQM-sC0jWflDR3GHqWLuSKYgEYP_z3m3lEv74n6Us298RH3Wh-T9brM_3nLes-sdXQkTjCsNMRGETA3VUtI94h3mAt-PBFqOMMTz51am3LcrcRWBCZJG3a9qZIELqZvSJUEJ_CZrR9DvJNu9Q2tId4FyI2vjRtFV6GsKVJw8GoVvTFO0p4-GGq_Pdhq1P8rdsmS1dtDKKf4PvlnyUtXWvJ1DcTvaNVDQBkh0R2LJ3uC9ySnyMnWS7Mrk36QaXUaeYKr97nDST00n4HqrP0dOqUJXdRP_D9nkMFG7RNaIx9TrxO3be_g3p7nkf2YOXcN7hUIBMGl9ZWiFBCrv9q0QOE_--qbq8VfQuRovIU5mAw_amUCUDO69ixt1Pa6JUWoGKjqjS7iM65zXPcE3ERg5VisQu=w972-h548-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2018/04/02/newhttps/">
+
+
+
+
+
+  <title>Domain name & SSL Certification | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站點地圖
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/04/02/newhttps/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Domain name & SSL Certification</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-02T12:57:59+01:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Website/" itemprop="url" rel="index">
+                    <span itemprop="name">Website</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/02/newhttps/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/02/newhttps/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center>這篇主要講述購買替換新的Domain name以及用最低成本的方式取得SSL證書的流程與方法。</center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/fluLtrmNwhceUVlyAigxXLQMXGNFF15gsXaKGTXaE1Eav9sH4c5HjElebK5ULCxKPg_DTlx42ciFV4uaObxiOYSvwW2nJZn8xVIl4oVVU6Mwr2ILZl27dfhngqDGSbVE8EgLQhuG1sGFPYMoTYea68_obeyDhZVUqWM0DiXq9iMnDT9owL6lPi6fboHTglDHuu1gE-GYOjq2mygX-gW7PJCOmg8eLmI-IwxczWWi2oZWfhnYE_MxfhViNOgAF8i-Zxd8W5dh7Mh-0jcoiQ7wpyH8vyiIaqvPokEnXcrEz16tNhL9mNUuc24LSE5GxKyG6YUfq5aU4yUxQM-sC0jWflDR3GHqWLuSKYgEYP_z3m3lEv74n6Us298RH3Wh-T9brM_3nLes-sdXQkTjCsNMRGETA3VUtI94h3mAt-PBFqOMMTz51am3LcrcRWBCZJG3a9qZIELqZvSJUEJ_CZrR9DvJNu9Q2tId4FyI2vjRtFV6GsKVJw8GoVvTFO0p4-GGq_Pdhq1P8rdsmS1dtDKKf4PvlnyUtXWvJ1DcTvaNVDQBkh0R2LJ3uC9ySnyMnWS7Mrk36QaXUaeYKr97nDST00n4HqrP0dOqUJXdRP_D9nkMFG7RNaIx9TrxO3be_g3p7nkf2YOXcN7hUIBMGl9ZWiFBCrv9q0QOE_--qbq8VfQuRovIU5mAw_amUCUDO69ixt1Pa6JUWoGKjqjS7iM65zXPcE3ERg5VisQu=w972-h548-no" rel="gallery_cjr42jzqd001plmtzkhtj744a" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/fluLtrmNwhceUVlyAigxXLQMXGNFF15gsXaKGTXaE1Eav9sH4c5HjElebK5ULCxKPg_DTlx42ciFV4uaObxiOYSvwW2nJZn8xVIl4oVVU6Mwr2ILZl27dfhngqDGSbVE8EgLQhuG1sGFPYMoTYea68_obeyDhZVUqWM0DiXq9iMnDT9owL6lPi6fboHTglDHuu1gE-GYOjq2mygX-gW7PJCOmg8eLmI-IwxczWWi2oZWfhnYE_MxfhViNOgAF8i-Zxd8W5dh7Mh-0jcoiQ7wpyH8vyiIaqvPokEnXcrEz16tNhL9mNUuc24LSE5GxKyG6YUfq5aU4yUxQM-sC0jWflDR3GHqWLuSKYgEYP_z3m3lEv74n6Us298RH3Wh-T9brM_3nLes-sdXQkTjCsNMRGETA3VUtI94h3mAt-PBFqOMMTz51am3LcrcRWBCZJG3a9qZIELqZvSJUEJ_CZrR9DvJNu9Q2tId4FyI2vjRtFV6GsKVJw8GoVvTFO0p4-GGq_Pdhq1P8rdsmS1dtDKKf4PvlnyUtXWvJ1DcTvaNVDQBkh0R2LJ3uC9ySnyMnWS7Mrk36QaXUaeYKr97nDST00n4HqrP0dOqUJXdRP_D9nkMFG7RNaIx9TrxO3be_g3p7nkf2YOXcN7hUIBMGl9ZWiFBCrv9q0QOE_--qbq8VfQuRovIU5mAw_amUCUDO69ixt1Pa6JUWoGKjqjS7iM65zXPcE3ERg5VisQu=w972-h548-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <a id="more"></a>
+<p>看了一下Domain name好像不貴，不過如果是挑選頂級域名價錢就會比較硬，最後我是挑選在Namecheap上買的，一年 NT300多還好，外加贈送WhoisGuard。<br>由於我是把hexo部署在Github Pages上，因此他的CNAME設定有固定的位置，可以參考這篇文章 <a href="https://blog.dmoon.tw/github-pages-custom-domain/" target="_blank" rel="noopener">Github Pages 自訂域名 </a>。有了新的域名之後還要替他加上個綠色鎖頭(也就是SSL證書)，但是正式的證書其實很貴(看你的規模需要多大)，而且設定過程非常複雜，因此後來當然也有人為了解決這個問題就出現了一些折衷的方式，用很低成本的方式達到目的(?)，當然啦不免多說一下就是在安全上的效果還是會有差異的。<br>另外，現在各大搜尋引擎其實都會對於有SSL(https)在SEO上有加分，所以也是為什麼要裝R。</p>
+<hr>
+<h1 id="更換Domain-name"><a href="#更換Domain-name" class="headerlink" title="更換Domain name"></a>更換Domain name</h1><h2 id="Namecheap上設定"><a href="#Namecheap上設定" class="headerlink" title="Namecheap上設定"></a>Namecheap上設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">進去Namecheap之後</span><br><span class="line">Domain list ► Advanced DNS ► 增加 Type</span><br><span class="line">A ► yoursite.com ► 192.30.252.153</span><br><span class="line">A ► yoursite.com ► 192.30.252.154</span><br><span class="line">CNAME ► www  ► yoursite.github.io</span><br></pre></td></tr></table></figure>
+<h2 id="Blog上設定"><a href="#Blog上設定" class="headerlink" title="Blog上設定"></a>Blog上設定</h2><p>緊接著，到你的 _config.yml 裡面的url更改新的 yoursite.com<br>以及到你的website Github Pages的倉庫裡setting裡面，有一區[GitHub Pages]設定你的新域名。<br>基本上這樣就完成了設定。<br>最後還要在yourname.github.io的根目錄下添加CNAME，在Hexo根目錄裡的source文件下創一個名為CNAME的文件，注意這個文件是沒有附檔名的(千萬不要設成.txt文本文件)，內容就輸入你的新域名 ex. chiehpower.com 這樣就可以儲存了。</p>
+<p>但是 Blog 最好要加上 SSL證書(https) 比較好(不論是趨勢與安全)，想說在Namecheap上一起買服務，結果買了之後發現不能用…(這中間有點過程，還跟客服搞了一番)，但不得不說這家公司真的優，而且態度很好又高效率，主動詢問是否要退款。我很喜歡他們提供的服務，但他們回應 “Custom domains hosted within the Github Pages cannot use third-party certificates, according to their rules.”，結論就是，github不接受第三方的證書，我最後只好退款他們建議我使用Cloudflare(網路上也大多都是建議用這種)，因此後來才轉戰CloudFlare的服務。</p>
+<hr>
+<h1 id="SSL-Certification"><a href="#SSL-Certification" class="headerlink" title="SSL Certification"></a>SSL Certification</h1><h2 id="Cloudflare"><a href="#Cloudflare" class="headerlink" title="Cloudflare"></a>Cloudflare</h2><p>Cloudflare的原理網站上有許多介紹就不多講，可以參考這篇的文章<a href="https://blog.dmoon.tw/github-pages-with-free-ssl/" target="_blank" rel="noopener">Github Pages 免費 ssl 設定</a><br>在CloudFlare上主要設定有三個地方吧</p>
+<ol>
+<li>DNS</li>
+<li>Crypto</li>
+<li>Page Rules</li>
+</ol>
+<p>另外就是還要回去設定Namecheap上更改Nameservers設定，把Namecheap basic DNS 改成 Custom DNS，而這裡面是直接複製貼上CF上給的位置即可(更改之後要等待時間)。<br>PS 要回去看一下你的website Github Pages的倉庫裡setting裡面，有一區[GitHub Pages]設定是否有跑掉(如果跑掉在設定回去即可)。</p>
+<h2 id="強制跳轉設定"><a href="#強制跳轉設定" class="headerlink" title="強制跳轉設定"></a>強制跳轉設定</h2><p>設定完成Cloudflare之後，於自己的Blog內檔案中加入強制跳轉機制。<br>  第一步驟:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_config.yml中加入:</span><br><span class="line">  url: https://www.yoursite.com   # with the https protocol</span><br><span class="line">  enforce_ssl: www.yoursite.com   # without any protocol</span><br></pre></td></tr></table></figure></p>
+<p>  <a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="noopener">參考網址</a></p>
+<p>  第二步驟:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Themes ► Next ► layout ► _layout.swig ► &lt;head&gt;中加入</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var host = &quot;yoursite.com&quot;;</span><br><span class="line">    if ((host == window.location.host) &amp;&amp; (window.location.protocol != &quot;https:&quot;))</span><br><span class="line">        window.location.protocol = &quot;https&quot;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  <a href="https://g2ex.github.io/2015/10/14/Hexo-with-SSL-Hosted-on-Github-Page/" target="_blank" rel="noopener">參考網址</a></p>
+<p>最後重新deploy一下就可以了。</p>
+<blockquote>
+<p>Referecnce: 圖片來自Google</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="https://chiehpower.com/2018/04/02/newhttps/" title="Domain name & SSL Certification">https://chiehpower.com/2018/04/02/newhttps/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Domain-name/" rel="tag"># Domain name</a>
+          
+            <a href="/tags/SSL/" rel="tag"># SSL</a>
+          
+            <a href="/tags/Https/" rel="tag"># Https</a>
+          
+            <a href="/tags/Cloudflare/" rel="tag"># Cloudflare</a>
+          
+            <a href="/tags/Namecheap/" rel="tag"># Namecheap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/19/TED/" rel="next" title="TED">
+                <i class="fa fa-chevron-left"></i> TED
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/03/parents-spend-on-child/" rel="prev" title="父母該滿足小孩物質上的需求嗎?">
+                父母該滿足小孩物質上的需求嗎? <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更換Domain-name"><span class="nav-number">1.</span> <span class="nav-text">更換Domain name</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Namecheap上設定"><span class="nav-number">1.1.</span> <span class="nav-text">Namecheap上設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog上設定"><span class="nav-number">1.2.</span> <span class="nav-text">Blog上設定</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSL-Certification"><span class="nav-number">2.</span> <span class="nav-text">SSL Certification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloudflare"><span class="nav-number">2.1.</span> <span class="nav-text">Cloudflare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#強制跳轉設定"><span class="nav-number">2.2.</span> <span class="nav-text">強制跳轉設定</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2018/04/02/newhttps/';
+          this.page.identifier = '2018/04/02/newhttps/';
+          this.page.title = 'Domain name & SSL Certification';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
