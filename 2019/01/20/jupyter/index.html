@@ -92,7 +92,7 @@
 <meta property="og:description" content="在Hexo上面展示Jupyter檔案內容。">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://lh3.googleusercontent.com/o8VeTA51bEaOhG3q5fm5kqlV7Uuf8vKUXPff8vHousbCwngxzK1QsLDbHhcalSv9vJuGlkRGF-4GB-36gam7UGRkIyK5hsZlwJeq9U80B8RG4t6T5itb6jgUSC_X57mVnF2A8IktgVp_SsUJyK_G6g4sT3xVGzzPzrDm1ZDvhLsacqIjLc-fjOZlu0gn8cj232RpvwTMibHtkKm9pi25Y-C6_O95Q3NqTiUPH1ofsm-ds31eLi1PjQtn1qFF3DXc3lXX_tbY326I53XvH0BboaD_c_BrhpteKGwcSFwFVgHSCy4pXkab0s2GHU33rAUoDdhVAIHVbC6JM6pa1z68fQnP6cEt_ox5i6P7l2qIFf-uAKhp6kn1YnG-NAzW2K1UHw_0DzAD2GU5xoAldWunr4zA8f1_W6pcZq7Sz-oaCMZiU8h165qyj9yDR3CqSkZzK05u-Z6jiw05W_zO10V365XfhajG8qpyo4qm4opTB5LPbi1ffK-y48J3-huvpRSYje_VC3oyvOTtLPTydglt6FCs8p1pQZd0sCPK48_9mO4S1SvqooLJQYBn1_FSQ_FhBG5L5_WiY0fONEGH8PmreBz7CuwkHmJICpemKM5WDhQAXFhhTGXSbyuoWCX2YrguGMDLw3HPUwLrO5GzsLO3-UR_a1ZLOHzQnTdL4uez3ZDLUuVNpyQgo7YxZcfozWoE7v-dndi2l88Ej1PddVc=w2208-h1242-no">
-<meta property="og:updated_time" content="2019-01-20T17:20:59.285Z">
+<meta property="og:updated_time" content="2019-01-20T17:24:14.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo with the Jupyter notebook">
 <meta name="twitter:description" content="在Hexo上面展示Jupyter檔案內容。">
@@ -14233,10 +14233,15 @@ AAAAAElFTkSuQmCC
 $("#ipynb").load( function() {
 console.log($("#ipynb").contents().find("body").find("#notebook"));
 document.getElementById('ipynb').height=$("#ipynb").contents().find("#notebook").height()+100;
-})
-</script> 
+})document.getElementById('ipynb').style['margin-left'] = '-60px';
+</script>
     
 </center>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="http://huanyouchen.github.io/2018/05/30/hexo-support-jupyter-notebook-in-blog/" target="_blank" rel="noopener">在hexo中写的文章支持jupyter-notebook显示</a></li>
+<li><a href="https://www.npmjs.com/package/hexo-jupyter-notebook" target="_blank" rel="noopener">hexo-jupyter-notebook</a></li>
+</ul>
 
       
     </div>
@@ -14476,7 +14481,7 @@ document.getElementById('ipynb').height=$("#ipynb").contents().find("#notebook")
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps"><span class="nav-number">1.</span> <span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步-安裝-hexo-jupyter-notebook"><span class="nav-number">1.1.</span> <span class="nav-text">第一步 安裝 hexo-jupyter-notebook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步-安裝兩個-pandoc-和-nbconvert"><span class="nav-number">1.2.</span> <span class="nav-text">第二步 安裝兩個 pandoc 和 nbconvert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步-打開配置裡面的選項"><span class="nav-number">1.3.</span> <span class="nav-text">第三步 打開配置裡面的選項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步-創建檔案夾，存放ipybn用的檔案夾"><span class="nav-number">1.4.</span> <span class="nav-text">第四步 創建檔案夾，存放ipybn用的檔案夾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步-插入語法"><span class="nav-number">1.5.</span> <span class="nav-text">第五步 插入語法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#展示"><span class="nav-number">2.</span> <span class="nav-text">展示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps"><span class="nav-number">1.</span> <span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步-安裝-hexo-jupyter-notebook"><span class="nav-number">1.1.</span> <span class="nav-text">第一步 安裝 hexo-jupyter-notebook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步-安裝兩個-pandoc-和-nbconvert"><span class="nav-number">1.2.</span> <span class="nav-text">第二步 安裝兩個 pandoc 和 nbconvert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步-打開配置裡面的選項"><span class="nav-number">1.3.</span> <span class="nav-text">第三步 打開配置裡面的選項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步-創建檔案夾，存放ipybn用的檔案夾"><span class="nav-number">1.4.</span> <span class="nav-text">第四步 創建檔案夾，存放ipybn用的檔案夾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步-插入語法"><span class="nav-number">1.5.</span> <span class="nav-text">第五步 插入語法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#展示"><span class="nav-number">2.</span> <span class="nav-text">展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
