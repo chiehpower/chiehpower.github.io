@@ -92,7 +92,7 @@
 <meta property="og:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
-<meta property="og:updated_time" content="2019-01-31T16:24:25.442Z">
+<meta property="og:updated_time" content="2019-01-31T16:29:16.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow &amp; Keras">
 <meta name="twitter:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
@@ -415,7 +415,9 @@
 <blockquote>
 <p>設備與環境：<br>Anaconda version: 1.9.6<br>MAC bookpro OS: Mojave 10.14.3<br>Python 3.6</p>
 </blockquote>
-<h2 id="PS-windows-10-也成功使用相同的安裝指令安裝。"><a href="#PS-windows-10-也成功使用相同的安裝指令安裝。" class="headerlink" title="PS windows 10 也成功使用相同的安裝指令安裝。"></a>PS windows 10 也成功使用相同的安裝指令安裝。</h2><h1 id="TensorFlow-安裝"><a href="#TensorFlow-安裝" class="headerlink" title="TensorFlow 安裝"></a>TensorFlow 安裝</h1><p>[OS我是選擇安裝無GPU版本]</p>
+<p>PS windows 10 也成功使用相同的安裝指令安裝。</p>
+<hr>
+<h1 id="TensorFlow-安裝"><a href="#TensorFlow-安裝" class="headerlink" title="TensorFlow 安裝"></a>TensorFlow 安裝</h1><p>[OS我是選擇安裝無GPU版本]</p>
 <p><a href="https://www.anaconda.com/tensorflow-in-anaconda/" target="_blank" rel="noopener">安裝 tensorflow in Anaconda</a></p>
 <h2 id="建立虛擬環境"><a href="#建立虛擬環境" class="headerlink" title="建立虛擬環境"></a>建立虛擬環境</h2><p>Interested in trying out these TensorFlow packages? After installing Anaconda or Miniconda, create a new conda environment containing TensorFlow and activate it<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure></p>
 <p>Or for the GPU version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow_gpuenv tensorflow-gpu</span><br><span class="line">conda activate tensorflow_gpuenv</span><br></pre></td></tr></table></figure></p>
@@ -437,7 +439,7 @@
 <p>再次呼叫jupyter notebook出來試試看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from keras.models import Sequential</span><br></pre></td></tr></table></figure></p>
 <p>顯示 Using TensorFlow backend. 基本上應該就是成功了。</p>
 <hr>
-<h1 id="總結-Steps-簡易版"><a href="#總結-Steps-簡易版" class="headerlink" title="總結 Steps [簡易版]"></a>總結 Steps [簡易版]</h1><ol>
+<h1 id="總結-Steps-精簡版"><a href="#總結-Steps-精簡版" class="headerlink" title="總結 Steps [精簡版]"></a>總結 Steps [精簡版]</h1><ol>
 <li>點開終端器，或者windows可以開啟Anaconda prompt</li>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
 </li>
@@ -447,7 +449,7 @@
 </li>
 </ol>
 <hr>
-<h1 id="matplotlib-error"><a href="#matplotlib-error" class="headerlink" title="matplotlib error"></a>matplotlib error</h1><p>如果顯示</p>
+<h1 id="Matplotlib-error的問題"><a href="#Matplotlib-error的問題" class="headerlink" title="Matplotlib error的問題"></a>Matplotlib error的問題</h1><p>如果顯示</p>
 <blockquote>
 <p>ModuleNotFoundError: No module named ‘matplotlib’</p>
 </blockquote>
@@ -711,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PS-windows-10-也成功使用相同的安裝指令安裝。"><span class="nav-number">1.</span> <span class="nav-text">PS windows 10 也成功使用相同的安裝指令安裝。</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-安裝"><span class="nav-number"></span> <span class="nav-text">TensorFlow 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立虛擬環境"><span class="nav-number">1.</span> <span class="nav-text">建立虛擬環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝TensorFlow的套件包"><span class="nav-number">2.</span> <span class="nav-text">安裝TensorFlow的套件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到警告"><span class="nav-number">3.</span> <span class="nav-text">遇到警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-and-iPython-解決問題"><span class="nav-number">4.</span> <span class="nav-text">Jupyter and iPython 解決問題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Keras"><span class="nav-number"></span> <span class="nav-text">安裝 Keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#總結-Steps-簡易版"><span class="nav-number"></span> <span class="nav-text">總結 Steps [簡易版]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib-error"><span class="nav-number"></span> <span class="nav-text">matplotlib error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Environment"><span class="nav-number"></span> <span class="nav-text">Source Environment</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-安裝"><span class="nav-number">1.</span> <span class="nav-text">TensorFlow 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立虛擬環境"><span class="nav-number">1.1.</span> <span class="nav-text">建立虛擬環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝TensorFlow的套件包"><span class="nav-number">1.2.</span> <span class="nav-text">安裝TensorFlow的套件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到警告"><span class="nav-number">1.3.</span> <span class="nav-text">遇到警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-and-iPython-解決問題"><span class="nav-number">1.4.</span> <span class="nav-text">Jupyter and iPython 解決問題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Keras"><span class="nav-number">2.</span> <span class="nav-text">安裝 Keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#總結-Steps-精簡版"><span class="nav-number">3.</span> <span class="nav-text">總結 Steps [精簡版]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib-error的問題"><span class="nav-number">4.</span> <span class="nav-text">Matplotlib error的問題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Environment"><span class="nav-number">5.</span> <span class="nav-text">Source Environment</span></a></li></ol></div>
             
 
           </div>
