@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chiehpower.com/about/index.html</loc>
+    
+    <lastmod>2019-01-31T17:02:26.115Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chiehpower.com/2019/01/31/Tensorflow-keras/</loc>
     
     <lastmod>2019-01-31T16:29:16.067Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://chiehpower.com/2019/01/20/jupyter/</loc>
     
     <lastmod>2019-01-31T15:57:02.595Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chiehpower.com/about/index.html</loc>
-    
-    <lastmod>2019-01-31T01:48:46.214Z</lastmod>
     
   </url>
   
