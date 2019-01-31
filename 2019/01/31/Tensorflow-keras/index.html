@@ -86,15 +86,15 @@
 <meta name="description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
 <meta name="keywords" content="Python,Notes,Jupyter notebook,ipynb,Tensorflow,Keras,Anaconda,Conda">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tensorflow &amp; Keras">
+<meta property="og:title" content="Install Tensorflow &amp; Keras">
 <meta property="og:url" content="https://chiehpower.com/2019/01/31/Tensorflow-keras/index.html">
 <meta property="og:site_name" content="Chieh&#39;s Blog">
 <meta property="og:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
-<meta property="og:updated_time" content="2019-01-31T16:29:16.067Z">
+<meta property="og:updated_time" content="2019-01-31T17:47:05.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tensorflow &amp; Keras">
+<meta name="twitter:title" content="Install Tensorflow &amp; Keras">
 <meta name="twitter:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>Tensorflow & Keras | Chieh's Blog</title>
+  <title>Install Tensorflow & Keras | Chieh's Blog</title>
   
 
 
@@ -305,7 +305,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Tensorflow & Keras</h2>
+          <h2 class="post-title" itemprop="name headline">Install Tensorflow & Keras</h2>
         
 
         <div class="post-meta">
@@ -410,12 +410,11 @@
       
 
       
-        <p>深度學習的朋友應該都會需要接觸到這兩個鼎鼎有名的程式，這裡有幾點小地方需要注意一下。<br>如果碰到Anaconda軟體自己跳出來說要不要更新，先不要更新容易有問題發生。</p>
-<p>另外一點在安裝的時候，一般來說有主要有幾種方式，常見方式一種是pip另一個是conda，這邊爬文之後建議用conda來安裝，效能比較好（？）</p>
+        <p>深度學習的朋友應該都會需要接觸到這兩個鼎鼎有名的程式，這裡有幾點小地方需要注意一下。<br>如果碰到Anaconda軟體自己跳出來說要不要更新，先不要更新容易有問題發生。<br>另外一點在安裝的時候，一般來說有好幾種方式，常見方式一種是<strong>pip</strong>另一個是<strong>conda</strong>，這邊爬文之後建議用conda來安裝，效能比較好(?)</p>
 <blockquote>
 <p>設備與環境：<br>Anaconda version: 1.9.6<br>MAC bookpro OS: Mojave 10.14.3<br>Python 3.6</p>
 </blockquote>
-<p>PS windows 10 也成功使用相同的安裝指令安裝。</p>
+<p>本人我也在windows 10上成功安裝，指令也是一樣的。</p>
 <hr>
 <h1 id="TensorFlow-安裝"><a href="#TensorFlow-安裝" class="headerlink" title="TensorFlow 安裝"></a>TensorFlow 安裝</h1><p>[OS我是選擇安裝無GPU版本]</p>
 <p><a href="https://www.anaconda.com/tensorflow-in-anaconda/" target="_blank" rel="noopener">安裝 tensorflow in Anaconda</a></p>
@@ -484,7 +483,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link：</strong>
-    <a href="https://chiehpower.com/2019/01/31/Tensorflow-keras/" title="Tensorflow & Keras">https://chiehpower.com/2019/01/31/Tensorflow-keras/</a>
+    <a href="https://chiehpower.com/2019/01/31/Tensorflow-keras/" title="Install Tensorflow & Keras">https://chiehpower.com/2019/01/31/Tensorflow-keras/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice： </strong>
@@ -896,7 +895,7 @@
         var disqus_config = function () {
           this.page.url = 'https://chiehpower.com/2019/01/31/Tensorflow-keras/';
           this.page.identifier = '2019/01/31/Tensorflow-keras/';
-          this.page.title = 'Tensorflow & Keras';
+          this.page.title = 'Install Tensorflow & Keras';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
