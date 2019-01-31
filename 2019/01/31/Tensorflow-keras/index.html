@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,Notes,Jupyter notebook,ipynb,Tensorflow,Keras,Anaconda,Conda,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
+<meta name="keywords" content="Python,Notes,Jupyter notebook,ipynb,Tensorflow,Keras,Anaconda,Conda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow &amp; Keras">
+<meta property="og:url" content="https://chiehpower.com/2019/01/31/Tensorflow-keras/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
+<meta property="og:updated_time" content="2019-01-31T16:24:25.442Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tensorflow &amp; Keras">
+<meta name="twitter:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2019/01/31/Tensorflow-keras/">
+
+
+
+
+
+  <title>Tensorflow & Keras | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站點地圖
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/01/31/Tensorflow-keras/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Tensorflow & Keras</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-01-31T13:25:12+00:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/31/Tensorflow-keras/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/Tensorflow-keras/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center>安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。</center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no" rel="gallery_cjrktyg09002k06tzaqejdj2c" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>深度學習的朋友應該都會需要接觸到這兩個鼎鼎有名的程式，這裡有幾點小地方需要注意一下。<br>如果碰到Anaconda軟體自己跳出來說要不要更新，先不要更新容易有問題發生。</p>
+<p>另外一點在安裝的時候，一般來說有主要有幾種方式，常見方式一種是pip另一個是conda，這邊爬文之後建議用conda來安裝，效能比較好（？）</p>
+<blockquote>
+<p>設備與環境：<br>Anaconda version: 1.9.6<br>MAC bookpro OS: Mojave 10.14.3<br>Python 3.6</p>
+</blockquote>
+<h2 id="PS-windows-10-也成功使用相同的安裝指令安裝。"><a href="#PS-windows-10-也成功使用相同的安裝指令安裝。" class="headerlink" title="PS windows 10 也成功使用相同的安裝指令安裝。"></a>PS windows 10 也成功使用相同的安裝指令安裝。</h2><h1 id="TensorFlow-安裝"><a href="#TensorFlow-安裝" class="headerlink" title="TensorFlow 安裝"></a>TensorFlow 安裝</h1><p>[OS我是選擇安裝無GPU版本]</p>
+<p><a href="https://www.anaconda.com/tensorflow-in-anaconda/" target="_blank" rel="noopener">安裝 tensorflow in Anaconda</a></p>
+<h2 id="建立虛擬環境"><a href="#建立虛擬環境" class="headerlink" title="建立虛擬環境"></a>建立虛擬環境</h2><p>Interested in trying out these TensorFlow packages? After installing Anaconda or Miniconda, create a new conda environment containing TensorFlow and activate it<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure></p>
+<p>Or for the GPU version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow_gpuenv tensorflow-gpu</span><br><span class="line">conda activate tensorflow_gpuenv</span><br></pre></td></tr></table></figure></p>
+<h2 id="安裝TensorFlow的套件包"><a href="#安裝TensorFlow的套件包" class="headerlink" title="安裝TensorFlow的套件包"></a>安裝TensorFlow的套件包</h2><ul>
+<li>可以參考此篇 <a href="https://medium.com/@prairie5270/1-tensorflow-實戰深度學習框架-tensorflow-環境搭建-a779b24bd165" target="_blank" rel="noopener">TensorFlow 環境搭建</a></li>
+<li>還需要去anaconda裡面<a href="https://anaconda.org/search?q=tensorflow" target="_blank" rel="noopener">安裝package</a></li>
+</ul>
+<hr>
+<h2 id="遇到警告"><a href="#遇到警告" class="headerlink" title="遇到警告"></a>遇到警告</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-01-30 23:30:27.762541: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA</span><br></pre></td></tr></table></figure>
+<p>解決方案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.environ[&apos;TF_CPP_MIN_LOG_LEVEL&apos;] = &apos;2&apos;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>參考這篇<a href="https://blog.csdn.net/GeneralLi95/article/details/80463628" target="_blank" rel="noopener">解決方案</a></li>
+</ul>
+<hr>
+<h2 id="Jupyter-and-iPython-解決問題"><a href="#Jupyter-and-iPython-解決問題" class="headerlink" title="Jupyter and iPython 解決問題"></a>Jupyter and iPython 解決問題</h2><p>因為一般Jupyter是安裝在全域環境，而tensorflow是安裝在虛擬環境，因此做法是在tensorflow環境下安裝jupyter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source activate tensorflow</span><br><span class="line">conda install ipython</span><br><span class="line">conda install jupyter</span><br></pre></td></tr></table></figure></p>
+<p>基本上應該就可以了<br>直接呼叫jupyter notebook出來輸入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">print (&quot;TensorFlow version: &quot; + tf.__version__)</span><br></pre></td></tr></table></figure></p>
+<p>有跑出來就是成功。</p>
+<h1 id="安裝-Keras"><a href="#安裝-Keras" class="headerlink" title="安裝 Keras"></a>安裝 Keras</h1><p>PS 需要先安裝好tensorflow。<br>在tensorflow的環境下執行安裝指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install Keras</span><br></pre></td></tr></table></figure></p>
+<p>再次呼叫jupyter notebook出來試試看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from keras.models import Sequential</span><br></pre></td></tr></table></figure></p>
+<p>顯示 Using TensorFlow backend. 基本上應該就是成功了。</p>
+<hr>
+<h1 id="總結-Steps-簡易版"><a href="#總結-Steps-簡易版" class="headerlink" title="總結 Steps [簡易版]"></a>總結 Steps [簡易版]</h1><ol>
+<li>點開終端器，或者windows可以開啟Anaconda prompt</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install ipython</span><br><span class="line">conda install jupyter</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install Keras</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h1 id="matplotlib-error"><a href="#matplotlib-error" class="headerlink" title="matplotlib error"></a>matplotlib error</h1><p>如果顯示</p>
+<blockquote>
+<p>ModuleNotFoundError: No module named ‘matplotlib’</p>
+</blockquote>
+<p>Steps:</p>
+<ol>
+<li>去Anaconda Navigator中選擇Environments再</li>
+<li>選擇tensorflow，在installed中查看是否安裝了matplotlib</li>
+<li>如果沒有找到，就換到Not installed，將其安裝上，就可以解決了</li>
+</ol>
+<ul>
+<li><a href="https://blog.csdn.net/yangzijiang666/article/details/79695938" target="_blank" rel="noopener">參考文章</a></li>
+</ul>
+<hr>
+<h1 id="Source-Environment"><a href="#Source-Environment" class="headerlink" title="Source Environment"></a>Source Environment</h1><p>如果要啟動tensorflow一般就是在prompt裡面直接下指令 source環境，但如果要用按按鈕的方式其實也可以，點開Anaconda裡面，到環境(Environment)，選到Tensorflow右鍵，就會看到Open Terminal點開直接就可以了，如果你是要開jupyter notebook也可以直接選。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author：</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link：</strong>
+    <a href="https://chiehpower.com/2019/01/31/Tensorflow-keras/" title="Tensorflow & Keras">https://chiehpower.com/2019/01/31/Tensorflow-keras/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice： </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Jupyter-notebook/" rel="tag"># Jupyter notebook</a>
+          
+            <a href="/tags/ipynb/" rel="tag"># ipynb</a>
+          
+            <a href="/tags/Tensorflow/" rel="tag"># Tensorflow</a>
+          
+            <a href="/tags/Keras/" rel="tag"># Keras</a>
+          
+            <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+          
+            <a href="/tags/Conda/" rel="tag"># Conda</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/26/london-trip/" rel="next" title="【Diary#4】London One-day trip">
+                <i class="fa fa-chevron-left"></i> 【Diary#4】London One-day trip
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">117</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PS-windows-10-也成功使用相同的安裝指令安裝。"><span class="nav-number">1.</span> <span class="nav-text">PS windows 10 也成功使用相同的安裝指令安裝。</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-安裝"><span class="nav-number"></span> <span class="nav-text">TensorFlow 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立虛擬環境"><span class="nav-number">1.</span> <span class="nav-text">建立虛擬環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝TensorFlow的套件包"><span class="nav-number">2.</span> <span class="nav-text">安裝TensorFlow的套件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到警告"><span class="nav-number">3.</span> <span class="nav-text">遇到警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-and-iPython-解決問題"><span class="nav-number">4.</span> <span class="nav-text">Jupyter and iPython 解決問題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Keras"><span class="nav-number"></span> <span class="nav-text">安裝 Keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#總結-Steps-簡易版"><span class="nav-number"></span> <span class="nav-text">總結 Steps [簡易版]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib-error"><span class="nav-number"></span> <span class="nav-text">matplotlib error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Environment"><span class="nav-number"></span> <span class="nav-text">Source Environment</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Chiehpower
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2019/01/31/Tensorflow-keras/';
+          this.page.identifier = '2019/01/31/Tensorflow-keras/';
+          this.page.title = 'Tensorflow & Keras';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
