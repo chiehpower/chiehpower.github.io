@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chiehpower.com/2019/01/06/macbookpro/</loc>
+    
+    <lastmod>2019-02-03T21:23:26.275Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chiehpower.com/categories/index.html</loc>
+    
+    <lastmod>2019-02-03T14:54:32.324Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chiehpower.com/tags/index.html</loc>
+    
+    <lastmod>2019-02-03T14:54:30.979Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chiehpower.com/2019/01/31/Tensorflow-keras/</loc>
     
-    <lastmod>2019-01-31T17:47:05.334Z</lastmod>
+    <lastmod>2019-02-02T18:13:41.025Z</lastmod>
     
   </url>
   
@@ -89,20 +110,6 @@
     <loc>https://chiehpower.com/2018/02/16/Task1-template/</loc>
     
     <lastmod>2019-01-20T22:42:36.687Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chiehpower.com/categories/index.html</loc>
-    
-    <lastmod>2019-01-20T11:41:09.597Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chiehpower.com/tags/index.html</loc>
-    
-    <lastmod>2019-01-20T11:41:09.596Z</lastmod>
     
   </url>
   
