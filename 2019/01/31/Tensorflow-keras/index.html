@@ -92,7 +92,7 @@
 <meta property="og:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no">
-<meta property="og:updated_time" content="2019-02-02T18:13:41.025Z">
+<meta property="og:updated_time" content="2019-02-08T14:52:52.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install Tensorflow &amp; Keras">
 <meta name="twitter:description" content="安裝Tensorflow與Keras，並且能在Jupyter Notebook上使用。">
@@ -410,36 +410,37 @@
       
 
       
-        <p>深度學習的朋友應該都會需要接觸到這兩個鼎鼎有名的程式，這裡有幾點小地方需要注意一下。<br>如果碰到Anaconda軟體自己跳出來說要不要更新，先不要更新容易有問題發生。<br>另外一點在安裝的時候，一般來說有好幾種方式，常見方式一種是<code>pip</code>另一個是<code>conda</code>，這邊爬文之後建議用conda來安裝，效能比較好(?)</p>
+        <p>深度學習的朋友應該都會需要接觸到這兩個鼎鼎有名的程式，這裡有幾點小地方需要注意一下。<br>如果碰到Anaconda軟體自己跳出來說要不要更新，先不要更新容易有問題發生。<br>另外一點在安裝的時候，一般來說有好幾種方式，常見方式一種是<code>pip</code>另一個是<code>conda</code>，這邊爬文之後建議用conda來安裝，效能比較好(?)<br>The friends of deep learning should need to use these two famous programs, there are a few small places to pay attention to.<br>If you encounter an Anaconda software which jumps out and says about update version thing, please don’t update it because there are easily problems.<br>Another point is that there are several ways to install it. The common way is <code>pip</code> and the other is <code>conda</code>. After I searched some webistes, it recommended to use conda to install it. The performance is better (?)</p>
 <blockquote>
-<p>設備與環境：<br>Anaconda version: 1.9.6<br>MAC bookpro OS: Mojave 10.14.3<br>Python 3.6</p>
+<p>設備與環境： (Device and Environment)<br>Anaconda version: 1.9.6<br>MAC bookpro OS: Mojave 10.14.3<br>Python 3.6</p>
 </blockquote>
-<p>本人我也在windows 10上成功安裝，指令也是一樣的。</p>
+<p>本人我也在windows 10上成功安裝，指令也是一樣的。<br>I also successfully installed on Windows 10, the commands are the same.</p>
 <hr>
-<h1 id="TensorFlow-安裝"><a href="#TensorFlow-安裝" class="headerlink" title="TensorFlow 安裝"></a>TensorFlow 安裝</h1><p>[OS我是選擇安裝無GPU版本]</p>
-<p><a href="https://www.anaconda.com/tensorflow-in-anaconda/" target="_blank" rel="noopener">安裝 tensorflow in Anaconda</a></p>
-<h2 id="建立虛擬環境"><a href="#建立虛擬環境" class="headerlink" title="建立虛擬環境"></a>建立虛擬環境</h2><p>Interested in trying out these TensorFlow packages? After installing Anaconda or Miniconda, create a new conda environment containing TensorFlow and activate it<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure></p>
+<h1 id="Install-TensorFlow"><a href="#Install-TensorFlow" class="headerlink" title="Install TensorFlow"></a>Install TensorFlow</h1><p>[OS我是選擇安裝無GPU版本]<br>[For OS, I chose the CPU version]</p>
+<p><a href="https://www.anaconda.com/tensorflow-in-anaconda/" target="_blank" rel="noopener">Install tensorflow in Anaconda</a></p>
+<h2 id="Create-the-virtual-environment"><a href="#Create-the-virtual-environment" class="headerlink" title="Create the virtual environment"></a>Create the virtual environment</h2><p>Interested in trying out these TensorFlow packages? After installing Anaconda or Miniconda, create a new conda environment containing TensorFlow and activate it<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure></p>
 <p>Or for the GPU version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow_gpuenv tensorflow-gpu</span><br><span class="line">conda activate tensorflow_gpuenv</span><br></pre></td></tr></table></figure></p>
-<h2 id="安裝TensorFlow的套件包"><a href="#安裝TensorFlow的套件包" class="headerlink" title="安裝TensorFlow的套件包"></a>安裝TensorFlow的套件包</h2><ul>
+<h2 id="Install-TensorFlow-packages"><a href="#Install-TensorFlow-packages" class="headerlink" title="Install TensorFlow packages"></a>Install TensorFlow packages</h2><p>For Chinese</p>
+<ul>
 <li>可以參考此篇 <a href="https://medium.com/@prairie5270/1-tensorflow-實戰深度學習框架-tensorflow-環境搭建-a779b24bd165" target="_blank" rel="noopener">TensorFlow 環境搭建</a></li>
 <li>還需要去anaconda裡面<a href="https://anaconda.org/search?q=tensorflow" target="_blank" rel="noopener">安裝package</a></li>
 </ul>
 <hr>
-<h2 id="遇到警告"><a href="#遇到警告" class="headerlink" title="遇到警告"></a>遇到警告</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-01-30 23:30:27.762541: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA</span><br></pre></td></tr></table></figure>
-<p>解決方案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.environ[&apos;TF_CPP_MIN_LOG_LEVEL&apos;] = &apos;2&apos;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Meet-the-error-messages"><a href="#Meet-the-error-messages" class="headerlink" title="Meet the error messages"></a>Meet the error messages</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-01-30 23:30:27.762541: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA</span><br></pre></td></tr></table></figure>
+<p>解決方案：<br>Solution:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.environ[&apos;TF_CPP_MIN_LOG_LEVEL&apos;] = &apos;2&apos;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>參考這篇<a href="https://blog.csdn.net/GeneralLi95/article/details/80463628" target="_blank" rel="noopener">解決方案</a></li>
 </ul>
 <hr>
-<h2 id="Jupyter-and-iPython-解決問題"><a href="#Jupyter-and-iPython-解決問題" class="headerlink" title="Jupyter and iPython 解決問題"></a>Jupyter and iPython 解決問題</h2><p>因為一般Jupyter是安裝在全域環境，而tensorflow是安裝在虛擬環境，因此做法是在tensorflow環境下安裝jupyter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source activate tensorflow</span><br><span class="line">conda install ipython</span><br><span class="line">conda install jupyter</span><br></pre></td></tr></table></figure></p>
-<p>基本上應該就可以了<br>直接呼叫<code>jupyter notebook</code>出來輸入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">print (&quot;TensorFlow version: &quot; + tf.__version__)</span><br></pre></td></tr></table></figure></p>
-<p>有跑出來就是成功。</p>
-<h1 id="安裝-Keras"><a href="#安裝-Keras" class="headerlink" title="安裝 Keras"></a>安裝 Keras</h1><p>PS 需要先安裝好tensorflow。<br>在tensorflow的環境下執行安裝指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install Keras</span><br></pre></td></tr></table></figure></p>
-<p>再次呼叫jupyter notebook出來試試看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from keras.models import Sequential</span><br></pre></td></tr></table></figure></p>
-<p>顯示 <code>Using TensorFlow backend.</code> 基本上應該就是成功了。</p>
+<h2 id="Solve-the-Jupyter-and-iPython-problems"><a href="#Solve-the-Jupyter-and-iPython-problems" class="headerlink" title="Solve the Jupyter and iPython problems"></a>Solve the Jupyter and iPython problems</h2><p>因為一般Jupyter是安裝在全域環境，而tensorflow是安裝在虛擬環境，因此做法是在tensorflow環境下安裝jupyter。<br>Because the general Jupyter is installed in a global environment and tensorflow is installed in a virtual environment, the solved method is to install jupyter in the tensorflow environment.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source activate tensorflow</span><br><span class="line">conda install ipython</span><br><span class="line">conda install jupyter</span><br></pre></td></tr></table></figure></p>
+<p>基本上應該就可以了<br>直接呼叫<code>jupyter notebook</code>出來輸入<br>Basically it should be fine.<br>Directly type the command <code>jupyter notebook</code>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">print (&quot;TensorFlow version: &quot; + tf.__version__)</span><br></pre></td></tr></table></figure></p>
+<p>有跑出來就是成功。<br>Running out is success.</p>
+<h1 id="Install-Keras"><a href="#Install-Keras" class="headerlink" title="Install Keras"></a>Install Keras</h1><p>PS 需要先安裝好tensorflow。<br>在tensorflow的環境下執行安裝指令。<br>PS You need to install tensorflow first.<br>Execute the installing commands in the tensorflow environment…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install Keras</span><br></pre></td></tr></table></figure></p>
+<p>再次呼叫<code>jupyter notebook</code>出來試試看。<br>Type the <code>jupyter notebook</code> again and try it out.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from keras.models import Sequential</span><br></pre></td></tr></table></figure></p>
+<p>顯示 <code>Using TensorFlow backend.</code> 基本上應該就是成功了。<br>If it shows <code>Using TensorFlow backend.</code>, it is successful.</p>
 <hr>
-<h1 id="總結-Steps-精簡版"><a href="#總結-Steps-精簡版" class="headerlink" title="總結 Steps [精簡版]"></a>總結 Steps [精簡版]</h1><ol>
-<li>點開終端器，或者windows可以開啟Anaconda prompt</li>
+<h1 id="Summary-Steps-Lite"><a href="#Summary-Steps-Lite" class="headerlink" title="Summary Steps [Lite]"></a>Summary Steps [Lite]</h1><ol>
+<li>點開終端器，或者windows可以開啟Anaconda prompt。<br>Open the terminal, or open the Anaconda prompt for Windows.</li>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow tensorflow</span><br><span class="line">conda activate tensorflow</span><br></pre></td></tr></table></figure>
 </li>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install ipython</span><br><span class="line">conda install jupyter</span><br></pre></td></tr></table></figure>
@@ -448,21 +449,21 @@
 </li>
 </ol>
 <hr>
-<h1 id="Matplotlib-error的問題"><a href="#Matplotlib-error的問題" class="headerlink" title="Matplotlib error的問題"></a>Matplotlib error的問題</h1><p>如果顯示</p>
+<h1 id="Matplotlib’s-poblem"><a href="#Matplotlib’s-poblem" class="headerlink" title="Matplotlib’s poblem"></a>Matplotlib’s poblem</h1><p>如果顯示<br>If it shows…</p>
 <blockquote>
 <p>ModuleNotFoundError: No module named ‘matplotlib’</p>
 </blockquote>
 <p>Steps:</p>
 <ol>
-<li>去Anaconda Navigator中選擇Environments再</li>
-<li>選擇tensorflow，在installed中查看是否安裝了matplotlib</li>
-<li>如果沒有找到，就換到Not installed，將其安裝上，就可以解決了</li>
+<li>去Anaconda Navigator中選擇Environments再<br>Go to the Anaconda Navigator then selecting Environments.</li>
+<li>選擇tensorflow，在installed中查看是否安裝了matplotlib<br>Click the tensorflow and check in the <code>installed</code> whether the matplotlib is installed or not.</li>
+<li>如果沒有找到，就換到Not installed，將其安裝上，就可以解決了<br>If it is not found, change to <code>Not installed</code> and install it, you can solve it.</li>
 </ol>
 <ul>
 <li><a href="https://blog.csdn.net/yangzijiang666/article/details/79695938" target="_blank" rel="noopener">參考文章</a></li>
 </ul>
 <hr>
-<h1 id="Source-Environment"><a href="#Source-Environment" class="headerlink" title="Source Environment"></a>Source Environment</h1><p>如果要啟動tensorflow一般就是在prompt裡面直接下指令 source環境，但如果要用按按鈕的方式其實也可以，點開Anaconda裡面，到環境(Environment)，選到Tensorflow右鍵，就會看到Open Terminal點開直接就可以了，如果你是要開jupyter notebook也可以直接選。</p>
+<h1 id="Source-Environment"><a href="#Source-Environment" class="headerlink" title="Source Environment"></a>Source Environment</h1><p>如果要啟動tensorflow一般就是在prompt裡面直接下指令 source環境，但如果要用按按鈕的方式其實也可以，點開Anaconda裡面，到環境(Environment)，選到Tensorflow右鍵，就會看到Open Terminal點開直接就可以了，如果你是要開jupyter notebook也可以直接選。<br>If you want to start the tensorflow, you need to type the commands of the source environment in the prompt, but if you want to use the button to open the tensorflow environment, you can open the Anaconda, go to the Environment, click the arrow of Tensorflow by right button, you will see the Open Terminal option. It can be done directly, if you want to open jupyter notebook, you can also choose directly.</p>
 
       
     </div>
@@ -716,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-安裝"><span class="nav-number">1.</span> <span class="nav-text">TensorFlow 安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立虛擬環境"><span class="nav-number">1.1.</span> <span class="nav-text">建立虛擬環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝TensorFlow的套件包"><span class="nav-number">1.2.</span> <span class="nav-text">安裝TensorFlow的套件包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到警告"><span class="nav-number">1.3.</span> <span class="nav-text">遇到警告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-and-iPython-解決問題"><span class="nav-number">1.4.</span> <span class="nav-text">Jupyter and iPython 解決問題</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安裝-Keras"><span class="nav-number">2.</span> <span class="nav-text">安裝 Keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#總結-Steps-精簡版"><span class="nav-number">3.</span> <span class="nav-text">總結 Steps [精簡版]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib-error的問題"><span class="nav-number">4.</span> <span class="nav-text">Matplotlib error的問題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Environment"><span class="nav-number">5.</span> <span class="nav-text">Source Environment</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-TensorFlow"><span class="nav-number">1.</span> <span class="nav-text">Install TensorFlow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-the-virtual-environment"><span class="nav-number">1.1.</span> <span class="nav-text">Create the virtual environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-TensorFlow-packages"><span class="nav-number">1.2.</span> <span class="nav-text">Install TensorFlow packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meet-the-error-messages"><span class="nav-number">1.3.</span> <span class="nav-text">Meet the error messages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solve-the-Jupyter-and-iPython-problems"><span class="nav-number">1.4.</span> <span class="nav-text">Solve the Jupyter and iPython problems</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Keras"><span class="nav-number">2.</span> <span class="nav-text">Install Keras</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Summary-Steps-Lite"><span class="nav-number">3.</span> <span class="nav-text">Summary Steps [Lite]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matplotlib’s-poblem"><span class="nav-number">4.</span> <span class="nav-text">Matplotlib’s poblem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Environment"><span class="nav-number">5.</span> <span class="nav-text">Source Environment</span></a></li></ol></div>
             
 
           </div>
