@@ -285,6 +285,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/install-spark/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/12/install-spark/" itemprop="url">Install pyspark × Use on Jupyter notebook × Colab</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T01:48:41+00:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/12/install-spark/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/install-spark/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/NPFZ7GgzvcBpwEc8aNInzANIPMtJyd8DGrGQrYLkwk2NFdkmq_2lHy67Bzrwxzj4VC8NANU4SdMfGcr-3YpY5drVkWgScLJvaORU1B3aKqmDRboCwSDXG5ptSU1n1c_jDRN4-LkCVFrjpaQ-Of9C8caoRGUWF1txHvMA7yRTd3en2psHLbSv1Q9VpghJofYd8E8APYcl347wW-6Ipwfbr99wdo_8ym3oo3Nw_1WisWRF0NsVyt2MyVVUswJk33ExNcI3BUEGD3moLbh1wW6wV2ADelWPQUXc4e99f5BUTUwEi1O2mlDhCCclqV6mSN5aCPiveHkCl_nbrHoJpj7KNqDKVb5ZcWqQvIy33rE6D08XfS2LfIV46pzY29vu8A26FQxfLizM_z-H2BfDhIAP3aQej5V5ui1-FvT4Roivl3eG3MXLwlS3qbPaHmfg1D1FpP3DWXQo5cvKhV8FTdZXhvBBndwC6cHgRXMJgDCuUhlXmLVkiVkxNO-1wgaegtYadhTjgdAwAjAMCnUwwN74v2hHEPgwro8-2xFw_weA1Cf65n3D1ielbXWlW5DURL4raPDUPlWSHulqVkK_cYm5X2kXsMUP3eRJWYQO54k77ml9c1I_R6JJePC-BLHE7r-Kf6RLcTzLmycMccv4adumYMEyxoEbbv5KQ5wD3a4kQANRWWkBcaU5KPQYnCYqPlCanSG0---ISuCqAjvaP6qyWcbwAw=w2160-h1216-no" rel="gallery_cjt55k9bz00bb8utzub13mxcw" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/NPFZ7GgzvcBpwEc8aNInzANIPMtJyd8DGrGQrYLkwk2NFdkmq_2lHy67Bzrwxzj4VC8NANU4SdMfGcr-3YpY5drVkWgScLJvaORU1B3aKqmDRboCwSDXG5ptSU1n1c_jDRN4-LkCVFrjpaQ-Of9C8caoRGUWF1txHvMA7yRTd3en2psHLbSv1Q9VpghJofYd8E8APYcl347wW-6Ipwfbr99wdo_8ym3oo3Nw_1WisWRF0NsVyt2MyVVUswJk33ExNcI3BUEGD3moLbh1wW6wV2ADelWPQUXc4e99f5BUTUwEi1O2mlDhCCclqV6mSN5aCPiveHkCl_nbrHoJpj7KNqDKVb5ZcWqQvIy33rE6D08XfS2LfIV46pzY29vu8A26FQxfLizM_z-H2BfDhIAP3aQej5V5ui1-FvT4Roivl3eG3MXLwlS3qbPaHmfg1D1FpP3DWXQo5cvKhV8FTdZXhvBBndwC6cHgRXMJgDCuUhlXmLVkiVkxNO-1wgaegtYadhTjgdAwAjAMCnUwwN74v2hHEPgwro8-2xFw_weA1Cf65n3D1ielbXWlW5DURL4raPDUPlWSHulqVkK_cYm5X2kXsMUP3eRJWYQO54k77ml9c1I_R6JJePC-BLHE7r-Kf6RLcTzLmycMccv4adumYMEyxoEbbv5KQ5wD3a4kQANRWWkBcaU5KPQYnCYqPlCanSG0---ISuCqAjvaP6qyWcbwAw=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <center> I recorded two installing methods. (i.e. Mac and Windows) </center>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/12/install-spark/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/02/03/macbookpro/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -388,7 +558,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/9oBMrY93ycF0lWf4bhjHxvhv5XWNxVQj86WQrHnovKpoO6UdFgHxHqWFVSw_mwdFQmWR7WfOpTfZZk7brpJ3WIJjKkhySWf8ezWo9OBhz6SVpJjv9s8ZUpZqH30E39BMY88YpmCm_8yNCYnidyzgqGEzNPWFO4amuIQS-WNE6p0VaslqlN3fgRofsMhg6cA89uMzSFKMt86q3xaxSztbDKa3EQj3WOeGOqVPgs-l47y3QuB5GQE7JHXIiHPqHNihgD3WEfSM0fZph131viFa5Qluk1jAz0eJoUOQtfstj6HWFS4uZv1k8DWwuUt6CZxyb_VKbVFBtoi4_Iy4fjwK6yp07H7FcGm6QwzqjfTsN_S5WlNqjyUtl1Yobe4MPGhyppwoScH3n1h49ioxtyporIUPv_es1VszjgMN1I4tkXA_qf8ehu0jlY_4Kqr0q0kfreeQka-kMXI0L2y52LcmuFKEeR9tFsEZda60UgMmeiBSME9Hl4BQ10hQjtN2DezSpqY7LLJfdbOgfkduMKalWCXVAVujQ_RmNBWrjopVLBaXG0iltxDhzywk9hdJKvWxog1LDzh0nTrKlRxvUGuY_impO_s33UuM1UmAjBTWVCId-hp5RMuwfhV3eCfFoTHBuO-PJVjRRMg9i-7Dpr9RLuL5sbDW6Mp1rEize0HgOkiIcHxFNRBPS-riDaoulXb_TpyGtL3O6-jPNIs439Elx1oQwQ=w2160-h1352-no" rel="gallery_cjt1j2jha00c0pltzjr8v5als" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/9oBMrY93ycF0lWf4bhjHxvhv5XWNxVQj86WQrHnovKpoO6UdFgHxHqWFVSw_mwdFQmWR7WfOpTfZZk7brpJ3WIJjKkhySWf8ezWo9OBhz6SVpJjv9s8ZUpZqH30E39BMY88YpmCm_8yNCYnidyzgqGEzNPWFO4amuIQS-WNE6p0VaslqlN3fgRofsMhg6cA89uMzSFKMt86q3xaxSztbDKa3EQj3WOeGOqVPgs-l47y3QuB5GQE7JHXIiHPqHNihgD3WEfSM0fZph131viFa5Qluk1jAz0eJoUOQtfstj6HWFS4uZv1k8DWwuUt6CZxyb_VKbVFBtoi4_Iy4fjwK6yp07H7FcGm6QwzqjfTsN_S5WlNqjyUtl1Yobe4MPGhyppwoScH3n1h49ioxtyporIUPv_es1VszjgMN1I4tkXA_qf8ehu0jlY_4Kqr0q0kfreeQka-kMXI0L2y52LcmuFKEeR9tFsEZda60UgMmeiBSME9Hl4BQ10hQjtN2DezSpqY7LLJfdbOgfkduMKalWCXVAVujQ_RmNBWrjopVLBaXG0iltxDhzywk9hdJKvWxog1LDzh0nTrKlRxvUGuY_impO_s33UuM1UmAjBTWVCId-hp5RMuwfhV3eCfFoTHBuO-PJVjRRMg9i-7Dpr9RLuL5sbDW6Mp1rEize0HgOkiIcHxFNRBPS-riDaoulXb_TpyGtL3O6-jPNIs439Elx1oQwQ=w2160-h1352-no" rel="gallery_cjt55k9dk00cu8utzri1guotn" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/9oBMrY93ycF0lWf4bhjHxvhv5XWNxVQj86WQrHnovKpoO6UdFgHxHqWFVSw_mwdFQmWR7WfOpTfZZk7brpJ3WIJjKkhySWf8ezWo9OBhz6SVpJjv9s8ZUpZqH30E39BMY88YpmCm_8yNCYnidyzgqGEzNPWFO4amuIQS-WNE6p0VaslqlN3fgRofsMhg6cA89uMzSFKMt86q3xaxSztbDKa3EQj3WOeGOqVPgs-l47y3QuB5GQE7JHXIiHPqHNihgD3WEfSM0fZph131viFa5Qluk1jAz0eJoUOQtfstj6HWFS4uZv1k8DWwuUt6CZxyb_VKbVFBtoi4_Iy4fjwK6yp07H7FcGm6QwzqjfTsN_S5WlNqjyUtl1Yobe4MPGhyppwoScH3n1h49ioxtyporIUPv_es1VszjgMN1I4tkXA_qf8ehu0jlY_4Kqr0q0kfreeQka-kMXI0L2y52LcmuFKEeR9tFsEZda60UgMmeiBSME9Hl4BQ10hQjtN2DezSpqY7LLJfdbOgfkduMKalWCXVAVujQ_RmNBWrjopVLBaXG0iltxDhzywk9hdJKvWxog1LDzh0nTrKlRxvUGuY_impO_s33UuM1UmAjBTWVCId-hp5RMuwfhV3eCfFoTHBuO-PJVjRRMg9i-7Dpr9RLuL5sbDW6Mp1rEize0HgOkiIcHxFNRBPS-riDaoulXb_TpyGtL3O6-jPNIs439Elx1oQwQ=w2160-h1352-no" itemprop="contentUrl">
               </a>
             
@@ -558,7 +728,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no" rel="gallery_cjt1j2jae002opltzfwpjf382" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no" rel="gallery_cjt55k99b00308utz6zejryso" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/gFXv2xgDGsRNIJ3TDjh77VMbrIetHpNPmP6kA-_3_RqJvORXcs2X9l06SbXYYgev0OYFDX2008IVWqnMv7WXNROYyG2mbudSxoXKfCVGkTM4RikGv844moH2ULT5JqSVTlfhtQcL3nZw1mWp-Q6Ah2VDezsPDjI3Tg0tAcjzlJhvuIbcIri_SLshKA5HMAkk6VYaP55q-SnuVfeQJFvVG0Xgc689p6rtFs2d8TX6LnVO87ihVC3o9IVqQh_CdC9Ck7Zqz9jOhy1idu8103JLl0wo8fon2CtUTNQ7CTCL8fVWESuhVZ3-fE4jyx-xKS20H_SxKdkawh0qFapeC5iEacxkPIkcSU9WUf5vEts7J7_7QxgkFQL5CPvJoJXcmIz0kIZN2g-FnU3UAMKkXwNBImRLObBAn1JoIflA1rexGGhBRDSx3mFgUS6jGHwQDb_veLJOIG8xHAIF1mPTBD_fN6KbRI_QYy7t6OLjQxPe7SY4IrFzBJn4CRlD2CI5v_rDLCTc6UqN6w3zV3fQ0e_lk6ZvVu7QX4L3J-RX9KvMU0d7DsBDR1q5a7Z0zRF_2zID4msYnVjMGKqBuaSFLcK5NXXrc2uqImB3nCTtHezNKOvt4EUGYzQS1Te1VrC3YD5gA4OBco7pfDakund79VRGlf6C4DtGOza71w1yIaNwlDptNDaROCgiLFwLu59KMaNSwOZun9VFdVIzRwzn8LA=w1707-h960-no" itemprop="contentUrl">
               </a>
             
@@ -625,7 +795,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/01/20/jupyter/">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/01/20/jupyter_hexo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chieh">
@@ -644,7 +814,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/20/jupyter/" itemprop="url">Hexo with the Jupyter notebook</a></h2>
+                <a class="post-title-link" href="/2019/01/20/jupyter_hexo/" itemprop="url">Hexo with the Jupyter notebook</a></h2>
         
 
         <div class="post-meta">
@@ -679,8 +849,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
                   </a>
                 </span>
 
@@ -697,8 +867,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/20/jupyter/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/20/jupyter/" itemprop="commentCount"></span>
+                <a href="/2019/01/20/jupyter_hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/20/jupyter_hexo/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -728,7 +898,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/o8VeTA51bEaOhG3q5fm5kqlV7Uuf8vKUXPff8vHousbCwngxzK1QsLDbHhcalSv9vJuGlkRGF-4GB-36gam7UGRkIyK5hsZlwJeq9U80B8RG4t6T5itb6jgUSC_X57mVnF2A8IktgVp_SsUJyK_G6g4sT3xVGzzPzrDm1ZDvhLsacqIjLc-fjOZlu0gn8cj232RpvwTMibHtkKm9pi25Y-C6_O95Q3NqTiUPH1ofsm-ds31eLi1PjQtn1qFF3DXc3lXX_tbY326I53XvH0BboaD_c_BrhpteKGwcSFwFVgHSCy4pXkab0s2GHU33rAUoDdhVAIHVbC6JM6pa1z68fQnP6cEt_ox5i6P7l2qIFf-uAKhp6kn1YnG-NAzW2K1UHw_0DzAD2GU5xoAldWunr4zA8f1_W6pcZq7Sz-oaCMZiU8h165qyj9yDR3CqSkZzK05u-Z6jiw05W_zO10V365XfhajG8qpyo4qm4opTB5LPbi1ffK-y48J3-huvpRSYje_VC3oyvOTtLPTydglt6FCs8p1pQZd0sCPK48_9mO4S1SvqooLJQYBn1_FSQ_FhBG5L5_WiY0fONEGH8PmreBz7CuwkHmJICpemKM5WDhQAXFhhTGXSbyuoWCX2YrguGMDLw3HPUwLrO5GzsLO3-UR_a1ZLOHzQnTdL4uez3ZDLUuVNpyQgo7YxZcfozWoE7v-dndi2l88Ej1PddVc=w2208-h1242-no" rel="gallery_cjt1j2jai0031pltz8k1z4d93" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/o8VeTA51bEaOhG3q5fm5kqlV7Uuf8vKUXPff8vHousbCwngxzK1QsLDbHhcalSv9vJuGlkRGF-4GB-36gam7UGRkIyK5hsZlwJeq9U80B8RG4t6T5itb6jgUSC_X57mVnF2A8IktgVp_SsUJyK_G6g4sT3xVGzzPzrDm1ZDvhLsacqIjLc-fjOZlu0gn8cj232RpvwTMibHtkKm9pi25Y-C6_O95Q3NqTiUPH1ofsm-ds31eLi1PjQtn1qFF3DXc3lXX_tbY326I53XvH0BboaD_c_BrhpteKGwcSFwFVgHSCy4pXkab0s2GHU33rAUoDdhVAIHVbC6JM6pa1z68fQnP6cEt_ox5i6P7l2qIFf-uAKhp6kn1YnG-NAzW2K1UHw_0DzAD2GU5xoAldWunr4zA8f1_W6pcZq7Sz-oaCMZiU8h165qyj9yDR3CqSkZzK05u-Z6jiw05W_zO10V365XfhajG8qpyo4qm4opTB5LPbi1ffK-y48J3-huvpRSYje_VC3oyvOTtLPTydglt6FCs8p1pQZd0sCPK48_9mO4S1SvqooLJQYBn1_FSQ_FhBG5L5_WiY0fONEGH8PmreBz7CuwkHmJICpemKM5WDhQAXFhhTGXSbyuoWCX2YrguGMDLw3HPUwLrO5GzsLO3-UR_a1ZLOHzQnTdL4uez3ZDLUuVNpyQgo7YxZcfozWoE7v-dndi2l88Ej1PddVc=w2208-h1242-no" rel="gallery_cjt55k99c00358utzumfn8xst" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/o8VeTA51bEaOhG3q5fm5kqlV7Uuf8vKUXPff8vHousbCwngxzK1QsLDbHhcalSv9vJuGlkRGF-4GB-36gam7UGRkIyK5hsZlwJeq9U80B8RG4t6T5itb6jgUSC_X57mVnF2A8IktgVp_SsUJyK_G6g4sT3xVGzzPzrDm1ZDvhLsacqIjLc-fjOZlu0gn8cj232RpvwTMibHtkKm9pi25Y-C6_O95Q3NqTiUPH1ofsm-ds31eLi1PjQtn1qFF3DXc3lXX_tbY326I53XvH0BboaD_c_BrhpteKGwcSFwFVgHSCy4pXkab0s2GHU33rAUoDdhVAIHVbC6JM6pa1z68fQnP6cEt_ox5i6P7l2qIFf-uAKhp6kn1YnG-NAzW2K1UHw_0DzAD2GU5xoAldWunr4zA8f1_W6pcZq7Sz-oaCMZiU8h165qyj9yDR3CqSkZzK05u-Z6jiw05W_zO10V365XfhajG8qpyo4qm4opTB5LPbi1ffK-y48J3-huvpRSYje_VC3oyvOTtLPTydglt6FCs8p1pQZd0sCPK48_9mO4S1SvqooLJQYBn1_FSQ_FhBG5L5_WiY0fONEGH8PmreBz7CuwkHmJICpemKM5WDhQAXFhhTGXSbyuoWCX2YrguGMDLw3HPUwLrO5GzsLO3-UR_a1ZLOHzQnTdL4uez3ZDLUuVNpyQgo7YxZcfozWoE7v-dndi2l88Ej1PddVc=w2208-h1242-no" itemprop="contentUrl">
               </a>
             
@@ -744,7 +914,7 @@
           <center> 在Hexo上面展示Jupyter檔案內容。</center>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/20/jupyter/">
+            <a class="btn" href="/2019/01/20/jupyter_hexo/">
               Read more &raquo;
             </a>
           </div>
@@ -898,7 +1068,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/h8OvtQ9H-J_w5RQyXnd8OoYcU7TvCirAW3YejmtumUGuGPvpWghqMc3h4Zg2OudaCKz4aJLbwV_JO319I_yKoJQhJjHnnnucR4WwnlAeoYpuq1QHyTdT4OUssY_n6FhwP3pzgt0kMpNTEpht7mXabztPwX3GAs6-IVvmOVI9qh6m7g97zJJPgxOcts7lmoe_tmzVA7r4tfn2ASAlJosrAb97DSDuXPhPC7VeEpC8bwvZoCnChuqXSx4yNGFVadPPCzHIRL_4Q5UcxJyS97uvOCPtamk8GFxMa2W1erA381Ta-IdPhEBy2t0fNUBx9M_MnOaqk6K3lHNY_MXGbmQClBbiHivsOZDN55kJ2kvRYYQ9SjCR0s7ecerssYNiV23Ukr1LX92b6JYmInt-EHRBDkXRS8rSDlWUk_cJN9PdZi83xZ9X-0GtQBtZ9XncDVxxH41LBt8_z-J24TinCYkuXNRAUsmBfg-4SvJuW0SbbSAHcySvDfgSKCRARzk2MkxitbTInXBIKxsVVQn0n9W9AF7R6OIWJKy0Mk-FQZIIAc1j9uuWTipsRNb7er8JvR5KUU-PPsElCf9X7-Dp18ImdY327kk5D9ORpsm8zXGzykUn9CPMqBPcO54OwUBAl8xZMeZgQR9J0lkePIFJGAXqaBQvmBCaUzosT-d7uQf0B0gnPD_n39QunLRTC_aKALL2m3aDV-jx-WughlWPuA=w1545-h869-no" rel="gallery_cjt1j2jka00djpltzgjia6ovd" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/h8OvtQ9H-J_w5RQyXnd8OoYcU7TvCirAW3YejmtumUGuGPvpWghqMc3h4Zg2OudaCKz4aJLbwV_JO319I_yKoJQhJjHnnnucR4WwnlAeoYpuq1QHyTdT4OUssY_n6FhwP3pzgt0kMpNTEpht7mXabztPwX3GAs6-IVvmOVI9qh6m7g97zJJPgxOcts7lmoe_tmzVA7r4tfn2ASAlJosrAb97DSDuXPhPC7VeEpC8bwvZoCnChuqXSx4yNGFVadPPCzHIRL_4Q5UcxJyS97uvOCPtamk8GFxMa2W1erA381Ta-IdPhEBy2t0fNUBx9M_MnOaqk6K3lHNY_MXGbmQClBbiHivsOZDN55kJ2kvRYYQ9SjCR0s7ecerssYNiV23Ukr1LX92b6JYmInt-EHRBDkXRS8rSDlWUk_cJN9PdZi83xZ9X-0GtQBtZ9XncDVxxH41LBt8_z-J24TinCYkuXNRAUsmBfg-4SvJuW0SbbSAHcySvDfgSKCRARzk2MkxitbTInXBIKxsVVQn0n9W9AF7R6OIWJKy0Mk-FQZIIAc1j9uuWTipsRNb7er8JvR5KUU-PPsElCf9X7-Dp18ImdY327kk5D9ORpsm8zXGzykUn9CPMqBPcO54OwUBAl8xZMeZgQR9J0lkePIFJGAXqaBQvmBCaUzosT-d7uQf0B0gnPD_n39QunLRTC_aKALL2m3aDV-jx-WughlWPuA=w1545-h869-no" rel="gallery_cjt55k9fn00ed8utz3fiy8j26" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/h8OvtQ9H-J_w5RQyXnd8OoYcU7TvCirAW3YejmtumUGuGPvpWghqMc3h4Zg2OudaCKz4aJLbwV_JO319I_yKoJQhJjHnnnucR4WwnlAeoYpuq1QHyTdT4OUssY_n6FhwP3pzgt0kMpNTEpht7mXabztPwX3GAs6-IVvmOVI9qh6m7g97zJJPgxOcts7lmoe_tmzVA7r4tfn2ASAlJosrAb97DSDuXPhPC7VeEpC8bwvZoCnChuqXSx4yNGFVadPPCzHIRL_4Q5UcxJyS97uvOCPtamk8GFxMa2W1erA381Ta-IdPhEBy2t0fNUBx9M_MnOaqk6K3lHNY_MXGbmQClBbiHivsOZDN55kJ2kvRYYQ9SjCR0s7ecerssYNiV23Ukr1LX92b6JYmInt-EHRBDkXRS8rSDlWUk_cJN9PdZi83xZ9X-0GtQBtZ9XncDVxxH41LBt8_z-J24TinCYkuXNRAUsmBfg-4SvJuW0SbbSAHcySvDfgSKCRARzk2MkxitbTInXBIKxsVVQn0n9W9AF7R6OIWJKy0Mk-FQZIIAc1j9uuWTipsRNb7er8JvR5KUU-PPsElCf9X7-Dp18ImdY327kk5D9ORpsm8zXGzykUn9CPMqBPcO54OwUBAl8xZMeZgQR9J0lkePIFJGAXqaBQvmBCaUzosT-d7uQf0B0gnPD_n39QunLRTC_aKALL2m3aDV-jx-WughlWPuA=w1545-h869-no" itemprop="contentUrl">
               </a>
             
@@ -1068,7 +1238,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/BZ-w7bYxhUTtlGdI1FoUfAOd3457SNDbssLu9JuFFexh0fZ-14CJAjFiyyj6DHVWLzK-QgesHLY7FsSycMeEjc9wWDF6dw4OYXSq5bOMTr4rqSDXJT15nGOXzMaloOiakJ3azi1kaud6KXHYjIN1iw4pCxPXLUPFKV7YclhPP7ZRpS48EM1LUB18bCWiFF8ojY8Spr9mqtiKqVsA9NeagIpe2RhK0bwlRxZJZCswuLkWvnPxocm56q5fkuyTMrJ3y_ADumOnoVjyGKmr1vjBPVOSM6pAKRNlWkJwW-12vpKvSnXbP9Qmj4ggb7w4jkvHuOHe8mDkAAwf87feXPcFL-3bGyX_hUWfbr-2nr3erDjpuPviweFddBhDozPWej2Mk4Fz16EjrIOXx8TF2xyJuXzO8e6zEjX82TQ79oOEjs1raYdZFS3zB_BVDEqnXN_Hwth1flxT8kNY1TLo8ALrgaNSzNPHiravl6BVBQelRj8YPoEqCawRC8-BhHPYnCjxmiJYa5COYHdYQCEKz-XEHq3T-Oh9sxi013ShcusI8XptkFVeB_kzoO52aZSyyVKCGMdinF-fwBiwCSHrhNqsMFlqN0H2FfticswWtWZbrKfxHwRX3zxRidBsBx3AZkrejEQ11Exvj1tQmxsU6iJGAJWRcynJjFXRDA-_u39nyAoHiRAnKrG9MffO_znz4AzXemiZYD9ePdWwysn5JQ=w1545-h869-no" rel="gallery_cjt1j2jk600d3pltz7ne4l73t" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/BZ-w7bYxhUTtlGdI1FoUfAOd3457SNDbssLu9JuFFexh0fZ-14CJAjFiyyj6DHVWLzK-QgesHLY7FsSycMeEjc9wWDF6dw4OYXSq5bOMTr4rqSDXJT15nGOXzMaloOiakJ3azi1kaud6KXHYjIN1iw4pCxPXLUPFKV7YclhPP7ZRpS48EM1LUB18bCWiFF8ojY8Spr9mqtiKqVsA9NeagIpe2RhK0bwlRxZJZCswuLkWvnPxocm56q5fkuyTMrJ3y_ADumOnoVjyGKmr1vjBPVOSM6pAKRNlWkJwW-12vpKvSnXbP9Qmj4ggb7w4jkvHuOHe8mDkAAwf87feXPcFL-3bGyX_hUWfbr-2nr3erDjpuPviweFddBhDozPWej2Mk4Fz16EjrIOXx8TF2xyJuXzO8e6zEjX82TQ79oOEjs1raYdZFS3zB_BVDEqnXN_Hwth1flxT8kNY1TLo8ALrgaNSzNPHiravl6BVBQelRj8YPoEqCawRC8-BhHPYnCjxmiJYa5COYHdYQCEKz-XEHq3T-Oh9sxi013ShcusI8XptkFVeB_kzoO52aZSyyVKCGMdinF-fwBiwCSHrhNqsMFlqN0H2FfticswWtWZbrKfxHwRX3zxRidBsBx3AZkrejEQ11Exvj1tQmxsU6iJGAJWRcynJjFXRDA-_u39nyAoHiRAnKrG9MffO_znz4AzXemiZYD9ePdWwysn5JQ=w1545-h869-no" rel="gallery_cjt55k9fi00dx8utzn0vvfodw" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/BZ-w7bYxhUTtlGdI1FoUfAOd3457SNDbssLu9JuFFexh0fZ-14CJAjFiyyj6DHVWLzK-QgesHLY7FsSycMeEjc9wWDF6dw4OYXSq5bOMTr4rqSDXJT15nGOXzMaloOiakJ3azi1kaud6KXHYjIN1iw4pCxPXLUPFKV7YclhPP7ZRpS48EM1LUB18bCWiFF8ojY8Spr9mqtiKqVsA9NeagIpe2RhK0bwlRxZJZCswuLkWvnPxocm56q5fkuyTMrJ3y_ADumOnoVjyGKmr1vjBPVOSM6pAKRNlWkJwW-12vpKvSnXbP9Qmj4ggb7w4jkvHuOHe8mDkAAwf87feXPcFL-3bGyX_hUWfbr-2nr3erDjpuPviweFddBhDozPWej2Mk4Fz16EjrIOXx8TF2xyJuXzO8e6zEjX82TQ79oOEjs1raYdZFS3zB_BVDEqnXN_Hwth1flxT8kNY1TLo8ALrgaNSzNPHiravl6BVBQelRj8YPoEqCawRC8-BhHPYnCjxmiJYa5COYHdYQCEKz-XEHq3T-Oh9sxi013ShcusI8XptkFVeB_kzoO52aZSyyVKCGMdinF-fwBiwCSHrhNqsMFlqN0H2FfticswWtWZbrKfxHwRX3zxRidBsBx3AZkrejEQ11Exvj1tQmxsU6iJGAJWRcynJjFXRDA-_u39nyAoHiRAnKrG9MffO_znz4AzXemiZYD9ePdWwysn5JQ=w1545-h869-no" itemprop="contentUrl">
               </a>
             
@@ -1238,7 +1408,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/qNTW7jzrI1rF-rBcu4pFF5uy9455KrCthoK7BVXAnRk3xghAP6QifNsYmYF6SKfvO5M0c6h6DKfLWlB4oQ8045iN_WW7SYl7T9snjRXjgZlSt9gV7wzAeLJsmWbqMKqpJEKasmSfjEL1sSkOMrxMZnQCDs-00FIyJQpkwXaLBp9ns9EJR06S2vlhayBKhIdmKEy7-dzr314Hxf3rX-s4R_K095AI7xTHq1vpzrT8ofW-sNSomDP3n5CJktDrMkjGxHhjwaeB3skN-DRCcxcNEl6UgU2whHun_kGlJbigYi_eAoc5ddKg-2eh_wJ8rhP-gJIpINM9fsLr2nVOCtVf1fL9F8w32eJE-tycMCXhVHL17Da4wGZlXnGvX4xOEKyZCwyuatfN4Q7sdrkYVEq4L8ZELkZvwsnyoSfndjrhamphggnHH6D--BaeNDVw_id-egLdi6V0JwgemYEOiHUCmPyv9FDyEYJTbOHmZDjMbtiqOkCqTWByuBzIe_GbY_jNKbZ58xE963O_H5ElwvADZLn0ODzRAROytDL_A_yGMRfXdZ-5_liA0ZLZDShnk7SUHPLXnqcxZzofQMO4kOwfJX3tTnKOb0h99ncxjU-6eH6vsPhk39xv_eMG9JpiBfW99Ma2EPB4sCE9THj6B9amQs-zI6Yf0pERP7J4iru-R6IlwjPN-CKkjy-6XuzkRAm1m2gP7MNtryRiOV9KOA=w1545-h869-no" rel="gallery_cjt1j2jix00cxpltz9u5py85e" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/qNTW7jzrI1rF-rBcu4pFF5uy9455KrCthoK7BVXAnRk3xghAP6QifNsYmYF6SKfvO5M0c6h6DKfLWlB4oQ8045iN_WW7SYl7T9snjRXjgZlSt9gV7wzAeLJsmWbqMKqpJEKasmSfjEL1sSkOMrxMZnQCDs-00FIyJQpkwXaLBp9ns9EJR06S2vlhayBKhIdmKEy7-dzr314Hxf3rX-s4R_K095AI7xTHq1vpzrT8ofW-sNSomDP3n5CJktDrMkjGxHhjwaeB3skN-DRCcxcNEl6UgU2whHun_kGlJbigYi_eAoc5ddKg-2eh_wJ8rhP-gJIpINM9fsLr2nVOCtVf1fL9F8w32eJE-tycMCXhVHL17Da4wGZlXnGvX4xOEKyZCwyuatfN4Q7sdrkYVEq4L8ZELkZvwsnyoSfndjrhamphggnHH6D--BaeNDVw_id-egLdi6V0JwgemYEOiHUCmPyv9FDyEYJTbOHmZDjMbtiqOkCqTWByuBzIe_GbY_jNKbZ58xE963O_H5ElwvADZLn0ODzRAROytDL_A_yGMRfXdZ-5_liA0ZLZDShnk7SUHPLXnqcxZzofQMO4kOwfJX3tTnKOb0h99ncxjU-6eH6vsPhk39xv_eMG9JpiBfW99Ma2EPB4sCE9THj6B9amQs-zI6Yf0pERP7J4iru-R6IlwjPN-CKkjy-6XuzkRAm1m2gP7MNtryRiOV9KOA=w1545-h869-no" rel="gallery_cjt55k9f300dr8utz2p1u369l" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/qNTW7jzrI1rF-rBcu4pFF5uy9455KrCthoK7BVXAnRk3xghAP6QifNsYmYF6SKfvO5M0c6h6DKfLWlB4oQ8045iN_WW7SYl7T9snjRXjgZlSt9gV7wzAeLJsmWbqMKqpJEKasmSfjEL1sSkOMrxMZnQCDs-00FIyJQpkwXaLBp9ns9EJR06S2vlhayBKhIdmKEy7-dzr314Hxf3rX-s4R_K095AI7xTHq1vpzrT8ofW-sNSomDP3n5CJktDrMkjGxHhjwaeB3skN-DRCcxcNEl6UgU2whHun_kGlJbigYi_eAoc5ddKg-2eh_wJ8rhP-gJIpINM9fsLr2nVOCtVf1fL9F8w32eJE-tycMCXhVHL17Da4wGZlXnGvX4xOEKyZCwyuatfN4Q7sdrkYVEq4L8ZELkZvwsnyoSfndjrhamphggnHH6D--BaeNDVw_id-egLdi6V0JwgemYEOiHUCmPyv9FDyEYJTbOHmZDjMbtiqOkCqTWByuBzIe_GbY_jNKbZ58xE963O_H5ElwvADZLn0ODzRAROytDL_A_yGMRfXdZ-5_liA0ZLZDShnk7SUHPLXnqcxZzofQMO4kOwfJX3tTnKOb0h99ncxjU-6eH6vsPhk39xv_eMG9JpiBfW99Ma2EPB4sCE9THj6B9amQs-zI6Yf0pERP7J4iru-R6IlwjPN-CKkjy-6XuzkRAm1m2gP7MNtryRiOV9KOA=w1545-h869-no" itemprop="contentUrl">
               </a>
             
@@ -1408,7 +1578,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/Uuwta9GPylHQ2tMmWYYg6uUskry3hHt_BJsaDo8V1ZKBOAGDMFfywjqJJNQU6BOkixRbnINKl_o9EWUVur257s1rsroQz5C88r-L58BWWkgSj85WdIfM3VGqPcmp_petmoJjYUZZ2OkWD3E8vjt9778ku7Hj5asRx1X3jCZkjDcM-oggFdZXD35QyKH1Hw4LqH-TIrf30P9X8r-T8K1GebJX5zrkPJ1TJIxHT9zFrQcKtKY2IuSd3aTsPii9k_f2sLfV1Lxq3F3qmyyIC8uBxRsovl0kYQCSuTPpeXXPXggqkarIDU4a6aaU-GFx7wG7DTjyJyJWxLjkkZDbbs72oZj2zBLdsDOroQgpyXivqxQotu31Euv0DlACtpYgOaxMVb2cyXUjPldKtqY8JXmdjSogekFvjnmrFk9B0Ok_1YouPALZtMh66Nrf_Tn-6vAVkLRDIrPcAB75mJxDLZVTih02WWCtlXqVZYCHDhAgEe76tAFXjXMT5kXQiNsOSzhcfiIcGMkkRia2LpvQlvdJuHSEUXb3VdQEtgM2qW7ZDzQ8Pmv9q6lw7oYpMQSpIvAXvXTBGsOEvYFteU5ZdPj49GmyJ0lDuULE3jEBzQfz-BxpyVzdzRJ0VznVOrp9_n-tW-6BUzAQxviV2PbE6W4K-gLb4JOIFW9Sl8OtYUe-_XkZutF_O0EvjuBjZhuIUs_E_OnSE3sTBgDw1KJp7Q=w1880-h1410-no" rel="gallery_cjt1j2jh900bzpltz9jxkmmzd" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/Uuwta9GPylHQ2tMmWYYg6uUskry3hHt_BJsaDo8V1ZKBOAGDMFfywjqJJNQU6BOkixRbnINKl_o9EWUVur257s1rsroQz5C88r-L58BWWkgSj85WdIfM3VGqPcmp_petmoJjYUZZ2OkWD3E8vjt9778ku7Hj5asRx1X3jCZkjDcM-oggFdZXD35QyKH1Hw4LqH-TIrf30P9X8r-T8K1GebJX5zrkPJ1TJIxHT9zFrQcKtKY2IuSd3aTsPii9k_f2sLfV1Lxq3F3qmyyIC8uBxRsovl0kYQCSuTPpeXXPXggqkarIDU4a6aaU-GFx7wG7DTjyJyJWxLjkkZDbbs72oZj2zBLdsDOroQgpyXivqxQotu31Euv0DlACtpYgOaxMVb2cyXUjPldKtqY8JXmdjSogekFvjnmrFk9B0Ok_1YouPALZtMh66Nrf_Tn-6vAVkLRDIrPcAB75mJxDLZVTih02WWCtlXqVZYCHDhAgEe76tAFXjXMT5kXQiNsOSzhcfiIcGMkkRia2LpvQlvdJuHSEUXb3VdQEtgM2qW7ZDzQ8Pmv9q6lw7oYpMQSpIvAXvXTBGsOEvYFteU5ZdPj49GmyJ0lDuULE3jEBzQfz-BxpyVzdzRJ0VznVOrp9_n-tW-6BUzAQxviV2PbE6W4K-gLb4JOIFW9Sl8OtYUe-_XkZutF_O0EvjuBjZhuIUs_E_OnSE3sTBgDw1KJp7Q=w1880-h1410-no" rel="gallery_cjt55k9dj00ct8utzde81o9y2" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/Uuwta9GPylHQ2tMmWYYg6uUskry3hHt_BJsaDo8V1ZKBOAGDMFfywjqJJNQU6BOkixRbnINKl_o9EWUVur257s1rsroQz5C88r-L58BWWkgSj85WdIfM3VGqPcmp_petmoJjYUZZ2OkWD3E8vjt9778ku7Hj5asRx1X3jCZkjDcM-oggFdZXD35QyKH1Hw4LqH-TIrf30P9X8r-T8K1GebJX5zrkPJ1TJIxHT9zFrQcKtKY2IuSd3aTsPii9k_f2sLfV1Lxq3F3qmyyIC8uBxRsovl0kYQCSuTPpeXXPXggqkarIDU4a6aaU-GFx7wG7DTjyJyJWxLjkkZDbbs72oZj2zBLdsDOroQgpyXivqxQotu31Euv0DlACtpYgOaxMVb2cyXUjPldKtqY8JXmdjSogekFvjnmrFk9B0Ok_1YouPALZtMh66Nrf_Tn-6vAVkLRDIrPcAB75mJxDLZVTih02WWCtlXqVZYCHDhAgEe76tAFXjXMT5kXQiNsOSzhcfiIcGMkkRia2LpvQlvdJuHSEUXb3VdQEtgM2qW7ZDzQ8Pmv9q6lw7oYpMQSpIvAXvXTBGsOEvYFteU5ZdPj49GmyJ0lDuULE3jEBzQfz-BxpyVzdzRJ0VznVOrp9_n-tW-6BUzAQxviV2PbE6W4K-gLb4JOIFW9Sl8OtYUe-_XkZutF_O0EvjuBjZhuIUs_E_OnSE3sTBgDw1KJp7Q=w1880-h1410-no" itemprop="contentUrl">
               </a>
             
@@ -1578,7 +1748,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/reCIUeuUBtPpw_8o1x92KdIWIhnMVXSl4z2nL2-97fbGYgADiM5CIr0oFsD-s4b17g5t8lT8nHefusTHL3PJR9qqQK7qrOGJDPR9d5duFrZNrAbb-MILGeIqN8aTBv3W-1l8LzudQqLG_h-Im7z1tcgxk2u86rmcarfxN6oQphEW7YUw6G1lejAWsgp0eURQC489M6Ac1lk6arQXr0QLyYoityMAkQDIK2yLqbTA4QOA6jZL_suvdm6ALh3_JMYNDe9FKUyoIREremYrbOxl84_tIEfqcEfc-eVED8cf9ig4HjFf4nR-qHcVyRlaHrBVR-ygKadm2Vue8cYmzQjgn3gX8mPQl5JOR5Qmm19lJN10o39wVMdnIcaOyrHiZQq0LVWnVvRhSEzIC2DCEW6ioOz1KADlMDIzd122qiwyQDGCT2YElL-UH2HN0sx6FlAC3ZMLoTVBQL_d-eNPVvQUZpj9nI0hp7XLC_u2Iz2gS6xVlpP0ar2pv_OvcKT8Y8buYaxaplZ-7T-0NUqO98bOg3aWHIXo-nigolJAJ2KxfM7jafbA0kkZy-LqwcsJj1TG1FyHNp-d2PlVIQ4d68m7a_PU1Eonx6yxoV5m7awQp6kDH2UQ5RNRR2LLLAimMw0=w1557-h876-no" rel="gallery_cjt1j2jfz00aspltzmv290828" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/reCIUeuUBtPpw_8o1x92KdIWIhnMVXSl4z2nL2-97fbGYgADiM5CIr0oFsD-s4b17g5t8lT8nHefusTHL3PJR9qqQK7qrOGJDPR9d5duFrZNrAbb-MILGeIqN8aTBv3W-1l8LzudQqLG_h-Im7z1tcgxk2u86rmcarfxN6oQphEW7YUw6G1lejAWsgp0eURQC489M6Ac1lk6arQXr0QLyYoityMAkQDIK2yLqbTA4QOA6jZL_suvdm6ALh3_JMYNDe9FKUyoIREremYrbOxl84_tIEfqcEfc-eVED8cf9ig4HjFf4nR-qHcVyRlaHrBVR-ygKadm2Vue8cYmzQjgn3gX8mPQl5JOR5Qmm19lJN10o39wVMdnIcaOyrHiZQq0LVWnVvRhSEzIC2DCEW6ioOz1KADlMDIzd122qiwyQDGCT2YElL-UH2HN0sx6FlAC3ZMLoTVBQL_d-eNPVvQUZpj9nI0hp7XLC_u2Iz2gS6xVlpP0ar2pv_OvcKT8Y8buYaxaplZ-7T-0NUqO98bOg3aWHIXo-nigolJAJ2KxfM7jafbA0kkZy-LqwcsJj1TG1FyHNp-d2PlVIQ4d68m7a_PU1Eonx6yxoV5m7awQp6kDH2UQ5RNRR2LLLAimMw0=w1557-h876-no" rel="gallery_cjt55k9bx00b78utzvz7qzja2" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/reCIUeuUBtPpw_8o1x92KdIWIhnMVXSl4z2nL2-97fbGYgADiM5CIr0oFsD-s4b17g5t8lT8nHefusTHL3PJR9qqQK7qrOGJDPR9d5duFrZNrAbb-MILGeIqN8aTBv3W-1l8LzudQqLG_h-Im7z1tcgxk2u86rmcarfxN6oQphEW7YUw6G1lejAWsgp0eURQC489M6Ac1lk6arQXr0QLyYoityMAkQDIK2yLqbTA4QOA6jZL_suvdm6ALh3_JMYNDe9FKUyoIREremYrbOxl84_tIEfqcEfc-eVED8cf9ig4HjFf4nR-qHcVyRlaHrBVR-ygKadm2Vue8cYmzQjgn3gX8mPQl5JOR5Qmm19lJN10o39wVMdnIcaOyrHiZQq0LVWnVvRhSEzIC2DCEW6ioOz1KADlMDIzd122qiwyQDGCT2YElL-UH2HN0sx6FlAC3ZMLoTVBQL_d-eNPVvQUZpj9nI0hp7XLC_u2Iz2gS6xVlpP0ar2pv_OvcKT8Y8buYaxaplZ-7T-0NUqO98bOg3aWHIXo-nigolJAJ2KxfM7jafbA0kkZy-LqwcsJj1TG1FyHNp-d2PlVIQ4d68m7a_PU1Eonx6yxoV5m7awQp6kDH2UQ5RNRR2LLLAimMw0=w1557-h876-no" itemprop="contentUrl">
               </a>
             
@@ -1748,7 +1918,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/2bVVm_7v6L7EIC9R2J2774NpY4W3-Dr6h5NTq6LEL-LL2tEkDailq7k0hguFaLhA1qrNlmjdcn0fnt63S3HRgNIQi6-wEU0Lkx7HpFIETq8Yex-3_PJXHIDochQNmhTtVHVYQgH3gHkLi21A3MVBhUP74PCQV4DBd4jF29yTM8LCK0nw1VWGUvcKkTN4zsBF6jKrsxHGZ6HoZsLso-SMcujwY_fStd-4YD8q9Pj3CBdouuRPnBWymg7VqTez_1pMhIc9wON_ZIvuoeG_LrzBbKp594Ju-vxO7tVuPrBdMvqDSwkPLpzAbQp808ku4xHozNVKN5KLul2752lM4qVXgdjx4VKeLxp1Y_By643w971l4T1Or_JkB9BjOCjwtwCetdMW-g9QRdgMH3E979EJgIlPNXLaM5Y86bu1Qa2ijhlPUywrcT4eWDsAfiJap-9uZPiQsitghmeYh9Wl7YXsrWfOUQ1sHEw71Y3_UIdwQ-OY6d_KJR-DilxGdDdfLbqyq1-cUW1skOJA63HVLNFE74OSTwmuIQ6crSsBFd-y4aXYzDo27A6mZVi-rfK5HFxsauH0bB6u1ZNkpaCoopR6ohq4FjLZ1aBwTC4JoD7zcLyMVbcGcDJqpf72SI5_PG1chf5J6_b99qIQLTLtrAqHJmphJHekC97QAcKGdlKpHaOZzSajZhrlyIYpW5Q0FRY0KOu2AMzQj7QQoS06ha4=w1280-h720-no" rel="gallery_cjt1j2jg000awpltzzcuiklqw" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/2bVVm_7v6L7EIC9R2J2774NpY4W3-Dr6h5NTq6LEL-LL2tEkDailq7k0hguFaLhA1qrNlmjdcn0fnt63S3HRgNIQi6-wEU0Lkx7HpFIETq8Yex-3_PJXHIDochQNmhTtVHVYQgH3gHkLi21A3MVBhUP74PCQV4DBd4jF29yTM8LCK0nw1VWGUvcKkTN4zsBF6jKrsxHGZ6HoZsLso-SMcujwY_fStd-4YD8q9Pj3CBdouuRPnBWymg7VqTez_1pMhIc9wON_ZIvuoeG_LrzBbKp594Ju-vxO7tVuPrBdMvqDSwkPLpzAbQp808ku4xHozNVKN5KLul2752lM4qVXgdjx4VKeLxp1Y_By643w971l4T1Or_JkB9BjOCjwtwCetdMW-g9QRdgMH3E979EJgIlPNXLaM5Y86bu1Qa2ijhlPUywrcT4eWDsAfiJap-9uZPiQsitghmeYh9Wl7YXsrWfOUQ1sHEw71Y3_UIdwQ-OY6d_KJR-DilxGdDdfLbqyq1-cUW1skOJA63HVLNFE74OSTwmuIQ6crSsBFd-y4aXYzDo27A6mZVi-rfK5HFxsauH0bB6u1ZNkpaCoopR6ohq4FjLZ1aBwTC4JoD7zcLyMVbcGcDJqpf72SI5_PG1chf5J6_b99qIQLTLtrAqHJmphJHekC97QAcKGdlKpHaOZzSajZhrlyIYpW5Q0FRY0KOu2AMzQj7QQoS06ha4=w1280-h720-no" rel="gallery_cjt55k9c100bf8utzcmo6tng8" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/2bVVm_7v6L7EIC9R2J2774NpY4W3-Dr6h5NTq6LEL-LL2tEkDailq7k0hguFaLhA1qrNlmjdcn0fnt63S3HRgNIQi6-wEU0Lkx7HpFIETq8Yex-3_PJXHIDochQNmhTtVHVYQgH3gHkLi21A3MVBhUP74PCQV4DBd4jF29yTM8LCK0nw1VWGUvcKkTN4zsBF6jKrsxHGZ6HoZsLso-SMcujwY_fStd-4YD8q9Pj3CBdouuRPnBWymg7VqTez_1pMhIc9wON_ZIvuoeG_LrzBbKp594Ju-vxO7tVuPrBdMvqDSwkPLpzAbQp808ku4xHozNVKN5KLul2752lM4qVXgdjx4VKeLxp1Y_By643w971l4T1Or_JkB9BjOCjwtwCetdMW-g9QRdgMH3E979EJgIlPNXLaM5Y86bu1Qa2ijhlPUywrcT4eWDsAfiJap-9uZPiQsitghmeYh9Wl7YXsrWfOUQ1sHEw71Y3_UIdwQ-OY6d_KJR-DilxGdDdfLbqyq1-cUW1skOJA63HVLNFE74OSTwmuIQ6crSsBFd-y4aXYzDo27A6mZVi-rfK5HFxsauH0bB6u1ZNkpaCoopR6ohq4FjLZ1aBwTC4JoD7zcLyMVbcGcDJqpf72SI5_PG1chf5J6_b99qIQLTLtrAqHJmphJHekC97QAcKGdlKpHaOZzSajZhrlyIYpW5Q0FRY0KOu2AMzQj7QQoS06ha4=w1280-h720-no" itemprop="contentUrl">
               </a>
             
@@ -1765,176 +1935,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/19/masterdegree/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/06/10/switch-file-gen/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chieh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chieh's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/10/switch-file-gen/" itemprop="url">利用Shell進階產生 .switch檔 | 利用Fortran簡易程式生產</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-10T11:56:08+01:00">
-                2018-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/10/switch-file-gen/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/10/switch-file-gen/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/X9rv991u-rnJP4KTgOXTt4DLa3pcf3W_VDpaXl1htbmvS8upz2cQBXh-4g1gEHrklif4X3jRtFwSlVd1W5KL4eveV8GJ0nMufoySC9XrF5JYcEHDILQ6awH8nmNrpTb4g8HzgTHuz2LXMwc6DxRUNXekjZB-BIeWGhNHfxxuFkzqp8SZfq-vV2WGdaMujvbrHnwLKiKiFtYrEs2SNe7taIYD2c1tUNCx_oOxTCl3f2yd7OloL0XPSm96BxypupToYa0OFyQC5fow0uA1n-6Yry_rLhRYfu71aPrnAIcr0ie0y3sYtc2TkLCSD9j8WblHAw63yPmBtoBfu-UX5fF08zICfRDa4Vk05ORtJwOZuBHZGkEarT6npbahJK71i1vTDh33sLhf7nWv0HOhwx22NKu6FHz-8ETsrbPmjadKPmoax5bZ8VmbLzfHaJmFXEoaGzREsrelH3TBUMA9wXc02oV1IHH9b2wIwdLS1Z1hFCnjApDjNDc0Q5PAc1T1LssNtbvBX7vZgNdQ3IqmgSi5UGvgiD8AKfjSQlT1qOHpaYfJiSYXLUASFLNI3aCKRc6D6Lo6_l-1WugwZQ4RHKTptm-chmUMb3mdYwozJIow6Yb31oB47yv2EaIrt8L2GhzcWWuUsgOo26WB4grNOclQIPm46VJ2K2kFp4Jg1JlQZ1-mBbKz_ClMJn3GMpbQAB3eGf9xXWeqY_TH4nJ_lg=w1546-h869-no" rel="gallery_cjt1j2jg300b0pltzz695nygn" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://lh3.googleusercontent.com/X9rv991u-rnJP4KTgOXTt4DLa3pcf3W_VDpaXl1htbmvS8upz2cQBXh-4g1gEHrklif4X3jRtFwSlVd1W5KL4eveV8GJ0nMufoySC9XrF5JYcEHDILQ6awH8nmNrpTb4g8HzgTHuz2LXMwc6DxRUNXekjZB-BIeWGhNHfxxuFkzqp8SZfq-vV2WGdaMujvbrHnwLKiKiFtYrEs2SNe7taIYD2c1tUNCx_oOxTCl3f2yd7OloL0XPSm96BxypupToYa0OFyQC5fow0uA1n-6Yry_rLhRYfu71aPrnAIcr0ie0y3sYtc2TkLCSD9j8WblHAw63yPmBtoBfu-UX5fF08zICfRDa4Vk05ORtJwOZuBHZGkEarT6npbahJK71i1vTDh33sLhf7nWv0HOhwx22NKu6FHz-8ETsrbPmjadKPmoax5bZ8VmbLzfHaJmFXEoaGzREsrelH3TBUMA9wXc02oV1IHH9b2wIwdLS1Z1hFCnjApDjNDc0Q5PAc1T1LssNtbvBX7vZgNdQ3IqmgSi5UGvgiD8AKfjSQlT1qOHpaYfJiSYXLUASFLNI3aCKRc6D6Lo6_l-1WugwZQ4RHKTptm-chmUMb3mdYwozJIow6Yb31oB47yv2EaIrt8L2GhzcWWuUsgOo26WB4grNOclQIPm46VJ2K2kFp4Jg1JlQZ1-mBbKz_ClMJn3GMpbQAB3eGf9xXWeqY_TH4nJ_lg=w1546-h869-no" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <center> Shell腳本分享[.switch]檔的生產，可推廣應用於重複動作輸出到txt檔內容</center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/10/switch-file-gen/">
               Read more &raquo;
             </a>
           </div>
@@ -2024,7 +2024,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2046,7 +2046,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">121</span>
+                  <span class="site-state-item-count">130</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
