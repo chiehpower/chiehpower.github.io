@@ -285,6 +285,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/01/31/manjaro/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/31/manjaro/" itemprop="url">Manjaro & 掛載硬碟流程</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T22:39:08+00:00">
+                2018-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/31/manjaro/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/31/manjaro/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/2bxqp4vHiAYRSrfHxzlKmfRNt2gQnXr5JuMvH2W0NdZXYA1m5EAkIKhb2OQJafKCpJwCy3RwDQxo4Brh7Zbq9-weqRHDbcllhaY5415ZcTxR8KHhJpjXfBRgM7MjxAsjBadadjXL1CFu34L1KjsfawjG7jQRhV7b0IGT8-BJbkPB6TWCfyIXgM6Olm0gYXndznr1uHmhY1Bg1P6CnUuwSPSBBVxuWmia2f2NuIfl6knOBfSL0lv0e2m8s-pB-bdXVboK-cRHygdmly-k_lod7uJ8qOKfSMk9eM17O1gG_AjSXbzfX9rjSlW7qM2Vu5Lsia_Fdn6rayRS8wSqTRa1NeXjDEStL-5TBVdZ2AlmJePZlsJhIiJqNIsEBoiqLhGbchHHf2fByKsGFiuHQj4BEeww3eHL0LbmQgbgo3fIezBvMZ_JhT0nptdW5nQshFXw4e_ZvbzMExLjlkK1rmoqgItfK75PH5qdipYdzPdljGsfGlVYUVXWX8h3vJMXuEvDRXJds-AJwPvYt9mrpl47hqb5w4OcS87w4l9d23E6uSzJ-ujr7nPjqKuA_ylTW5_EXhgQFaWAAIPmRSEjZXT4fnSZ1ohC13q40r4d9JJQalXZnhpothWwWtkOVwaSaeDypCni_NGgRK-iqb37UcdxRLPCYAqqszTaM1Bzz9qq3A1zA_pqaAsvY_6ECbFoMHKUAf3K9EuHKw-pCVAcOX8=w2160-h1216-no" rel="gallery_cjt55k99h003g8utz1jodr3kr" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/2bxqp4vHiAYRSrfHxzlKmfRNt2gQnXr5JuMvH2W0NdZXYA1m5EAkIKhb2OQJafKCpJwCy3RwDQxo4Brh7Zbq9-weqRHDbcllhaY5415ZcTxR8KHhJpjXfBRgM7MjxAsjBadadjXL1CFu34L1KjsfawjG7jQRhV7b0IGT8-BJbkPB6TWCfyIXgM6Olm0gYXndznr1uHmhY1Bg1P6CnUuwSPSBBVxuWmia2f2NuIfl6knOBfSL0lv0e2m8s-pB-bdXVboK-cRHygdmly-k_lod7uJ8qOKfSMk9eM17O1gG_AjSXbzfX9rjSlW7qM2Vu5Lsia_Fdn6rayRS8wSqTRa1NeXjDEStL-5TBVdZ2AlmJePZlsJhIiJqNIsEBoiqLhGbchHHf2fByKsGFiuHQj4BEeww3eHL0LbmQgbgo3fIezBvMZ_JhT0nptdW5nQshFXw4e_ZvbzMExLjlkK1rmoqgItfK75PH5qdipYdzPdljGsfGlVYUVXWX8h3vJMXuEvDRXJds-AJwPvYt9mrpl47hqb5w4OcS87w4l9d23E6uSzJ-ujr7nPjqKuA_ylTW5_EXhgQFaWAAIPmRSEjZXT4fnSZ1ohC13q40r4d9JJQalXZnhpothWwWtkOVwaSaeDypCni_NGgRK-iqb37UcdxRLPCYAqqszTaM1Bzz9qq3A1zA_pqaAsvY_6ECbFoMHKUAf3K9EuHKw-pCVAcOX8=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <center> Manjaro介紹，與掛載硬碟流程 </center>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/31/manjaro/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/01/27/scooter-site/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1808,179 +1978,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2017/11/03/G6-oilanalysis/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chieh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chieh's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/03/G6-oilanalysis/" itemprop="url">騎乘油耗分析表</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-03T13:55:48+00:00">
-                2017-11-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Scooter/" itemprop="url" rel="index">
-                    <span itemprop="name">Scooter</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/11/03/G6-oilanalysis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/03/G6-oilanalysis/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://images.unsplash.com/photo-1460400408855-36abd76648b9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844b39e01750f5d64b8d6263182dc893&auto=format&fit=crop&w=1950&q=80" rel="gallery_cjt55k98s001s8utzja7a1e4t" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://images.unsplash.com/photo-1460400408855-36abd76648b9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844b39e01750f5d64b8d6263182dc893&auto=format&fit=crop&w=1950&q=80" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <blockquote>
-<p>這是我從購車開始到現在的油耗記錄與分析，<br>分享給各位參考。<br>當然也歡迎大家學習與記錄自己的愛車才能知道車況如何</p>
-</blockquote>
-<p><em>記錄機車: G6</em><br>如果有想知道一些更詳細的數據，在歡迎來信或留言。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/03/G6-oilanalysis/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2033,7 +2030,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
