@@ -92,7 +92,7 @@
 <meta property="og:description" content="I recorded two installing methods. (i.e. the Mac and Windows)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no">
-<meta property="og:updated_time" content="2019-03-12T14:35:45.480Z">
+<meta property="og:updated_time" content="2019-03-13T17:22:23.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install pyspark × Use on Jupyter notebook × Colab">
 <meta name="twitter:description" content="I recorded two installing methods. (i.e. the Mac and Windows)">
@@ -446,6 +446,8 @@
 <hr>
 <p>是否運行這個<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PYSPARK_SUBMIT_ARGS=&quot;--master local[2]&quot;</span><br></pre></td></tr></table></figure></p>
 <p>需要再驗證。</p>
+<hr>
+<p>2019/03/13 測試之後<br>重開機之後測試，現在又能順利正常啟動Ｏ＿Ｏ<br>實在很怪～～<br>總之，環境也無需特別設定什麼，echo $SPARK_HOME也是空的但卻能正常運行。<br>大概是因為用conda安裝所以環境也都一併設定好了，所以jupyter notebook直接呼叫之後，<br>也不需要多設定什麼。<br>有遇到任何問題會在即時更新。</p>
 <hr>
 <h1 id="The-Steps-of-Windows-Installation"><a href="#The-Steps-of-Windows-Installation" class="headerlink" title="The Steps of Windows Installation"></a>The Steps of Windows Installation</h1><blockquote>
 <p>參考文章：<br><a href="https://blog.csdn.net/shiheyingzhe/article/details/80714301" target="_blank" rel="noopener">https://blog.csdn.net/shiheyingzhe/article/details/80714301</a></p>
