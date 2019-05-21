@@ -34,49 +34,13 @@
       <category term="Studyabroad" scheme="https://chiehpower.com/categories/Studyabroad/"/>
     
     
-      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
-    
       <category term="UK" scheme="https://chiehpower.com/tags/UK/"/>
     
       <category term="Studyabroad" scheme="https://chiehpower.com/tags/Studyabroad/"/>
     
+      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
+    
       <category term="Exam" scheme="https://chiehpower.com/tags/Exam/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>deep_learning</title>
-    <link href="https://chiehpower.com/2019/05/18/deep-learning/"/>
-    <id>https://chiehpower.com/2019/05/18/deep-learning/</id>
-    <published>2019-05-18T12:02:15.000Z</published>
-    <updated>2019-05-21T01:20:14.831Z</updated>
-    
-    <content type="html"><![CDATA[<p>Log-loss is suitable for Classification, and cross-entropy loss is same.<br>because the classification will use the sigmoid, and the cross-entropy can increase the residual of sigmoid.<br>the MSE is suitable for regression.<br>softmax is suitable for mutli-classification. (becasue softmax is sum of all value and the sum of them is 1. (we could think it is probability))</p><p>btw sigmoid is easily to happen the gradient descent vanishing problem.<br>After we use the sigmoid and softmax which are activation function, we can use the log-loss (Cross_entropy loss function) to estimate the accuracy.</p><hr><h2 id="Pooling"><a href="#Pooling" class="headerlink" title="Pooling"></a>Pooling</h2><ul><li>Max Pooling<br>把取範圍內的最大值</li><li>Average Pooling<br>曲範圍內的均值</li><li>Min Pooling<br>取範圍內的最小值出來</li></ul><h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><p>padding = ‘VALID’<br>padding = ‘SAME’</p><h2 id="strides"><a href="#strides" class="headerlink" title="strides"></a>strides</h2><p>要移動的格數</p><p>Softmax 回歸是邏輯回歸 (Logistic Regression) 的推廣，邏輯回歸適用於二元分類的問題，而 Softmax 回歸適用於多分類的問題。<br><a href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/%E4%BD%BF%E7%94%A8-tensorflow-%E5%AD%B8%E7%BF%92-softmax-%E5%9B%9E%E6%AD%B8-softmax-regression-41a12b619f04" target="_blank" rel="noopener">https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/%E4%BD%BF%E7%94%A8-tensorflow-%E5%AD%B8%E7%BF%92-softmax-%E5%9B%9E%E6%AD%B8-softmax-regression-41a12b619f04</a></p><hr><ol><li>If the smaller is regularizers.l2 value, the more convergent is result.</li><li>For the optimizers, the adam is more efficient than the RMSprop.</li><li>The more neurons may not necessarily be getting better results.</li><li>What value the dropout should be used? When should the dropout be used? How many times should the dropout be used?</li><li>Could I use the Relu, tank, sigmoid in the same breath?</li><li>Why do we use the RMSprop rather than use the Adam?  </li><li>How to choose among the Cross Entropy (categorical_crossentropy), sparse_categorical_crossentropy and binary_crossentropy?</li></ol><hr><h2 id="RL"><a href="#RL" class="headerlink" title="RL"></a>RL</h2><h3 id="Q-learning"><a href="#Q-learning" class="headerlink" title="Q learning"></a>Q learning</h3><h4 id="英文"><a href="#英文" class="headerlink" title="英文"></a>英文</h4><ul><li>Medium <a href="https://medium.freecodecamp.org/an-introduction-to-q-learning-reinforcement-learning-14ac0b4493cc" target="_blank" rel="noopener">https://medium.freecodecamp.org/an-introduction-to-q-learning-reinforcement-learning-14ac0b4493cc</a></li></ul><h4 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h4><ul><li>Medium <a href="https://link.medium.com/YBSxkV55OV" target="_blank" rel="noopener">https://link.medium.com/YBSxkV55OV</a></li><li><a href="https://blog.csdn.net/itplus/article/details/9361915" target="_blank" rel="noopener">https://blog.csdn.net/itplus/article/details/9361915</a></li><li>莫煩 <a href="https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/4-2-DQN2/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/4-2-DQN2/</a></li></ul><h3 id="RL-1"><a href="#RL-1" class="headerlink" title="RL"></a>RL</h3><h4 id="英文-1"><a href="#英文-1" class="headerlink" title="英文"></a>英文</h4><ul><li><a href="https://towardsdatascience.com/reinforcement-learning-demystified-markov-decision-processes-part-2-b209e8617c5a" target="_blank" rel="noopener">Reinforcement Learning Demystified: Markov Decision Processes (Part 2)</a></li><li><a href="https://medium.com/tensorflow/deep-reinforcement-learning-playing-cartpole-through-asynchronous-advantage-actor-critic-a3c-7eab2eea5296" target="_blank" rel="noopener">Deep Reinforcement Learning: Playing CartPole through Asynchronous Advantage Actor Critic (A3C) with tf.keras and eager execution</a></li></ul><h4 id="中文-1"><a href="#中文-1" class="headerlink" title="中文"></a>中文</h4><ul><li><a href="https://www.youtube.com/watch?v=W8XF3ME8G2I" target="_blank" rel="noopener">ML Lecture 23-1: Deep Reinforcement Learning</a> This is U2</li></ul><hr><h3 id="mnist-fashion"><a href="#mnist-fashion" class="headerlink" title="mnist_fashion"></a>mnist_fashion</h3><ul><li>How to use the mnist_fashion <a href="https://medium.com/tensorflow/hello-deep-learning-fashion-mnist-with-keras-50fcff8cd74a" target="_blank" rel="noopener">https://medium.com/tensorflow/hello-deep-learning-fashion-mnist-with-keras-50fcff8cd74a</a></li></ul><hr><h3 id="Practice-Repository"><a href="#Practice-Repository" class="headerlink" title="Practice Repository"></a>Practice Repository</h3><p><a href="https://github.com/Rowing0914/TF_RL/blob/master/agents/Q_learning_train.py" target="_blank" rel="noopener">https://github.com/Rowing0914/TF_RL/blob/master/agents/Q_learning_train.py</a><br><a href="https://github.com/Rowing0914/TF_RL/blob/master/agents/DQN_eager.py~" target="_blank" rel="noopener">https://github.com/Rowing0914/TF_RL/blob/master/agents/DQN_eager.py~</a>~</p><p><a href="https://github.com/Rowing0914/TF_RL" target="_blank" rel="noopener">https://github.com/Rowing0914/TF_RL</a></p><hr><p>QRN</p><hr><h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><h4 id="英文-2"><a href="#英文-2" class="headerlink" title="英文"></a>英文</h4><ul><li><a href="http://www.docin.com/p-704741266.html" target="_blank" rel="noopener">A tutorial on training recurrent neural networks</a></li><li><a href="https://arxiv.org/pdf/1506.00019.pdf" target="_blank" rel="noopener">A Critical Review of Recurrent Neural Networks for Sequence Learning</a></li><li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">Understanding LSTM Networks</a></li><li><a href="https://apaszke.github.io/lstm-explained.html" target="_blank" rel="noopener">LSTM implementation explained</a></li><li><a href="https://www.youtube.com/watch?v=56TYLaQN4N8" target="_blank" rel="noopener">Deep Learning Lecture 12: Recurrent Neural Nets and LSTMs</a> This is U2</li><li><a href="https://medium.com/datadriveninvestor/recurrent-neural-network-rnn-52dd4f01b7e8" target="_blank" rel="noopener">Recurrent Neural Network-RNN</a></li></ul><h4 id="中文-2"><a href="#中文-2" class="headerlink" title="中文"></a>中文</h4><ul><li><a href="https://brohrer.mcknote.com/zh-Hant/how_machine_learning_works/how_rnns_lstm_work.html" target="_blank" rel="noopener">遞歸神經網路（RNN）和長短期記憶模型（LSTM）的運作原理</a></li></ul><hr><p>多分類問題 activation=(‘softmax’) loss=’categorical_crossentropy’ one-hot True labels</p><p>Softmax 函數通常會放在類神經網路的最後一層，將最後一層所有節點的輸出都通過指數函數 (exponential function)，並將結果相加作為分母，個別的輸出作為分子。</p><p>二分類問題 activation=(‘sigmoid’)</p><hr><p>Q: Why the MSE need to “square”?</p><p>A: Becasue  sometimes you have a lot of data which have positive and negative, so if you sum of loss, the loss will be small, but it is not correct.</p><h1 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h1><ul><li><a href="http://ruder.io/optimizing-gradient-descent/index.html#adam" target="_blank" rel="noopener">An overview of gradient descent optimization algorithms</a></li></ul><h1 id="常見問題"><a href="#常見問題" class="headerlink" title="常見問題"></a>常見問題</h1><p>梯度消失<br>梯度爆炸<br>怎麼樣的activation function才是好的function</p><h1 id="Fashion-MNIST-with-tf-Keras"><a href="#Fashion-MNIST-with-tf-Keras" class="headerlink" title="Fashion-MNIST with tf.Keras"></a>Fashion-MNIST with tf.Keras</h1><p><a href="https://medium.com/tensorflow/hello-deep-learning-fashion-mnist-with-keras-50fcff8cd74a" target="_blank" rel="noopener">Fashion-MNIST with tf.Keras</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; &lt;/center&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Cambridge_trip</title>
-    <link href="https://chiehpower.com/2019/03/21/Cambridge-trip/"/>
-    <id>https://chiehpower.com/2019/03/21/Cambridge-trip/</id>
-    <published>2019-03-21T12:42:03.000Z</published>
-    <updated>2019-03-21T14:20:52.228Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="票價"><a href="#票價" class="headerlink" title="票價"></a>票價</h1><ul><li>購買一日票價，由於是八點九點的班次，因此費用稍微高了十磅，有看到晚一小時的班次是比較便宜的，而我買的是來回票(Open return)，從Egham坐火車到倫敦Vauxhall，再從Vauxhall坐地鐵到King’s Cross，最後再從King’s Cross搭火車到Cambridge，來回票價位是31.8磅。</li><li>抵達之後坐U niversal巴士到King’s College，購買一日票價3磅</li><li>回程搭乘1號巴士(1磅)</li><li>PS 不同的公車一日票是不能用的．．．(淚</li><li>吃飯是41.5磅左右，三道菜，兩碗白飯，兩瓶飲料。</li></ul><p>在英國能看到某一種建築物，叫做<a href="https://en.wikipedia.org/wiki/Timber_framing" target="_blank" rel="noopener">Tember Framing</a><br>而柱子(木頭)越多即代表該戶人家越有錢！<br>不過現在已經很少這種房子了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; &lt;/center&gt;
-    
-    </summary>
-    
     
   </entry>
   
@@ -371,32 +335,6 @@
   </entry>
   
   <entry>
-    <title>【Diary#3】Study abroad × UK</title>
-    <link href="https://chiehpower.com/2018/10/21/diary-3/"/>
-    <id>https://chiehpower.com/2018/10/21/diary-3/</id>
-    <published>2018-10-21T13:06:19.000Z</published>
-    <updated>2019-05-21T01:40:57.895Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="類別"><a href="#類別" class="headerlink" title="類別"></a>類別</h1><p>分為幾大類:</p><ul><li>買腳踏車</li><li>寄名信片</li><li>坐巴士</li><li>理髮</li><li>看電影</li></ul><h1 id="自行車"><a href="#自行車" class="headerlink" title="自行車"></a><center>自行車</center></h1><p>來到英國之後，沒有車就等於沒有腳! 當然這邊的火車公車也是相當方便，但是缺點就是英國的交通費實在很貴!<br>如果一般要去超市或是學校可以考慮買輛腳踏車來做代步，不過這邊的全新腳踏車說實在的也不便宜，這時候若不介意可以考慮買輛二手的腳踏車。</p><p><img src="https://lh3.googleusercontent.com/Uw0XNsqTUi55ThAxIyfjLVOKl8tcKSxsmLSTC3fTcF8JP9jqJkB_8JAwY-n0y11_bEQ2qiPZaq23HY_FU8xD0gv2ksVtnpurCga5pTAB3FoAbjl0-QgTQcKjJHbTvpPz9AZQHWVICx2Br3LbQwQIO3PAYKmhOLyW350Rg1fideRBzK5uuSk5bcbpfliVXGhcwu0TVd2LEdpBnpnG46Q0x8lP_pX3kR3hRTN_Wuz96EE0N6yONbHsutsoDF3Dfbx-ES2sKnWMg3fkM3ypRUsW2MP1JrGRpLhC5egCU417zncKIOhNVGF7rgCbLdNp7xgZjvPCX__gUFRyvRzrkr5LF2eoakPMkhuRhxEx8Q7waUPLqpX9wwy9Z1BPx_u_AGW8NsgFP8WLU728-2q34aV2aFi8v1zqctk8j_HKacKfoykA4j6JGuwCsERoX23uWDwODjopmERnZLVmG-_ntB0tcNeFfnEe8lp5jWZkzm6ZedqDRtCskTiBtYvVtKcRClawcQSW7T5Ok1MH0E94lZ6t-QAZtBwy6L5lOxCwP5R1mTeIgSiZR8455fvKqeQFkymvqejs-YVlTohs5R-V9Zwae2w0VelcFYPypwuI0Z1f6Uges8o7HgLDyp4G1LAlDP-f96KbUBHJQDBKVJL7qfEzXXRetwJLsaEBhjo_EEAxQEo8=w1158-h869-no" alt="bike"></p><h1 id="寄名信片"><a href="#寄名信片" class="headerlink" title="寄名信片"></a><center>寄名信片</center></h1><p>到郵局 去買 international stamp 就說是postcard用的<br>明信片是秤重量計費 (由於一次量多 所以取最大張的秤) 我買的時候一張大概1.25磅<br>還會另外附一張 air mail的貼紙 示意是要坐飛機的卡片(?)<br><img src="https://lh3.googleusercontent.com/feh4HdMoc9fB1yx4d6IrKu6mjwTJeU-F90YXSEovU6mP1EYDHy5_sPL9kz-zOgOzTiHWeKeUqS_pHUDjQ841V9WDPPaSFOC2Byrt1mBsib-SurgV31JzgN2LjAYjfRMao9HAeIr_RABl95mL70ghGeDRtoz4pyE3PCpYTSQIhLrQQqIOBNoBJwO7tOFdVQAid5sex0pfPlZKmcdUxvOxYYABKuGdwW7ZnuOKRASfi6myYmA33ZYYb7AhnY5xYOFE1kxRrsfyIeto163Ae9vFY8vELjxYZKkm9dLrk0nFemgpvnUR53opjoFoR_ezsPxTWkgTw6Rk3Ml9BLAevzxJ2p59Hvm7PG1gNUeEz9wZ8pdC4sYrT3oSw-yyA2RGIuBKIHBTpxBEypQPkwZFBB5643Pq2eyOo7aXdSkS5pTX50NdQWcaOXzWMM3Ma3PlkOx7WJQVH_sdRvS4tuUwx7h49RusMUEfBMJa04f3yRPo6shySbAc6zKiB6ETTG1yhYmI-QJImhQpP-SWjPLxAiJN-jVROQM3yfZ_GxUYxebThVUuW5OOVSF-2rUHK16q__2fyl6TsCTZp7MPM9MPgUOa8YtI7D8JW84PBRDnhi5hrH7Qw-kgPtZTP2wl1hIs9B_O9m6LZUjx-RkoBdJmCSiUPfmaU9J-RTlcj3M0J85E3xbhG1fNd84pDfwA6y_s0Cl8_98nshZILJUA01_fpQ=w1158-h869-no" alt="postcard"></p><h1 id="坐巴士"><a href="#坐巴士" class="headerlink" title="坐巴士"></a><center>坐巴士</center></h1><p>在英國沒車沒地鐵沒火車的郊區，雖然有公車但也不是說非常方便，所以通常都是直接叫Uber。<br>先前從Egham到希斯洛機場之間來回都是叫車，但實在太貴了！<br>從希斯洛機場到Egham 28磅左右因為出去要含買票錢，而Egham去機場18磅。車程來講大約30-40分鐘。<br>所以這次學會坐公車從希斯洛T2回到Egham需要坐地鐵到T5，再搭8號巴士，整體時間大約一小時左右。<br>但由於第一次乘坐真的需要花一點時間尋找位置…而且真的很久！！<br>不過相對來講真的非常省錢啊！！<br>這樣只需要£5 單程票<br>PS 用APP買票的話，記得是屬於Berkshire這個Zone區的<br>不曉得為什麼First Bus的app裡面都沒有賣單程票，最少都是一日票…（問號</p><h1 id="理髮"><a href="#理髮" class="headerlink" title="理髮"></a><center>理髮</center></h1><p><a href="https://lh3.googleusercontent.com/BgxMBfhdKFMonc0hjYzx3r6b_6EzMAcu0IqD-3aH3rz-9vT3YdGnsFjzAJIwAE9ieUMxv08xB0FxcoNltLL4cPM91wEwtxeFLggL6euVPKesJHzESwo8BTziyX5Qk4ddrwn0RXcirkUAOd7VDCdouLCIdRaGHonhYTDLazmi63ehSQxlmEX_3oTZL5CRHfd-FGt9CCAX4rua_EiK5cWuLtVm8_dKX6tbrttX-n6t_XACaP4Z-XmMgrmYxBZT2Ln_d3hy2qDC9NtB0_TBPgI_iKzCejb2CXt0E0nJXQQzS6vlTIzlYyzMkgqObubcRE4k8yBSwI-YV0RkwmqaGvkLy9WZz4OWeyMq1o5F6K_dNozNLreWt9WOP-2YkuykA1iRzSYIsLHe7f4ZP8y7Q8nJiw7ogxLyZO32Zug1ii5aGgpt2jTsoPGGS4B40SUegnPSxWjBDl9nxBY8MFi0_zRLbg45RRZikIAN7WKbDaCEvOfuEUWSFDoW_lun-6ao30j8Ezw9cfECa12OOWSucattcXMbdZqzGHhSb8ws4Zxs5jDSQ5yKngG6-x8P68J1wRsZABVgYwJgytUKD3eFZkGEAh5-aLI0dExznvSBLuvSlfz37DD7V5qWnqubvqPWYZ_a-UI9XQFS3dzGZvWGq66oA4UdX0VGW7jaC8-QG7ooNcppJgX9GE3Uv6lM2oRsKxDweIBuzZDq8hnIqSZoDw8=w1058-h1410-no" target="_blank" rel="noopener">cuthair1</a><br><a href="https://lh3.googleusercontent.com/t-di3ROOpAd6b-oUilFfEJZxiJeybthpmgkdilfCF3ez9F6xLZgdJzbkZzrfbVkObfUVwZFcgaYEfBb-0q1PKp-k1qNcPZndXqR0Xf6ajNFKH-U74leC2mmDDR6HGrXbDvfUGNxzAXT3cpEgWi7uu1YGSzgAXwCqiXVVCff_548TzcNVCC8xv99LuYk169DKOIl-B1N9p59fAYMXqna8y4m_O8zqtKyuFbOsoKH03ozKJqlO7l9rQ1N9TC8Iaf2RBJrSErg5HOBD8eu3sE-6CuYgrnZqlNZo3hzMT3ocxa9xx4BqjfGqtp7KR6VwhKWcWcDvJCIZ6vxeCvw40IZ-Hq1ajwF4EyvA3RbDjV_ejqVe_L2fCDfTSqlkuj-0KZgPOWFUd0iNJLY4NuzZ34J9lLJfHbcmx_um1OT6w6Txq9aYRH9yfjjlbsoDqueAFvKjH86R6ku0fYF9S7zSyigq0KB8t7XOOnALfd_Ba2mVXsPLbjsmBdpe_LUkagcKnaCPdrzxOrpSgzFBXGOz4Hesb-b_JShPqagolyi_J6GyAjg77m81p1x0Zmk29SRsZTlqx-zrMvg7m9JyvFY123Qm19FIJAACxK29iKWnC0uvGfyKLPs4DmSq64oCYVWYP2U0oVtjEdsLfnKi9iODcMrQKkofBzGO4gjFX72Q7jut8p1WqxsCb5T-uk5kJsGgwn5rRLt03EPkbwgwd1W2SbA=w1058-h1410-no" target="_blank" rel="noopener">cuthair</a></p><h1 id="看電影"><a href="#看電影" class="headerlink" title="看電影"></a><center>看電影</center></h1><p><a href="https://lh3.googleusercontent.com/ApDfzekpGyYY6E-VWMtU522GcbUaoWAnm2T28cZP3Alr6FkijouaYD3r0bLEeN-szvbFdE0-NhbeiJo4ZWROCRrQLwms6MkTOO4xIxV0LA7e9f2q6TDj2Kffvf5k0CAdQDLtHIMxJNVdQCnp0Xn0DqpkQnLg0fvW_0bAh7eUW6O1bN5UrmsmB4-mmZs3DEvBkJ8Xo-miFpXlxT9tQ-Lzrz7HCuoOL3NwvXGRMgDNEP6eXE70t16o-3cdnHRmKbHniuwjBZsCglYdq_8CimLl6GXlXKAdn0LDZGCEqT0JQyocwFHwrqpxVp6uyvSN9_ny4GumG3gtgKLMwoDl55jaWa62J1mPe4W6C6JZ3sbvnVK9ojjBfsYcNbAhSsaBzwfEcJfcttRU9j1VGyhAzeUo7Ax0YimUjFrGms7ds-CrQHEGx-ImtX4LcpMxoSsTpCH-OYY7BmZtEFpJSnsN09wSvBE-vzJLeYHtRQZ0T20cax-dIxFHsu1upNIPIYnau0IMyIvaCDC92Gw2IfuZw3C2CeIMJEC4JAA1Ob_aynsmYvR9W7RqFBsn3EcGSjcU0FeF7wZ1jHq-k4CuTy_HTCPsEuQOnpAOASc0hAMHK_zCdm8PXogn5jpjV_ZUwBccTdAQ8s4f_kEskK4hy_E8Cp4n2XG7JNWx9lZV8LzcKbtWrCZvcF3SLlu-GOSudGzmMX62G9kRO4eQ5yHRIuegBNs=w1058-h1410-no" target="_blank" rel="noopener">movie</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; 英國留學的點滴，主要紀錄來這邊之後，平常生活的小事情! &lt;/center&gt;
-    
-    </summary>
-    
-      <category term="Studyabroad" scheme="https://chiehpower.com/categories/Studyabroad/"/>
-    
-    
-      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
-    
-      <category term="UK" scheme="https://chiehpower.com/tags/UK/"/>
-    
-      <category term="Studyabroad" scheme="https://chiehpower.com/tags/Studyabroad/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【Diary#2】Study abroad × UK</title>
     <link href="https://chiehpower.com/2018/10/21/diary-2/"/>
     <id>https://chiehpower.com/2018/10/21/diary-2/</id>
@@ -414,11 +352,11 @@
       <category term="Studyabroad" scheme="https://chiehpower.com/categories/Studyabroad/"/>
     
     
-      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
-    
       <category term="UK" scheme="https://chiehpower.com/tags/UK/"/>
     
       <category term="Studyabroad" scheme="https://chiehpower.com/tags/Studyabroad/"/>
+    
+      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
     
   </entry>
   
@@ -440,6 +378,8 @@
       <category term="Food" scheme="https://chiehpower.com/categories/Food/"/>
     
     
+      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
+    
       <category term="Food" scheme="https://chiehpower.com/tags/Food/"/>
     
       <category term="Peking Duck" scheme="https://chiehpower.com/tags/Peking-Duck/"/>
@@ -447,8 +387,6 @@
       <category term="Aya court" scheme="https://chiehpower.com/tags/Aya-court/"/>
     
       <category term="Experience" scheme="https://chiehpower.com/tags/Experience/"/>
-    
-      <category term="Diary" scheme="https://chiehpower.com/tags/Diary/"/>
     
   </entry>
   
@@ -595,6 +533,86 @@
       <category term="Update" scheme="https://chiehpower.com/tags/Update/"/>
     
       <category term="Camera" scheme="https://chiehpower.com/tags/Camera/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>父母該滿足小孩物質上的需求嗎?</title>
+    <link href="https://chiehpower.com/2018/04/03/parents-spend-on-child/"/>
+    <id>https://chiehpower.com/2018/04/03/parents-spend-on-child/</id>
+    <published>2018-04-03T19:26:33.000Z</published>
+    <updated>2019-01-20T11:41:09.574Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言 "></a><center>前言 </center></h1><p>如題。<br>我們深知教育的重要性，而每位父母也都想要給予自己的孩子一個「最好」的教育，但是怎麼樣子的教育才是最好的?<br>我們很難去界定或評斷說這種教育對於小孩，真的就是最優、最棒的。<br>看到最近的新聞，讓我深省去思考，父母對於小孩在教育上的溺愛程度應該要如何拿捏? 我想，畢竟這是遲早該去面對的課題。<br><blockquote class="blockquote-center"><p> 我主張：父母是該滿足小孩物質上的需求，我認為這是應該的。<br>但應該要到什麼樣的上限呢? </p></blockquote><br>也許是從小所受到的家庭教育背景因素影響，加上一路學習專業知識下培養的邏輯影響，使我這麼認為。<br>當然每一個議題的背後肯定有兩面，所以沒有絕對的對與錯，單純只是想來拋出這麼一個討論話題，與我個人的看法。</p><h1 id="想法"><a href="#想法" class="headerlink" title="想法 "></a><center>想法 </center></h1><p>我的想法是，提供金錢上的援助可以讓小孩在相對短時間內，去發展興趣讓孩子可以在適時的接觸，隨著時間會了解更多更深入，我認為這是好事。<br>當然任何興趣的培養都是需要用錢投資，「專業」往往與投入多少代價有所關聯，不論時間或金錢(時間也是一大成本)。小孩不必因為這個興趣的入門門檻(金錢)太高，而被迫選擇放棄或者失去機會。但同時有人也會提出，那可以以最低成本方式學習，我們都曉得學習可以有很多種方法來達成，不過老天也是很公平的，時間與金錢是成反比，兩者相乘所得到的是最大效益。<br><blockquote class="blockquote-center"><p>時間 x 金錢 = 效益 </p></blockquote><br>在這部分，我會把品質、熱忱與效率放入討論。如果期望小孩能夠獲得最大效益，就要傾向以最高效率的方式達到目標，而金錢多少我相信必然會影響學習上的品質與熱忱(當然不是絕對)。不然換個角度想，為什麼大家在選擇學校時，都要往排名越前面的學校擠呢? 不就是因為資源多嗎?</p><p>當然這不免涉及到選擇性的問題，父母認為這是否值得栽培(投資)，也是本次議題的重點問題之一。</p><h1 id="潛在問題"><a href="#潛在問題" class="headerlink" title="潛在問題 "></a><center>潛在問題 </center></h1><p>而在選擇「應該」的同時，就得去考慮這個決定背後所附帶的潛在影響，我認為關鍵是「珍惜」。<br>如果越需要高金額的花費，相比別人之下小孩能輕易的達到，這是否會造成他們潛在認為，是容易、認為這都是理所當然的事情? (不論是父母為孩子付出，或者這個需求看起來要達成是很簡單的這一件事情。)<br>但是相反的，若換個角度思考，有一些興趣、領域，確實是一種高花費高投資，入門就是需要高金額的設備或學習花費，站在父母立場認為這屬栽培範疇時很容易地忽略了在沒有經濟基礎與社會歷練下的孩子為他們建立一個適當的價值觀。<br>舉凡，攝影，需要買昂貴的相機；養魚，需要花錢來買水族設備…等等，我相信有很多也是。對於沒有經濟能力的小孩來說，都屬入門需高金額且容易持續高花費的領域(相比其他領域來說)，但是這是一個健康正向的興趣嗜好。因此要如何拿捏與適時的給予教育，我意識到這是很重要的課題，不應該多高的金額都給予(無條件)幫助，他們掠過了應該要「珍惜」好不容易得來的前段(如何得到、取得的過程)，才會有後段的出現(開始使用設備、東西，並學習、使用)。</p><h1 id="目的-amp-取的平衡點"><a href="#目的-amp-取的平衡點" class="headerlink" title="目的 &amp; 取的平衡點 "></a><center>目的 &amp; 取的平衡點 </center></h1><p>以下我提出立場與想法 (這部分會摻有較多主觀的條件設定在內)。<br>站在父母立場，可認為這些金額對他們相比賺的薪水來說真的不算多，而如果能為小孩培養正向興趣，是一件值得的花費。錢再賺就有，因為小孩的青春過了就過了，錢長大有能力時再賺回來就好，比起年紀小時打工賺錢(無資歷時)來說相對是很容易的事情，那還有什麼理由不幫助小孩呢? 也因此看到許多(較富有的)小康家庭甚至富豪的小孩，從小接觸的環境習慣了那種消費水準之後，在金錢上的控管很容易發生問題，也有所耳聞某某家的小孩零用錢多少，或者身穿名牌(我們可視為這是一種收集的興趣範圍之一)。<br>我們在限制取得平衡的過程，應該要如何限制，難不成要條件式嗎?<br>但我看過許多人在談論教育方面，提到說教育小孩時，請不要用條件鼓勵的方式來要求小孩。反而應該教育責任感，在言語上溝通要當成大人來定位對談的內容，並且要相信他們做得到。(扯遠了)<br>而我認為要去取得平衡，解決這個問題的最中心想法不可遺忘:<br><blockquote class="blockquote-center"><p>我們做的任何事情都有其目的，在這部分需把「學習」放在最優先，以其目的為最重要的部分去思考。</p></blockquote><br>在奢侈與必要品之間先界定好那條鴻溝線，而滿足入門的需求是為了能夠學習是基本，但金額提高時，就得思考這是否能夠幫助獲得更高層次的學習? 基本全面已有所深入涉略，為了邁入更高層次的學習以及提高學習質量而需要的?</p><blockquote class="blockquote-center"><p>我們都曉得，得來不易的才會更加珍惜的道理。</p></blockquote><h1 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a><center>結尾</center></h1><p>並沒有特別想下什麼強而有力的結論，只是想抒發一下，透過抒寫的過程去思考與整理。畢竟每個人的教育方式都不同，家庭背景也不同，根本沒有什麼最好阿，只有最適合的。<br>也許你有不一樣的看法可以分享給我知道。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; 對於這個問題，有沒有一個最好的標準解答呢?  &lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Mood" scheme="https://chiehpower.com/categories/Mood/"/>
+    
+    
+      <category term="Education" scheme="https://chiehpower.com/tags/Education/"/>
+    
+      <category term="Mood" scheme="https://chiehpower.com/tags/Mood/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Domain name &amp; SSL Certification</title>
+    <link href="https://chiehpower.com/2018/04/02/newhttps/"/>
+    <id>https://chiehpower.com/2018/04/02/newhttps/</id>
+    <published>2018-04-02T11:57:59.000Z</published>
+    <updated>2019-01-20T11:41:09.574Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>看了一下Domain name好像不貴，不過如果是挑選頂級域名價錢就會比較硬，最後我是挑選在Namecheap上買的，一年 NT300多還好，外加贈送WhoisGuard。<br>由於我是把hexo部署在Github Pages上，因此他的CNAME設定有固定的位置，可以參考這篇文章 <a href="https://blog.dmoon.tw/github-pages-custom-domain/" target="_blank" rel="noopener">Github Pages 自訂域名 </a>。有了新的域名之後還要替他加上個綠色鎖頭(也就是SSL證書)，但是正式的證書其實很貴(看你的規模需要多大)，而且設定過程非常複雜，因此後來當然也有人為了解決這個問題就出現了一些折衷的方式，用很低成本的方式達到目的(?)，當然啦不免多說一下就是在安全上的效果還是會有差異的。<br>另外，現在各大搜尋引擎其實都會對於有SSL(https)在SEO上有加分，所以也是為什麼要裝R。</p><hr><h1 id="更換Domain-name"><a href="#更換Domain-name" class="headerlink" title="更換Domain name"></a>更換Domain name</h1><h2 id="Namecheap上設定"><a href="#Namecheap上設定" class="headerlink" title="Namecheap上設定"></a>Namecheap上設定</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">進去Namecheap之後</span><br><span class="line">Domain list ► Advanced DNS ► 增加 Type</span><br><span class="line">A ► yoursite.com ► 192.30.252.153</span><br><span class="line">A ► yoursite.com ► 192.30.252.154</span><br><span class="line">CNAME ► www  ► yoursite.github.io</span><br></pre></td></tr></table></figure><h2 id="Blog上設定"><a href="#Blog上設定" class="headerlink" title="Blog上設定"></a>Blog上設定</h2><p>緊接著，到你的 _config.yml 裡面的url更改新的 yoursite.com<br>以及到你的website Github Pages的倉庫裡setting裡面，有一區[GitHub Pages]設定你的新域名。<br>基本上這樣就完成了設定。<br>最後還要在yourname.github.io的根目錄下添加CNAME，在Hexo根目錄裡的source文件下創一個名為CNAME的文件，注意這個文件是沒有附檔名的(千萬不要設成.txt文本文件)，內容就輸入你的新域名 ex. chiehpower.com 這樣就可以儲存了。</p><p>但是 Blog 最好要加上 SSL證書(https) 比較好(不論是趨勢與安全)，想說在Namecheap上一起買服務，結果買了之後發現不能用…(這中間有點過程，還跟客服搞了一番)，但不得不說這家公司真的優，而且態度很好又高效率，主動詢問是否要退款。我很喜歡他們提供的服務，但他們回應 “Custom domains hosted within the Github Pages cannot use third-party certificates, according to their rules.”，結論就是，github不接受第三方的證書，我最後只好退款他們建議我使用Cloudflare(網路上也大多都是建議用這種)，因此後來才轉戰CloudFlare的服務。</p><hr><h1 id="SSL-Certification"><a href="#SSL-Certification" class="headerlink" title="SSL Certification"></a>SSL Certification</h1><h2 id="Cloudflare"><a href="#Cloudflare" class="headerlink" title="Cloudflare"></a>Cloudflare</h2><p>Cloudflare的原理網站上有許多介紹就不多講，可以參考這篇的文章<a href="https://blog.dmoon.tw/github-pages-with-free-ssl/" target="_blank" rel="noopener">Github Pages 免費 ssl 設定</a><br>在CloudFlare上主要設定有三個地方吧</p><ol><li>DNS</li><li>Crypto</li><li>Page Rules</li></ol><p>另外就是還要回去設定Namecheap上更改Nameservers設定，把Namecheap basic DNS 改成 Custom DNS，而這裡面是直接複製貼上CF上給的位置即可(更改之後要等待時間)。<br>PS 要回去看一下你的website Github Pages的倉庫裡setting裡面，有一區[GitHub Pages]設定是否有跑掉(如果跑掉在設定回去即可)。</p><h2 id="強制跳轉設定"><a href="#強制跳轉設定" class="headerlink" title="強制跳轉設定"></a>強制跳轉設定</h2><p>設定完成Cloudflare之後，於自己的Blog內檔案中加入強制跳轉機制。<br>  第一步驟:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_config.yml中加入:</span><br><span class="line">  url: https://www.yoursite.com   # with the https protocol</span><br><span class="line">  enforce_ssl: www.yoursite.com   # without any protocol</span><br></pre></td></tr></table></figure></p><p>  <a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="noopener">參考網址</a></p><p>  第二步驟:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Themes ► Next ► layout ► _layout.swig ► &lt;head&gt;中加入</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var host = &quot;yoursite.com&quot;;</span><br><span class="line">    if ((host == window.location.host) &amp;&amp; (window.location.protocol != &quot;https:&quot;))</span><br><span class="line">        window.location.protocol = &quot;https&quot;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p><p>  <a href="https://g2ex.github.io/2015/10/14/Hexo-with-SSL-Hosted-on-Github-Page/" target="_blank" rel="noopener">參考網址</a></p><p>最後重新deploy一下就可以了。</p><blockquote><p>Referecnce: 圖片來自Google</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;這篇主要講述購買替換新的Domain name以及用最低成本的方式取得SSL證書的流程與方法。&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Website" scheme="https://chiehpower.com/categories/Website/"/>
+    
+    
+      <category term="Domain name" scheme="https://chiehpower.com/tags/Domain-name/"/>
+    
+      <category term="SSL" scheme="https://chiehpower.com/tags/SSL/"/>
+    
+      <category term="Https" scheme="https://chiehpower.com/tags/Https/"/>
+    
+      <category term="Cloudflare" scheme="https://chiehpower.com/tags/Cloudflare/"/>
+    
+      <category term="Namecheap" scheme="https://chiehpower.com/tags/Namecheap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TED</title>
+    <link href="https://chiehpower.com/2018/02/19/TED/"/>
+    <id>https://chiehpower.com/2018/02/19/TED/</id>
+    <published>2018-02-19T22:47:38.000Z</published>
+    <updated>2019-01-20T11:41:09.580Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>個人很推薦TED來練聽力，訓練聽力最好的方式我覺得不是看電影，而是一直不斷的聽一個人講話，就像是與外國人對談的感覺，因為對談中會不斷的講話與聆聽，選擇演講類型的影片或者介紹類型的影片來做訓練聽力其實效果都會是很不錯的。</p><p>TED有多國語言，且其內容也具有知識性，一方面可以吸引你的興趣(去聆聽他講的主題)，另一方面可以增加額外的知識or議題，影片時間也不長，但卻有多種類型(多領域)的影片任你挑選，挑自己有興趣的影片來做練習可以降低對於”專門訓練聽力”這一件事情的乏味度。</p><p>以下是我自己紀錄的幾部，個人挑選會從咬字、講話速度做一個塞選。其次就是口音(這就要看個人習慣或者目標要哪一種口音訓練為主囉)。</p><p>(我會持續新增)</p><h2 id="Let-us-put-birth-control-back-on-the-agenda"><a href="#Let-us-put-birth-control-back-on-the-agenda" class="headerlink" title="Let us put birth control back on the agenda"></a>Let us put birth control back on the agenda</h2><blockquote><p>Contraception. The topic has become controversial in recent years. But should it be? Melinda Gates believes that many of the world’s social change issues depend on ensuring that women are able to control their rate of having kids. In this significant talk at TEDxChange, she makes the case for the world to re-examine an issue she intends to lend her voice to for the next decade.</p></blockquote><div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/melinda_gates_let_s_put_birth_control_back_on_the_agenda" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div><h2 id="Do-schools-kill-creativity"><a href="#Do-schools-kill-creativity" class="headerlink" title="Do schools kill creativity?"></a>Do schools kill creativity?</h2><blockquote><p>Sir Ken Robinson makes an entertaining and profoundly moving case for creating an education system that nurtures (rather than undermines) creativity.</p></blockquote><div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/ken_robinson_says_schools_kill_creativity" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div><h2 id="How-we-are-teaching-computers-to-understand-pictures"><a href="#How-we-are-teaching-computers-to-understand-pictures" class="headerlink" title="How we are teaching computers to understand pictures"></a>How we are teaching computers to understand pictures</h2><blockquote><p>When a very young child looks at a picture, she can identify simple elements: “cat,” “book,” “chair.” Now, computers are getting smart enough to do that too. What’s next? In a thrilling talk, computer vision expert Fei-Fei Li describes the state of the art – including the database of 15 million photos her team built to “teach” a computer to understand pictures – and the key insights yet to come.</p></blockquote><div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/fei_fei_li_how_we_re_teaching_computers_to_understand_pictures" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div><h2 id="A-funny-look-at-the-unintended-consequences-of-technology"><a href="#A-funny-look-at-the-unintended-consequences-of-technology" class="headerlink" title="A funny look at the unintended consequences of technology"></a>A funny look at the unintended consequences of technology</h2><blockquote><p>Technology should work for us, but what happens when it doesn’t? Comedian Chuck Nice explores the unintended consequences of technological advancement and human interaction – with hilarious results.</p></blockquote><div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/chuck_nice_a_funny_look_at_the_unintended_consequences_of_technology" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; 短期內增進聽力的最佳練習辦法。 &lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://chiehpower.com/categories/Notes/"/>
+    
+    
+      <category term="Notes" scheme="https://chiehpower.com/tags/Notes/"/>
+    
+      <category term="TED" scheme="https://chiehpower.com/tags/TED/"/>
+    
+      <category term="English" scheme="https://chiehpower.com/tags/English/"/>
     
   </entry>
   
