@@ -795,6 +795,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/spark_databricks/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/12/spark_databricks/" itemprop="url">Databricks 使用流程</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T13:04:23+00:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/12/spark_databricks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/spark_databricks/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" rel="gallery_cjwex6rln0000m1tzzgngom61" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <center> 介紹如何輕鬆在Databricks上操作Spark。 </center>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/12/spark_databricks/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/install-spark/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1802,176 +1972,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/12/27/iceland-2/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chieh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chieh's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/27/iceland-2/" itemprop="url">【Traveling#1】Iceland × Day2 × ​Day Tour</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-27T11:09:10+00:00">
-                2018-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Traveling/" itemprop="url" rel="index">
-                    <span itemprop="name">Traveling</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/27/iceland-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/27/iceland-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/BZ-w7bYxhUTtlGdI1FoUfAOd3457SNDbssLu9JuFFexh0fZ-14CJAjFiyyj6DHVWLzK-QgesHLY7FsSycMeEjc9wWDF6dw4OYXSq5bOMTr4rqSDXJT15nGOXzMaloOiakJ3azi1kaud6KXHYjIN1iw4pCxPXLUPFKV7YclhPP7ZRpS48EM1LUB18bCWiFF8ojY8Spr9mqtiKqVsA9NeagIpe2RhK0bwlRxZJZCswuLkWvnPxocm56q5fkuyTMrJ3y_ADumOnoVjyGKmr1vjBPVOSM6pAKRNlWkJwW-12vpKvSnXbP9Qmj4ggb7w4jkvHuOHe8mDkAAwf87feXPcFL-3bGyX_hUWfbr-2nr3erDjpuPviweFddBhDozPWej2Mk4Fz16EjrIOXx8TF2xyJuXzO8e6zEjX82TQ79oOEjs1raYdZFS3zB_BVDEqnXN_Hwth1flxT8kNY1TLo8ALrgaNSzNPHiravl6BVBQelRj8YPoEqCawRC8-BhHPYnCjxmiJYa5COYHdYQCEKz-XEHq3T-Oh9sxi013ShcusI8XptkFVeB_kzoO52aZSyyVKCGMdinF-fwBiwCSHrhNqsMFlqN0H2FfticswWtWZbrKfxHwRX3zxRidBsBx3AZkrejEQ11Exvj1tQmxsU6iJGAJWRcynJjFXRDA-_u39nyAoHiRAnKrG9MffO_znz4AzXemiZYD9ePdWwysn5JQ=w1545-h869-no" rel="gallery_cjvx592ou00fdw1tz846vva0h" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://lh3.googleusercontent.com/BZ-w7bYxhUTtlGdI1FoUfAOd3457SNDbssLu9JuFFexh0fZ-14CJAjFiyyj6DHVWLzK-QgesHLY7FsSycMeEjc9wWDF6dw4OYXSq5bOMTr4rqSDXJT15nGOXzMaloOiakJ3azi1kaud6KXHYjIN1iw4pCxPXLUPFKV7YclhPP7ZRpS48EM1LUB18bCWiFF8ojY8Spr9mqtiKqVsA9NeagIpe2RhK0bwlRxZJZCswuLkWvnPxocm56q5fkuyTMrJ3y_ADumOnoVjyGKmr1vjBPVOSM6pAKRNlWkJwW-12vpKvSnXbP9Qmj4ggb7w4jkvHuOHe8mDkAAwf87feXPcFL-3bGyX_hUWfbr-2nr3erDjpuPviweFddBhDozPWej2Mk4Fz16EjrIOXx8TF2xyJuXzO8e6zEjX82TQ79oOEjs1raYdZFS3zB_BVDEqnXN_Hwth1flxT8kNY1TLo8ALrgaNSzNPHiravl6BVBQelRj8YPoEqCawRC8-BhHPYnCjxmiJYa5COYHdYQCEKz-XEHq3T-Oh9sxi013ShcusI8XptkFVeB_kzoO52aZSyyVKCGMdinF-fwBiwCSHrhNqsMFlqN0H2FfticswWtWZbrKfxHwRX3zxRidBsBx3AZkrejEQ11Exvj1tQmxsU6iJGAJWRcynJjFXRDA-_u39nyAoHiRAnKrG9MffO_znz4AzXemiZYD9ePdWwysn5JQ=w1545-h869-no" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <center> 第二天我們選擇參加了一日旅遊，一共去了四個景點。</center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/27/iceland-2/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2024,7 +2024,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2046,7 +2046,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">134</span>
+                  <span class="site-state-item-count">135</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

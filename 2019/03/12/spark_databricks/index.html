@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Chiehpower.com">
+  <meta name="keywords" content="Notes,Spark,Pyspark,Hadoop,Colab,Program,Databricks,">
 
 
 
@@ -83,15 +83,19 @@
 
 
 
+<meta name="description" content="介紹如何輕鬆在Databricks上操作Spark。">
+<meta name="keywords" content="Notes,Spark,Pyspark,Hadoop,Colab,Program,Databricks">
 <meta property="og:type" content="article">
-<meta property="og:title" content="databricks">
+<meta property="og:title" content="Databricks 使用流程">
 <meta property="og:url" content="https://chiehpower.com/2019/03/12/spark_databricks/index.html">
 <meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="介紹如何輕鬆在Databricks上操作Spark。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no">
-<meta property="og:updated_time" content="2019-03-12T14:19:45.991Z">
+<meta property="og:updated_time" content="2019-06-02T13:30:14.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="databricks">
+<meta name="twitter:title" content="Databricks 使用流程">
+<meta name="twitter:description" content="介紹如何輕鬆在Databricks上操作Spark。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no">
 
 
@@ -128,7 +132,7 @@
 
 
 
-  <title>databricks | Chieh's Blog</title>
+  <title>Databricks 使用流程 | Chieh's Blog</title>
   
 
 
@@ -301,7 +305,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">databricks</h2>
+          <h2 class="post-title" itemprop="name headline">Databricks 使用流程</h2>
         
 
         <div class="post-meta">
@@ -323,6 +327,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -353,7 +379,7 @@
 
           
               <div class="post-description">
-                  <center> </center>
+                  <center> 介紹如何輕鬆在Databricks上操作Spark。 </center>
               </div>
           
 
@@ -372,7 +398,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" rel="gallery_cjt5yu8h00042sqtzq888dm1j" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" rel="gallery_cjwex6rln0000m1tzzgngom61" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" itemprop="contentUrl">
               </a>
             
@@ -384,7 +410,28 @@
       
 
       
-        <p>To be continuing…</p>
+        <p>使用Spark有一個不錯的平台『Databricks』，雖然後來已不使用ＸＤ 轉戰到Colab上操作。<br>因為Databricks免費使用有個缺點，容易時間一長就要重新創建Cluster。<br>當然使用這個好處是可以不用使用到本機的資源。</p>
+<p>首先，如果要找登入帳號的頁面，在google首頁直接打上<code>databricks account login</code>，點選第一個<code>Login - Databricks Community Edition</code></p>
+<p>進入之後會看到這個畫面。<br><img src="/images/databricks_1.png" alt="databrick"></p>
+<p>我們可以看到旁邊有一些選項:</p>
+<ol>
+<li>Home</li>
+<li>Workspace：裡面會儲存所有的import檔案</li>
+<li>Recents</li>
+<li>Data</li>
+<li>Clusters：每個檔案都需要有一個cluster來做支配。</li>
+<li>Jobs</li>
+<li>Search</li>
+</ol>
+<p>我們會用到的是 <code>Workspace</code> ＆ <code>Clusters</code>部分。</p>
+<blockquote class="blockquote-center"><p>總共有兩大Steps，首先第一步是要先創造一個Cluster。<br>再來是我們要把我們的file import 進去 Databricks。</p>
+</blockquote>
+<h1 id="Create-Clusters"><a href="#Create-Clusters" class="headerlink" title="Create Clusters"></a>Create Clusters</h1><p>點擊左側的Clusters，裡面列出所有的已創建或還未創建的群集。<br>剛登入的時候(或一般過了一段時間之後他會停止，需重創)，我們先創建一個。點擊上方的<code>✚ Create Cluster</code>之後會看到下方的畫面。<br><img src="/images/databricks_2.png" alt="databrick"></p>
+<p>可以隨意起個Cluster Name，我們選擇最新的Databricks Runtime Version版本吧！Python Version選擇3，然後其他可以不用動，最後就是Create Cluster。<br>一開始state是Pending，等個幾秒鐘讓他處理一下，當state變成Running時，這樣就創建成功囉！</p>
+<h1 id="Create-file"><a href="#Create-file" class="headerlink" title="Create file"></a>Create file</h1><p>再來我們可以到Workspace area，如果是一開始使用是空的，我們可以選擇Create一個空白的file，或者要import file進去都可以。<br>按右鍵，或出現Create &amp; Import。<br><img src="/images/databricks_3.png" alt="databrick"><br>選擇Create file &gt; Notebook，之後會跳出視窗填入file name、選擇使用的語言spark可以使用四種語言，個人使用Python，最後就是點選我們剛剛創建的cluster。完成之後就創建成功。<br><img src="/images/databricks_4.png" alt="databrick"><br>我們直接type sc，shift+enter，可以看見<code>Out[1]: &lt;SparkContext master=local[8] appName=Databricks Shell&gt;</code>，完成。</p>
+<p>如果是import file的人，記得在Detached點選我們剛創建的Cluster。<br>然後就可以運行我們的code了。<br><img src="/images/databricks_5.png" alt="databrick"></p>
+<p>不過一段時間就需要再重新操作一次cluster流程… lol<br>當然有另一個擇中辦法就是使用Colab，我覺得相對方便許多🤔</p>
+<p>👉可以參考這篇<a href="https://chiehpower.com/2019/03/12/install-spark/">Install pyspark × Use on Jupyter notebook × Colab</a></p>
 
       
     </div>
@@ -405,7 +452,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://chiehpower.com/2019/03/12/spark_databricks/" title="databricks">https://chiehpower.com/2019/03/12/spark_databricks/</a>
+    <a href="https://chiehpower.com/2019/03/12/spark_databricks/" title="Databricks 使用流程">https://chiehpower.com/2019/03/12/spark_databricks/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -417,6 +464,24 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Spark/" rel="tag"># Spark</a>
+          
+            <a href="/tags/Pyspark/" rel="tag"># Pyspark</a>
+          
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+          
+            <a href="/tags/Colab/" rel="tag"># Colab</a>
+          
+            <a href="/tags/Program/" rel="tag"># Program</a>
+          
+            <a href="/tags/Databricks/" rel="tag"># Databricks</a>
+          
+        </div>
       
 
       
@@ -436,6 +501,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/13/mac-terminal/" rel="prev" title="Mac OS × Terminal Colour">
+                Mac OS × Terminal Colour <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -515,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -537,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">130</span>
+                  <span class="site-state-item-count">135</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -595,6 +673,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-Clusters"><span class="nav-number">1.</span> <span class="nav-text">Create Clusters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-file"><span class="nav-number">2.</span> <span class="nav-text">Create file</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -772,7 +866,7 @@
         var disqus_config = function () {
           this.page.url = 'https://chiehpower.com/2019/03/12/spark_databricks/';
           this.page.identifier = '2019/03/12/spark_databricks/';
-          this.page.title = 'databricks';
+          this.page.title = 'Databricks 使用流程';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
