@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chiehpower.com/"/>
-  <updated>2019-06-18T00:33:09.200Z</updated>
+  <updated>2019-05-22T13:59:40.404Z</updated>
   <id>https://chiehpower.com/</id>
   
   <author>
@@ -15,24 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Tensorboard</title>
-    <link href="https://chiehpower.com/2019/06/17/Tensorboard/"/>
-    <id>https://chiehpower.com/2019/06/17/Tensorboard/</id>
-    <published>2019-06-17T11:59:35.000Z</published>
-    <updated>2019-06-18T00:33:09.200Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><ol><li><a href="https://github.com/tensorflow/tensorboard/blob/master/README.md" target="_blank" rel="noopener">Tensorboard</a></li><li><a href="https://github.com/lspvic/jupyter_tensorboard" target="_blank" rel="noopener">Jupyter with Tensorboard</a></li><li><a href="https://github.com/chaoleili/jupyterlab_tensorboard" target="_blank" rel="noopener">JupyterLab with Tensorboard</a><br>2和3比較麻煩一點。暫且放著。希望未來能夠完成。</li></ol><h1 id="初始練習"><a href="#初始練習" class="headerlink" title="初始練習"></a>初始練習</h1><p>首先，我們先使用現成的code測試一下是否能夠成功的在本機(local)運行。<br>如果成功之後，我們再來學習如何使用在自己的code上。</p><p>我使用[2017 IT 邦幫忙鐵人賽]的<a href="https://github.com/yaojenkuo/learn_python_for_a_r_user/blob/master/day28.md" target="_blank" rel="noopener">第28天深度學習(2)TensorBoard</a>內教學來做練習，並且一一測試確實能在tensorboard上跑出結果。<br>附上連結：<a href="https://github.com/yaojenkuo/learn_python_for_a_r_user" target="_blank" rel="noopener">https://github.com/yaojenkuo/learn_python_for_a_r_user</a></p><p>把Code直接貼到py檔內做運行即可。<br>每次跑完，並於終端器上輸入<code>tensorboard --logdir=&#39;TensorBoard/&#39;</code><br>(因為code裡面<code>tf.summary.FileWriter(&quot;TensorBoard/&quot;)</code>是寫<code>TensorBoard/</code>)<br>便會跳出一行網址，複製於瀏覽器上輸入就可以看到結果了。</p><p>按照裡面教學流程做應該沒問題。</p><blockquote><p>不過這個教學是使用tensorflow來做計算，不適用keras。<br>以下直接提供現成檔案，跟<code>第28天深度學習</code>內的是一樣的。</p><ul><li><a href="../Tensorboard/tensorboard_test.py">tensorboard_test.py</a></li></ul></blockquote><h1 id="嘗試Keras"><a href="#嘗試Keras" class="headerlink" title="嘗試Keras"></a>嘗試Keras</h1><p>接下來我們嘗試使用Keras套件包與Tensorboard的效果，<br>參考terrence大大寫的<a href="http://terrence.logdown.com/posts/1321107-keras-run-tensorflow" target="_blank" rel="noopener">用Keras跑tensorflow</a><br>一樣我也附上copy網站上所操作的code的檔案，可直接下載練習。<br>於終端器輸入<code>tensorboard --logdir=/tmp/keras_log</code>即可看到結果。</p><blockquote><p>PS 其中我修正了<code>histogram_freq=0</code>部分，若按照網站上的code在我電腦上跑會有error。</p><ul><li><a href="../Tensorboard/tensorboard_keras_test.py">tensorboard_keras_test.py</a></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; &lt;/center&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>【Diary#5】Study abroad × 考完啦！</title>
@@ -611,6 +593,30 @@
       <category term="Update" scheme="https://chiehpower.com/tags/Update/"/>
     
       <category term="Camera" scheme="https://chiehpower.com/tags/Camera/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>父母該滿足小孩物質上的需求嗎?</title>
+    <link href="https://chiehpower.com/2018/04/03/parents-spend-on-child/"/>
+    <id>https://chiehpower.com/2018/04/03/parents-spend-on-child/</id>
+    <published>2018-04-03T19:26:33.000Z</published>
+    <updated>2019-01-20T11:41:09.574Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言 "></a><center>前言 </center></h1><p>如題。<br>我們深知教育的重要性，而每位父母也都想要給予自己的孩子一個「最好」的教育，但是怎麼樣子的教育才是最好的?<br>我們很難去界定或評斷說這種教育對於小孩，真的就是最優、最棒的。<br>看到最近的新聞，讓我深省去思考，父母對於小孩在教育上的溺愛程度應該要如何拿捏? 我想，畢竟這是遲早該去面對的課題。<br><blockquote class="blockquote-center"><p> 我主張：父母是該滿足小孩物質上的需求，我認為這是應該的。<br>但應該要到什麼樣的上限呢? </p></blockquote><br>也許是從小所受到的家庭教育背景因素影響，加上一路學習專業知識下培養的邏輯影響，使我這麼認為。<br>當然每一個議題的背後肯定有兩面，所以沒有絕對的對與錯，單純只是想來拋出這麼一個討論話題，與我個人的看法。</p><h1 id="想法"><a href="#想法" class="headerlink" title="想法 "></a><center>想法 </center></h1><p>我的想法是，提供金錢上的援助可以讓小孩在相對短時間內，去發展興趣讓孩子可以在適時的接觸，隨著時間會了解更多更深入，我認為這是好事。<br>當然任何興趣的培養都是需要用錢投資，「專業」往往與投入多少代價有所關聯，不論時間或金錢(時間也是一大成本)。小孩不必因為這個興趣的入門門檻(金錢)太高，而被迫選擇放棄或者失去機會。但同時有人也會提出，那可以以最低成本方式學習，我們都曉得學習可以有很多種方法來達成，不過老天也是很公平的，時間與金錢是成反比，兩者相乘所得到的是最大效益。<br><blockquote class="blockquote-center"><p>時間 x 金錢 = 效益 </p></blockquote><br>在這部分，我會把品質、熱忱與效率放入討論。如果期望小孩能夠獲得最大效益，就要傾向以最高效率的方式達到目標，而金錢多少我相信必然會影響學習上的品質與熱忱(當然不是絕對)。不然換個角度想，為什麼大家在選擇學校時，都要往排名越前面的學校擠呢? 不就是因為資源多嗎?</p><p>當然這不免涉及到選擇性的問題，父母認為這是否值得栽培(投資)，也是本次議題的重點問題之一。</p><h1 id="潛在問題"><a href="#潛在問題" class="headerlink" title="潛在問題 "></a><center>潛在問題 </center></h1><p>而在選擇「應該」的同時，就得去考慮這個決定背後所附帶的潛在影響，我認為關鍵是「珍惜」。<br>如果越需要高金額的花費，相比別人之下小孩能輕易的達到，這是否會造成他們潛在認為，是容易、認為這都是理所當然的事情? (不論是父母為孩子付出，或者這個需求看起來要達成是很簡單的這一件事情。)<br>但是相反的，若換個角度思考，有一些興趣、領域，確實是一種高花費高投資，入門就是需要高金額的設備或學習花費，站在父母立場認為這屬栽培範疇時很容易地忽略了在沒有經濟基礎與社會歷練下的孩子為他們建立一個適當的價值觀。<br>舉凡，攝影，需要買昂貴的相機；養魚，需要花錢來買水族設備…等等，我相信有很多也是。對於沒有經濟能力的小孩來說，都屬入門需高金額且容易持續高花費的領域(相比其他領域來說)，但是這是一個健康正向的興趣嗜好。因此要如何拿捏與適時的給予教育，我意識到這是很重要的課題，不應該多高的金額都給予(無條件)幫助，他們掠過了應該要「珍惜」好不容易得來的前段(如何得到、取得的過程)，才會有後段的出現(開始使用設備、東西，並學習、使用)。</p><h1 id="目的-amp-取的平衡點"><a href="#目的-amp-取的平衡點" class="headerlink" title="目的 &amp; 取的平衡點 "></a><center>目的 &amp; 取的平衡點 </center></h1><p>以下我提出立場與想法 (這部分會摻有較多主觀的條件設定在內)。<br>站在父母立場，可認為這些金額對他們相比賺的薪水來說真的不算多，而如果能為小孩培養正向興趣，是一件值得的花費。錢再賺就有，因為小孩的青春過了就過了，錢長大有能力時再賺回來就好，比起年紀小時打工賺錢(無資歷時)來說相對是很容易的事情，那還有什麼理由不幫助小孩呢? 也因此看到許多(較富有的)小康家庭甚至富豪的小孩，從小接觸的環境習慣了那種消費水準之後，在金錢上的控管很容易發生問題，也有所耳聞某某家的小孩零用錢多少，或者身穿名牌(我們可視為這是一種收集的興趣範圍之一)。<br>我們在限制取得平衡的過程，應該要如何限制，難不成要條件式嗎?<br>但我看過許多人在談論教育方面，提到說教育小孩時，請不要用條件鼓勵的方式來要求小孩。反而應該教育責任感，在言語上溝通要當成大人來定位對談的內容，並且要相信他們做得到。(扯遠了)<br>而我認為要去取得平衡，解決這個問題的最中心想法不可遺忘:<br><blockquote class="blockquote-center"><p>我們做的任何事情都有其目的，在這部分需把「學習」放在最優先，以其目的為最重要的部分去思考。</p></blockquote><br>在奢侈與必要品之間先界定好那條鴻溝線，而滿足入門的需求是為了能夠學習是基本，但金額提高時，就得思考這是否能夠幫助獲得更高層次的學習? 基本全面已有所深入涉略，為了邁入更高層次的學習以及提高學習質量而需要的?</p><blockquote class="blockquote-center"><p>我們都曉得，得來不易的才會更加珍惜的道理。</p></blockquote><h1 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a><center>結尾</center></h1><p>並沒有特別想下什麼強而有力的結論，只是想抒發一下，透過抒寫的過程去思考與整理。畢竟每個人的教育方式都不同，家庭背景也不同，根本沒有什麼最好阿，只有最適合的。<br>也許你有不一樣的看法可以分享給我知道。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; 對於這個問題，有沒有一個最好的標準解答呢?  &lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Mood" scheme="https://chiehpower.com/categories/Mood/"/>
+    
+    
+      <category term="Education" scheme="https://chiehpower.com/tags/Education/"/>
+    
+      <category term="Mood" scheme="https://chiehpower.com/tags/Mood/"/>
     
   </entry>
   
