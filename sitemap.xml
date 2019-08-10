@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chiehpower.com/about/index.html</loc>
+    
+    <lastmod>2019-08-09T21:21:38.218Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chiehpower.com/categories/index.html</loc>
     
     <lastmod>2019-08-09T15:54:46.800Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://chiehpower.com/tags/index.html</loc>
     
     <lastmod>2019-08-09T15:54:26.786Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chiehpower.com/about/index.html</loc>
-    
-    <lastmod>2019-08-09T15:14:15.185Z</lastmod>
     
   </url>
   
