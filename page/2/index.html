@@ -285,346 +285,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/install-spark/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chieh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chieh's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/12/install-spark/" itemprop="url">Install pyspark × Use on Jupyter notebook × Colab</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T01:48:41+08:00">
-                2019-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Program/" itemprop="url" rel="index">
-                    <span itemprop="name">Program</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/12/install-spark/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/install-spark/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no" rel="gallery_ck45i288f0053y2tzi08vwpop" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <center> I recorded two installing methods. (i.e. the Mac and Windows) </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/12/install-spark/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/09/jupyter-function/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chieh">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chieh's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/09/jupyter-function/" itemprop="url">Jupyter × Convert to pdf × Nbextension</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T13:46:14+08:00">
-                2019-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Program/" itemprop="url" rel="index">
-                    <span itemprop="name">Program</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/09/jupyter-function/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/09/jupyter-function/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/5clJCXaTh0Ylh8YesDovUvYMCohlxPsfG1i-Ctf_R_ZXsG4WZQXJQB7XP6bvrU9e88PiBrTWDBB--L6cVd78fMxOW7AkccHqy6DIZYzX83DaR3Ked67njMRpqeEHxN1qUI7N0Z4l29LJw0fPiQdPk9_IND5537Gc6JLuMgbtJGmhq4uJUYHkpFBb3LeXGYpQcLW7jhg79Bt8sBmu1tolqJKGgyHidwgCnseV69sSdJJjwXJstOgclbxY3CojbZzDSwaUcd0mGO9ZJZiSSQxdcX0y5dO_bJBHWbaEnFpdCbpvTxZBhVBEeqOxk68510MnBDMSezQa2U8ydi968Wl5Pb_ivVJntW6M6QpoVVE6K7UrWlXKf5BoHwEIWxCvvuV_vFqe3lu---UmxkWqowgo_YXbO194KKcFuXinwFLv3ndGU3Se90DN_WhsgSInbEcUhTmt8bonPrSWqTxZkFDkTnAWjd4BARNbu5bYA8UZC1nW6N-huubR9H61WrIbLGaCzVi5yVodx7Dnte7JilF004inOomBDilSJy04N6JB5wBu-fxyr0r5OEm_EptKrFZl5dYGdv0cBo96yzchT2KHeuserFc6bYLB_S_F1K17zrHLoTMYFJUqa_sLsybf95p1rh2JH_r1TpJwtL8IkHehAT0r0iyGckfcu0Q1TSPW1iHtbvt7DGsTPUUEXUObsUKs_J2_lgejTVAlGTjqcTstl8qeZA=w1707-h960-no" rel="gallery_ck45i288d004xy2tz8iayc1q0" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://lh3.googleusercontent.com/5clJCXaTh0Ylh8YesDovUvYMCohlxPsfG1i-Ctf_R_ZXsG4WZQXJQB7XP6bvrU9e88PiBrTWDBB--L6cVd78fMxOW7AkccHqy6DIZYzX83DaR3Ked67njMRpqeEHxN1qUI7N0Z4l29LJw0fPiQdPk9_IND5537Gc6JLuMgbtJGmhq4uJUYHkpFBb3LeXGYpQcLW7jhg79Bt8sBmu1tolqJKGgyHidwgCnseV69sSdJJjwXJstOgclbxY3CojbZzDSwaUcd0mGO9ZJZiSSQxdcX0y5dO_bJBHWbaEnFpdCbpvTxZBhVBEeqOxk68510MnBDMSezQa2U8ydi968Wl5Pb_ivVJntW6M6QpoVVE6K7UrWlXKf5BoHwEIWxCvvuV_vFqe3lu---UmxkWqowgo_YXbO194KKcFuXinwFLv3ndGU3Se90DN_WhsgSInbEcUhTmt8bonPrSWqTxZkFDkTnAWjd4BARNbu5bYA8UZC1nW6N-huubR9H61WrIbLGaCzVi5yVodx7Dnte7JilF004inOomBDilSJy04N6JB5wBu-fxyr0r5OEm_EptKrFZl5dYGdv0cBo96yzchT2KHeuserFc6bYLB_S_F1K17zrHLoTMYFJUqa_sLsybf95p1rh2JH_r1TpJwtL8IkHehAT0r0iyGckfcu0Q1TSPW1iHtbvt7DGsTPUUEXUObsUKs_J2_lgejTVAlGTjqcTstl8qeZA=w1707-h960-no" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <center> Introduce how to solve the problem of jupyter notebook which output the pdf file and how to extend the jupyter widgets. </center>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/09/jupyter-function/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/02/03/macbookpro/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1972,6 +1632,346 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/09/10/diary-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/10/diary-1/" itemprop="url">【Diary#1】Peking Duck</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T00:44:44+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Food/" itemprop="url" rel="index">
+                    <span itemprop="name">Food</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/10/diary-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/10/diary-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/reCIUeuUBtPpw_8o1x92KdIWIhnMVXSl4z2nL2-97fbGYgADiM5CIr0oFsD-s4b17g5t8lT8nHefusTHL3PJR9qqQK7qrOGJDPR9d5duFrZNrAbb-MILGeIqN8aTBv3W-1l8LzudQqLG_h-Im7z1tcgxk2u86rmcarfxN6oQphEW7YUw6G1lejAWsgp0eURQC489M6Ac1lk6arQXr0QLyYoityMAkQDIK2yLqbTA4QOA6jZL_suvdm6ALh3_JMYNDe9FKUyoIREremYrbOxl84_tIEfqcEfc-eVED8cf9ig4HjFf4nR-qHcVyRlaHrBVR-ygKadm2Vue8cYmzQjgn3gX8mPQl5JOR5Qmm19lJN10o39wVMdnIcaOyrHiZQq0LVWnVvRhSEzIC2DCEW6ioOz1KADlMDIzd122qiwyQDGCT2YElL-UH2HN0sx6FlAC3ZMLoTVBQL_d-eNPVvQUZpj9nI0hp7XLC_u2Iz2gS6xVlpP0ar2pv_OvcKT8Y8buYaxaplZ-7T-0NUqO98bOg3aWHIXo-nigolJAJ2KxfM7jafbA0kkZy-LqwcsJj1TG1FyHNp-d2PlVIQ4d68m7a_PU1Eonx6yxoV5m7awQp6kDH2UQ5RNRR2LLLAimMw0=w1557-h876-no" rel="gallery_ck45i2885004cy2tzyocc6xg3" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/reCIUeuUBtPpw_8o1x92KdIWIhnMVXSl4z2nL2-97fbGYgADiM5CIr0oFsD-s4b17g5t8lT8nHefusTHL3PJR9qqQK7qrOGJDPR9d5duFrZNrAbb-MILGeIqN8aTBv3W-1l8LzudQqLG_h-Im7z1tcgxk2u86rmcarfxN6oQphEW7YUw6G1lejAWsgp0eURQC489M6Ac1lk6arQXr0QLyYoityMAkQDIK2yLqbTA4QOA6jZL_suvdm6ALh3_JMYNDe9FKUyoIREremYrbOxl84_tIEfqcEfc-eVED8cf9ig4HjFf4nR-qHcVyRlaHrBVR-ygKadm2Vue8cYmzQjgn3gX8mPQl5JOR5Qmm19lJN10o39wVMdnIcaOyrHiZQq0LVWnVvRhSEzIC2DCEW6ioOz1KADlMDIzd122qiwyQDGCT2YElL-UH2HN0sx6FlAC3ZMLoTVBQL_d-eNPVvQUZpj9nI0hp7XLC_u2Iz2gS6xVlpP0ar2pv_OvcKT8Y8buYaxaplZ-7T-0NUqO98bOg3aWHIXo-nigolJAJ2KxfM7jafbA0kkZy-LqwcsJj1TG1FyHNp-d2PlVIQ4d68m7a_PU1Eonx6yxoV5m7awQp6kDH2UQ5RNRR2LLLAimMw0=w1557-h876-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <center>一隻65磅的北津烤鴨初體驗!</center>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/10/diary-1/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/08/19/masterdegree/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/masterdegree/" itemprop="url">MSc Application and IELTS Experience</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-19T21:22:44+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mood/" itemprop="url" rel="index">
+                    <span itemprop="name">Mood</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/19/masterdegree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/19/masterdegree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/2bVVm_7v6L7EIC9R2J2774NpY4W3-Dr6h5NTq6LEL-LL2tEkDailq7k0hguFaLhA1qrNlmjdcn0fnt63S3HRgNIQi6-wEU0Lkx7HpFIETq8Yex-3_PJXHIDochQNmhTtVHVYQgH3gHkLi21A3MVBhUP74PCQV4DBd4jF29yTM8LCK0nw1VWGUvcKkTN4zsBF6jKrsxHGZ6HoZsLso-SMcujwY_fStd-4YD8q9Pj3CBdouuRPnBWymg7VqTez_1pMhIc9wON_ZIvuoeG_LrzBbKp594Ju-vxO7tVuPrBdMvqDSwkPLpzAbQp808ku4xHozNVKN5KLul2752lM4qVXgdjx4VKeLxp1Y_By643w971l4T1Or_JkB9BjOCjwtwCetdMW-g9QRdgMH3E979EJgIlPNXLaM5Y86bu1Qa2ijhlPUywrcT4eWDsAfiJap-9uZPiQsitghmeYh9Wl7YXsrWfOUQ1sHEw71Y3_UIdwQ-OY6d_KJR-DilxGdDdfLbqyq1-cUW1skOJA63HVLNFE74OSTwmuIQ6crSsBFd-y4aXYzDo27A6mZVi-rfK5HFxsauH0bB6u1ZNkpaCoopR6ohq4FjLZ1aBwTC4JoD7zcLyMVbcGcDJqpf72SI5_PG1chf5J6_b99qIQLTLtrAqHJmphJHekC97QAcKGdlKpHaOZzSajZhrlyIYpW5Q0FRY0KOu2AMzQj7QQoS06ha4=w1280-h720-no" rel="gallery_ck45i288o005ty2tz5yquuiv6" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/2bVVm_7v6L7EIC9R2J2774NpY4W3-Dr6h5NTq6LEL-LL2tEkDailq7k0hguFaLhA1qrNlmjdcn0fnt63S3HRgNIQi6-wEU0Lkx7HpFIETq8Yex-3_PJXHIDochQNmhTtVHVYQgH3gHkLi21A3MVBhUP74PCQV4DBd4jF29yTM8LCK0nw1VWGUvcKkTN4zsBF6jKrsxHGZ6HoZsLso-SMcujwY_fStd-4YD8q9Pj3CBdouuRPnBWymg7VqTez_1pMhIc9wON_ZIvuoeG_LrzBbKp594Ju-vxO7tVuPrBdMvqDSwkPLpzAbQp808ku4xHozNVKN5KLul2752lM4qVXgdjx4VKeLxp1Y_By643w971l4T1Or_JkB9BjOCjwtwCetdMW-g9QRdgMH3E979EJgIlPNXLaM5Y86bu1Qa2ijhlPUywrcT4eWDsAfiJap-9uZPiQsitghmeYh9Wl7YXsrWfOUQ1sHEw71Y3_UIdwQ-OY6d_KJR-DilxGdDdfLbqyq1-cUW1skOJA63HVLNFE74OSTwmuIQ6crSsBFd-y4aXYzDo27A6mZVi-rfK5HFxsauH0bB6u1ZNkpaCoopR6ohq4FjLZ1aBwTC4JoD7zcLyMVbcGcDJqpf72SI5_PG1chf5J6_b99qIQLTLtrAqHJmphJHekC97QAcKGdlKpHaOZzSajZhrlyIYpW5Q0FRY0KOu2AMzQj7QQoS06ha4=w1280-h720-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          <center> 純粹記錄個人申請MSc的整個過程和一些經驗 </center>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/19/masterdegree/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2024,7 +2024,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
