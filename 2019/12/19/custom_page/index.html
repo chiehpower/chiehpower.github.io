@@ -92,7 +92,7 @@
 <meta property="og:description" content="針對Hexo的Next添加客製化分頁。非常實用！！">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/o5ynXVceB9w95Tnd4GeSa0jOFxf4-61FpjCk_l3LpaYW7KmCmbBRdiDtTrZGPevU7i7I6LTxo1xmroJWyuXPaMKha2hQfGMuqyORamN90BWCbSS7F8jPkPsh8F_QwJEoplGQnb0Qmoxe6d6go4WteaLxZ4SAjAds9zcdRFpth3iYlZMSxYCaMVKclEXke7_40oh2m5Csqh-CqNCcJ2iDyw8ecIIwf71DrLI2cZxgBIPq0dnp3xX2maHm-A9f_D_oc1C_Lymuq5SFA6tywdmQWc0GzU8-ZBeA4HFa_ML6QJa24h94PuO9iGHiBiWIVCdQPDyikKtpw4Cr7ol_6FBpVVoY2q1fpOsM-NytiDAxbAx66Jm59Zw5cJC14BwrZqCyqlcvtkNDwZrO76R_MJr-HInuN1rZ_m8Qh2qk9RHS8XyuJdG_EMXZ1BZpkagNPsYdsdsSrtY_aN1koUUeQDCF5GZiLUemrjZga47RftEHQeHPzL1FwXRHHRld_Wg1GjQsJjaejib-fFgFu3KMPx2yu6IVES_frFT99VahOWxic7oCkFuyqdWsuEyu2xKbS_LbRlG68T3m-ryf3FeG5v4lYaZlVEWVBTW5PmjSlwPNaJvRzvq5lyKONsyPyZZvRoNwI0gebx3lRDiuKAmmX-O4KZNhSEbN5srPES_mKkrjog75w84JIF9r9vuI0yZPh5yZRnwcBefgcrEL__roCu57OoXrtoIBCLnxK3cKYbFSlgIOM0hPpw=w1262-h946-no">
-<meta property="og:updated_time" content="2019-12-15T15:52:29.450Z">
+<meta property="og:updated_time" content="2019-12-15T15:54:32.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to create customized pages？">
 <meta name="twitter:description" content="針對Hexo的Next添加客製化分頁。非常實用！！">
@@ -438,7 +438,7 @@
 <hr>
 <h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><p>這部分我覺得比較重要，因為我的page裡面的presentation，有我想要放的html檔案，先前也有想要放過履歷，都需要這個功能。<br>所以這部分我先拿我presentation這區來做範例。</p>
 <p>首先感謝<a href="https://www.zhihu.com/question/56677837" target="_blank" rel="noopener">這篇</a>給的靈感，我參考了這篇的方法。</p>
-<p>首先，因為我是放在page，所以需要先<code>hexo new page &lt;name&gt;</code>，接著在<code>\source\</code>資料夾下創建一個新的資料夾，裡面放你要的文件，這部分我是放我的html就好。<br>緊接著，去<code>根目錄</code>(不是主題下的)<code>_config.yml</code>裡面找到<code>skip_render</code>這區，在後放加入你的檔案位置。</p>
+<p>首先，因為我是放在page，所以需要先<code>hexo new page &lt;name&gt;</code>，接著在<code>\source\</code>資料夾下創建一個新的資料夾，裡面放你要的文件，這部分我是放我的html就好。<br>緊接著，去<code>根目錄</code>(不是主題下的)<code>_config.yml</code>裡面找到<code>skip_render</code>這區，在後放加入你的檔案位置。<br>有一點要說一下就是當你的東西放到source裡面他都會部署到public，所以理論上都是會採用主題裡的渲染，我們因此要把他給屏蔽掉。</p>
 <p>For example:<br>我的新資料夾名為<code>demo</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">  - &apos;demo/*.html&apos;</span><br></pre></td></tr></table></figure>
 <p>最後，就是在page裡面或者你一般的文章裡面，建立連結。<br>For example:</p>
