@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chiehpower.com/"/>
-  <updated>2019-12-14T11:28:32.883Z</updated>
+  <updated>2019-12-15T15:52:29.450Z</updated>
   <id>https://chiehpower.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to create customized pages？</title>
+    <link href="https://chiehpower.com/2019/12/19/custom_page/"/>
+    <id>https://chiehpower.com/2019/12/19/custom_page/</id>
+    <published>2019-12-19T11:59:08.000Z</published>
+    <updated>2019-12-15T15:52:29.450Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>封面圖是使用iPhone 11 Pro於信義101附近採0.5倍焦拍攝。</p></blockquote><p>我個人認為此篇的內容，可謂是相當有價值，這方面的資訊在網路上有點少，花了一點時間才解決，當然需要的人可能不多。<br>因此也這坑走了很久，我也為此成功而非常興奮開心啊！</p><h1 id="正題"><a href="#正題" class="headerlink" title="正題"></a>正題</h1><p>如何在Hexo的Next主題上，放置自己的東西、文章、Html、子分頁。</p><p>這部分細分兩個部分：</p><ol><li>想要在主目錄上的文章裡面，放置子文章、子分頁。</li><li>想要在主目錄上的文章裡面，放置Html、自己的檔案。</li></ol><p>第一點和第二點的差別在於，是否使用原生主題的渲染來做文章，OK 給個情境。<br>首先，有時候想要在此篇文章裡面在連結到子文章，但是我不想要讓這子文章顯露到主頁上的文章列表上，一定要從這篇文章裡面連結過去。進去之後繼續寫，而這個版面樣式跟父文章是一樣的。</p><p>第二就是，例如你想要放一下自己的自製履歷啦，或者其他你已經有現成的pdf或網頁檔(.html)等等的，就非常需要。因為這類似說做一個本地連結過去而已。</p><hr><h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><p>如果想要放自己的東西在子分頁裡面 直接建立空白html就可以。<br><!-- [HTML file test](../custom_page/test.html)[Md file test](../custom_page//2019/12/19/test_md.md) --><br>這部分暫時留著，之後繼續完成。</p><hr><h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><p>這部分我覺得比較重要，因為我的page裡面的presentation，有我想要放的html檔案，先前也有想要放過履歷，都需要這個功能。<br>所以這部分我先拿我presentation這區來做範例。</p><p>首先感謝<a href="https://www.zhihu.com/question/56677837" target="_blank" rel="noopener">這篇</a>給的靈感，我參考了這篇的方法。</p><p>首先，因為我是放在page，所以需要先<code>hexo new page &lt;name&gt;</code>，接著在<code>\source\</code>資料夾下創建一個新的資料夾，裡面放你要的文件，這部分我是放我的html就好。<br>緊接著，去<code>根目錄</code>(不是主題下的)<code>_config.yml</code>裡面找到<code>skip_render</code>這區，在後放加入你的檔案位置。</p><p>For example:<br>我的新資料夾名為<code>demo</code>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">  - &apos;demo/*.html&apos;</span><br></pre></td></tr></table></figure><p>最後，就是在page裡面或者你一般的文章裡面，建立連結。<br>For example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- [TensorRT](../demo/slides-tensorrt.html)</span><br></pre></td></tr></table></figure><p>這裡要特別注意路徑，由於我是在Page裡面做輸入，所以要先回到上一層，在進去demo裡面的該html檔案。<br>如果你是在_post裡面，那就要在依照你放置的檔案做<code>相對路徑</code>的調整。記得要是<code>相對路徑</code>！！</p><p>以上！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt; 針對Hexo的Next添加客製化分頁。非常實用！！ &lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://chiehpower.com/categories/Notes/"/>
+    
+    
+      <category term="Notes" scheme="https://chiehpower.com/tags/Notes/"/>
+    
+      <category term="Share" scheme="https://chiehpower.com/tags/Share/"/>
+    
+      <category term="hexo" scheme="https://chiehpower.com/tags/hexo/"/>
+    
+      <category term="customized pages" scheme="https://chiehpower.com/tags/customized-pages/"/>
+    
+  </entry>
   
   <entry>
     <title>Logitech Master 2S &amp; Anywhere 2S</title>
@@ -599,32 +627,6 @@
       <category term="Peking Duck" scheme="https://chiehpower.com/tags/Peking-Duck/"/>
     
       <category term="Aya court" scheme="https://chiehpower.com/tags/Aya-court/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSc Application and IELTS Experience</title>
-    <link href="https://chiehpower.com/2018/08/19/masterdegree/"/>
-    <id>https://chiehpower.com/2018/08/19/masterdegree/</id>
-    <published>2018-08-19T13:22:44.000Z</published>
-    <updated>2019-01-21T11:24:55.372Z</updated>
-    
-    <content type="html"><![CDATA[<p>撰寫完成日期: 2018/08/19</p><p>寫下這篇文章猶豫了一下，主要紀載我在申請碩班的一個過程，也是所謂的辛酸史(?) 以及分享考IELTS的經驗感想，最後談談在這過程中間，我有碰到心理層面的困擾，想必應該也會有人遇到類似的問題。<br><br></p><h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a><center>Background</center><br></h1><p>最早有想繼續念書的這個念頭，契機是在大四上學期的期末(2017/01/16)，那時候由於物理年會剛好在我們學校舉辦，因此參加了學校的打工幫忙，而我是被安排在會中的計時人員與一些設備的操作(事後想想也很慶幸不是被安排在場外服務)，在那幾天裡我深刻的感受到以往沒有過的感受，一部分是自己接觸的不夠多，會中全程英文報告、Q&amp;A、包含協助，因為有來自世界各地的學者們，不論是教授、學生、業界的科技人員都是來這接受更多的新資訊，這場年會帶給我相當大的衝擊，也讓自己深知還有許多的不足，才會改變了想法與決定，讓自己在往更上一層走。</p><p>最初一開始是決定申請PhD (其中原因就不再這多做說明)，申請了兩間，後來收到了 York 的通知interview通知，在 2018/01/08 interview for the department of Physics on Skype(7:00pm)，但很可惜的是由於當時英文能力實在還很菜，在表達上並不能好好的轉達自己的意思，以及學術專業用字還不夠熟練，因此被欲申請的指導教授拒絕以及建議先加提升英語能力之後再來試試，當然這中間受到了相當大的打擊，畢竟自己是真的還滿喜歡這間學校，另一個原因是喜歡這個lab，這次的失敗同時也突顯了自己的弱點，算是另一種鍛鍊嗎(?)</p><p>當下的策略是先全力衝刺加強英文，一心一意就是計畫日後再次申請試試，不過也因此錯失了申請碩士的最佳時機(後話)。<br>因此，接下來的日子就是積極衝刺英文的時期，不過我的英文從小就是最弱的科目(苦笑)，目標是考到過為止，當時還下了一個誓言「沒考過就不回家」，準備的過程中多少辛苦，不過在緊湊充實的生活步調以及一邊研究與處理申請的事情中度過，其實時間一下子就過去了，就這樣從三月開始連續四個月每個月都考一場雅思，因為雅思成績需要兩週才會發放，加上這個時間點大家都在努力的拚雅思考試所以考場很容易滿場，不論好或壞都得考完時接續報考下一場，一方面也是在跟時間競賽。也有一些人會問說為什麼不準備好再接著考? 選擇一個月考一場另一個原因是避免讓自己忘記考試的臨場與熟悉感，以及在時間壓迫下可以讓自己更加迅速的成長，一場考試費用相當之高，每考一場心理的壓力就會更加沉重，而我調適自己的另一個方式就是利用空閒時間和教授做一點研究。</p><p>在四月快五月份時，我改變了想法和決定，採取了另一個策略，深知自己的不足之處，轉戰進而先申請Master學一些程式方面的專業知識並且增加語言能力也是一個不錯的選擇(對我來說)，不過想到若要在未來一兩個月必須達到英文標準成績，有巨大的風險(因為這次申請非理科因此英語成績又更高一些)，因此同時決定直接走申請PELPs的策略，所以加緊報考了一場UKVI的考試也是我最後一場IELTS考試(6/2)。</p><p>不過距離開學時間很近所以時間有些緊迫(五月下旬)，好在因為先前申請過PhD一些資料也都準備妥妥，所以遞件申請準備的時間很短，不過要聯繫推薦信教授與等待他們的線上繳交作業時間，最終順利的在六月之前送出申請，而申請了三間，但其中兩間學校拒絕外系的學生申請而遭拒(此時又過了一兩周已經六約中旬)，加上等待IELTS成績發放(6/15)，當下已經沒有學校也並未知曉英文成績，許多學校因為PELPs開課時間因素會提前一個月就截止，簡直近乎到了走投無路的狀況。</p><p>就在漫無目的地搜索其他學校的可能時，回想當初教授推薦的一間位在倫敦的學校，很幸運的簡直就是看到了另一個希望，開放給非本科系學生與截止日期較其他間學校晚了兩三周，且英語門檻以過往烤過的成績來看已經符合(但因為非UKVI)，因此在發放英語成績的當天能決定是否繼續拚拚看(原因是距離截止不到兩週時間呀!)</p><p>慶幸的是成績出來也符合門檻，與教授嚴謹的商討專業科目的教學課程內容，並啟動申請的動作包含聯繫推薦信人與準備申請資料等，不過中間也是出現層層問題，有位推薦信人在國外忙著開會因此也要再找新的推薦信人，但在這麼短的時間內要找到新的推薦信人願意幫忙實在難度很高很高!(還好最後有找到了一位很照顧學生的教授願意幫忙!) 以及系統上已送出推薦信的邀請，但教授並未收到(結果多等了兩三天才收到)，這邊我也非常焦急，因為一般都是系統上這邊發送了，系統另頭就立即發送email過去給教授，而不太會採用所謂的人工方式，所以經過兩三天的時間才收到我覺得非常詭異阿!(教授也是一直時常刷新信箱查看，非常不好意思一直麻煩教授多多關注，時間非常有限)，最終在6/21日確定送出申請，中間非工作日扣除的話剩下沒幾天就到7月了。</p><p>PELPs Deadline是7月1號，必須要在這之前收到offer才能申請，不過慶幸的是學校承諾說若收到offer還是可以讓我申請所以就比較放心了，在7/2號收到offer並趕緊申請PELPs，但由於課程於7/19號開始，這之間需要完成收到學校的PELPs的offer、申請accommodation、等待學校發放CAS並完成簽證、購買機票、辦理銀行財務證明、信用卡(之前沒需要用沒辦)、匯款給學校訂金等等多個程序，而許多則是一個扣一個環節，有的必須需等待多個工作天(遇到假日又沒辦法辦理)，所以可以說相當地繁忙…<br>另外一提，學校很好心的直接給了T4簽證，這樣就不用在開學前去當地辦理延簽的動作和費用，而且可以直接領到BRP卡省了很多事情，真的給我很大的方便!</p><p>最後，順利成功地在7/20搭土耳其航空(TK25)出發UK啦。</p><p>這是我先前完全沒有期望的，因為只要有任一失誤或延誤就很可能造成其他的結果(簽證是最拖延時間的)，要送去馬尼拉在送回來，若沒辦急簽絕對來不及(星期一上午八點十五辦理，周四中午收到)。</p><p>以上就是我前前後後的一個申請過程。<br><br><img src="https://lh3.googleusercontent.com/rrav4uhdVopVxi4SH5cLnT-060_eVDERr4W9DB5zikX8Np5LGYr-B-S36Ukhh8F_myh_KasU0-J8BWPNQpYSZj35FUm3ckJsZ8VNGgLbaXqz1KmGEbSbg6QNuEOcplOCWLVbLUx3_hkEiehkxHgTswaxZ3EV8AWBqsR8u_uePeDQx6m1IGa6Tz1xN17kBUlZ2ja4F-yzcRdPOGxxYtsWpDV6nfYmJCdvZ9KSGpIlXvioyWap0W1HChfLkvpLHkdHMpwDFiH5-5bNNhnmE8g1JP1roFH7_Y4vRgyDV3XM6wFxAv4wqW4ZSFdtNUg-Wrg1o5uUvDorj3DQxOh_GZRkuNa4TmH3wTrY9Rjnb8lGwrTdLD3SxqvI1lGYRmxUr61IlMf3BY3nhZPm7a-GZLIav3Smb4APa4vbmIqGva7hBlLbJ39lIjHcZlyGsppqDbmBpdrCgDDVaV9QU2SuKWAU04qhk3ZoD8dIMju_bH_V4MlPKEYy7XfnpFWe1CMqc5kkpKVicGHA0_Tphj-uiZR1l6yGZKVL5zXMrkP-oIM89RpoQy13yNbZL8YV_t39XR8g-kcgLvTp5srzpRxa8fPUgQRJ8uB1DVrg3_cFR6w=w1557-h876-no" alt="stainesphoto"></p><blockquote><p>這是在Staines拍攝的</p></blockquote><h1 id="IELTS"><a href="#IELTS" class="headerlink" title="IELTS"></a><center>IELTS</center><br></h1><p>談談考雅思的感想，初次考試其實很緊張，安檢非常的嚴格，規定要帶正本護照和影本護照不然就掰，很嚴格的要在時間內把包包放到一間房間，然後排隊等待完成指紋辨識紀錄、現場拍照、資料核對並簽名(與護照上名子筆跡相同，有看到不同的馬上被糾正)，緊接著檢查眼鏡、文具，只能帶透明的瓶子與水進去，一支筆一個橡皮差和護照，進去時會接受全身的金屬探測，還會掃描兩隻腳底… 對於第一次考這種大型考試的我來說，算是大開眼界。</p><p>而他們通常會在九點前就完全結束所有動作，然後準備開始考前的宣導與講解，就這樣直到中午十二點多，有時候他們手腳慢一點就會到快半才放人出來，考這個考試最累的的地方是必須控制飲食，早上不可以喝太多、吃太多東西喝太多水以及容易造成腸胃攪動的食物，直到中午考完才出來上廁所(中途可以出來但是這畢竟多少會影響考試心情，加上他們進出的檢查也繁雜，所以不建議中途上廁所)。</p><p>總共考過四個考場，剛好也分別不同考場，台大集思會議中心考過兩次、北科大一次、台北國際會議中心一次，其中最差的是台北國際會議中心椅子和桌子都是臨時性的那種，場地很高又很廣大，同個空間容納很多人，而因為人太多的因素會很多噪音，容易影響考試的專心度。次差的是北科大，他的座位雖然式階梯式的，不過前與後的距離非常貼近，桌子也非常的淺(桌上又設有麥克風而佔用了桌面的面積)，在考試得過程中因為監考人員會走動，需要檢查每個人的資料與護照的關係，而變成我要一直挪動我的椅子好讓他們能夠順利進出，這個我覺得很不OK。最好的一個是台大集思會議中心的小間考場，因為每間人數少且安靜，座位寬大椅子舒適，整體來說給考生的感覺是最適宜。</p><p>而在考口說的部份，一個當天考試一個是分兩天，我的經驗是當天考完是最累的，因為中間去吃飯並且等待口試時間(兩次都被排到了下午五六點的時段)，歷經了上午的考試之後，難免會影響頭腦的清晰度，比起分兩天考試的來說，我覺得若單獨一天準備口說考試的感覺，體力與精神上是最充沛的，不過壞處就是要跑兩次。(各有好處與壞處)</p><p>UKVI不過就是多了幾台行車紀錄器在每個環節錄影，所以考UKVI的同學也不必太多緊張擔心，其他的部分還是跟一般雅思是相同的。<br><blockquote class="blockquote-center"><p><strong><b><font color="#0000c6">雅思，它就是一場考試，一個人為精密安排設計過的考試。</font></b></strong></p></blockquote><br></p><h1 id="Study-vs-Work"><a href="#Study-vs-Work" class="headerlink" title="Study vs Work"></a><center>Study vs Work</center></h1><center>如果你不是一個志向清晰且堅定的人，或多或少會想過這個問題「該工作呢? 還是繼續升學?」</center><p><img src="https://lh3.googleusercontent.com/1pSKCRVqOx2Nf-IO8jQURPG-oZLxZtM6wqIWQKc8msqJESg5fMPc8UTEuty66-d7iArwFBaxhDykGJcMR7dJolVE0k8t3EcmCy0KpjUekPf_HX1ZQE1a6lQ1ndMeLaCsmG2smJTKg37N30ifjwqz2ZS99XadPasdwOs80YYqiRdGSN3dCN5Lt9Hr1YDFqksEA3Q0GgOTQXLGrd0FDXEXhnEu_n8SQPUphUz_79SIVLuRiFKniQqQz1oZcJja24ci5_YfvAl4pcWFlRhCHDG51qSSLz7-8UXF-XrtnSO37FeVVGJynRE0GNafptHtZfO8jLMISsX_aO5vL9oD_fWrqa_bNs4Ys528CZXds1fJJNVw3TacxPois7Ze0yuy0oNZFiqxiCD40ywS7A3koQkRhGrMU6VTWAyMn_bpU9qMHvbDkwjGx_iUSvEhdafI2oCg2j5gynCljphBeW_K0Ab-h0JtmfQz_r-vc8CRT1lHr3zDsGTLPGqZU-5pjiV_FJuRYmHuJ9-yON2NDiZWZnbiU9LqhqrJ_FADBwB_VOu_x_5Pl16QvSAgSUKKM47W0R99xoH1CnCg7rrR5quor9oOEF24nxHQef2y39MFrhZZSeJk3NSJ0qrOc-oja8W-VTMflOKwJi58ISiprImDo3ynLm5bC4kd3vLBOh6jpFSBZu9QP8RKKgHcJ3GdZtKC5CMP03gRKxrtK0SY8C2PiQ=w694-h390-no" alt="handlight"><br>這個問題我也詢問一些比我年紀稍長的前輩，無論是學長，亦或是教授們，多聽聽他們的想法，對我來說也是一個很好的方法，這能幫助自己加速釐清想法。<br>選擇升學的人呢，可能會認為說到了20好幾了還在念書，如果又繼續念博士的話應該更有感覺，而別人已經開始在賺錢，以及開始築基自己的社會資歷與人脈，當自己畢業之後是否能夠順利找到一個滿意的工作還是個未知數時，總會有點焦急。</p><p>沒錯，但要去考量的是畢業大學之後馬上踏入社會找工作的人，過了一兩年之後是否能夠學到真正有用具有幫助升遷的能力呢? 以及，當你畢業之後他們的薪水能夠到達多少的水準呢? 他們那一兩年的資歷是否真的有幫助呢? 另外，得問自己說，如果選擇繼續升學是否有學到真正的專業知識以及能後活用? 在這兩年升學裡，你預期讓自己到達多高的高度、讓自己吸收成長多少呢? 好好的檢視一下哪一個是你想要的。</p><p><blockquote class="blockquote-center"><p><strong><b><font color="#0000c6">把自己放在未來的幾年來看，決定了你的選擇，最後最重要的就是好好的做好當下的你。</font></b></strong></p></blockquote><br></p><p><img src="https://lh3.googleusercontent.com/Ej_TfiEih-qrhhWKeYe2vhhPBelpEoD9cJoN-o5SDTiN4Ctitfn3zxZyWA54WYDVwty0gILyYfV7bEq9UMke7N2G_-oFrdVaHQXWhmZFVBYHpdsiimcq4-SDELzwcr0crHLBypBnbK5sAlQSPjTfNetljJj9dqyFKhoW12PZonseFiYP61Lw0eSCNSla3rzXCRmnAL8tZ2UqxwJ7ImFanj1nx_qhqpWGojr1w8JaCxpmvSeWW3bWcz8TcVQmHD6LfKy0oXZPMQ7uTJIXfHhsUBawhfnAeaABI9tHzbIUus8Ad5WgGTG3L2jC3g0pl3pKCwqVLzCL8haTPxszNrF7DpFLyBmss1F39mpbwK_3kOn1ovwA1GxtXTxaJ0AINtrmg1kVIffzjNxP7YrArHZeVgl9cOh21F5ftLH9YDxAjd3RkxzXE3WBmujrlue5UKFP3C_Potfkv0ekCLMIo7nrMcOoz3IXMFufw-OjapXWvgS3R_a55UCje0Djja1TZzv0uzZoJevqSATvRuz5V9kzHC94FuyRnyuq92d-D0gWG3p2xcin0GX6fb4KTGWle90ps48vlWdnWmFa-a7XE4aHiA304vFL9EIuHbgodxLwN6OJqHo-vtTDRalRikJa5eUYBZNs-hMugk6e_SYiPG4ZhTWqWLahTIdp=w1557-h876-no" alt="oxfordstreet"></p><blockquote><p>拍攝於Oxford Street</p></blockquote><h1 id="Appreciate"><a href="#Appreciate" class="headerlink" title="Appreciate"></a><center>Appreciate</center><br></h1><p>最後，當然最感謝的是一路支持我的父母啦，除此還有我的指導老師李明憲教授，不論在申請的過程中亦或是平時，老師很照顧我，遇到一些問題時會提供我一些寶貴的建議和策略。</p><p>如果想，就去做。不要讓自己只是停留在，想。</p><center>Thanks for your reading.</center>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt; 純粹記錄個人申請MSc的整個過程和一些經驗 &lt;/center&gt;
-    
-    </summary>
-    
-      <category term="Mood" scheme="https://chiehpower.com/categories/Mood/"/>
-    
-    
-      <category term="Application" scheme="https://chiehpower.com/tags/Application/"/>
-    
-      <category term="English" scheme="https://chiehpower.com/tags/English/"/>
-    
-      <category term="IELTS" scheme="https://chiehpower.com/tags/IELTS/"/>
     
   </entry>
   

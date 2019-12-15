@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chiehpower.com/2019/12/14/logitech-mouse/</loc>
+    <loc>https://chiehpower.com/2019/12/19/custom_page/</loc>
     
-    <lastmod>2019-12-14T11:28:32.883Z</lastmod>
+    <lastmod>2019-12-15T15:52:29.450Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chiehpower.com/presentation/index.html</loc>
+    
+    <lastmod>2019-12-15T14:52:28.255Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://chiehpower.com/about/index.html</loc>
     
-    <lastmod>2019-11-20T07:14:41.106Z</lastmod>
+    <lastmod>2019-12-15T06:04:52.569Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chiehpower.com/2019/12/14/logitech-mouse/</loc>
+    
+    <lastmod>2019-12-14T11:28:32.883Z</lastmod>
     
   </url>
   
@@ -180,13 +194,6 @@
     <loc>https://chiehpower.com/sitemap/index.html</loc>
     
     <lastmod>2019-08-09T15:54:35.040Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chiehpower.com/tags/index.html</loc>
-    
-    <lastmod>2019-08-09T15:54:26.786Z</lastmod>
     
   </url>
   
@@ -366,14 +373,14 @@
   </url>
   
   <url>
-    <loc>https://chiehpower.com/2018/06/10/switch-file-gen/</loc>
+    <loc>https://chiehpower.com/2018/04/13/upgrade-xt20firmware/</loc>
     
     <lastmod>2019-01-20T11:41:09.587Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://chiehpower.com/2018/04/13/upgrade-xt20firmware/</loc>
+    <loc>https://chiehpower.com/2018/06/10/switch-file-gen/</loc>
     
     <lastmod>2019-01-20T11:41:09.587Z</lastmod>
     
