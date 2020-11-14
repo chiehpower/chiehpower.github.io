@@ -1,0 +1,64 @@
+---
+title: Bidding the license plate number of scooter
+description: <center> 標牌經驗紀錄 </center>
+photos:
+  - 'https://lh3.googleusercontent.com/o8VeTA51bEaOhG3q5fm5kqlV7Uuf8vKUXPff8vHousbCwngxzK1QsLDbHhcalSv9vJuGlkRGF-4GB-36gam7UGRkIyK5hsZlwJeq9U80B8RG4t6T5itb6jgUSC_X57mVnF2A8IktgVp_SsUJyK_G6g4sT3xVGzzPzrDm1ZDvhLsacqIjLc-fjOZlu0gn8cj232RpvwTMibHtkKm9pi25Y-C6_O95Q3NqTiUPH1ofsm-ds31eLi1PjQtn1qFF3DXc3lXX_tbY326I53XvH0BboaD_c_BrhpteKGwcSFwFVgHSCy4pXkab0s2GHU33rAUoDdhVAIHVbC6JM6pa1z68fQnP6cEt_ox5i6P7l2qIFf-uAKhp6kn1YnG-NAzW2K1UHw_0DzAD2GU5xoAldWunr4zA8f1_W6pcZq7Sz-oaCMZiU8h165qyj9yDR3CqSkZzK05u-Z6jiw05W_zO10V365XfhajG8qpyo4qm4opTB5LPbi1ffK-y48J3-huvpRSYje_VC3oyvOTtLPTydglt6FCs8p1pQZd0sCPK48_9mO4S1SvqooLJQYBn1_FSQ_FhBG5L5_WiY0fONEGH8PmreBz7CuwkHmJICpemKM5WDhQAXFhhTGXSbyuoWCX2YrguGMDLw3HPUwLrO5GzsLO3-UR_a1ZLOHzQnTdL4uez3ZDLUuVNpyQgo7YxZcfozWoE7v-dndi2l88Ej1PddVc=w2208-h1242-no'
+date: 2020-11-07 11:23:23
+tags: [ Share, G6 , Scooter ]
+categories: Scooter
+password:
+---
+
+This was my first time to attend this kind of bidding activity.
+
+從大學時候就一直想要標牌因為超帥的啊！可惜一直沒機會也不夠有閒錢，一直都很好奇到底機車標一個鐵支數字的車牌到底要多少錢？直到工作之後才又開始在那邊亂想... ＯＫ才會有這次的行動。
+
+人生第一次標牌，請前提準備先去戶政事務所辦一張自然人憑證，然後再買一台晶片讀卡機，這樣就可以參與網路標牌活動。其實非常方便，只要在家就可以參與競標全程活動。
+
+# 標牌
+
+然後就在監理站網站上留意各地區監理站發布標牌活動的時間，基本上活動時間為兩天，詳細的細節可以看監理站上面說明，總之在兩天後得標後趕緊線上付完款。個人心得是，現在由於車牌是七碼導致其實號碼選擇超多，因為是三組英文＋四個數字，可想而知三組英文光是排列組合就一堆... 加上可能疫情關係（？）參與的人其實也不多，除了8888以外基本上沒什麼人在競爭，而8888就相對激烈許多啦ＸＤ
+
+鐵支標牌是三千起標，其他的相對好一點的數字是兩千，最低的一級則是一千起標。共分三級。如果你預算不多或不求鐵支，基本上兩千就可以買到一個心儀的數字。（而且還不差）
+
+![](https://lh3.googleusercontent.com/pw/ACtC-3e1Fzdw8JuWk5s5XNiD96RiLTuCO3YKnKIF36GjYsxIt2dA-csyHvd4PDsB05tejzqytUE8_BXDu_dbe3by5Q2L_TSOwEin3wiVCBcl24wYDyNpU0uWwK2zQ3Dl1GqPW2oDQ-rslSjJbFpDQ6v-UBEaXw=w1244-h756-no?authuser=3)
+
+付款之後會有這張證明，把這張證明單印下來。
+第一階段標牌結束。
+
+---
+# 領牌
+
+到監理站之後，先去領牌櫃給他行照並跟他登記驗車，別忘記你的強制險有效日期要超過三十天以上，另外請注意中午十二點到一點是沒辦法驗車的，如果想要利用上班中午休息時間我覺得是不夠啦，然後我就等到一點之後開始，看著前面幾台先驗車，網路上說很多驗車都不用驗喇叭結果不是啊！都有驗誒！！由於我有換過喇叭（換蝸牛），所以趕緊跑到機車行說換原廠的喇叭，再趕回去驗車。
+驗車的時候車牌上不要黏東西，不過我是要換車牌的所以沒差，然後測左右方向燈、大小遠近燈、喇叭、引擎，過了之後就會給你一張單子填寫，填完了就可以拆車牌拿回去櫃檯領牌。他們也說可以用他們那邊工具拆車牌，不過我有換過精品螺絲，那邊沒有工具可以拆下來。
+![](https://lh3.googleusercontent.com/pw/ACtC-3eMpedIVYvltTIipQ6rdywtcI_sK42tohNUumf7DMigH6INru8QhdY5uA0rErHoF0CyHelnVN760tkr-8Em1DV0lAQr3LacOZckfKMZOhYFXbHLc-WKsCb8O0GjsO2wyh_LcWFVvHfI3gRrY3Wd9RBVTw=w2044-h1532-no?authuser=3)
+
+又跑去旁邊五金行想說買隻工具來換，想不到試了兩三次以及問老闆還是沒辦法，最後只好去車行直接請老闆幫忙拆卸與裝牌。
+
+買了一個還算可以夠厚的車牌框避免新款車牌太軟一下就被撞凹。
+![牌框](https://lh3.googleusercontent.com/rwvlbJbcyll7xPMmxawsSfbOmwIe2IzLOOM_3ypXiEaeunW_V_ohjWrcwkqq-ehZ8eq8_Z9IvB5NTWVr3A3kVkpyIjXe-6KDHm0oDqcpoS8P6uKgVAi6G2vlxnZGlH5eDvd-PZhORb2Ek_mBNcxySNaKQk4uOfZTgxy0kgFZG5WQ_4vc8e8Pe_GsKaVAvuCeibsxtWDTek3IpDU5AoZWQe_z05CjNxWM1mHkhcDoCWpISTQaydTQJ8mmhx1JbbUxOo_MxS5tHBkkogLfe9lsYKS2fw6K2I9F_wb3kXYNZNktoUMU0y_68xCGy0EGTvrb7fhAiSLLDC6WcFU8uoGOylpfA26DzSLIKE0oEPgiU8EdXuMoCbsR0inlqd2OzzY-mCFy14B0KKB-qf_iCodyPKXhYUm7GY8DwzSWcFVeCK4VbCD8g0JXTk4XYacS4b7IUou_PTVGByeKo4mxIuyvmTHkUemp8waSB9_UI4h8Y8Pp3teGYnt-IiqhAQDkCgD_0ur76TxbIBqjJp-OkP7Ebx8YzIiz142iG3obqHXTqt8c1Mxf5CJXh-ZlgtuUAcDNCdh6ZrrmZAMlDly95-15y1UDVHl9ZsIZC5GbA43C3WqUgB9ZY3WJoX2tJyTc8C9QxNeSMa89p3Fgk2pRxJQPSsXJ1xiSIO0wbn08I0qcOBjcuByWv72hmRADw8F_VDQ=w1150-h1532-no?authuser=3)
+
+2020/11/13 特地請特休假來領牌...弄了一個下午（耗時三小時）這是個人案例啦...
+![完成照](https://lh3.googleusercontent.com/Ic5g797rbe_CoUI6pfH8DA3URO7B5uuhWYD6LNPeuCfVg-eW9bxxGYAyr4WkHsqvPku3-0V3jWwvwAThDusi9B0Q0gAk-FlSwF9sqN68UNicIFfK-uQLoWYwjwG8_rxRcpADajyFyoBznmpIqj76RmQpTb7uc3UIBwxBZKBH6E5DKJfD-VevdieM-dlZLwdplO8ym9y8uHXBQ_180XGKtXgf5RzRwko-Wxn06fbU9gBvzHbaWAppq2MSdIBEoJeqSozEHnkNyjpq0oEXGRbWfEmygaXk8xpv7i-F6IjwrVxgbSeoeyFhpfJ84SMi-ysOaw-EafJPVGPP1vnA3A1i9ztEuZbE2V0QyjdwEFE_1CX5i_v35tGQW5BXAY8ZYrpRdPRynOXUqZCALcRgXR-v1PWTzdjAGqwNLyZjLDty1dqf3sA1mD-GQw_wb4DkSbnX4uDvui6AgftiDn9gK6B557tcy_OopSSU1JPIYkWePHZc4VpEofM9NqJpCUrAWcLmqi2KqRFVMlLjNHPgt5i9F7k2ACwOaga9Y8Luk4yTXKnbdRt-IEguWUQCQyyYLoP4x2paH013WDhyuhvdRocPkYcXDDt3cObW03h5JqousfbtZO-olJ0nJc6u2aach0zXMqY58rEq4JN4Tp5Z-3Ktf1kaK6N0vsgX1L421x0woV4P2fR45VVBCft0ab8goGc=w1124-h1500-no?authuser=3)
+
+真滴帥啦！！最多人大概就是好奇鐵支車牌標牌價格，詢問度超高ＸＤ
+其實也沒啥，只算是完成人生中一個成就吧！
+
+---
+# 費用總結
+
+- 競標費用
+- 機車號牌費 300
+- 機車行車執照費 150 (可不用 可直接貼貼紙)
+
+**個人額外費用：**
+
+- 車牌框 299
+- 補發行車執照費 150
+- 換喇叭 450
+- 拆換車牌 100
+
+
+### Reference:
+1. https://tws2872.pixnet.net/blog/post/399544018
+2. 可以先準備有效電子式保險證查詢：https://ecard.cali.org.tw/PPCP_QRY/

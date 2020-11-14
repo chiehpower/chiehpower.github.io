@@ -1,0 +1,10 @@
+---
+title: Matlab
+description: <center> </center>
+photos:
+  - 'https://lh3.googleusercontent.com/Ip433Hp1rTZhc-zmGdi-8vwGGcz1wkXUWOm38dEVFB7g1zxIBqte1eyiJjCzl3FKDTacwWfyjCEWZ2aC7JkmkrryduFgzN4dtu9OFN1PKGG-W-F7ZJklx0cVS-9hOnaFdl3mjgBROU6b9_R_-LLL5huWqaQkura3AF76c0XrgySH0m0DIGO0-o0kswWA5PtORS4UqNoOyFMNQdZHTWhOqz9lOdqhUI8QnnmLCn5XXei79npAjervZscRuXcOsHqs8piWsQDrA7Mi-2PyCeVxFR7eBBiH71tD2jebi7h2QVNuWf6ZF2Nm7xsdfsyMunA4IcopWe8700-SUebPbAl2Qp1OKAzwzPen2mmyrsYBKNTES3PQbd_X5XagD04qCoS04xm-2nv_ELgRJoH8ftnbC3dMXKJKiu3VsgN38vVjdQXbXDN0j4Cv-vO5X_R3ourLVzZtJrLhAm-7wIpt6gumKEpGuU_58xlfQXzovyJi3TlRPvOKS7zj48LbDUlrLGegqcwJk4jDzKCxu8JJL1OReA25CWTD4s0NDWSk4LFHh2qI8SAn4kd7EKZ__KsflLCKxtIQqr1RcIouxAtyCWoWk5Wjf7YVVHZIdDgQpT9SL1xccTTBD1hV046hYr75vd_zd4g0Xfyig3EYI1D4earQejTV3zoKDytsLBBznVQxtGm2=w1545-h869-no'
+date: 2018-11-09 01:19:49
+tags: [ Matlab, Programme, Coding]
+categories: Program
+password:
+---
