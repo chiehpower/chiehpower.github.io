@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔    Linux 目錄階層介紹   介紹 解釋    / (萬物起的源 根 root )   /boot (kernel,boot.b 核心,系統開機二進位檔)">
+<meta name="description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔">
 <meta name="keywords" content="Linux,Instruction">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux writing">
 <meta property="og:url" content="https://chiehpower.com/2017/10/05/Linux-writing/index.html">
 <meta property="og:site_name" content="Chieh&#39;s Blog">
-<meta property="og:description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔    Linux 目錄階層介紹   介紹 解釋    / (萬物起的源 根 root )   /boot (kernel,boot.b 核心,系統開機二進位檔)">
+<meta property="og:description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/vaFtf5kn1b3FlHyF-R5sBQAx5UzVkaUvb3G3TCB26Z4YSceZFXKziUsWZR0pKYI1WOp1rYC28jz1pjb1MzPBwYyLc1AXUgrkiCGKZHt0a-8jBo987osPDEtAKSVQTvdU0uqGcJUhylU5siMuXqlgbMhIPvkZA0Dg1MvcIu2E_8CfbiWg-EsTJKxh1oeNQOVgM7MDOJQfTEZZIdB7YqBf6TLCJxjb_GVgWh5aVvcZiuf5lXefBWdswgZ7iUBEz_3Mws4b-mBLClqb9PzCYGCeeNNqya-kX4PmIpb39ncUMKFCKW-5EtvX-5cz31Tat-DlufhZoNURJj3EX569wCJD1GoPiQ39bUY9CTqaeOxTRoS75Rh0Px9wwTHrd9TmwCe5sFGox0DTes0vGbpmvSvOP_VAYlrtijvmlABwziqUqJFeTR9wd5RZBTDhm-TQZLyzeiEyUx01IS1NXNoqYpPZtsKMPI-0dY-E0bIxf0fs7h2n0wvee_fGK56YxvUbJNCvwXkd-C_4esPrtXdx9_VSv2qrcKITB9POaDw0q-ZrShY-ll9vXI5s-raQ9wsDmDjUWovJdO4lej216taeejaqZR35Q-s6SdgJM4J0ZTafoFBG4RjnmqR4HZHnRWWOKq7Sa5oMXMfMD3WNJvAWzVKiGoNuzZMjcBz8MP0qEaPzhY98BLgAqvKPgXeiZJGQvXo5qeVMOi1Knvg-diNzTvOoEx4sjzbd_F5lYcb31-DxhrdqLKAbKg=w2160-h1216-no">
 <meta property="og:updated_time" content="2019-09-10T01:10:28.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux writing">
-<meta name="twitter:description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔    Linux 目錄階層介紹   介紹 解釋    / (萬物起的源 根 root )   /boot (kernel,boot.b 核心,系統開機二進位檔)">
+<meta name="twitter:description" content="安裝伺服器 以及 虛擬機器之新手紀錄 Arch linux此為 Arch linux下載網站 https://www.archlinux.org/download/ 可使用虛擬機 virtual box 灌 Arch linux ISO檔">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/vaFtf5kn1b3FlHyF-R5sBQAx5UzVkaUvb3G3TCB26Z4YSceZFXKziUsWZR0pKYI1WOp1rYC28jz1pjb1MzPBwYyLc1AXUgrkiCGKZHt0a-8jBo987osPDEtAKSVQTvdU0uqGcJUhylU5siMuXqlgbMhIPvkZA0Dg1MvcIu2E_8CfbiWg-EsTJKxh1oeNQOVgM7MDOJQfTEZZIdB7YqBf6TLCJxjb_GVgWh5aVvcZiuf5lXefBWdswgZ7iUBEz_3Mws4b-mBLClqb9PzCYGCeeNNqya-kX4PmIpb39ncUMKFCKW-5EtvX-5cz31Tat-DlufhZoNURJj3EX569wCJD1GoPiQ39bUY9CTqaeOxTRoS75Rh0Px9wwTHrd9TmwCe5sFGox0DTes0vGbpmvSvOP_VAYlrtijvmlABwziqUqJFeTR9wd5RZBTDhm-TQZLyzeiEyUx01IS1NXNoqYpPZtsKMPI-0dY-E0bIxf0fs7h2n0wvee_fGK56YxvUbJNCvwXkd-C_4esPrtXdx9_VSv2qrcKITB9POaDw0q-ZrShY-ll9vXI5s-raQ9wsDmDjUWovJdO4lej216taeejaqZR35Q-s6SdgJM4J0ZTafoFBG4RjnmqR4HZHnRWWOKq7Sa5oMXMfMD3WNJvAWzVKiGoNuzZMjcBz8MP0qEaPzhY98BLgAqvKPgXeiZJGQvXo5qeVMOi1Knvg-diNzTvOoEx4sjzbd_F5lYcb31-DxhrdqLKAbKg=w2160-h1216-no">
 
 
@@ -404,7 +404,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/vaFtf5kn1b3FlHyF-R5sBQAx5UzVkaUvb3G3TCB26Z4YSceZFXKziUsWZR0pKYI1WOp1rYC28jz1pjb1MzPBwYyLc1AXUgrkiCGKZHt0a-8jBo987osPDEtAKSVQTvdU0uqGcJUhylU5siMuXqlgbMhIPvkZA0Dg1MvcIu2E_8CfbiWg-EsTJKxh1oeNQOVgM7MDOJQfTEZZIdB7YqBf6TLCJxjb_GVgWh5aVvcZiuf5lXefBWdswgZ7iUBEz_3Mws4b-mBLClqb9PzCYGCeeNNqya-kX4PmIpb39ncUMKFCKW-5EtvX-5cz31Tat-DlufhZoNURJj3EX569wCJD1GoPiQ39bUY9CTqaeOxTRoS75Rh0Px9wwTHrd9TmwCe5sFGox0DTes0vGbpmvSvOP_VAYlrtijvmlABwziqUqJFeTR9wd5RZBTDhm-TQZLyzeiEyUx01IS1NXNoqYpPZtsKMPI-0dY-E0bIxf0fs7h2n0wvee_fGK56YxvUbJNCvwXkd-C_4esPrtXdx9_VSv2qrcKITB9POaDw0q-ZrShY-ll9vXI5s-raQ9wsDmDjUWovJdO4lej216taeejaqZR35Q-s6SdgJM4J0ZTafoFBG4RjnmqR4HZHnRWWOKq7Sa5oMXMfMD3WNJvAWzVKiGoNuzZMjcBz8MP0qEaPzhY98BLgAqvKPgXeiZJGQvXo5qeVMOi1Knvg-diNzTvOoEx4sjzbd_F5lYcb31-DxhrdqLKAbKg=w2160-h1216-no" rel="gallery_ckhgi42f6003uv9tzhhh1czbl" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/vaFtf5kn1b3FlHyF-R5sBQAx5UzVkaUvb3G3TCB26Z4YSceZFXKziUsWZR0pKYI1WOp1rYC28jz1pjb1MzPBwYyLc1AXUgrkiCGKZHt0a-8jBo987osPDEtAKSVQTvdU0uqGcJUhylU5siMuXqlgbMhIPvkZA0Dg1MvcIu2E_8CfbiWg-EsTJKxh1oeNQOVgM7MDOJQfTEZZIdB7YqBf6TLCJxjb_GVgWh5aVvcZiuf5lXefBWdswgZ7iUBEz_3Mws4b-mBLClqb9PzCYGCeeNNqya-kX4PmIpb39ncUMKFCKW-5EtvX-5cz31Tat-DlufhZoNURJj3EX569wCJD1GoPiQ39bUY9CTqaeOxTRoS75Rh0Px9wwTHrd9TmwCe5sFGox0DTes0vGbpmvSvOP_VAYlrtijvmlABwziqUqJFeTR9wd5RZBTDhm-TQZLyzeiEyUx01IS1NXNoqYpPZtsKMPI-0dY-E0bIxf0fs7h2n0wvee_fGK56YxvUbJNCvwXkd-C_4esPrtXdx9_VSv2qrcKITB9POaDw0q-ZrShY-ll9vXI5s-raQ9wsDmDjUWovJdO4lej216taeejaqZR35Q-s6SdgJM4J0ZTafoFBG4RjnmqR4HZHnRWWOKq7Sa5oMXMfMD3WNJvAWzVKiGoNuzZMjcBz8MP0qEaPzhY98BLgAqvKPgXeiZJGQvXo5qeVMOi1Knvg-diNzTvOoEx4sjzbd_F5lYcb31-DxhrdqLKAbKg=w2160-h1216-no" rel="gallery_ckhh75xph0036ndtzz0nb4ezx" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/vaFtf5kn1b3FlHyF-R5sBQAx5UzVkaUvb3G3TCB26Z4YSceZFXKziUsWZR0pKYI1WOp1rYC28jz1pjb1MzPBwYyLc1AXUgrkiCGKZHt0a-8jBo987osPDEtAKSVQTvdU0uqGcJUhylU5siMuXqlgbMhIPvkZA0Dg1MvcIu2E_8CfbiWg-EsTJKxh1oeNQOVgM7MDOJQfTEZZIdB7YqBf6TLCJxjb_GVgWh5aVvcZiuf5lXefBWdswgZ7iUBEz_3Mws4b-mBLClqb9PzCYGCeeNNqya-kX4PmIpb39ncUMKFCKW-5EtvX-5cz31Tat-DlufhZoNURJj3EX569wCJD1GoPiQ39bUY9CTqaeOxTRoS75Rh0Px9wwTHrd9TmwCe5sFGox0DTes0vGbpmvSvOP_VAYlrtijvmlABwziqUqJFeTR9wd5RZBTDhm-TQZLyzeiEyUx01IS1NXNoqYpPZtsKMPI-0dY-E0bIxf0fs7h2n0wvee_fGK56YxvUbJNCvwXkd-C_4esPrtXdx9_VSv2qrcKITB9POaDw0q-ZrShY-ll9vXI5s-raQ9wsDmDjUWovJdO4lej216taeejaqZR35Q-s6SdgJM4J0ZTafoFBG4RjnmqR4HZHnRWWOKq7Sa5oMXMfMD3WNJvAWzVKiGoNuzZMjcBz8MP0qEaPzhY98BLgAqvKPgXeiZJGQvXo5qeVMOi1Knvg-diNzTvOoEx4sjzbd_F5lYcb31-DxhrdqLKAbKg=w2160-h1216-no" itemprop="contentUrl">
               </a>
             
@@ -418,103 +418,104 @@
       
         <p><em>安裝伺服器 以及 虛擬機器之新手紀錄</em></p>
 <h1 id="Arch-linux"><a href="#Arch-linux" class="headerlink" title="Arch linux"></a>Arch linux</h1><p>此為 Arch linux下載網站</p>
-<p><a href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></p>
+<p><a href="https://www.archlinux.org/download/" target="_blank" rel="noopener">https://www.archlinux.org/download/</a></p>
 <p>可使用虛擬機 virtual box 灌 Arch linux ISO檔</p>
-<!---more-->
-
+<a id="more"></a>
 <hr>
 <h1 id="Linux-目錄階層介紹"><a href="#Linux-目錄階層介紹" class="headerlink" title="Linux 目錄階層介紹"></a>Linux 目錄階層介紹</h1><table>
 <thead>
 <tr>
-<th align="center">介紹</th>
+<th style="text-align:center">介紹</th>
 <th>解釋</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">/</td>
+<tbody>
+<tr>
+<td style="text-align:center">/</td>
 <td>(萬物起的源 根 root )</td>
 </tr>
 <tr>
-<td align="center">/boot</td>
+<td style="text-align:center">/boot</td>
 <td>(kernel,boot.b 核心,系統開機二進位檔)</td>
 </tr>
 <tr>
-<td align="center">/etc</td>
+<td style="text-align:center">/etc</td>
 <td>(設定檔)</td>
 </tr>
 <tr>
-<td align="center">/bin</td>
+<td style="text-align:center">/bin</td>
 <td>(工具)</td>
 </tr>
 <tr>
-<td align="center">/sbin</td>
+<td style="text-align:center">/sbin</td>
 <td>(系統工具)</td>
 </tr>
 <tr>
-<td align="center">/lib</td>
+<td style="text-align:center">/lib</td>
 <td>(共享函式庫)</td>
 </tr>
 <tr>
-<td align="center">/dev</td>
+<td style="text-align:center">/dev</td>
 <td>(device 目錄)</td>
 </tr>
 <tr>
-<td align="center">/usr</td>
+<td style="text-align:center">/usr</td>
 <td>(使用者等級工具)</td>
 </tr>
 <tr>
-<td align="center">/bin</td>
+<td style="text-align:center">/bin</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/sbin</td>
+<td style="text-align:center">/sbin</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/lib</td>
+<td style="text-align:center">/lib</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/local</td>
+<td style="text-align:center">/local</td>
 <td>(local 端專有工具)</td>
 </tr>
 <tr>
-<td align="center">/bin</td>
+<td style="text-align:center">/bin</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/sbin</td>
+<td style="text-align:center">/sbin</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/lib</td>
+<td style="text-align:center">/lib</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">/home</td>
+<td style="text-align:center">/home</td>
 <td>(系統使用者帳號的家)</td>
 </tr>
 <tr>
-<td align="center">/root</td>
+<td style="text-align:center">/root</td>
 <td>(root 的家)</td>
 </tr>
 <tr>
-<td align="center">/mnt</td>
+<td style="text-align:center">/mnt</td>
 <td>(系統 mount 暫存區)</td>
 </tr>
 <tr>
-<td align="center">/tmp</td>
+<td style="text-align:center">/tmp</td>
 <td>(暫存檔案存放位置)</td>
 </tr>
 <tr>
-<td align="center">/var</td>
+<td style="text-align:center">/var</td>
 <td>(系統資訊)</td>
 </tr>
 <tr>
-<td align="center">/proc</td>
+<td style="text-align:center">/proc</td>
 <td>(系統程序檔案系統)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
       
     </div>
@@ -687,10 +688,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">150</span>
                   <span class="site-state-item-name">tags</span>
-                
+                </a>
               </div>
             
 
