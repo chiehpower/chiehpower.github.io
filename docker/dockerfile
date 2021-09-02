@@ -1,8 +1,43 @@
 FROM ubuntu:18.04
 MAINTAINER Chieh
+RUN sed -i -e 's/archive.ubuntu.com/free.nchc.org.tw/' /etc/apt/sources.list
 
-RUN apt-get update
-RUN apt-get install -y net-tools
-RUN apt-get install -y git curl
+RUN apt-get update && apt-get install -y net-tools ca-certificates wget sudo \
+    git curl vim fonts-powerline zsh && \
+    rm -rf /var/lib/apt/lists/*
+
+### Upgrade the node version
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && apt-get install -y nodejs
-RUN apt-get install -y vim
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+### Install zsh 
+# terminal colors with xterm
+ENV TERM xterm
+# set the zsh theme 
+ENV ZSH_THEME bunnyruni
+# run the installation script  
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+
+RUN sudo apt-get update && sudo apt-get install -y autojump \
+&& sudo curl https://raw.githubusercontent.com/jopcode/oh-my-zsh-bunnyruni-theme/master/bunnyruni.zsh-theme -L -o ~/.oh-my-zsh/themes/bunnyruni.zsh-theme \
+&& sudo git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
+&& sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting \
+&& sudo git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions \
+&& sudo git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search \
+&& sudo sed -i 's/plugins=(git)/plugins=(git autojump zsh-autosuggestions zsh-completions zsh-syntax-highlighting zsh-history-substring-search)/1' ~/.zshrc \ 
+&& sudo sed -i -e 's/# DISABLE_UNTRACKED_FILES_DIRTY="true"/DISABLE_UNTRACKED_FILES_DIRTY="true"/1' ~/.zshrc \
+&& sudo sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="bunnyruni"/g' ~/.zshrc 
+
+RUN sudo sed -i '$i alias e="exit"' ~/.zshrc \
+&& sudo sed -i '$i alias cdd="j"' ~/.zshrc \
+&& sudo sed -i '$i alias n="nvidia-smi"' ~/.zshrc \
+&& sudo sed -i '$i alias gs="git status"' ~/.zshrc \
+&& sudo sed -i '$i alias ga="git add"' ~/.zshrc \
+&& sudo sed -i '$i alias gp="git pull"' ~/.zshrc \
+&& sudo sed -i '$i export PATH="$PATH:/usr/src/tensorrt/bin"' ~/.zshrc 
+
+WORKDIR /workspace
+
+ENTRYPOINT zsh
