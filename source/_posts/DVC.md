@@ -16,9 +16,9 @@ password:
 
 # Introduction
 
-We usually used Git to control code versions, but we knew that it is not good for controling large files or non-code documents.
+We usually used Git to control code versions, but we knew that it was not good for controling large files or non-code documents.
 
-Also, suppose we add one large file by git and push to registry such as Github, there are some potential issues inside actually. 
+Also, suppose if we add one large file by git and push to registry such as Github, there are some potential issues inside actually. As we know, usually deep learning or mahcine learning developers / researhers request to do a lot of trainings based on many verious experiments, so we need to find a proper way to maintain and manage those models.
 
 First of all, it will highly increase `.git` folder size ; for example, if your whole files size are 1GB, it will have another 1GB in the `.git` folder. Hence, it will account for 2GB. 
 
