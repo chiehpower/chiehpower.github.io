@@ -4,32 +4,86 @@ description: <center> </center>
 photos:
   - 'https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3'
 date: 2021-09-01 16:31:21
-tags:
-categories:
+tags: [ DVC , Deep-learning , Technique ]
+categories: Technique
 password:
 ---
+# DVC 
 
-# DVC
+[DVC](https://dvc.org/) is meaning of **Data Version Control**.
 
-Step:
-*Do it in the .git directory.*
+- [GitHub](https://github.com/iterative/dvc)
+
+# Introduction
+
+We usually used Git to control code versions, but we knew that it is not good for controling large files or non-code documents.
+
+Also, suppose we add one large file by git and push to registry such as Github, there are some potential issues inside actually. 
+
+First of all, it will highly increase `.git` folder size ; for example, if your whole files size are 1GB, it will have another 1GB in the `.git` folder. Hence, it will account for 2GB. 
+
+Second, it will take too much time on git clone repository. 
+
+Of course, DVC not only can do this kinds of things, but also implement the DL/ML pipeline things.
+
+It provides a lot of functionality inside if you are interested in it, you can take a look its website.
+
+In this article, I only showcased how to easily use DVC to control the models (DL/ML); in other word, control large files or put large files in the git folder.
+
+Here is a simple and main workflow for DVC below:
+
+![Graph from official website.](https://dvc.org/img/flow.gif)
+
+The simplest critical concept for DVC workflow is that we use our "files" to exchange one "document" or you can say a "receipt", and then DVC will put (store) your files to remote place, where can be in the local (in your PC somewhere) or remote servers or cloud drive, etc. Hence, we use **git** control this "receipt" to achieve data version controlled.
+
+I can separate the parts for using DVC. If you can nail it these points, there is no problem to use it smoothly.
+
+1. Set up the `config` file in the `.dvc` folder.
+2. Find a remote place such as local place (same device), remote server, or cloud drive (e.g., S3, AWS, etc.) 
+3. Remember the steps for usage.
+
+To be honest, the second point is the most difficult part if you do not have a cloud drive to store your files.
+
+In my case, I was stored the data in our server via **ssh** in the end. Hence, if you have an account such as S3, then you can use that way. 
+
+
+---
+# Usage
+
+## Step:
+*Do it in the directory which includes `.git` folder.*
+
+First, if this folder hasn't been controlled by dvc before, you need to do once in the beginning.
 ```
 dvc init
-
+```
+Second, let's add the files that we wanna store in the remote place. 
+When we `dvc add` one file, it will automatically generate one `.dvc` file give you. In addition, it will also automatically add your original file into `.gitignore` file to avoid being controlled by **git**.
+```
 ## Add file
 dvc add test
 git add test.dvc
 git commit -m "Add raw data"
+```
 
+Let's set up the config file in the first time. 
+Basically we need to add the remote side such as your personal server. We have to make sure dvc which can connect to there!! So you can test it by yourself first. For instance, we can use ssh to access your server to see whether there is a denied issue or not.
+
+Official website provided a lot of ways that you guys can find the commands on there.
+```
 ### Add the remote source 
 # For now, we only use local folder.
 dvc remote add -d myremote /tmp/dvcstore
 ### If you use webhdfs 
 dvc remote add -d myremote webhdfs://10.1.2.84:9870/tmp/webhdfs
 
-
 # check the information
 cat .dvc/config 
+```
+
+After we finish the setup config file, let's push the file to remote side. Next, let's git add this `.dvc` file and git commit & git push as usual.
+
+```
 # Push the test folder to dvc 
 dvc push 
 
@@ -39,12 +93,16 @@ git commit -m "Configure remote storage"
 git push
 ```
 
-If you wanna pull
+If you wanna pull the models or files or updates, use it:
+
 ```
 dvc pull
 ```
 
+---
 # Setup WebHDFS Part [Failure]
+
+Sorry I am not really familiar wiht using HDFS that I still failed in this way. I will update it if I have succeeded to use it.
 
 Reference:
 1. [hub.docker-hadoop-docker](https://hub.docker.com/r/sequenceiq/hadoop-docker/)
@@ -85,7 +143,8 @@ Reference:
     ```
     curl -i -X PUT http://localhost:50070/webhdfs/v1/tmp/webhdfs\?user.name\=istvan\&op\=MKDIRS
     ```
-
+    
+---
 # Via SSH Part [Success]
 
 Reference: 
@@ -110,7 +169,8 @@ dvc remote modify --local ssh-storage password 123456789
 If you dont wanna record any information into `.dvc/config`, then you can use `--local` option.
 Otherwise, it will be added into the git control.
 
-## How to add new files?
+---
+# How to add new files?
 
 When we change something new files in the tracked dvc folder, how can we add this new files into dvc?
 
@@ -149,9 +209,12 @@ git commit -m "Update tmp.dvc file"
 git push
 ```
 
+---
 # Docker
 
-Dockerfile:
+Here is a simple dockerfile to create a stored space that you can set up your remote side in here.
+
+**Dockerfile:**
 
 ```
 FROM ubuntu:latest
@@ -174,12 +237,14 @@ USER $USER_NAME
 RUN chmod 700 /home/user
 CMD [ "bash" ]
 ```
-Build image:
+
+**Build image:**
 ```
 docker build -t dvc:0.1 .
 docker run --rm -ti -p 8787:22 dvc:0.1 bash
 ```
 
+---
 # Requirements
 ```
 pip3 install dvc 
@@ -187,10 +252,10 @@ pip3 install dvc
 If you use WebHDFS, you need to install this requirement.
 ```
 pip3 install 'dvc[webhdfs]'
+or 
+pip3 install 'dvc[ssh]'
 ```
-Or you can use `dvc[all]`
-
-
+Or you can use `dvc[all]` to install all packages.
 
 
 # Reference: 
