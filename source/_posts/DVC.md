@@ -1,6 +1,6 @@
 ---
 title: DVC
-description: <center> </center>
+description: <center> It is time to learn how to use DVC to control verisons for your models and files. </center>
 photos:
   - 'https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3'
 date: 2021-09-01 16:31:21
