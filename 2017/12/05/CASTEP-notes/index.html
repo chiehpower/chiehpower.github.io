@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,CASTEP,Notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="這篇屬很雜亂的一些紀錄和推薦分享 (持續新增)">
+<meta name="keywords" content="Linux,CASTEP,Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CASTEP notes">
+<meta property="og:url" content="https://chiehpower.com/2017/12/05/CASTEP-notes/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="這篇屬很雜亂的一些紀錄和推薦分享 (持續新增)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lh3.googleusercontent.com/szmRN7Fi41DBW3X5lcoo3b-buUlF1R-SSq4tWcvxHb_6SS_bg_LwCM7bJYOo4JPJhL9xQgQOEQySP83QlGwW1_wOwZpk91BUbXXYhQTQFX1YPKDpPPT9IQMLilWcyhp9TUol9jQqZfdefSLLlktfydO1XSfNxJ7lJg4L2eDSW0C_Zy17ad1GLQAJZRUvUQo0aZ1acUQErTkCVRh_5tBRnopUWvsaTwhg_Uopuv6HxZ9SpNu-Rddc92OQFW0yC-8X0RoEBA_R7wipdskET4sOByKYzmqfyTy9hAO9XmyMxFdZ0_7VuQtw6wzgh2O7nVJoezyNRJyAj2UPBswOrbPyoIfx-rael7MSy4JZC7xPieUP7UH82GgpAbSDMrEFjBnV_bok56En50iZcrUJHTTq33nby-XVBMIuhXAfbwb6SdDNFxNTRMi0gt_bqME71-6B_cklI2uVO-yHWrID78oMG1JzFtugcePXdzT_vZlBm58JIkWNC1vBl8PYjyFC9Q-XtuMRB7RetKjfV2Ra1mxcqmnB0hkwxVY4GqLRUbeH6k3WPzSDvBvUAW3mA2cF9ol1YmupJ6Pt52GqqDlwmLpscd3Msiz6vDtsnfBI9IPDDZEcUPp5UBXPlfyGVlYLmIL1UMmNKS2MjO3lv-cJdTzu_0SUoIDlodtL9R-LAE-t7pEUJ_AaCp7qd_tzOMnlJFBtmkowt3Xc6Y_uwtYS2es=w2160-h1216-no">
+<meta property="og:updated_time" content="2020-12-18T05:35:05.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CASTEP notes">
+<meta name="twitter:description" content="這篇屬很雜亂的一些紀錄和推薦分享 (持續新增)">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/szmRN7Fi41DBW3X5lcoo3b-buUlF1R-SSq4tWcvxHb_6SS_bg_LwCM7bJYOo4JPJhL9xQgQOEQySP83QlGwW1_wOwZpk91BUbXXYhQTQFX1YPKDpPPT9IQMLilWcyhp9TUol9jQqZfdefSLLlktfydO1XSfNxJ7lJg4L2eDSW0C_Zy17ad1GLQAJZRUvUQo0aZ1acUQErTkCVRh_5tBRnopUWvsaTwhg_Uopuv6HxZ9SpNu-Rddc92OQFW0yC-8X0RoEBA_R7wipdskET4sOByKYzmqfyTy9hAO9XmyMxFdZ0_7VuQtw6wzgh2O7nVJoezyNRJyAj2UPBswOrbPyoIfx-rael7MSy4JZC7xPieUP7UH82GgpAbSDMrEFjBnV_bok56En50iZcrUJHTTq33nby-XVBMIuhXAfbwb6SdDNFxNTRMi0gt_bqME71-6B_cklI2uVO-yHWrID78oMG1JzFtugcePXdzT_vZlBm58JIkWNC1vBl8PYjyFC9Q-XtuMRB7RetKjfV2Ra1mxcqmnB0hkwxVY4GqLRUbeH6k3WPzSDvBvUAW3mA2cF9ol1YmupJ6Pt52GqqDlwmLpscd3Msiz6vDtsnfBI9IPDDZEcUPp5UBXPlfyGVlYLmIL1UMmNKS2MjO3lv-cJdTzu_0SUoIDlodtL9R-LAE-t7pEUJ_AaCp7qd_tzOMnlJFBtmkowt3Xc6Y_uwtYS2es=w2160-h1216-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2017/12/05/CASTEP-notes/">
+
+
+
+
+
+  <title>CASTEP notes | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record . 封面照都是自己拍的哦！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            Presentation
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2017/12/05/CASTEP-notes/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CASTEP notes</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-05T14:22:37+00:00">
+                2017-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/05/CASTEP-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/05/CASTEP-notes/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center> 這篇屬很雜亂的一些紀錄和推薦分享 (持續新增) </center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/szmRN7Fi41DBW3X5lcoo3b-buUlF1R-SSq4tWcvxHb_6SS_bg_LwCM7bJYOo4JPJhL9xQgQOEQySP83QlGwW1_wOwZpk91BUbXXYhQTQFX1YPKDpPPT9IQMLilWcyhp9TUol9jQqZfdefSLLlktfydO1XSfNxJ7lJg4L2eDSW0C_Zy17ad1GLQAJZRUvUQo0aZ1acUQErTkCVRh_5tBRnopUWvsaTwhg_Uopuv6HxZ9SpNu-Rddc92OQFW0yC-8X0RoEBA_R7wipdskET4sOByKYzmqfyTy9hAO9XmyMxFdZ0_7VuQtw6wzgh2O7nVJoezyNRJyAj2UPBswOrbPyoIfx-rael7MSy4JZC7xPieUP7UH82GgpAbSDMrEFjBnV_bok56En50iZcrUJHTTq33nby-XVBMIuhXAfbwb6SdDNFxNTRMi0gt_bqME71-6B_cklI2uVO-yHWrID78oMG1JzFtugcePXdzT_vZlBm58JIkWNC1vBl8PYjyFC9Q-XtuMRB7RetKjfV2Ra1mxcqmnB0hkwxVY4GqLRUbeH6k3WPzSDvBvUAW3mA2cF9ol1YmupJ6Pt52GqqDlwmLpscd3Msiz6vDtsnfBI9IPDDZEcUPp5UBXPlfyGVlYLmIL1UMmNKS2MjO3lv-cJdTzu_0SUoIDlodtL9R-LAE-t7pEUJ_AaCp7qd_tzOMnlJFBtmkowt3Xc6Y_uwtYS2es=w2160-h1216-no" rel="gallery_cktdzprnw0022e3jxxs45kz3o" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/szmRN7Fi41DBW3X5lcoo3b-buUlF1R-SSq4tWcvxHb_6SS_bg_LwCM7bJYOo4JPJhL9xQgQOEQySP83QlGwW1_wOwZpk91BUbXXYhQTQFX1YPKDpPPT9IQMLilWcyhp9TUol9jQqZfdefSLLlktfydO1XSfNxJ7lJg4L2eDSW0C_Zy17ad1GLQAJZRUvUQo0aZ1acUQErTkCVRh_5tBRnopUWvsaTwhg_Uopuv6HxZ9SpNu-Rddc92OQFW0yC-8X0RoEBA_R7wipdskET4sOByKYzmqfyTy9hAO9XmyMxFdZ0_7VuQtw6wzgh2O7nVJoezyNRJyAj2UPBswOrbPyoIfx-rael7MSy4JZC7xPieUP7UH82GgpAbSDMrEFjBnV_bok56En50iZcrUJHTTq33nby-XVBMIuhXAfbwb6SdDNFxNTRMi0gt_bqME71-6B_cklI2uVO-yHWrID78oMG1JzFtugcePXdzT_vZlBm58JIkWNC1vBl8PYjyFC9Q-XtuMRB7RetKjfV2Ra1mxcqmnB0hkwxVY4GqLRUbeH6k3WPzSDvBvUAW3mA2cF9ol1YmupJ6Pt52GqqDlwmLpscd3Msiz6vDtsnfBI9IPDDZEcUPp5UBXPlfyGVlYLmIL1UMmNKS2MjO3lv-cJdTzu_0SUoIDlodtL9R-LAE-t7pEUJ_AaCp7qd_tzOMnlJFBtmkowt3Xc6Y_uwtYS2es=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <a id="more"></a>
+<h1 id="Geometry-Optimization"><a href="#Geometry-Optimization" class="headerlink" title="Geometry Optimization"></a>Geometry Optimization</h1><p>SCF 電子結構收斂 ► 若在這無法收斂 ► Oband DFT 要去動SCF相關的參數</p>
+<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><ol>
+<li>SCF over (每一移動一個原子，就算一次SCF)</li>
+<li>算Force ►作用對象是原子</li>
+<li>SCF重做一次</li>
+<li>算Stress應力為0 ► 作用對象為cell</li>
+<li>BFGS若不收斂，則為GO state不收斂(但有SCF有收斂)<br>► 最常原因是因為E_cut不夠，尤其在動晶包 (請看Stress是否有小不下來的現象)</li>
+</ol>
+<p>長晶包 ► 應力波</p>
+<blockquote>
+<p>force  微分一次(energy對位置微分)，原子看force<br>  stress 微分兩次，晶包看stress</p>
+</blockquote>
+<p>臨界阻泥震盪 ► 最快停下來</p>
+<p>(2018/02/06)</p>
+<blockquote>
+<p>force 與總個(晶包，內容物)的受力相關(各方向等等)<br>  stress (應變=&gt;伸長量) 長度變化量/參考長度(總長) =&gt; “沒有單位”</p>
+</blockquote>
+<h2 id="GO不收斂情況"><a href="#GO不收斂情況" class="headerlink" title="GO不收斂情況"></a>GO不收斂情況</h2><p>有幾種，一種是SCF計算，一種是BFGS計算達到次數(預設100次)<br>要去查看幾個部分。<br>另外，在判定GO不收斂時，請看Stress值是否持續大而未降下來，以及SCF計算(tolerance)是否有持續漸小。</p>
+<h2 id="調控tolerance地方是在"><a href="#調控tolerance地方是在" class="headerlink" title="調控tolerance地方是在:"></a>調控tolerance地方是在:</h2><p><img src="/images/castep_notes1.png" alt="CASTEP_notes1"><br><img src="/images/castep_notes2.png" alt="CASTEP_notes2"><br>一般medium就夠用，不過還是得考量計算的物性的需求來做決定。</p>
+<h2 id="精確度的影響因素"><a href="#精確度的影響因素" class="headerlink" title="精確度的影響因素"></a>精確度的影響因素</h2><ol>
+<li>tolerance ► Q:如何判斷他的值該設多少? A:還是要看計算什麼物性來做決定。</li>
+<li>stress</li>
+<li>force</li>
+</ol>
+<h2 id="TPSD-2-points-steepest-descent"><a href="#TPSD-2-points-steepest-descent" class="headerlink" title="TPSD (2 points steepest descent)"></a>TPSD (2 points steepest descent)</h2><p>另外，計算的條件是有固定一軸而另一軸可動時，可使用TPSD代替BFGS的計算，會比較有效率。<br>TPSD ► 2 points 兩點之意(始=&gt;末)，若要做TPSD castep計算，則需把BFGS的字手動更改為TPSD。或者直接於GO more內做更改。</p>
+<p>另外，還有一種也可以嘗試，使用LBFGS也不錯。</p>
+<h2 id="增加E-cut的時機"><a href="#增加E-cut的時機" class="headerlink" title="增加E_cut的時機"></a>增加E_cut的時機</h2><p>不是所有的GO不收斂都適用，增加E_cut時，可以提升波函數的品質，進而可以更好的算出stress值，讓stress能夠小下來。<br>而如果E_cut不夠，則stress小不下來，就不容易收斂。<br>所以建議要看stress有沒有持續小不下來的跡象，方建議使用此法解決。</p>
+<h2 id="Fractional-coordinates"><a href="#Fractional-coordinates" class="headerlink" title="Fractional coordinates"></a>Fractional coordinates</h2><p>原子的位置表示，是分數座標。<br>Real Lattice 是(直或橫)的為A、B、C向量，而是由 uA(向量)+vB(向量)+wC(向量)所組成。</p>
+<blockquote>
+<p>舉例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">!======================================!</span><br><span class="line">!           Real Lattice(A)            !    </span><br><span class="line">!    2.5448282  -1.4697230   0.0001380 !    </span><br><span class="line">!   -0.0004034   2.9387474  -0.0001380 !      </span><br><span class="line">!    0.0002992  -0.0005183   8.0000000 !     </span><br><span class="line">!======================================!</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">x  Element         Atom        Fractional coordinates of atoms  x</span><br><span class="line">x                 Number           u          v          w      x</span><br><span class="line">x---------------------------------------------------------------x</span><br><span class="line">x  C                 1         0.666572   0.333428   0.449079   x</span><br><span class="line">x  C                 2         0.333428   0.666572   0.550921   x</span><br><span class="line">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如果今天要計算兩個碳原子的C軸方向高度差計算，則是<br>0.449079*(0,0,8)<br>0.550921*(0,0,8)<br>兩相減則為 0.814736 angstrom。 (這時才有單位)</p>
+</blockquote>
+<hr>
+<h1 id="Other-notes"><a href="#Other-notes" class="headerlink" title="Other notes"></a>Other notes</h1><p>DFT-D means Van-der_Waals.<br>lo-to ► 用於離子晶體計算，在左右移動上補計算<br>凡德瓦利是屬於激發態，瞬間對偶極，總的來說就是吸引力<br>DFT ► 屬基態<br>dft-dispesion<br>constraint ► 適用於固定原子 (需打開勾選最下面)<br>restraint ► 適用於表面重構<br>BFGS delocalize internals自由度較小</p>
+<hr>
+<h1 id="極化率計算"><a href="#極化率計算" class="headerlink" title="極化率計算"></a>極化率計算</h1><p>極化率分兩種<br>1.電場(or電子)<br>2.離子</p>
+<h2 id="算極化率"><a href="#算極化率" class="headerlink" title="算極化率"></a>算極化率</h2><p>計算極化率的時候，可先儲存file，再到Efield裡面task，刪去 phonon，留下 efield，再做計算較快</p>
+<p>以及做極化率計算時候，把原子fix住之後，就不會算低頻電場的值<br>(metal不可點選 因為計算電場若使用金屬 會有電流產生)</p>
+<p>電場做出來的極化率 沒分頻率 相當於極高頻</p>
+<hr>
+<h1 id="與計算材料相關及其他類型程式推薦"><a href="#與計算材料相關及其他類型程式推薦" class="headerlink" title="與計算材料相關及其他類型程式推薦"></a>與計算材料相關及其他類型程式推薦</h1><h2 id="OVITO"><a href="#OVITO" class="headerlink" title="OVITO"></a><a href="https://ovito.org/index.php/about/what-is-ovito" target="_blank" rel="noopener">OVITO</a></h2><p>Description:</p>
+<pre><code>Molecular dynamics (MD), molecular statics and Monte-Carlo based simulations are nowadays standard methods for modeling materials with atomic-scale resolution.
+Such atomistic simulation models generate three-dimensional atomic configurations or trajectories, which usually need to be further analyzed in order to generate new scientific insights.
+Powerful analysis and visualization techniques play a key role in this process as simulated systems become larger and more complex.
+Without the right software tools, key information would remain undiscovered, inaccessible and unused.
+The task of visualization packages such as OVITO is to translate the raw atomic coordinates into a meaningful graphical representation and enable an interpretation by the scientist.
+
+OVITO is a freely available visualization and data analysis software for atomistic datasets as output by large-scale molecular dynamics/statics and Monte-Carlo simulations.
+Its name is an acronym for Open Visualization Tool, emphasizing that flexibility and extensibility were important goals in the development of this software.
+</code></pre><p>  (截取官網Introduction)</p>
+<h2 id="ASE"><a href="#ASE" class="headerlink" title="ASE"></a><a href="https://wiki.fysik.dtu.dk/ase/index.html" target="_blank" rel="noopener">ASE</a></h2><p>Description:</p>
+<pre><code>ASE is an Atomic Simulation Environment written in the Python programming language with the aim of setting up, steering, and analyzing atomistic simulations.
+</code></pre><p>  (截取官網About)</p>
+<h2 id="Quantum-Espresso"><a href="#Quantum-Espresso" class="headerlink" title="Quantum-Espresso"></a><a href="http://www.quantum-espresso.org/" target="_blank" rel="noopener">Quantum-Espresso</a></h2><p>Description:</p>
+<pre><code>Quantum ESPRESSO is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale.
+It is based on density-functional theory, plane waves, and pseudopotentials.
+
+Quantum ESPRESSO has evolved into a distribution of independent and inter-operable codes in the spirit of an open-source project.
+The Quantum ESPRESSO distribution consists of a “historical” core set of components, and a set of plug-ins that perform more advanced tasks, plus a number of third-party packages designed to be inter-operable with the core components.
+Researchers active in the field of electronic-structure calculations are encouraged to participate in the project by contributing their own codes or by implementing their own ideas into existing codes.
+
+Quantum ESPRESSO is an open initiative, in collaboration with many groups world-wide, coordinated by the Quantum ESPRESSO Foundation.
+Present members of the latter include Scuola Internazionale Superiore di Studi Avanzati (SISSA) , the Abdus Salam International Centre for Theoretical Physics (ICTP), the CINECA National Supercomputing Center , the Ecole Polytechnique Fédérale de Lausanne, the University of North Texas, the Oxford University.
+Courses on modern electronic-structure theory with hands-on tutorials on the Quantum ESPRESSO codes are offered on a regular basis in collaboration with ICTP.
+(Last updated Sep. 29, 2017)
+</code></pre><p>  (截取官網About)</p>
+<h2 id="Xcrysden"><a href="#Xcrysden" class="headerlink" title="Xcrysden"></a><a href="http://www.xcrysden.org/" target="_blank" rel="noopener">Xcrysden</a></h2><p>  <em>非常推薦使用這個程式</em><br>Description:</p>
+<pre><code>XCrySDen is a crystalline- and molecular-structure visualisation program.
+The name of the program stands for Crystalline Structures and Densities and X because it runs under the X-Window environment.
+It facilitates a display of isosurfaces and contours, which can be superimposed on crystalline structures and interactively rotated and manipulated.
+It also possesses some tools for analysis of properties in reciprocal space such as interactive selection of k-paths in the Brillouin zone for the band-structure plots, and visualisation of Fermi surfaces.
+
+The graphical user interface of XCrySDen was developed to provide an easy to use and learn interface.
+Casual users should be able to exploit more than just the basic functionality without devoting more than a few hours of effort to the task of learning the use of the program.
+XCrySDen also provides a (partial) graphical user interface for CRYSTAL ab initio program, and a visualization system for PWscf and WIEN2k and initio programs.
+</code></pre><p>  (截取官網)</p>
+<h2 id="lyx"><a href="#lyx" class="headerlink" title="lyx"></a><a href="https://www.lyx.org/" target="_blank" rel="noopener">lyx</a></h2><p>Description:</p>
+<pre><code>LyX is a document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
+LyX combines the power and flexibility of TeX/LaTeX with the ease of use of a graphical interface.
+This results in world-class support for creation of mathematical content (via a fully integrated equation editor) and structured documents like academic articles, theses, and books.
+In addition, staples of scientific authoring such as reference list and index creation come standard.
+But you can also use LyX to create a letter or a novel or a theatre play or film script.
+A broad array of ready, well-designed document layouts are built in.
+
+LyX is for people who want their writing to look great, right out of the box.
+No more endless tinkering with formatting details, “finger painting” font attributes or futzing around with page boundaries.
+You just write. On screen, LyX looks like any word processor; its printed output — or richly cross-referenced PDF, just as readily produced — looks like nothing else.
+
+LyX is released under a Free Software/Open Source license, runs on Linux/Unix, Windows, and Mac OS X, and is available in several languages.
+</code></pre><p>  (截取官網)</p>
+<h2 id="VESTA"><a href="#VESTA" class="headerlink" title="VESTA"></a><a href="http://jp-minerals.org/vesta/en/" target="_blank" rel="noopener">VESTA</a></h2><p>Description:</p>
+<pre><code>VESTA is a 3D visualization program for structural models, volumetric data such as electron/nuclear densities, and crystal morphologies. Some of the novel features of VESTA are listed below.
+</code></pre><p>  (截取官網)</p>
+<h2 id="Crystallography-Open-Database"><a href="#Crystallography-Open-Database" class="headerlink" title="Crystallography Open Database"></a><a href="http://www.crystallography.net/cod/" target="_blank" rel="noopener">Crystallography Open Database</a></h2><p>Description:</p>
+<pre><code>Open-access collection of crystal structures of organic, inorganic, metal-organic compounds and minerals, excluding biopolymers.
+</code></pre><p>  (截取官網)</p>
+<h2 id="USPEX"><a href="#USPEX" class="headerlink" title="USPEX"></a><a href="http://uspex-team.org/en/uspex/overview" target="_blank" rel="noopener">USPEX</a></h2><p>Description:</p>
+<pre><code>USPEX (Universal Structure Predictor: Evolutionary Xtallography...and in Russian &quot;uspekh&quot; means &quot;success&quot; - owing to the high success rate and many useful results produced by this method) is a method developed by the Oganov laboratory since 2004.
+The problem of crystal structure prediction is very old and does, in fact, constitute the central problem of theoretical crystal chemistry. In 1988 John Maddox wrote that:
+
+&quot;One of the continuing scandals in the physical sciences is that it remains in general impossible to predict the structure of even the simplest crystalline solids from a knowledge of their chemical composition solids such as crystalline water (ice) are still thought to lie beyond mortals&apos; ken&quot;.
+
+USPEX method/code solves this problem and is used by over 4000 researchers worldwide.
+The First Blind Test of Inorganic Crystal Structure Prediction shows that USPEX outperforms other methods in terms of efficiency and reliability.
+The method continues to be rapidly developed. In addition to crystal structure prediction, USPEX can work in other dimensionalities and predict the structure of nanoparticles, polymers, surfaces, interfaces and 2D-crystals.
+It can very efficiently handle molecular crystals (including those with flexible and very complex molecules) and can predict stable chemical compositions and corresponding crystal structures, given just the names of the chemical elements.
+In addition to this fully non-empirical search, USPEX allows one to predict also a large set of robust metastable structures and perform several types of simulations using various degrees of prior knowledge.
+
+USPEX can also be used for finding low-energy metastable phases, as well as stable structures of nanoparticles, surface reconstructions, molecular packings in organic crystals, and for searching for materials with desired physical (mechanical, electronic) properties.
+The USPEX code is based on an efficient evolutionary algorithm developed by A.R. Oganov&apos;s group, but also has options for using alternative methods (random sampling, metadynamics, corrected particle swarm optimization algorithms).
+USPEX is interfaced with many ab initio codes, such as VASP, SIESTA, GULP, Quantum Espresso, CP2K, CASTEP, LAMMPS, and so on.
+</code></pre><p>  (截取官網)</p>
+<hr>
+<h1 id="增加-number-of-electrons"><a href="#增加-number-of-electrons" class="headerlink" title="增加 number of electrons"></a>增加 number of electrons</h1><p>在 .param 檔案內底部增加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">charge : 數目</span><br></pre></td></tr></table></figure></p>
+<p>增加一個一電子 -1<br>減少一個一電子 1</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://chiehpower.com/2017/12/05/CASTEP-notes/" title="CASTEP notes">https://chiehpower.com/2017/12/05/CASTEP-notes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/CASTEP/" rel="tag"># CASTEP</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/30/Photography/" rel="next" title="Photography">
+                <i class="fa fa-chevron-left"></i> Photography
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/27/learning/" rel="prev" title="即溶式教育">
+                即溶式教育 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://sourcerer.io/chiehpower" target="_blank" title="Sourcerer">
+                      
+                        <i class="fa fa-fw fa-user-secret"></i>Sourcerer</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Geometry-Optimization"><span class="nav-number">1.</span> <span class="nav-text">Geometry Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟"><span class="nav-number">1.1.</span> <span class="nav-text">步驟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GO不收斂情況"><span class="nav-number">1.2.</span> <span class="nav-text">GO不收斂情況</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#調控tolerance地方是在"><span class="nav-number">1.3.</span> <span class="nav-text">調控tolerance地方是在:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精確度的影響因素"><span class="nav-number">1.4.</span> <span class="nav-text">精確度的影響因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TPSD-2-points-steepest-descent"><span class="nav-number">1.5.</span> <span class="nav-text">TPSD (2 points steepest descent)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加E-cut的時機"><span class="nav-number">1.6.</span> <span class="nav-text">增加E_cut的時機</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fractional-coordinates"><span class="nav-number">1.7.</span> <span class="nav-text">Fractional coordinates</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-notes"><span class="nav-number">2.</span> <span class="nav-text">Other notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#極化率計算"><span class="nav-number">3.</span> <span class="nav-text">極化率計算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算極化率"><span class="nav-number">3.1.</span> <span class="nav-text">算極化率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#與計算材料相關及其他類型程式推薦"><span class="nav-number">4.</span> <span class="nav-text">與計算材料相關及其他類型程式推薦</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OVITO"><span class="nav-number">4.1.</span> <span class="nav-text">OVITO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASE"><span class="nav-number">4.2.</span> <span class="nav-text">ASE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quantum-Espresso"><span class="nav-number">4.3.</span> <span class="nav-text">Quantum-Espresso</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Xcrysden"><span class="nav-number">4.4.</span> <span class="nav-text">Xcrysden</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lyx"><span class="nav-number">4.5.</span> <span class="nav-text">lyx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VESTA"><span class="nav-number">4.6.</span> <span class="nav-text">VESTA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Crystallography-Open-Database"><span class="nav-number">4.7.</span> <span class="nav-text">Crystallography Open Database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USPEX"><span class="nav-number">4.8.</span> <span class="nav-text">USPEX</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#增加-number-of-electrons"><span class="nav-number">5.</span> <span class="nav-text">增加 number of electrons</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Theme
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2017/12/05/CASTEP-notes/';
+          this.page.identifier = '2017/12/05/CASTEP-notes/';
+          this.page.title = 'CASTEP notes';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

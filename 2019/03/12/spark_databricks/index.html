@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Notes,Program,Spark,Pyspark,Hadoop,Colab,Databricks,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="介紹如何輕鬆在Databricks上操作Spark。">
+<meta name="keywords" content="Notes,Program,Spark,Pyspark,Hadoop,Colab,Databricks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Databricks 使用流程">
+<meta property="og:url" content="https://chiehpower.com/2019/03/12/spark_databricks/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="介紹如何輕鬆在Databricks上操作Spark。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no">
+<meta property="og:updated_time" content="2020-12-18T05:35:05.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Databricks 使用流程">
+<meta name="twitter:description" content="介紹如何輕鬆在Databricks上操作Spark。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2019/03/12/spark_databricks/">
+
+
+
+
+
+  <title>Databricks 使用流程 | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record . 封面照都是自己拍的哦！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            Presentation
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/spark_databricks/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Databricks 使用流程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T13:04:23+00:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/12/spark_databricks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/spark_databricks/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center> 介紹如何輕鬆在Databricks上操作Spark。 </center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" rel="gallery_cktdzprpy006te3jxdliohfni" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/R5LU72iR_Jldl9qecsMdy0W1cGQn-__taWMCuCiHCIiYSggrRmFD2uaWdBv06WdCH4OX-85IFzgN-JmfBtzaGqiBxrfhSJVWicxL_kEW95gQlDWhULtznDYVh0qpW-S-3fQvfFW1_Ncc5VDqontgbOWkkNE3vNs53t6zUFvNVPWkdA6r55-LqbhU5VR8qpS98b98MSAfI88b4sdFVjnxvtxJSVeBmUCfvaD0hni92fyEQT9QrKGUwYE006hE4mBSW4s4UwUJuIPGaqMY5KK7NKilQqk5Tqs6HtMMFMaVovMqYebjFb4VxCdE6NFhVqx5zPokSt81s2TWggQu2nNJCiA_jjBSU5pvcIrKyQo9MXrl1_mJsC3fVtp9oNE-ZEZ7MMnkUx6sT-sHhKPtZ6BnPKNz-DoaYIOF39QD6gswS2FsIml-raOvhZh2qaYAc9xyUSjymWt1IjIrTqEwQjG1RS4yOtUpYqmKS3x2870DoltgqHrGtTQF9TYPbBW3YpDGVGjFfeCXyH51O_2ua0E1G5C2p9-g4JIRBaKp6xhebXhdD5EvCkH-sm88mERT-sL6To57dpF5IYjVCBblcy_YHDHctV1kboxQeL6jdS3XlTUo7l6ghszlymUT3ACE801NjKQNKzdloZRmChn3Kk3CfB-251R90zQSqRa_ulRZSpvsbHhIE3IzJ5t3DNlD41k7GvvZU97uxvvzXgroLB1sr7MqaA=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>使用Spark有一個不錯的平台『Databricks』，雖然後來已不使用ＸＤ 轉戰到Colab上操作。<br>因為Databricks免費使用有個缺點，容易時間一長就要重新創建Cluster。<br>當然使用這個好處是可以不用使用到本機的資源。</p>
+<p>首先，如果要找登入帳號的頁面，在google首頁直接打上<code>databricks account login</code>，點選第一個<code>Login - Databricks Community Edition</code></p>
+<p>進入之後會看到這個畫面。<br><img src="/images/databricks_1.png" alt="databrick"></p>
+<p>我們可以看到旁邊有一些選項:</p>
+<ol>
+<li>Home</li>
+<li>Workspace：裡面會儲存所有的import檔案</li>
+<li>Recents</li>
+<li>Data</li>
+<li>Clusters：每個檔案都需要有一個cluster來做支配。</li>
+<li>Jobs</li>
+<li>Search</li>
+</ol>
+<p>我們會用到的是 <code>Workspace</code> ＆ <code>Clusters</code>部分。</p>
+<blockquote class="blockquote-center"><p>總共有兩大Steps，首先第一步是要先創造一個Cluster。<br>再來是我們要把我們的file import 進去 Databricks。</p>
+</blockquote>
+<h1 id="Create-Clusters"><a href="#Create-Clusters" class="headerlink" title="Create Clusters"></a>Create Clusters</h1><p>點擊左側的Clusters，裡面列出所有的已創建或還未創建的群集。<br>剛登入的時候(或一般過了一段時間之後他會停止，需重創)，我們先創建一個。點擊上方的<code>✚ Create Cluster</code>之後會看到下方的畫面。<br><img src="/images/databricks_2.png" alt="databrick"></p>
+<p>可以隨意起個Cluster Name，我們選擇最新的Databricks Runtime Version版本吧！Python Version選擇3，然後其他可以不用動，最後就是Create Cluster。<br>一開始state是Pending，等個幾秒鐘讓他處理一下，當state變成Running時，這樣就創建成功囉！</p>
+<h1 id="Create-file"><a href="#Create-file" class="headerlink" title="Create file"></a>Create file</h1><p>再來我們可以到Workspace area，如果是一開始使用是空的，我們可以選擇Create一個空白的file，或者要import file進去都可以。<br>按右鍵，或出現Create &amp; Import。<br><img src="/images/databricks_3.png" alt="databrick"><br>選擇Create file &gt; Notebook，之後會跳出視窗填入file name、選擇使用的語言spark可以使用四種語言，個人使用Python，最後就是點選我們剛剛創建的cluster。完成之後就創建成功。<br><img src="/images/databricks_4.png" alt="databrick"><br>我們直接type sc，shift+enter，可以看見<code>Out[1]: &lt;SparkContext master=local[8] appName=Databricks Shell&gt;</code>，完成。</p>
+<p>如果是import file的人，記得在Detached點選我們剛創建的Cluster。<br>然後就可以運行我們的code了。<br><img src="/images/databricks_5.png" alt="databrick"></p>
+<p>不過一段時間就需要再重新操作一次cluster流程… lol<br>當然有另一個擇中辦法就是使用Colab，我覺得相對方便許多🤔</p>
+<p>👉可以參考這篇<a href="https://chiehpower.com/2019/03/12/install-spark/">Install pyspark × Use on Jupyter notebook × Colab</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://chiehpower.com/2019/03/12/spark_databricks/" title="Databricks 使用流程">https://chiehpower.com/2019/03/12/spark_databricks/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Program/" rel="tag"># Program</a>
+          
+            <a href="/tags/Spark/" rel="tag"># Spark</a>
+          
+            <a href="/tags/Pyspark/" rel="tag"># Pyspark</a>
+          
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+          
+            <a href="/tags/Colab/" rel="tag"># Colab</a>
+          
+            <a href="/tags/Databricks/" rel="tag"># Databricks</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/12/install-spark/" rel="next" title="Install pyspark × Use on Jupyter notebook × Colab">
+                <i class="fa fa-chevron-left"></i> Install pyspark × Use on Jupyter notebook × Colab
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/13/mac-terminal/" rel="prev" title="Mac OS × Terminal Colour">
+                Mac OS × Terminal Colour <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://sourcerer.io/chiehpower" target="_blank" title="Sourcerer">
+                      
+                        <i class="fa fa-fw fa-user-secret"></i>Sourcerer</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-Clusters"><span class="nav-number">1.</span> <span class="nav-text">Create Clusters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-file"><span class="nav-number">2.</span> <span class="nav-text">Create file</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Theme
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2019/03/12/spark_databricks/';
+          this.page.identifier = '2019/03/12/spark_databricks/';
+          this.page.title = 'Databricks 使用流程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

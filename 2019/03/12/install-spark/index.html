@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Notes,Jupyter notebook,Program,Spark,Pyspark,Hadoop,Java,Colab,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="I recorded two installing methods. (i.e. the Mac and Windows)">
+<meta name="keywords" content="Notes,Jupyter notebook,Program,Spark,Pyspark,Hadoop,Java,Colab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install pyspark × Use on Jupyter notebook × Colab">
+<meta property="og:url" content="https://chiehpower.com/2019/03/12/install-spark/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="I recorded two installing methods. (i.e. the Mac and Windows)">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no">
+<meta property="og:updated_time" content="2020-12-18T05:35:05.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install pyspark × Use on Jupyter notebook × Colab">
+<meta name="twitter:description" content="I recorded two installing methods. (i.e. the Mac and Windows)">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2019/03/12/install-spark/">
+
+
+
+
+
+  <title>Install pyspark × Use on Jupyter notebook × Colab | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record . 封面照都是自己拍的哦！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            Presentation
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2019/03/12/install-spark/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Install pyspark × Use on Jupyter notebook × Colab</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T01:48:41+00:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/12/install-spark/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/12/install-spark/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center> I recorded two installing methods. (i.e. the Mac and Windows) </center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no" rel="gallery_cktdzprpf0059e3jxacqox7mj" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/BL2KrSPXi9jyhnmAJoCeWIYkTHiUDeymiv6w6Jw7ESPY_G9n2Kr8hncerzl97s6Q2m9fzYS8FGWALBv31z1rDI3KW1Nq8AVmieNtpmnJtO-MfxitS4ZFrkt62VAbyCPCM3myZm5cy1KIYoUS2bbHp6cw1hQ_BjrzC33uBSkSLVdQoX5_QT9Po9bTwEr-lBjLH2Wh11xj7A8bd9M9WUWJUDFcHEQlydsgYzQ83Aobxf5Y_HWbtDTfCwR0Y_8R7xwLtYmAxLS_d4FSsyGJ0HlNdupW0Yy87RCW0PfZC1nG921KSoQ2MbWAaRx_hysgsZnWV4NXN1GB0g-BdMoaeAGZebHRCll9pbxJkdvvLQtJD2OjxB7DR2__3BpsKVgOWlAlxfk6IJqDagy7bcyeNFD9ilbwAekcHs0wZjqB0WtK7vTKVth4gGM5MUKEJM75GfMyRveaX3VkvgIg4KHYPwB5cu-Dj0VgPl7p0hJ2U5PS3rCkd4VsfFacGoF1GiBCrZzGpX2gFvlK07q9uciiHPX57bQ2aNJ8EkGcrjy4eXWc_-Ggydu-yjYACcdEM6J4AbR8HLfrunCnlOpVYGaX7ZiRd44zxCsgj5jjmxhX_XpstpzO8g0PgZlwF8-G7wSpRNkess56jhf1jhplDbCMZk5Vbc7iixjPdrA4jRg6435-SAOL_2sM-AeTrTCp-dAynaJ6nWi3e1NyiX0aZjZtfaWVeNiHgg=w2160-h1216-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="The-Steps-of-Mac-Installation"><a href="#The-Steps-of-Mac-Installation" class="headerlink" title="The Steps of Mac Installation"></a>The Steps of Mac Installation</h1><p>I also saw this link:<br><a href="https://anaconda.org/anaconda-cluster/notebook-pyspark-language/notebook" target="_blank" rel="noopener">https://anaconda.org/anaconda-cluster/notebook-pyspark-language/notebook</a></p>
+<h2 id="Install-pyspark-by-conda"><a href="#Install-pyspark-by-conda" class="headerlink" title="Install pyspark by conda"></a>Install pyspark by conda</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">Last login: Tue Mar  5 16:20:24 on ttys001</span><br><span class="line">(base) Chiehde-MacBook-Pro:~ chiehpower$ conda install -c conda-forge pyspark</span><br><span class="line">Collecting package metadata: done</span><br><span class="line">Solving environment: done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==&gt; WARNING: A newer version of conda exists. &lt;==</span><br><span class="line">  current version: 4.6.1</span><br><span class="line">  latest version: 4.6.7</span><br><span class="line"></span><br><span class="line">Please update conda by running</span><br><span class="line"></span><br><span class="line">    $ conda update -n base -c defaults conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">\## Package Plan ##</span><br><span class="line"></span><br><span class="line">  environment location: /Users/chiehpower/anaconda3</span><br><span class="line"></span><br><span class="line">  added / updated specs:</span><br><span class="line">    - pyspark</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    package                    |            build</span><br><span class="line">    ---------------------------|-----------------</span><br><span class="line">    certifi-2018.11.29         |        py37_1000         145 KB  conda-forge</span><br><span class="line">    conda-4.6.7                |           py37_0         875 KB  conda-forge</span><br><span class="line">    openssl-1.1.1b             |       h1de35cc_0         3.5 MB  conda-forge</span><br><span class="line">    py4j-0.10.8.1              |             py_0         178 KB  conda-forge</span><br><span class="line">    pyspark-2.4.0              |        py37_1000       203.5 MB  conda-forge</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:       208.1 MB</span><br><span class="line"></span><br><span class="line">The following NEW packages will be INSTALLED:</span><br><span class="line"></span><br><span class="line">  py4j               conda-forge/noarch::py4j-0.10.8.1-py_0</span><br><span class="line">  pyspark            conda-forge/osx-64::pyspark-2.4.0-py37_1000</span><br><span class="line"></span><br><span class="line">The following packages will be UPDATED:</span><br><span class="line"></span><br><span class="line">  certifi              pkgs/main::certifi-2018.11.29-py37_0 --&gt; conda-forge::certifi-2018.11.29-py37_1000</span><br><span class="line">  conda                       pkgs/main::conda-4.6.1-py37_0 --&gt; conda-forge::conda-4.6.7-py37_0</span><br><span class="line">  openssl              pkgs/main::openssl-1.1.1a-h1de35cc_0 --&gt; conda-forge::openssl-1.1.1b-h1de35cc_0</span><br><span class="line"></span><br><span class="line">The following packages will be SUPERSEDED by a higher-priority channel:</span><br><span class="line"></span><br><span class="line">  ca-certificates    pkgs/main::ca-certificates-2018.12.5-0 --&gt; conda-forge::ca-certificates-2018.11.29-ha4d7672_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">certifi-2018.11.29   | 145 KB    | ##################################### | 100%</span><br><span class="line">py4j-0.10.8.1        | 178 KB    | ##################################### | 100%</span><br><span class="line">pyspark-2.4.0        | 203.5 MB  | ##################################### | 100%</span><br><span class="line">conda-4.6.7          | 875 KB    | ##################################### | 100%</span><br><span class="line">openssl-1.1.1b       | 3.5 MB    | ##################################### | 100%</span><br><span class="line">Preparing transaction: done</span><br><span class="line">Verifying transaction: done</span><br><span class="line">Executing transaction: done</span><br><span class="line">(base) Chiehde-MacBook-Pro:~ chiehpower$ ls</span><br><span class="line">Applications		Library			anaconda3</span><br><span class="line">Desktop			Movies			blog</span><br><span class="line">Documents		Music			blog_backup</span><br><span class="line">Downloads		Pictures		node_modules</span><br><span class="line">Google 雲端硬碟		Public			package-lock.json</span><br><span class="line">(base) Chiehde-MacBook-Pro:~ chiehpower$ cd anaconda3/</span><br><span class="line">(base) Chiehde-MacBook-Pro:anaconda3 chiehpower$ ls</span><br><span class="line">Anaconda-Navigator.app			org.freedesktop.dbus-session.plist</span><br><span class="line">Applications				phrasebooks</span><br><span class="line">bin					pkgs</span><br><span class="line">conda-meta				plugins</span><br><span class="line">condabin				python.app</span><br><span class="line">doc					qml</span><br><span class="line">docs					resources</span><br><span class="line">envs					sbin</span><br><span class="line">etc					share</span><br><span class="line">fonts					shell</span><br><span class="line">include					ssl</span><br><span class="line">lib					translations</span><br><span class="line">libexec					var</span><br><span class="line">man					vscode_inst.py.log</span><br><span class="line">mkspecs</span><br><span class="line">(base) Chiehde-MacBook-Pro:anaconda3 chiehpower$</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Java-版本過低問題"><a href="#Java-版本過低問題" class="headerlink" title="Java 版本過低問題"></a>Java 版本過低問題</h2><p>遇到JAVA版本過低問題 （非本人的錯誤訊息，但類似）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: org/apache/spark/network/util/ByteUnit : Unsupported major.minor version 52.0</span><br><span class="line">    at java.lang.ClassLoader.defineClass1(Native Method)</span><br><span class="line">    at java.lang.ClassLoader.defineClass(ClassLoader.java:803)</span><br><span class="line">    at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)</span><br><span class="line">    at java.net.URLClassLoader.defineClass(URLClassLoader.java:442)</span><br><span class="line">    at java.net.URLClassLoader.access$100(URLClassLoader.java:64)</span><br><span class="line">    at java.net.URLClassLoader$1.run(URLClassLoader.java:354)</span><br><span class="line">    at java.net.URLClassLoader$1.run(URLClassLoader.java:348)</span><br><span class="line">    at java.security.AccessController.doPrivileged(Native Method)</span><br><span class="line">    at java.net.URLClassLoader.findClass(URLClassLoader.java:347)</span><br><span class="line">    at java.lang.ClassLoader.loadClass(ClassLoader.java:425)</span><br><span class="line">    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)</span><br><span class="line">    at java.lang.ClassLoader.loadClass(ClassLoader.java:358)</span><br><span class="line">    at org.apache.spark.internal.config.package$.&lt;init&gt;(package.scala:41)</span><br><span class="line">    at org.apache.spark.internal.config.package$.&lt;clinit&gt;(package.scala)</span><br><span class="line">    at org.apache.spark.deploy.yarn.ApplicationMaster.&lt;init&gt;(ApplicationMaster.scala:73)</span><br><span class="line">    at org.apache.spark.deploy.yarn.ApplicationMaster$$anonfun$main$1.apply$mcV$sp(ApplicationMaster.scala:763)</span><br><span class="line">    at org.apache.spark.deploy.SparkHadoopUtil$$anon$2.run(SparkHadoopUtil.scala:67)</span><br><span class="line">    at org.apache.spark.deploy.SparkHadoopUtil$$anon$2.run(SparkHadoopUtil.scala:66)</span><br><span class="line">    at java.security.AccessController.doPrivileged(Native Method)</span><br><span class="line">    at javax.security.auth.Subject.doAs(Subject.java:415)</span><br><span class="line">    at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1698)</span><br><span class="line">    at org.apache.spark.deploy.SparkHadoopUtil.runAsSparkUser(SparkHadoopUtil.scala:66)</span><br><span class="line">    at org.apache.spark.deploy.yarn.ApplicationMaster$.main(ApplicationMaster.scala:762)</span><br><span class="line">    at org.apache.spark.deploy.yarn.ExecutorLauncher$.main(ApplicationMaster.scala:785)</span><br><span class="line">    at org.apache.spark.deploy.yarn.ExecutorLauncher.main(ApplicationMaster.scala)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>但其實已經安裝了最新版的JAVA版本，不過顯示出來的卻是舊版本。<br>主要是路徑問題。</p>
+</blockquote>
+<hr>
+<h2 id="Improve-the-Java-env-path"><a href="#Improve-the-Java-env-path" class="headerlink" title="Improve the Java env path"></a>Improve the Java env path</h2><p>更新一下JAVA的環境路徑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/</span><br></pre></td></tr></table></figure>
+<p>可以放在 <code>.bash_profile</code> 裡，新增至最後一行</p>
+<p>參考這篇：<a href="https://www.jianshu.com/p/bdde3dd6918a" target="_blank" rel="noopener">https://www.jianshu.com/p/bdde3dd6918a</a></p>
+<blockquote>
+<p>持續遇到問題<br>Exception: Java gateway process exited before sending its port number</p>
+</blockquote>
+<hr>
+<h2 id="Install-findspark"><a href="#Install-findspark" class="headerlink" title="Install findspark"></a>Install findspark</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge findspark</span><br></pre></td></tr></table></figure>
+<p>結果依然 <strong>無法解決問題</strong>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">(base) Chiehde-MacBook-Pro:~ chiehpower$ conda install -c conda-forge findspark</span><br><span class="line">Collecting package metadata: done</span><br><span class="line">Solving environment: done</span><br><span class="line"></span><br><span class="line">\## Package Plan ##</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  environment location: /Users/chiehpower/anaconda3</span><br><span class="line"></span><br><span class="line">  added / updated specs:</span><br><span class="line">    - findspark</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    package                    |            build</span><br><span class="line">    ---------------------------|-----------------</span><br><span class="line">    conda-4.6.8                |           py37_0         877 KB  conda-forge</span><br><span class="line">    findspark-1.3.0            |             py_1           6 KB  conda-forge</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:         882 KB</span><br><span class="line"></span><br><span class="line">The following NEW packages will be INSTALLED:</span><br><span class="line"></span><br><span class="line">  findspark          conda-forge/noarch::findspark-1.3.0-py_1</span><br><span class="line"></span><br><span class="line">The following packages will be UPDATED:</span><br><span class="line"></span><br><span class="line">  conda                                        4.6.7-py37_0 --&gt; 4.6.8-py37_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">findspark-1.3.0      | 6 KB      | ####################################################################################### | 100%</span><br><span class="line">conda-4.6.8          | 877 KB    | ####################################################################################### | 100%</span><br><span class="line">Preparing transaction: done</span><br><span class="line">Verifying transaction: done</span><br><span class="line">Executing transaction: done</span><br><span class="line">(base) Chiehde-MacBook-Pro:~ chiehpower$</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>遇到另一問題<br>ValueError: Couldn’t find Spark, make sure SPARK_HOME env is set or Spark is in an expected location (e.g. from homebrew installation).</p>
+</blockquote>
+<hr>
+<p>加上了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export IPYTHON=1</span><br><span class="line">export PYSPARK_DRIVER_PYTHON=python3</span><br><span class="line">export PYSPARK_DRIVER_PYTHON_OPTS=&quot;jupyter notebook&quot;</span><br><span class="line">export PYSPARK_PYTHON=/Users/chiehpower/anaconda3/bin/python3</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>之後還是一樣回報同樣問題。<br>Exception: Java gateway process exited before sending its port number</p>
+</blockquote>
+<hr>
+<p>找到pyspark檔案夾的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/chiehpower/anaconda3/lib/python3.7/site-packages/pyspark</span><br></pre></td></tr></table></figure></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PYSPARK_DRIVER_PYTHON=jupyter</span><br><span class="line">export PYSPARK_DRIVER_PYTHON_OPTS=&apos;notebook&apos;</span><br></pre></td></tr></table></figure>
+<p>測試sc是否能在jupyter內運行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sc.stop()</span><br><span class="line">from pyspark import SparkContext</span><br><span class="line">sc = SparkContext(appName=&quot;PySparkShell&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>在這個路徑下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/chiehpower/anaconda3/bin</span><br></pre></td></tr></table></figure></p>
+<p>發布jupyter notebook<br>成功運行，但應該路徑未設定好，還是會有問題發生。</p>
+<hr>
+<p>是否運行這個<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PYSPARK_SUBMIT_ARGS=&quot;--master local[2]&quot;</span><br></pre></td></tr></table></figure></p>
+<p>需要再驗證。</p>
+<hr>
+<p>2019/03/13 測試之後<br>重開機之後測試，現在又能順利正常啟動Ｏ＿Ｏ<br>實在很怪～～<br>總之，環境也無需特別設定什麼，echo $SPARK_HOME也是空的但卻能正常運行。<br>大概是因為用conda安裝所以環境也都一併設定好了，所以jupyter notebook直接呼叫之後，<br>也不需要多設定什麼。<br>有遇到任何問題會在即時更新。</p>
+<hr>
+<h1 id="The-Steps-of-Windows-Installation"><a href="#The-Steps-of-Windows-Installation" class="headerlink" title="The Steps of Windows Installation"></a>The Steps of Windows Installation</h1><blockquote>
+<p>參考文章：<br><a href="https://blog.csdn.net/shiheyingzhe/article/details/80714301" target="_blank" rel="noopener">https://blog.csdn.net/shiheyingzhe/article/details/80714301</a></p>
+</blockquote>
+<h2 id="Windows-install-spark"><a href="#Windows-install-spark" class="headerlink" title="Windows install spark"></a>Windows install spark</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyspark</span><br></pre></td></tr></table></figure>
+<h2 id="Install-the-Java-Oracle"><a href="#Install-the-Java-Oracle" class="headerlink" title="Install the Java Oracle"></a>Install the Java Oracle</h2><blockquote>
+<p>連結：<br><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html</a></p>
+</blockquote>
+<p><code>version: windows jdk-11.0.2_windows-x64_bin.exe</code></p>
+<h3 id="Set-the-environment-path"><a href="#Set-the-environment-path" class="headerlink" title="Set the environment path"></a>Set the environment path</h3><blockquote>
+<p>我的電腦(右鍵)-&gt;內容-&gt;進階系統設定(顯示系統內容)-&gt;進階-&gt;環境變數</p>
+</blockquote>
+<p>User的使用者變數新增<code>JAVA_HOME</code> and <code>C:\Program Files\Java\jdk-11.0.2</code><br>系統變數 找到<code>Path</code>按新增 輸入<code>%JAVA_HOME%\bin</code></p>
+<p>若在終端器裡輸入<code>JAVA -version</code>未找到<br>可以去確認一下path裡面是否有<code>C:\ProgramData\Oracle\Java\javapath</code>這個位置，若有則去這個地方把裡面的檔案(應該會有三個檔案<code>java</code>，<code>javaw</code>，<code>javaws</code>)清掉，以及刪除path裡面的這個<code>C:\ProgramData\Oracle\Java\javapath</code>路徑<br>再次輸入查看版本指令應該會成功顯示。</p>
+<h2 id="Download-the-spark-and-Hadoop-package"><a href="#Download-the-spark-and-Hadoop-package" class="headerlink" title="Download the spark and Hadoop package"></a>Download the spark and Hadoop package</h2><blockquote>
+<p>連結：<br><a href="http://spark.apache.org/downloads.html" target="_blank" rel="noopener">http://spark.apache.org/downloads.html</a><br><a href="https://www.apache.org/dyn/closer.lua/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz" target="_blank" rel="noopener">https://www.apache.org/dyn/closer.lua/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz</a></p>
+</blockquote>
+<p><code>Version: spark-2.4.0-bin-hadoop2.7</code></p>
+<h3 id="Set-the-environment-path-1"><a href="#Set-the-environment-path-1" class="headerlink" title="Set the environment path"></a>Set the environment path</h3><p>於D disk 解壓縮之後同樣進入修改環境變數</p>
+<blockquote>
+<p>User的使用者變數新增<code>SPARK_HOME</code> and <code>D:\spark-2.4.0-bin-hadoop2.7</code><br>系統變數 找到<code>Path</code>按新增 輸入<code>%SPARK_HOME%\bin</code> and <code>%SPARK_HOME%\sbin</code></p>
+</blockquote>
+<h2 id="Install-hadoop"><a href="#Install-hadoop" class="headerlink" title="Install hadoop"></a>Install hadoop</h2><blockquote>
+<p>連結：<br><a href="http://hadoop.apache.org/releases.html" target="_blank" rel="noopener">http://hadoop.apache.org/releases.html</a><br><a href="https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz" target="_blank" rel="noopener">https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz</a></p>
+</blockquote>
+<p>下載hadoop相對應的包，本應下載2.7.7版本，但由於網址出問題改下載3.1.2。<br>Download <code>version: binary 3.1.2</code></p>
+<h3 id="Set-the-environment-path-2"><a href="#Set-the-environment-path-2" class="headerlink" title="Set the environment path"></a>Set the environment path</h3><p>於D disk 解壓縮之後同樣進入修改環境變數</p>
+<blockquote>
+<p>User的使用者變數新增<code>HADOOP_HOME</code> and <code>D:\hadoop</code><br>系統變數 找到<code>Path</code>按新增 輸入<code>%HADOOP_HOME%\bin</code> and <code>%HADOOP_HOME%\sbin</code></p>
+</blockquote>
+<p>另外，到下方網址下載兩個文件<code>winutils.exe</code> and <code>winutils.pdb</code> 複製到<code>D:\hadoop\bin</code>裡面</p>
+<blockquote>
+<p>連結：<br><a href="https://github.com/srccodes/hadoop-common-2.2.0-bin/tree/master/bin" target="_blank" rel="noopener">https://github.com/srccodes/hadoop-common-2.2.0-bin/tree/master/bin</a></p>
+</blockquote>
+<p>基本上這樣就完成了。<br>輸入<code>pyspark</code>是否能於終端器中顯示。<br>測試jupyter notebook中是否能夠運行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from pyspark import SparkContext</span><br><span class="line">sc = SparkContext()</span><br></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sc</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="Install-pyspark-in-Colab"><a href="#Install-pyspark-in-Colab" class="headerlink" title="Install pyspark in Colab"></a>Install pyspark in Colab</h1><blockquote>
+<p>參考文章：<br><a href="https://medium.com/@chiayinchen/使用-google-colaboratory-跑-pyspark-625a07c75000" target="_blank" rel="noopener">https://medium.com/@chiayinchen/使用-google-colaboratory-跑-pyspark-625a07c75000</a></p>
+</blockquote>
+<p>Just type it, and it will work.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install -q pyspark</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/colab_spark.png" alt="colab_spark"></p>
+<hr>
+<h1 id="Monitor-your-jobs"><a href="#Monitor-your-jobs" class="headerlink" title="Monitor your jobs"></a>Monitor your jobs</h1><p><img src="/images/py_spark_job.png" alt="spark_job"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://chiehpower.com/2019/03/12/install-spark/" title="Install pyspark × Use on Jupyter notebook × Colab">https://chiehpower.com/2019/03/12/install-spark/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Jupyter-notebook/" rel="tag"># Jupyter notebook</a>
+          
+            <a href="/tags/Program/" rel="tag"># Program</a>
+          
+            <a href="/tags/Spark/" rel="tag"># Spark</a>
+          
+            <a href="/tags/Pyspark/" rel="tag"># Pyspark</a>
+          
+            <a href="/tags/Hadoop/" rel="tag"># Hadoop</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Colab/" rel="tag"># Colab</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/09/jupyter-function/" rel="next" title="Jupyter × Convert to pdf × Nbextension">
+                <i class="fa fa-chevron-left"></i> Jupyter × Convert to pdf × Nbextension
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/12/spark_databricks/" rel="prev" title="Databricks 使用流程">
+                Databricks 使用流程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://sourcerer.io/chiehpower" target="_blank" title="Sourcerer">
+                      
+                        <i class="fa fa-fw fa-user-secret"></i>Sourcerer</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Steps-of-Mac-Installation"><span class="nav-number">1.</span> <span class="nav-text">The Steps of Mac Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-pyspark-by-conda"><span class="nav-number">1.1.</span> <span class="nav-text">Install pyspark by conda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-版本過低問題"><span class="nav-number">1.2.</span> <span class="nav-text">Java 版本過低問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improve-the-Java-env-path"><span class="nav-number">1.3.</span> <span class="nav-text">Improve the Java env path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-findspark"><span class="nav-number">1.4.</span> <span class="nav-text">Install findspark</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Steps-of-Windows-Installation"><span class="nav-number">2.</span> <span class="nav-text">The Steps of Windows Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-install-spark"><span class="nav-number">2.1.</span> <span class="nav-text">Windows install spark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-the-Java-Oracle"><span class="nav-number">2.2.</span> <span class="nav-text">Install the Java Oracle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-the-environment-path"><span class="nav-number">2.2.1.</span> <span class="nav-text">Set the environment path</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-the-spark-and-Hadoop-package"><span class="nav-number">2.3.</span> <span class="nav-text">Download the spark and Hadoop package</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-the-environment-path-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Set the environment path</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-hadoop"><span class="nav-number">2.4.</span> <span class="nav-text">Install hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-the-environment-path-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">Set the environment path</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-pyspark-in-Colab"><span class="nav-number">3.</span> <span class="nav-text">Install pyspark in Colab</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Monitor-your-jobs"><span class="nav-number">4.</span> <span class="nav-text">Monitor your jobs</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Theme
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2019/03/12/install-spark/';
+          this.page.identifier = '2019/03/12/install-spark/';
+          this.page.title = 'Install pyspark × Use on Jupyter notebook × Colab';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

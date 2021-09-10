@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CASTEP,AIRSS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="AIRSS 全名為 Ab initio Random Structure Searching檔案下載處 0.9版 ※特別注意 AIRSS目前是支援CASTEP 2017版本以上，在驅動CASTEP注意一下! 初始在安裝時，Makefile前，請先export environment123export PATH=$PATH:/home/username/airss-0.9/binexport LD_">
+<meta name="keywords" content="CASTEP,AIRSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIRSS">
+<meta property="og:url" content="https://chiehpower.com/2017/11/29/AIRSS/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="AIRSS 全名為 Ab initio Random Structure Searching檔案下載處 0.9版 ※特別注意 AIRSS目前是支援CASTEP 2017版本以上，在驅動CASTEP注意一下! 初始在安裝時，Makefile前，請先export environment123export PATH=$PATH:/home/username/airss-0.9/binexport LD_">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Txg503nhDVQHVdmlP9NUYoJukPLFLgNuN_TC_sViAnQdJMKhWgnfeJ8WkljEBQL2WmXEygwL_UM_BmW7bt4nuzUsCHrQykE895C51RrtdZiel43gsl5tjVSQSgmbnH70TDoKoe-okSIpSIw_mjVp_2Po4WnqfiFvIxvFSUDk7Vs0w-IsOaK8ZQPzQ6voPMt8Dp53mu0P-o63ziPbkbasupBo-OYgAT65gn8Xxzudo0MMdcNK-EgTxsdPiygqK_GV0k-Hh9lLgBeK35k5PNHVgJpL7CrcCv4niQ80TH4Wo2cPrJbwwcfbq51A-LvgqSMgSpSEETdtEbdzj36LGELxFrBW8gs8wayMCMm3IfAng2GotfRHXKTkWIHBF62l9fnPW7kBLuwzYul88X_MGiVepOt4wK7EyfU-Yx8xoEcNq7LR4y6uxGATSyPCaRUYe8QtXWQctPsQcXGoAc0IhzuGC9GNOW2ukpsPQGV3hioVqy0yGUhlHtF1Qo2zEf-5r3sNQhU6R3CiLhxKiRaS8tjSiw56GUUAZ7_RiRal4bdIdQWLTD6PG20yt8QjYgyWXHfuNYG0fNB9dsacj0rjkSPUsmf60Gv6EWFIm73BYaC21olbORh9XN459R9ueyVdItHy2XIWfO6OeJ223sGTBOq60cIFtik-fHnL7oE1mNgE4lfy44CNlwabJF-maFwxtpPX8PywfJfhd33UYSmyzIE=w2168-h1220-no">
+<meta property="og:updated_time" content="2020-12-18T05:35:05.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AIRSS">
+<meta name="twitter:description" content="AIRSS 全名為 Ab initio Random Structure Searching檔案下載處 0.9版 ※特別注意 AIRSS目前是支援CASTEP 2017版本以上，在驅動CASTEP注意一下! 初始在安裝時，Makefile前，請先export environment123export PATH=$PATH:/home/username/airss-0.9/binexport LD_">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/Txg503nhDVQHVdmlP9NUYoJukPLFLgNuN_TC_sViAnQdJMKhWgnfeJ8WkljEBQL2WmXEygwL_UM_BmW7bt4nuzUsCHrQykE895C51RrtdZiel43gsl5tjVSQSgmbnH70TDoKoe-okSIpSIw_mjVp_2Po4WnqfiFvIxvFSUDk7Vs0w-IsOaK8ZQPzQ6voPMt8Dp53mu0P-o63ziPbkbasupBo-OYgAT65gn8Xxzudo0MMdcNK-EgTxsdPiygqK_GV0k-Hh9lLgBeK35k5PNHVgJpL7CrcCv4niQ80TH4Wo2cPrJbwwcfbq51A-LvgqSMgSpSEETdtEbdzj36LGELxFrBW8gs8wayMCMm3IfAng2GotfRHXKTkWIHBF62l9fnPW7kBLuwzYul88X_MGiVepOt4wK7EyfU-Yx8xoEcNq7LR4y6uxGATSyPCaRUYe8QtXWQctPsQcXGoAc0IhzuGC9GNOW2ukpsPQGV3hioVqy0yGUhlHtF1Qo2zEf-5r3sNQhU6R3CiLhxKiRaS8tjSiw56GUUAZ7_RiRal4bdIdQWLTD6PG20yt8QjYgyWXHfuNYG0fNB9dsacj0rjkSPUsmf60Gv6EWFIm73BYaC21olbORh9XN459R9ueyVdItHy2XIWfO6OeJ223sGTBOq60cIFtik-fHnL7oE1mNgE4lfy44CNlwabJF-maFwxtpPX8PywfJfhd33UYSmyzIE=w2168-h1220-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2017/11/29/AIRSS/">
+
+
+
+
+
+  <title>AIRSS | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record . 封面照都是自己拍的哦！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            Presentation
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2017/11/29/AIRSS/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">AIRSS</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-29T13:51:05+00:00">
+                2017-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/29/AIRSS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/29/AIRSS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/Txg503nhDVQHVdmlP9NUYoJukPLFLgNuN_TC_sViAnQdJMKhWgnfeJ8WkljEBQL2WmXEygwL_UM_BmW7bt4nuzUsCHrQykE895C51RrtdZiel43gsl5tjVSQSgmbnH70TDoKoe-okSIpSIw_mjVp_2Po4WnqfiFvIxvFSUDk7Vs0w-IsOaK8ZQPzQ6voPMt8Dp53mu0P-o63ziPbkbasupBo-OYgAT65gn8Xxzudo0MMdcNK-EgTxsdPiygqK_GV0k-Hh9lLgBeK35k5PNHVgJpL7CrcCv4niQ80TH4Wo2cPrJbwwcfbq51A-LvgqSMgSpSEETdtEbdzj36LGELxFrBW8gs8wayMCMm3IfAng2GotfRHXKTkWIHBF62l9fnPW7kBLuwzYul88X_MGiVepOt4wK7EyfU-Yx8xoEcNq7LR4y6uxGATSyPCaRUYe8QtXWQctPsQcXGoAc0IhzuGC9GNOW2ukpsPQGV3hioVqy0yGUhlHtF1Qo2zEf-5r3sNQhU6R3CiLhxKiRaS8tjSiw56GUUAZ7_RiRal4bdIdQWLTD6PG20yt8QjYgyWXHfuNYG0fNB9dsacj0rjkSPUsmf60Gv6EWFIm73BYaC21olbORh9XN459R9ueyVdItHy2XIWfO6OeJ223sGTBOq60cIFtik-fHnL7oE1mNgE4lfy44CNlwabJF-maFwxtpPX8PywfJfhd33UYSmyzIE=w2168-h1220-no" rel="gallery_cktdzpro8002oe3jxwzqtjtn0" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/Txg503nhDVQHVdmlP9NUYoJukPLFLgNuN_TC_sViAnQdJMKhWgnfeJ8WkljEBQL2WmXEygwL_UM_BmW7bt4nuzUsCHrQykE895C51RrtdZiel43gsl5tjVSQSgmbnH70TDoKoe-okSIpSIw_mjVp_2Po4WnqfiFvIxvFSUDk7Vs0w-IsOaK8ZQPzQ6voPMt8Dp53mu0P-o63ziPbkbasupBo-OYgAT65gn8Xxzudo0MMdcNK-EgTxsdPiygqK_GV0k-Hh9lLgBeK35k5PNHVgJpL7CrcCv4niQ80TH4Wo2cPrJbwwcfbq51A-LvgqSMgSpSEETdtEbdzj36LGELxFrBW8gs8wayMCMm3IfAng2GotfRHXKTkWIHBF62l9fnPW7kBLuwzYul88X_MGiVepOt4wK7EyfU-Yx8xoEcNq7LR4y6uxGATSyPCaRUYe8QtXWQctPsQcXGoAc0IhzuGC9GNOW2ukpsPQGV3hioVqy0yGUhlHtF1Qo2zEf-5r3sNQhU6R3CiLhxKiRaS8tjSiw56GUUAZ7_RiRal4bdIdQWLTD6PG20yt8QjYgyWXHfuNYG0fNB9dsacj0rjkSPUsmf60Gv6EWFIm73BYaC21olbORh9XN459R9ueyVdItHy2XIWfO6OeJ223sGTBOq60cIFtik-fHnL7oE1mNgE4lfy44CNlwabJF-maFwxtpPX8PywfJfhd33UYSmyzIE=w2168-h1220-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p><a href="https://www.mtg.msm.cam.ac.uk/Codes/AIRSS" target="_blank" rel="noopener">AIRSS</a> 全名為 Ab initio Random Structure Searching<br><a href="https://www.mtg.msm.cam.ac.uk/files/airss-0.9.tgz" target="_blank" rel="noopener">檔案下載處 0.9版</a></p>
+<p><strong>※特別注意 AIRSS目前是支援CASTEP 2017版本以上，在驅動CASTEP注意一下!</strong></p>
+<p>初始在安裝時，Makefile前，請先export environment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/home/username/airss-0.9/bin</span><br><span class="line">export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/</span><br><span class="line">source ~/mpivars.sh</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>於airss.pl腳本內，可以自行替換要驅動的CASTEP來源，甚至可以驅動MS的RunCASTEP腳本來做CASTEP計算。</p>
+<h1 id="一般基本計算指令與流程"><a href="#一般基本計算指令與流程" class="headerlink" title="一般基本計算指令與流程"></a>一般基本計算指令與流程</h1><ul>
+<li><p>計算結構搜尋</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">airss.pl -press (看要計算幾Gpa) -max (計算結構數量) -mpinp (核心數) -seed (檔名)</span><br><span class="line">可另，外加上 -keep -step 0 等等指令。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分析<br>結構搜尋完之後用基本的分析指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ca -r</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由左到右的意思<br>The above is a “ranking” of the results according to energy (strictly, enthalpy).<br>The first column is the unique structure name, the second - pressure, the third - volume per formula unit (fu), the fourth - enthalpy/fu for the first, and then relative to that, the fifth - number of fu, the sixth - chemical formula, the seventh - symmetry, and the eighth - number of repeats.<br>(參考Example 1.1部分有寫)</p>
+</li>
+</ul>
+<hr>
+<p>目前測試過的是，可以自行指定特定的potential(.cell file內指定)，在做搜尋的時候可於(.param)調整E-cut增加精確性的結構搜尋。<br>先前做了C_Si之間的結構搜尋，在分析時有注意到一件事情，AIRSS認定的space group與MS內的symmetry後找的space group上有幾個會有不同。<br>  舉例:<br>  AIRSS ► MS<br>  C2/m ► R-3M<br>  P63/mmc ► P1<br>  P1 or P-1 ► C2/m<br>  R-3M ► PM-3M<br>  C2/m ► I41/AMD<br>所以之後再做判斷時，可能要再多加確認，最嚴謹一點的方式是要在MS內做完幾何結構最佳化的計算再來看是最準確的。</p>
+<p>由於AIRSS功能也可以做到讓其原子小幅度的震動，使其落到更低的亞穩態。(降低依些奇怪的結構出現)，而要做統計分析時要把計算的數量提高，才會比較精確(100甚至1000)。</p>
+<hr>
+<h1 id="資料提供"><a href="#資料提供" class="headerlink" title="資料提供"></a>資料提供</h1><ol>
+<li>AIRSS內的關鍵字表(這些都可以從Cambridge上下載的到)<br><a href="https://drive.google.com/file/d/11EfzxEjXYz4pquAa2XzxERPkF1bAVEIt/view?usp=sharing" target="_blank" rel="noopener">AIRSS_cheat_sheet</a></li>
+<li>AIRSS 0.9版 內提供的Example (我把他抓出來)<br><a href="https://drive.google.com/file/d/1tqhWNFsX3ahki03RlCzgDEs_JYhEQUZU/view?usp=sharing" target="_blank" rel="noopener">AIRSS_Example</a></li>
+</ol>
+<h1 id="Code內容寫的關鍵字註釋"><a href="#Code內容寫的關鍵字註釋" class="headerlink" title="Code內容寫的關鍵字註釋"></a>Code內容寫的關鍵字註釋</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">VARVOL ► Determine the variable target volume</span><br><span class="line">OVERLAP ► What overlap to tolerate - using hard-sphere potentials</span><br><span class="line">SLACK ► Fractional slack on the bonding</span><br><span class="line">COMPACT ► Compact the final cell? Not if there is any symmetry, as the operators are not currently converted</span><br><span class="line">Not if the cell is supposed to be fixed in any way, not if a cluster</span><br><span class="line"></span><br><span class="line">NUM=2 為 兩個原子</span><br><span class="line">POSAMP=3 代表最多可移動為 3 angstrom</span><br><span class="line">MINSEP=0.75 ensured 原子分子 不會被 generated</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="space-group"><a href="#space-group" class="headerlink" title="space group"></a>space group</h1><p><a href="https://en.wikipedia.org/wiki/Space_group" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Space_group</a></p>
+<h1 id="cellsym"><a href="#cellsym" class="headerlink" title="cellsym"></a>cellsym</h1><p><a href="http://www.check2xsf.org.uk/cellsym.html" target="_blank" rel="noopener">http://www.check2xsf.org.uk/cellsym.html</a></p>
+<h2 id="Spglib"><a href="#Spglib" class="headerlink" title="Spglib"></a>Spglib</h2><p><a href="http://atztogo.github.io/spglib/" target="_blank" rel="noopener">http://atztogo.github.io/spglib/</a></p>
+<hr>
+<p>Less than 1% of crystals in most databases are P1</p>
+<p>另一款預測結構程式<br><a href="http://uspex-team.org/en/" target="_blank" rel="noopener">http://uspex-team.org/en/</a></p>
+<p>Crystal structure prediction = CSP (?)<br>Potential energy surfaces = PEs (?)</p>
+<p><a href="http://doye.chem.ox.ac.uk/jon/structures/LJ/tables.150.html" target="_blank" rel="noopener">http://doye.chem.ox.ac.uk/jon/structures/LJ/tables.150.html</a></p>
+<hr>
+<h1 id="討論與問題"><a href="#討論與問題" class="headerlink" title="討論與問題"></a>討論與問題</h1><ol>
+<li>內文有錯字 if ► is (1.6)We start with a 55 atom icosahedral (point group Ih) cluster, centred on the origin. On generating the random structure this cluster if(應該是is) neither shifted (#POSAMP=0) nor rotated (#ANGAMP=0). The “# Ih” label is identical for all the 55 atoms of the cluster. The 56th atom is randomly located in a shell of outer radius 6 (#POSAMP=6) and inner radius 5 (#POSAMP=5). Structures in which any atoms are closer than 1.5 are rejected.</li>
+<li>input file內制定的cluster是否與在command line時 下定的 -cluster 有何不同?<br>host:1.6 cjp10$ airss.pl -pp3 -cluster -max 10 -seed Al</li>
+<li>另外，在input file內的cluster是否有順序之分?<br>MINSEP=1.5<br>CLUSTER<br>POSAMP=0<br>ANGAMP=0<br>是否使用cluster之後 posamp angamp都會受cluster影響?</li>
+<li>cluster 使用之後 無週期性邊界條件的問題</li>
+<li>.pp程式說明檔在哪? 另外，特別注意 #Beta是甚麼意思?</li>
+<li>學習: In the above run the known ground state structure of LJ56 is located after 10 attempts.</li>
+<li>(1.7)中， Q: 為什麼The shape of the unit cell is not optimised during the relaxation. 還需要 #FIX ?<br>FIX_ALL_CELL : true A: 一個是在隨機搜尋時 固定 一個是在CASTEP計算時 固定</li>
+<li>1.7 HCP找出兩種結構 命中率 10個 只有一種結構(屬於能量最低) 使用MS做一個slab(小的) 然後做兩組 看淺的洞 還是 深的洞 能量高? (吸附位置) 最低能量的數量(命中率)問題 ► 波茲曼分布 ► 活化能 ► 導致在結構搜尋時，尋找能<br>量的谷底數</li>
+<li>SUPERCELL n or a b c or ax ay az bx by bz cx cy cz the full matrix (9 numbers) 時 ax ay az bx by bz cx cy cz 任<br>給整數 保證一定是超晶包嗎?</li>
+</ol>
+<hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://chiehpower.com/2017/11/29/AIRSS/" title="AIRSS">https://chiehpower.com/2017/11/29/AIRSS/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CASTEP/" rel="tag"># CASTEP</a>
+          
+            <a href="/tags/AIRSS/" rel="tag"># AIRSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/25/xmgrace-advanced/" rel="next" title="Xmgrace 進階篇">
+                <i class="fa fa-chevron-left"></i> Xmgrace 進階篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/30/Photography/" rel="prev" title="Photography">
+                Photography <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://sourcerer.io/chiehpower" target="_blank" title="Sourcerer">
+                      
+                        <i class="fa fa-fw fa-user-secret"></i>Sourcerer</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一般基本計算指令與流程"><span class="nav-number">1.</span> <span class="nav-text">一般基本計算指令與流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#資料提供"><span class="nav-number">2.</span> <span class="nav-text">資料提供</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code內容寫的關鍵字註釋"><span class="nav-number">3.</span> <span class="nav-text">Code內容寫的關鍵字註釋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#space-group"><span class="nav-number">4.</span> <span class="nav-text">space group</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cellsym"><span class="nav-number">5.</span> <span class="nav-text">cellsym</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spglib"><span class="nav-number">5.1.</span> <span class="nav-text">Spglib</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#討論與問題"><span class="nav-number">6.</span> <span class="nav-text">討論與問題</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Theme
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2017/11/29/AIRSS/';
+          this.page.identifier = '2017/11/29/AIRSS/';
+          this.page.title = 'AIRSS';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

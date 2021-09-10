@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleabb0235d95708546.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,Notes,Shell,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chieh's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="讓腳本來替勞這些大量且重複的事情吧!">
+<meta name="keywords" content="Linux,Notes,Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell">
+<meta property="og:url" content="https://chiehpower.com/2018/02/02/Shell/index.html">
+<meta property="og:site_name" content="Chieh&#39;s Blog">
+<meta property="og:description" content="讓腳本來替勞這些大量且重複的事情吧!">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://lh3.googleusercontent.com/MJ-Ujvugso1AwXPPMsN2gjofse0G12oi_NPiyyNKTl0PqBSmIVcE3qiNETSNuKKpbtCQfVyAgblWYBtvPUR6hY1ijz1REwdqXHdnJ6fJUpYGmCjSFpt-TDudHnEZV8iRhSqhS6zvPXx-tCmPMvTOfSOhFgQf9rkOXznGZKYfThzsQ9VTzMHnHQZR60G4OLUWI_KKz0oUJwtCG9KuXYy-Fjo0YJHWYE1f7t4w-QIh0BtNjquhMEI-9pxy77-rWQdvTlLd8U0RJJ4HhJOK4eIKtHWOfShH5r7yA46aM4xiiUfcE-w4eOXpaszCYp_hLtiz1-ZgH1zKuRE_GiWMyqh-TiIcsas4qUcGKddErD-nIgcPYmxlNvubQhLbp9MAmtCogv2KsZAVoQmyhLs_GDZNeJobnCRyF28j0QBYkEZY5b207ySEvJH3NNMQJPmY7lBHFzIeglhWQ5ku4Nh5bdXvfsvUboGgqr4T1b6-VrrSMIleMbBaG3EUa5k0d8sMYDoLz2hhZtyhkbrly7qYIjdC-30ShPUhf0g2o26BUuyqOsFWpyry1Bz9wQaNjSOYL0cbe-J0UxnwO_IbwoQejPO_cmEiwkpxcW43d1NeKIqh__1-XI_Nzr4e8X0Ozy-9blHVV3Qz2ilV0ZFqpcLEIsMCv1_yK55JAkT8ZjEhlheKNIDP_Ah81YF2WKrZj3jvQd6szSogZL572fy5uTQPN2w=w2160-h1368-no">
+<meta property="og:updated_time" content="2020-12-18T05:35:05.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shell">
+<meta name="twitter:description" content="讓腳本來替勞這些大量且重複的事情吧!">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/MJ-Ujvugso1AwXPPMsN2gjofse0G12oi_NPiyyNKTl0PqBSmIVcE3qiNETSNuKKpbtCQfVyAgblWYBtvPUR6hY1ijz1REwdqXHdnJ6fJUpYGmCjSFpt-TDudHnEZV8iRhSqhS6zvPXx-tCmPMvTOfSOhFgQf9rkOXznGZKYfThzsQ9VTzMHnHQZR60G4OLUWI_KKz0oUJwtCG9KuXYy-Fjo0YJHWYE1f7t4w-QIh0BtNjquhMEI-9pxy77-rWQdvTlLd8U0RJJ4HhJOK4eIKtHWOfShH5r7yA46aM4xiiUfcE-w4eOXpaszCYp_hLtiz1-ZgH1zKuRE_GiWMyqh-TiIcsas4qUcGKddErD-nIgcPYmxlNvubQhLbp9MAmtCogv2KsZAVoQmyhLs_GDZNeJobnCRyF28j0QBYkEZY5b207ySEvJH3NNMQJPmY7lBHFzIeglhWQ5ku4Nh5bdXvfsvUboGgqr4T1b6-VrrSMIleMbBaG3EUa5k0d8sMYDoLz2hhZtyhkbrly7qYIjdC-30ShPUhf0g2o26BUuyqOsFWpyry1Bz9wQaNjSOYL0cbe-J0UxnwO_IbwoQejPO_cmEiwkpxcW43d1NeKIqh__1-XI_Nzr4e8X0Ozy-9blHVV3Qz2ilV0ZFqpcLEIsMCv1_yK55JAkT8ZjEhlheKNIDP_Ah81YF2WKrZj3jvQd6szSogZL572fy5uTQPN2w=w2160-h1368-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://chiehpower.com/2018/02/02/Shell/">
+
+
+
+
+
+  <title>Shell | Chieh's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107521179-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chieh's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Life Record . 封面照都是自己拍的哦！</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-presentation">
+          <a href="/presentation" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            Presentation
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chiehpower.com/2018/02/02/Shell/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chieh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chieh's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Shell</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-02T13:34:18+00:00">
+                2018-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/02/Shell/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/02/Shell/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>點擊數
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  <center> 讓腳本來替勞這些大量且重複的事情吧! </center>
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/MJ-Ujvugso1AwXPPMsN2gjofse0G12oi_NPiyyNKTl0PqBSmIVcE3qiNETSNuKKpbtCQfVyAgblWYBtvPUR6hY1ijz1REwdqXHdnJ6fJUpYGmCjSFpt-TDudHnEZV8iRhSqhS6zvPXx-tCmPMvTOfSOhFgQf9rkOXznGZKYfThzsQ9VTzMHnHQZR60G4OLUWI_KKz0oUJwtCG9KuXYy-Fjo0YJHWYE1f7t4w-QIh0BtNjquhMEI-9pxy77-rWQdvTlLd8U0RJJ4HhJOK4eIKtHWOfShH5r7yA46aM4xiiUfcE-w4eOXpaszCYp_hLtiz1-ZgH1zKuRE_GiWMyqh-TiIcsas4qUcGKddErD-nIgcPYmxlNvubQhLbp9MAmtCogv2KsZAVoQmyhLs_GDZNeJobnCRyF28j0QBYkEZY5b207ySEvJH3NNMQJPmY7lBHFzIeglhWQ5ku4Nh5bdXvfsvUboGgqr4T1b6-VrrSMIleMbBaG3EUa5k0d8sMYDoLz2hhZtyhkbrly7qYIjdC-30ShPUhf0g2o26BUuyqOsFWpyry1Bz9wQaNjSOYL0cbe-J0UxnwO_IbwoQejPO_cmEiwkpxcW43d1NeKIqh__1-XI_Nzr4e8X0Ozy-9blHVV3Qz2ilV0ZFqpcLEIsMCv1_yK55JAkT8ZjEhlheKNIDP_Ah81YF2WKrZj3jvQd6szSogZL572fy5uTQPN2w=w2160-h1368-no" rel="gallery_cktdzpror003ue3jxurhsgrpf" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://lh3.googleusercontent.com/MJ-Ujvugso1AwXPPMsN2gjofse0G12oi_NPiyyNKTl0PqBSmIVcE3qiNETSNuKKpbtCQfVyAgblWYBtvPUR6hY1ijz1REwdqXHdnJ6fJUpYGmCjSFpt-TDudHnEZV8iRhSqhS6zvPXx-tCmPMvTOfSOhFgQf9rkOXznGZKYfThzsQ9VTzMHnHQZR60G4OLUWI_KKz0oUJwtCG9KuXYy-Fjo0YJHWYE1f7t4w-QIh0BtNjquhMEI-9pxy77-rWQdvTlLd8U0RJJ4HhJOK4eIKtHWOfShH5r7yA46aM4xiiUfcE-w4eOXpaszCYp_hLtiz1-ZgH1zKuRE_GiWMyqh-TiIcsas4qUcGKddErD-nIgcPYmxlNvubQhLbp9MAmtCogv2KsZAVoQmyhLs_GDZNeJobnCRyF28j0QBYkEZY5b207ySEvJH3NNMQJPmY7lBHFzIeglhWQ5ku4Nh5bdXvfsvUboGgqr4T1b6-VrrSMIleMbBaG3EUa5k0d8sMYDoLz2hhZtyhkbrly7qYIjdC-30ShPUhf0g2o26BUuyqOsFWpyry1Bz9wQaNjSOYL0cbe-J0UxnwO_IbwoQejPO_cmEiwkpxcW43d1NeKIqh__1-XI_Nzr4e8X0Ozy-9blHVV3Qz2ilV0ZFqpcLEIsMCv1_yK55JAkT8ZjEhlheKNIDP_Ah81YF2WKrZj3jvQd6szSogZL572fy5uTQPN2w=w2160-h1368-no" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <a id="more"></a>
+<p>在處理大量且重複的事情的時候，你會很希望你能有個腳本來當你的左右手。</p>
+<p>英文裡叫腳本為 Script ，這裡不講一些細節，有需要學習的可以買書或上網自行閱讀。<br>主要以記錄與推薦為主。我覺得有需要有目的才會促使自己變強與改進，我在腳本上的訓練也是一樣，不斷有新的目標與需求，然後不斷的去想到底能不能更好更方便，學習並且改進不好的程式處。</p>
+<p>不過據說其實shell已經慢慢落伍了QAQ，現在應該是改用Python居多啦…畢竟更簡單易懂且方便。<br>但是無論哪一種，只要你能精通都是很方便的。</p>
+<hr>
+<h1 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h1><ol>
+<li><p>Shell第一行 務必為</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br></pre></td></tr></table></figure>
+<p>當然如果你的bash不是安裝於這個位置，或者不是安裝這個版本，就不會是這個位置。(一般都是這裡)<br>你可以在裡面先行輸入好你希望要在command line裡做的指令，寫在script裡，而當執行時便會一行一行的執行下去。</p>
+</li>
+<li>在Shell內的註釋是使用 “#” (在fortran裡面則一般是”!”)</li>
+<li>可以在command line上放置shell腳本name後面接續你要放的參數。 (fortran在這部分則需要引用其他的函式)</li>
+<li><p>簡單介紹幾個基本的Shell指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo :是顯示(呼叫)，類似於fortran內的write,print指令</span><br><span class="line">read :讀取，類似於Fortran內的read</span><br><span class="line">$    :變數之意，在shell內有一方便也特別的就是，變數不需要宣告。而記住這概念 &quot;A=$B&quot; 等於後面放變數  </span><br><span class="line">for  :類似於fortran內的do迴圈之意，用法有很多種且很活(陸續介紹)。</span><br><span class="line">if   :if判定很好用，可以用來做一些邏輯檢查。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在shell內若要處裡字串，則要靠awk與sed的幫助。</p>
+</li>
+<li>腳本每次啟動是進入一個新的bash，也就是進入一個子程序，當你在子程序內做一些環境的export，程序結束之後退回父程序就沒有了。</li>
+<li>完成後，記得把這個shell腳本賦予可執行的權限<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x (name).sh</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h1 id="指令介紹"><a href="#指令介紹" class="headerlink" title="指令介紹"></a>指令介紹</h1><h2 id="for指令"><a href="#for指令" class="headerlink" title="for指令"></a>for指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for a in 0 1 2 3</span><br><span class="line">do</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>這意思是從a=0做到a=3，不過如果你的數字很大的時候就會很麻煩，所以後來我都改用下面這個<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for a in `seq 0 3`</span><br><span class="line">do</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>如果你是要從0做到100，就把3改成100就好，很方便。<br>如果要做矩陣迴圈(也就是雙迴圈意思)，你就可以在for裡面再放一個for迴圈。</p>
+<h2 id="if指令"><a href="#if指令" class="headerlink" title="if指令"></a>if指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ 判定事項 ]; then</span><br><span class="line">else</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>這是基本式，可以不必有else但是then-else之間一定要有指令<br>判定事項可以加上”邏輯判定”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [ a -eq a ]; then</span><br><span class="line">else</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>記住裡面的左右都需要空格，不要連接再一起。如果a值是一個變數，也就是你希望他是會隨你的外部參數改變的話，就把它改為”$a”</p>
+<h2 id="continus-amp-break指令"><a href="#continus-amp-break指令" class="headerlink" title="continus &amp; break指令"></a>continus &amp; break指令</h2><p>說明:</p>
+<blockquote>
+<p>這個指令滿特別的，當你的do迴圈裡面可以放一個if判定後接續continue，意即當你滿足這判定完接續continue之後會掠過以下的過程，進行下一次的do迴圈。<br>而break則是會直接跳出do迴圈</p>
+</blockquote>
+<h1 id="let-amp-expr指令"><a href="#let-amp-expr指令" class="headerlink" title="let &amp; expr指令"></a>let &amp; expr指令</h1><p>說明:</p>
+<blockquote>
+<p>在Shell內做計算，不像是fortran內那樣精密與方便，<br>但是做一些簡易的計算還是可以的，可以使用這兩個指令。</p>
+</blockquote>
+<hr>
+<h1 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h1><ol>
+<li><a href="http://www.cnblogs.com/xuxm2007/archive/2011/10/20/2218846.html" target="_blank" rel="noopener">Shell符號的意義</a></li>
+<li><a href="http://blog.csdn.net/lizhi200404520/article/details/8819762" target="_blank" rel="noopener">echo指令用法</a></li>
+<li><a href="http://blog.csdn.net/taiyang1987912/article/details/38929069" target="_blank" rel="noopener">Shell的for,while,until循環</a> 裡面有continue的用法。(不錯)</li>
+<li><a href="https://www.linuxdaxue.com/linux-shell/" target="_blank" rel="noopener">Shell教程</a></li>
+<li><a href="http://www.delightpress.com.tw/bookRead/skns00004_read.pdf" target="_blank" rel="noopener">Shell的awk &amp; sed</a> 推薦要初學sed與awk者可看這個。</li>
+</ol>
+<hr>
+<h1 id="腳本範本"><a href="#腳本範本" class="headerlink" title="腳本範本 (?)"></a>腳本範本 (?)</h1><p>其實就是我寫的一些腳本記錄一下 XD<br>這是在計算一個檔案且每次需要重複289次，前前後後大概需要讓腳本跑2~3次這289次循環的動作…<br>若需要人為來做這動作光是想想就覺得後怕…(很懶阿誰會有這毅力!)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># Program:</span><br><span class="line"># 	Using for cal opium</span><br><span class="line"># History:</span><br><span class="line"># 2017/10/20		First release</span><br><span class="line">PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin</span><br><span class="line">export PATH</span><br><span class="line"></span><br><span class="line">#this for boson2 using</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># source environment</span><br><span class="line"></span><br><span class="line">#source /opt/intel/impi/5.0.0.028/intel64/bin/mpivars.sh # 01</span><br><span class="line">source /opt/intel/impi/4.1.0/bin64/mpivars.sh            # boson2</span><br><span class="line"></span><br><span class="line">#First stage</span><br><span class="line">echo &quot;!------------------------!&quot;</span><br><span class="line">echo &quot;! 歡迎來到自動化腳本大營 !&quot;</span><br><span class="line">echo &quot;!------------------------!&quot;</span><br><span class="line">echo &quot;&quot;</span><br><span class="line"></span><br><span class="line">#read -p &quot;S軌域,想要混和多少比例 0-&gt;1 :&quot; b</span><br><span class="line">#read -p &quot;P軌域,想要混合多少比例 0-&gt;1 :&quot; c</span><br><span class="line">#read -p &quot;D軌域,想要混合多少比例 0-&gt;1 :&quot; j</span><br><span class="line">#read -p &quot;F軌域,想要混合多少比例 0-&gt;1 :&quot; h</span><br><span class="line"></span><br><span class="line">f=1</span><br><span class="line">g=0</span><br><span class="line"></span><br><span class="line">read -p &quot;(Fisrt atom)Seedname :&quot; Aname</span><br><span class="line">read -p &quot;(Second atom)Seedname :&quot; Bname</span><br><span class="line">read -p &quot;How many cores :&quot; n</span><br><span class="line">read -p &quot;CPU total number :&quot; mm</span><br><span class="line">read -p &quot;你要計算CASTEP的檔案名子 :&quot; Filename</span><br><span class="line">read -p &quot;要跳過Opium step? (1:no 2:yes) :&quot; step</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ -f &quot;$step&quot; -eq 1 ]; then</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ -f &quot;$Filename.0001.err&quot; ]; then</span><br><span class="line">rm *.err</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">rm -r $Aname\_S*</span><br><span class="line"></span><br><span class="line">rm -r origin_firstatomfile</span><br><span class="line"></span><br><span class="line">#--------------- S &amp; P orbitals ------------------</span><br><span class="line"></span><br><span class="line">mkdir origin_firstatomfile</span><br><span class="line">cp ./$Aname.param origin_firstatomfile</span><br><span class="line">cp ./$Bname.param origin_firstatomfile</span><br><span class="line"></span><br><span class="line">cd origin_firstatomfile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#if this produceVPS put in local folder,please improve here.</span><br><span class="line">(路徑) ~/produceVPS_sp $g $g $f</span><br><span class="line"># it will produce alcwnl.txt, pc.txt and pcen.txt.</span><br><span class="line">#Because keyin f=1  it will produce Wps1_s.txt, Wps1_p.txt and en.txt</span><br><span class="line">(路徑) ~/opium  $Aname.param $Aname.log all rpt recpot &gt;$Aname\_opium.txt</span><br><span class="line"></span><br><span class="line">mv Wps2_s.txt Wps1_s.txt</span><br><span class="line">mv Wps2_p.txt Wps1_p.txt</span><br><span class="line"></span><br><span class="line">cd ..</span><br><span class="line"></span><br><span class="line">m=1</span><br><span class="line"></span><br><span class="line">for a in `seq 0 16`</span><br><span class="line">do</span><br><span class="line">r=$(awk &quot;BEGIN&#123;print $a/16 &#125;&quot;)</span><br><span class="line"></span><br><span class="line">for aa in `seq 0 16`</span><br><span class="line">do</span><br><span class="line">rr=$(awk &quot;BEGIN&#123;print $aa/16 &#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#-------------- count --------------------</span><br><span class="line"></span><br><span class="line">nn=`expr $mm + 1`</span><br><span class="line">let &quot;temp2=m%$nn&quot;</span><br><span class="line">#echo &quot;temp2=$temp2&quot;</span><br><span class="line"></span><br><span class="line">if [ &quot;$temp2&quot; -eq 0 ]</span><br><span class="line">then</span><br><span class="line">echo -n &quot;!==========!&quot;</span><br><span class="line">echo -n &quot;! Sleeping !&quot;</span><br><span class="line">echo -n &quot;!==========!&quot;</span><br><span class="line">sleep 120</span><br><span class="line">fi</span><br><span class="line">let &quot;m++&quot;</span><br><span class="line"></span><br><span class="line">#-------------- continue  ----------------</span><br><span class="line"></span><br><span class="line">mkdir $Aname\_S$a\_P$aa\_$Bname</span><br><span class="line">cp ./origin_firstatomfile/* $Aname\_S$a\_P$aa\_$Bname</span><br><span class="line"></span><br><span class="line">#-------------- Second stage ------------------</span><br><span class="line"></span><br><span class="line">cd $Aname\_S$a\_P$aa\_$Bname</span><br><span class="line"></span><br><span class="line">b=$r</span><br><span class="line">c=$rr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(路徑) ~/produceVPS_sp $b $c $g</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># it will produce alcwnl.txt, pc.txt and pcen.txt.</span><br><span class="line">#Because keyin g=0 it will not produce Wps1_s.txt, Wps1_p.txt Wps1_d.txt Wps1_f.txt and en.txt.</span><br><span class="line"></span><br><span class="line"># Now Wps1_s.txt , Wps1_p.txt and en.txt are Aname files.</span><br><span class="line"></span><br><span class="line">(路徑) ~/opium $Bname.param $Bname.log all rpt recpot &gt;$Bname\_opium.txt &amp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd ..</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">done</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"># copy recpot into all_potential</span><br><span class="line">mkdir all_potential</span><br><span class="line"></span><br><span class="line">for a in `seq 0 16`</span><br><span class="line">do</span><br><span class="line"></span><br><span class="line">for aa in `seq 0 16`</span><br><span class="line">do</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mv ./$Aname\_S$a\_P$aa\_$Bname/$Bname.recpot ./$Aname\_S$a\_P$aa\_$Bname/$Aname\_S$a\_P$aa\_$Bname.recpot</span><br><span class="line">cp ./$Aname\_S$a\_P$aa\_$Bname/$Aname\_S$a\_P$aa\_$Bname.recpot ./all_potential/</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">#------------------------------------- Finish Pseudopotential --------------------------</span><br><span class="line">#cd ./all_potential/</span><br><span class="line">else</span><br><span class="line">if [ -f &quot;$step&quot; -eq 2 ] ; then</span><br><span class="line"></span><br><span class="line">for a in `seq 0 16`</span><br><span class="line">do</span><br><span class="line">r=$(awk &quot;BEGIN&#123;print $a/16 &#125;&quot;)</span><br><span class="line"></span><br><span class="line">for aa in `seq 0 16`</span><br><span class="line">do</span><br><span class="line">rr=$(awk &quot;BEGIN&#123;print $aa/16 &#125;&quot;)</span><br><span class="line"></span><br><span class="line">b=$r</span><br><span class="line">c=$rr</span><br><span class="line"></span><br><span class="line"># it will produce alcwnl.txt, pc.txt and pcen.txt.</span><br><span class="line">#Because keyin g=0 it will not produce Wps1_s.txt, Wps1_p.txt Wps1_d.txt Wps1_f.txt and en.txt.</span><br><span class="line"></span><br><span class="line"># Now Wps1_s.txt , Wps1_p.txt and en.txt are Aname files.</span><br><span class="line"></span><br><span class="line">#(路徑) ~/opium $Bname.param $Bname.log all rpt recpot plot ke plot wp plot logd plot vi &gt;$Bname\_opium.txt</span><br><span class="line">      #mv $Bname.recpot $Aname\_S$a\_P$aa\_$Bname.recpot</span><br><span class="line"></span><br><span class="line">cd ./$Aname\_S$a\_P$aa\_$Bname/</span><br><span class="line"></span><br><span class="line">echo &quot;========== Check Files ==========&quot;</span><br><span class="line">cp ../$Filename/* .</span><br><span class="line"></span><br><span class="line">if [ -f &quot;$Filename.cell&quot; ]; then</span><br><span class="line">echo &quot;File $Filename.cell exists.&quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;File $Filename.cell does not exist.&quot;</span><br><span class="line">exit</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [  -f &quot;./$Filename.param&quot; ]; then</span><br><span class="line">echo &quot;File $Filename.param exists&quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;File $Filename.param does not exist.&quot;</span><br><span class="line">exit</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#----- improve recpot name in .cell files -----------------------------</span><br><span class="line">echo &quot;========== Potential Name ==========&quot;</span><br><span class="line">echo &quot;$Aname\_S$a\_P$aa\_$Bname&quot;</span><br><span class="line"></span><br><span class="line">sed -e &quot;/^.*_.[^a-zA-Z]_.[^a-zA-Z]_.*\.recpot/c\ $Aname $Aname\_S$a\_P$aa\_$Bname.recpot&quot; $Filename.cell &gt; $Filename\_new.cell</span><br><span class="line"></span><br><span class="line">mv $Filename\_new.cell $Filename.cell</span><br><span class="line"></span><br><span class="line">#------ CASTEP calculation</span><br><span class="line">echo &quot;========= Start to calculate SCF =========&quot;</span><br><span class="line">#mpirun -np $n (路徑) ~/RunCASTEP.sh $Filename</span><br><span class="line">mpirun -np $n (路徑) ~/castep.mpi $Filename</span><br><span class="line"></span><br><span class="line">awk  &apos;/alpha | beta | gamma/ &#123;print $1 , $2 , $3&#125; &apos; $Filename.castep  &gt; $Filename\_length.txt</span><br><span class="line"></span><br><span class="line">N=3  # line N from the bottom</span><br><span class="line">tail -n $N $Filename\_length.txt &gt; $Aname\_S$a\_P$aa\_$Bname\_length.txt</span><br><span class="line">#mv length.txt $Aname\_$r\_$Bname\_$a\_length.txt</span><br><span class="line">#cp $Aname.castep $Aname\_$r\_$Bname\_$a.castep # I consider that we don&apos;t need to open now.</span><br><span class="line">#cp $Aname\_BandStr.castep $Aname\_$r\_$Bname\_$a\_BandStr.castep #If you want to calculate, you open it.</span><br><span class="line">#sed &apos; /a|b|c/w length.txt &apos; $Aname\_$r\_$Bname\_$a\_length.txt # open #try to close</span><br><span class="line"></span><br><span class="line">namename=$Aname\_S$a\_P$aa\_$Bname\_length</span><br><span class="line">sed &apos; 1w xmgrace1.txt&apos; $namename.txt # open # print file just one line</span><br><span class="line"></span><br><span class="line">#awk &apos;&#123;print name, $0 &gt;&gt; &quot;length.txt&quot;&#125;&apos; name=$Aname\_$r\_$Bname\_$a $Aname\_$r\_$Bname\_$a\_length.txt # no requirement work</span><br><span class="line"></span><br><span class="line">#---- real</span><br><span class="line"></span><br><span class="line">awk &apos;&#123;print name &gt;&gt; &quot;length.txt&quot;&#125;&apos; name=$Aname\_S$a\_P$aa\_$Bname $Aname\_S$a\_P$aa\_$Bname\_length.txt #open</span><br><span class="line">awk &apos;&#123;print $0 &gt;&gt; &quot;length.txt&quot;&#125;&apos; $Aname\_S$a\_P$aa\_$Bname\_length.txt # open</span><br><span class="line">rm $Filename\_length.txt</span><br><span class="line"></span><br><span class="line">#---- xmgrace requirement input file</span><br><span class="line">#awk &apos;&#123;print name &gt;&gt; &quot;xmgrace.txt&quot;&#125;&apos; name=$r $Aname\_$r\_$Bname\_$a\_length.txt # don&apos;t open</span><br><span class="line">#awk &apos;&#123;print name,$3 &gt;&gt; &quot;xmgrace.txt&quot;&#125;&apos; name=$r $Aname\_$r\_$Bname\_$a\_length.txt # currently don&apos;t open</span><br><span class="line">awk &apos;&#123;print name,$3 &gt;&gt; &quot;xmgrace.txt&quot;&#125;&apos; name=$r xmgrace1.txt</span><br><span class="line"></span><br><span class="line">#----- combine all the individual .txt files --------------------------</span><br><span class="line"></span><br><span class="line">sed &apos;$!N; /^\(.*\)\n\1$/!P; D&apos; length.txt &gt; $Aname\_$Bname\_analysis_length.txt   # open</span><br><span class="line">rm length.txt # need?</span><br><span class="line">rm xmgrace1.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mv $Filename.castep $Aname\_S$a\_P$aa\_$Bname.castep</span><br><span class="line">mv $Filename.cell $Aname\_S$a\_P$aa\_$Bname.cell</span><br><span class="line"></span><br><span class="line">cd ..</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo &quot;====== Job Finish ======&quot;</span><br><span class="line"></span><br><span class="line">fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">#End</span><br></pre></td></tr></table></figure>
+<p>主要一個技巧就是先把你要做的一整個流程想好，之後把整個流程動作指令寫入你的script裡面就對了。</p>
+<hr>
+<h1 id="使用的工具書"><a href="#使用的工具書" class="headerlink" title="使用的工具書"></a>使用的工具書</h1><p>我使用的工具書是 <a href="http://www.books.com.tw/products/CN11369414" target="_blank" rel="noopener">Linux命令行與shell腳本編程大全（第3版</a><br>Shell工具書非常之多，有的其實也找的到pdf檔<br>不過覺得實體的工具書應該買一本，還是有它方便之處的。</p>
+<p>以上 若有想到會再繼續補充…</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Chieh
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://chiehpower.com/2018/02/02/Shell/" title="Shell">https://chiehpower.com/2018/02/02/Shell/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/31/manjaro/" rel="next" title="Manjaro & 掛載硬碟流程">
+                <i class="fa fa-chevron-left"></i> Manjaro & 掛載硬碟流程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/16/IELTS_Task1-template/" rel="prev" title="Task1 模板">
+                Task1 模板 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.gif" alt="Chieh">
+            
+              <p class="site-author-name" itemprop="name">Chieh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/chiehpower" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:iloveberit@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Gmail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/maplemadmessage" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.flightradar24.com/chiehpower" target="_blank" title="Flightradar24">
+                      
+                        <i class="fa fa-fw fa-plane"></i>Flightradar24</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://sourcerer.io/chiehpower" target="_blank" title="Sourcerer">
+                      
+                        <i class="fa fa-fw fa-user-secret"></i>Sourcerer</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重點"><span class="nav-number">1.</span> <span class="nav-text">重點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令介紹"><span class="nav-number">2.</span> <span class="nav-text">指令介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for指令"><span class="nav-number">2.1.</span> <span class="nav-text">for指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if指令"><span class="nav-number">2.2.</span> <span class="nav-text">if指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#continus-amp-break指令"><span class="nav-number">2.3.</span> <span class="nav-text">continus &amp; break指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let-amp-expr指令"><span class="nav-number">3.</span> <span class="nav-text">let &amp; expr指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Website"><span class="nav-number">4.</span> <span class="nav-text">Website</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#腳本範本"><span class="nav-number">5.</span> <span class="nav-text">腳本範本 (?)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用的工具書"><span class="nav-number">6.</span> <span class="nav-text">使用的工具書</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chieh</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">
+  Theme
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      訪客數
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      訪問量
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-chiehpower-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://chiehpower.com/2018/02/02/Shell/';
+          this.page.identifier = '2018/02/02/Shell/';
+          this.page.title = 'Shell';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-chiehpower-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
