@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Chieh&#39;s Blog">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3">
-<meta property="og:updated_time" content="2021-09-07T01:50:30.779Z">
+<meta property="og:updated_time" content="2021-09-22T01:15:27.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DVC">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3">
@@ -382,7 +382,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3" rel="gallery_cktdzprny0026e3jxuh8uno09" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3" rel="gallery_cktuv4wa100211ojxi5n6fg8p" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://lh3.googleusercontent.com/pw/AM-JKLVcZMv8Y84R_6NNJRIcWCzF7z2YUEpvOoCQFj0DoTFvjX9IuybBYmxUdOO1GBIASjsTEAOCLOJQtPS10_-pTo-Pj29cawiP4yXgPawhWgENfavuwe9WajbOJdk82xkMox-8h-8u8J3WN4byuzb9pq3lQw=w2038-h1530-no?authuser=3" itemprop="contentUrl">
               </a>
             
@@ -394,9 +394,41 @@
       
 
       
-        <h1 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h1><p>Step:<br><em>Do it in the .git directory.</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">dvc init</span><br><span class="line"></span><br><span class="line">## Add file</span><br><span class="line">dvc add test</span><br><span class="line">git add test.dvc</span><br><span class="line">git commit -m &quot;Add raw data&quot;</span><br><span class="line"></span><br><span class="line">### Add the remote source </span><br><span class="line"># For now, we only use local folder.</span><br><span class="line">dvc remote add -d myremote /tmp/dvcstore</span><br><span class="line">### If you use webhdfs </span><br><span class="line">dvc remote add -d myremote webhdfs://10.1.2.84:9870/tmp/webhdfs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># check the information</span><br><span class="line">cat .dvc/config </span><br><span class="line"># Push the test folder to dvc </span><br><span class="line">dvc push </span><br><span class="line"></span><br><span class="line">### Add &quot;test&quot; folder into .gitignore</span><br><span class="line">git add .dvc/configsolomon</span><br><span class="line">git commit -m &quot;Configure remote storage&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
-<p>If you wanna pull<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvc pull</span><br></pre></td></tr></table></figure></p>
-<h1 id="Setup-WebHDFS-Part-Failure"><a href="#Setup-WebHDFS-Part-Failure" class="headerlink" title="Setup WebHDFS Part [Failure]"></a>Setup WebHDFS Part [Failure]</h1><p>Reference:</p>
+        <h1 id="DVC"><a href="#DVC" class="headerlink" title="DVC"></a>DVC</h1><p><a href="https://dvc.org/" target="_blank" rel="noopener">DVC</a> is meaning of <strong>Data Version Control</strong>.</p>
+<ul>
+<li><a href="https://github.com/iterative/dvc" target="_blank" rel="noopener">GitHub</a></li>
+</ul>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>We usually used Git to control code versions, but we knew that it was not good for controling large files or non-code documents.</p>
+<p>Also, suppose if we add one large file by git and push to registry such as Github, there are some potential issues inside actually. As we know, usually deep learning or mahcine learning developers / researhers request to do a lot of trainings based on many verious experiments, so we need to find a proper way to maintain and manage those models.</p>
+<p>First of all, it will highly increase <code>.git</code> folder size ; for example, if your whole files size are 1GB, it will have another 1GB in the <code>.git</code> folder. Hence, it will account for 2GB. </p>
+<p>Second, it will take too much time on git clone repository. </p>
+<p>Of course, DVC not only can do this kinds of things, but also implement the DL/ML pipeline things.</p>
+<p>It provides a lot of functionality inside if you are interested in it, you can take a look its website.</p>
+<p>In this article, I only showcased how to easily use DVC to control the models (DL/ML); in other word, control large files or put large files in the git folder.</p>
+<p>Here is a simple and main workflow for DVC below:</p>
+<p><img src="https://dvc.org/img/flow.gif" alt="Graph from official website."></p>
+<p>The simplest critical concept for DVC workflow is that we use our “files” to exchange one “document” or you can say a “receipt”, and then DVC will put (store) your files to remote place, where can be in the local (in your PC somewhere) or remote servers or cloud drive, etc. Hence, we use <strong>git</strong> control this “receipt” to achieve data version controlled.</p>
+<p>I can separate the parts for using DVC. If you can nail it these points, there is no problem to use it smoothly.</p>
+<ol>
+<li>Set up the <code>config</code> file in the <code>.dvc</code> folder.</li>
+<li>Find a remote place such as local place (same device), remote server, or cloud drive (e.g., S3, AWS, etc.) </li>
+<li>Remember the steps for usage.</li>
+</ol>
+<p>To be honest, the second point is the most difficult part if you do not have a cloud drive to store your files.</p>
+<p>In my case, I was stored the data in our server via <strong>ssh</strong> in the end. Hence, if you have an account such as S3, then you can use that way. </p>
+<hr>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="Step"><a href="#Step" class="headerlink" title="Step:"></a>Step:</h2><p><em>Do it in the directory which includes <code>.git</code> folder.</em></p>
+<p>First, if this folder hasn’t been controlled by dvc before, you need to do once in the beginning.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvc init</span><br></pre></td></tr></table></figure></p>
+<p>Second, let’s add the files that we wanna store in the remote place.<br>When we <code>dvc add</code> one file, it will automatically generate one <code>.dvc</code> file give you. In addition, it will also automatically add your original file into <code>.gitignore</code> file to avoid being controlled by <strong>git</strong>.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## Add file</span><br><span class="line">dvc add test</span><br><span class="line">git add test.dvc</span><br><span class="line">git commit -m &quot;Add raw data&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Let’s set up the config file in the first time.<br>Basically we need to add the remote side such as your personal server. We have to make sure dvc which can connect to there!! So you can test it by yourself first. For instance, we can use ssh to access your server to see whether there is a denied issue or not.</p>
+<p>Official website provided a lot of ways that you guys can find the commands on there.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">### Add the remote source </span><br><span class="line"># For now, we only use local folder.</span><br><span class="line">dvc remote add -d myremote /tmp/dvcstore</span><br><span class="line">### If you use webhdfs </span><br><span class="line">dvc remote add -d myremote webhdfs://10.1.2.84:9870/tmp/webhdfs</span><br><span class="line"></span><br><span class="line"># check the information</span><br><span class="line">cat .dvc/config</span><br></pre></td></tr></table></figure></p>
+<p>After we finish the setup config file, let’s push the file to remote side. Next, let’s git add this <code>.dvc</code> file and git commit &amp; git push as usual.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Push the test folder to dvc </span><br><span class="line">dvc push </span><br><span class="line"></span><br><span class="line">### Add &quot;test&quot; folder into .gitignore</span><br><span class="line">git add .dvc/configsolomon</span><br><span class="line">git commit -m &quot;Configure remote storage&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>If you wanna pull the models or files or updates, use it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dvc pull</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Setup-WebHDFS-Part-Failure"><a href="#Setup-WebHDFS-Part-Failure" class="headerlink" title="Setup WebHDFS Part [Failure]"></a>Setup WebHDFS Part [Failure]</h1><p>Sorry I am not really familiar wiht using HDFS that I still failed in this way. I will update it if I have succeeded to use it.</p>
+<p>Reference:</p>
 <ol>
 <li><a href="https://hub.docker.com/r/sequenceiq/hadoop-docker/" target="_blank" rel="noopener">hub.docker-hadoop-docker</a></li>
 <li><a href="https://blog.csdn.net/qq_45083975/article/details/106137674" target="_blank" rel="noopener">Hadoop REST API – WebHDFS使用详解</a></li>
@@ -415,6 +447,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -i -X PUT http://localhost:50070/webhdfs/v1/tmp/webhdfs\?user.name\=istvan\&amp;op\=MKDIRS</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<hr>
 <h1 id="Via-SSH-Part-Success"><a href="#Via-SSH-Part-Success" class="headerlink" title="Via SSH Part [Success]"></a>Via SSH Part [Success]</h1><p>Reference: </p>
 <ol>
 <li><a href="https://discuss.dvc.org/t/how-do-i-use-dvc-with-ssh-remote/279/2" target="_blank" rel="noopener">How do I use DVC with SSH remote</a></li>
@@ -426,7 +459,8 @@
 <p>Let’s add SSH remote.</p>
 <p>I wanna put it in my remote server at <code>/home/user/tmp/</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dvc remote add --default ssh-storage ssh://10.1.2.30/home/user/tmp/</span><br><span class="line">dvc remote modify ssh-storage user Chieh</span><br><span class="line">dvc remote modify ssh-storage port 22</span><br><span class="line">dvc remote modify --local ssh-storage password 123456789</span><br></pre></td></tr></table></figure></p>
 <p>If you dont wanna record any information into <code>.dvc/config</code>, then you can use <code>--local</code> option.<br>Otherwise, it will be added into the git control.</p>
-<h2 id="How-to-add-new-files"><a href="#How-to-add-new-files" class="headerlink" title="How to add new files?"></a>How to add new files?</h2><p>When we change something new files in the tracked dvc folder, how can we add this new files into dvc?</p>
+<hr>
+<h1 id="How-to-add-new-files"><a href="#How-to-add-new-files" class="headerlink" title="How to add new files?"></a>How to add new files?</h1><p>When we change something new files in the tracked dvc folder, how can we add this new files into dvc?</p>
 <p>For example, suppose I have a tmp folder, there is one <code>index</code> file inside. </p>
 <p><strong>Before</strong>:<br>└── tmp<br>    └── index</p>
 <p>After we <code>dvc add tmp</code>, it will generate a file as <code>tmp.dvc</code>.<br>And I add one document, <code>confusion.json</code>, into the tmp folder like below:</p>
@@ -434,12 +468,15 @@
 <p>We can use <code>dvc add tmp</code> again, then it will update the tmp.dvc again.<br>Dont forget to <code>git commit</code> this <code>tmp.dvc</code> file and <code>dvc push</code>.</p>
 <p>We use <code>tmp.dvc</code> to control the files; hence, if you wanna get one files from specific commit, you can <code>git checkout (specific commit)</code> back to that one commit, and remove the original tmp folder and dvc pull the files from server.</p>
 <p>Step:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dvc unprotect tmp</span><br><span class="line">dvc add tmp</span><br><span class="line"></span><br><span class="line"># Let&apos;s push to server</span><br><span class="line">dvc push</span><br><span class="line"></span><br><span class="line"># It will also update the .dvc file, so we need to git add it to do git control again.</span><br><span class="line">git add tmp.dvc</span><br><span class="line"></span><br><span class="line"># Regularly git commit and push it to git server.</span><br><span class="line">git commit -m &quot;Update tmp.dvc file&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Dockerfile:</p>
+<hr>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Here is a simple dockerfile to create a stored space that you can set up your remote side in here.</p>
+<p><strong>Dockerfile:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu:latest</span><br><span class="line">RUN sed -i -e &apos;s/archive.ubuntu.com/free.nchc.org.tw/&apos; /etc/apt/sources.list</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y ssh openssh-server vim ca-certificates wget sudo</span><br><span class="line"></span><br><span class="line"># RUN mkdir /var/run/sshd</span><br><span class="line">RUN echo &apos;root:Root&apos; | chpasswd</span><br><span class="line">RUN sed -i &apos;s/#PermitRootLogin/PermitRootLogin/&apos; /etc/ssh/sshd_config</span><br><span class="line">RUN sed -i &apos;s/#PasswordAuthentication/PasswordAuthentication/&apos; /etc/ssh/sshd_config</span><br><span class="line">  </span><br><span class="line">EXPOSE 22</span><br><span class="line">ARG USER_ID=1000</span><br><span class="line">RUN useradd -m --no-log-init --system  --uid $&#123;USER_ID&#125; user -g sudo</span><br><span class="line">RUN echo &apos;user:user&apos; | sudo /usr/sbin/chpasswd</span><br><span class="line">RUN echo &apos;%sudo ALL=(ALL) NOPASSWD:ALL&apos; &gt;&gt; /etc/sudoers</span><br><span class="line"># ENTRYPOINT sudo service ssh restart </span><br><span class="line">WORKDIR /home/user</span><br><span class="line">USER $USER_NAME</span><br><span class="line">RUN chmod 700 /home/user</span><br><span class="line">CMD [ &quot;bash&quot; ]</span><br></pre></td></tr></table></figure>
-<p>Build image:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker build -t dvc:0.1 .</span><br><span class="line">docker run --rm -ti -p 8787:22 dvc:0.1 bash</span><br></pre></td></tr></table></figure></p>
+<p><strong>Build image:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker build -t dvc:0.1 .</span><br><span class="line">docker run --rm -ti -p 8787:22 dvc:0.1 bash</span><br></pre></td></tr></table></figure></p>
+<hr>
 <h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install dvc</span><br></pre></td></tr></table></figure>
-<p>If you use WebHDFS, you need to install this requirement.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install &apos;dvc[webhdfs]&apos;</span><br></pre></td></tr></table></figure></p>
-<p>Or you can use <code>dvc[all]</code></p>
+<p>If you use WebHDFS, you need to install this requirement.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install &apos;dvc[webhdfs]&apos;</span><br><span class="line">or </span><br><span class="line">pip3 install &apos;dvc[ssh]&apos;</span><br></pre></td></tr></table></figure></p>
+<p>Or you can use <code>dvc[all]</code> to install all packages.</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><ul>
 <li><a href="https://www.dazhuanlan.com/wdgann/topics/1008692" target="_blank" rel="noopener">DVC 介紹</a></li>
 </ul>
@@ -494,6 +531,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/09/22/repair-master2s/" rel="prev" title="Save my Master-2S">
+                Save my Master-2S <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -582,7 +623,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -604,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">152</span>
+                  <span class="site-state-item-count">154</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -678,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DVC"><span class="nav-number">1.</span> <span class="nav-text">DVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setup-WebHDFS-Part-Failure"><span class="nav-number">2.</span> <span class="nav-text">Setup WebHDFS Part [Failure]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">2.1.</span> <span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Via-SSH-Part-Success"><span class="nav-number">3.</span> <span class="nav-text">Via SSH Part [Success]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-add-new-files"><span class="nav-number">3.1.</span> <span class="nav-text">How to add new files?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">4.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements"><span class="nav-number">5.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DVC"><span class="nav-number">1.</span> <span class="nav-text">DVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step"><span class="nav-number">3.1.</span> <span class="nav-text">Step:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setup-WebHDFS-Part-Failure"><span class="nav-number">4.</span> <span class="nav-text">Setup WebHDFS Part [Failure]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">4.1.</span> <span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Via-SSH-Part-Success"><span class="nav-number">5.</span> <span class="nav-text">Via SSH Part [Success]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-add-new-files"><span class="nav-number">6.</span> <span class="nav-text">How to add new files?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">7.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements"><span class="nav-number">8.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
             
 
           </div>
