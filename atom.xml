@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chiehpower.com/"/>
-  <updated>2021-09-22T05:36:59.514Z</updated>
+  <updated>2021-09-22T05:38:01.030Z</updated>
   <id>https://chiehpower.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://chiehpower.com/2021/09/22/repair-master2s/"/>
     <id>https://chiehpower.com/2021/09/22/repair-master2s/</id>
     <published>2021-09-22T01:11:29.000Z</published>
-    <updated>2021-09-22T05:36:59.514Z</updated>
+    <updated>2021-09-22T05:38:01.030Z</updated>
     
     <content type="html"><![CDATA[<h1 id="拯救-MX-Master-2S"><a href="#拯救-MX-Master-2S" class="headerlink" title="拯救 MX Master 2S"></a>拯救 MX Master 2S</h1><p>由於我的Master 2S也使用了一陣子，某天發現他的游標不能夠移動，但是左右按鍵卻還是可以使用，但我個人直覺是不至於應該就直接掛掉，然後上網找了一番發現是MX Master的老毛病，大拇指部分的按鍵會影響光標移動，因此有次偶然按壓大拇指部分喬一下還真讓他恢復正常，不過當電腦重開之後滑鼠重新連結之後又會失效，問題會再現，因此最直接的解決方式就是拆解並調整內部比較快，當初預想說即使拿掉大拇指這個按鍵的功能也無所謂，畢竟時常在Linux環境底下操作時，大拇指按鍵基本上沒啥作用。</p><p>因此便展開了修復滑鼠的計畫，畢竟一顆上千塊，老實說沒有真正的壞掉，還真捨不得再添購一顆新的，抱持著能救則救的心態XD 加上外面好像很少人在修理這個，因此在蝦皮全站免運之際，怕之後還會需要直接購買了兩組滑鼠底部的墊片貼片，一組大約三十塊其實還滿便宜的。</p><h2 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h2><p>貼片: 售價30 / 組<br>T5星型螺絲起子: 我是購買一組裡面是33 in 1的費用是350元一組，如果只單購一支的話，單支售價80元 / 支<br>十字螺絲起子</p><p>貼片外包裝大概長這樣:<br><img src="https://lh3.googleusercontent.com/pw/AM-JKLWHwhjuYQ0xaEU1rdVJAcjG6AYJD9xwagrU4qPnxCfrBGuMJj1iUqydbSorauY-Jlygs5GSgyYg62D26EvgGm0v_YukE9TL0Te9LW5bLH0Xgmzqt3-ftffWrLQSzfPjF8Om_QVqEQrR_rU5U8BphY47EA=w2038-h1530-no?authuser=0" alt=""></p><h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><p>首先，先把底部左右兩邊的膠墊給撕下來，螺絲藏在裡面，總共有六顆螺絲需要拆卸，上方兩顆為T5星型，下方四顆為普通的十字螺絲。</p><p><img src="https://lh3.googleusercontent.com/pw/AM-JKLVUvE-XU-GO1umThZiRBFD_48ndg-u0Vg249d3a5HJh3jtBfs13W6Vk_HFjO4u-JYl3V-0exfGchPUpGAdmJfQBGldcu1B5MLDK_AQ4-N75r1DnIidJCh7D81AU9lKoM6-Vo6pLDoFAfU97_IxHawJJjA=w690-h916-no?authuser=0" alt=""></p><p>全部卸下之後，在大拇指正下方有排線，因此要拆開的時候上下兩個部分小心抓好然後從<strong>非大拇指</strong>的那一側小心掀開。</p><p><img src="https://lh3.googleusercontent.com/pw/AM-JKLUvf0yHJZGCOGbDYZw9E2YpXcLuC_282qWelzKkomI67YJ_7YhvUJvPI-w9CWJkkkSht9e1JvOBLfN84ZK6_XYRwuN5sbtvvWZGgzBszc8PEZ6I_pFWAgI3Ut9ypfqZe8hon-GbSpeQzyfuEUj4DDNhwg=w1228-h922-no?authuser=0" alt=""></p><p>看到紅色框起來的兩個螺絲部分，旋開一兩圈即可。這時候可以測試看看是否有恢復狀況，基本上我測試這時候就恢復了，那就可以蓋起來然後把螺絲鎖回去。當然可以順便清潔一下滑鼠裡面，可以用相機使用的吹球往非電子零件與非線組的部分做清潔。</p><p><img src="https://lh3.googleusercontent.com/pw/AM-JKLUEZtbXi4qMjXD6xlkF0SNnr6MEmSb_GbiS1Dth3irlIlm_v5vJGt5RK5K4VQ5IE5ROrHZYEs8vbUbnKj-JfcG10Y1chVSjDer1dRLYjiTsLGGcRvQQkHsQnHBBs8if_UyPKPKZ_6Xga9iFkg1bAuxTtg=w1146-h1528-no?authuser=0" alt=""></p><p>鎖完之後，用內裡面附的酒精棉片做清潔然後貼上滑鼠墊片。</p><p><img src="https://lh3.googleusercontent.com/pw/AM-JKLUCKjcfXM7AIsOYLrTbYbqHEFCSe3KekXD-YNjOVm_kGjgWFUhPals4rQHIgrXRB-79wwx7u26mjal-SvYbrmEKk-fhMWJBKG-ftu2cVgfI_1Nl6CdJEk4eoNVxfgIe8Ngfc4BhTbccTkaz3BHdvdkSdg=w1146-h1528-no?authuser=0" alt=""></p><p>就大功告成啦!! 滑鼠又可以再戰一陣子了!!</p>]]></content>
     
     <summary type="html">
     
-      &lt;center&gt; &lt;/center&gt;
+      &lt;center&gt; 修復Master不能移動的問題 &lt;/center&gt;
     
     </summary>
     
